@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NomadCore Feature Graphic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #333;
+        }
+        
+        .feature-graphic {
+            width: 1024px;
+            height: 500px;
+            background: linear-gradient(135deg, #0A0F1A 0%, #1A2332 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+        }
+        
+        /* Background pattern */
+        .feature-graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 68, 68, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* Topographic lines effect */
+        .topo-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 20px,
+                #00D4FF 20px,
+                #00D4FF 21px
+            );
+            transform: skewY(-5deg);
+        }
+        
+        .left-content {
+            flex: 1;
+            z-index: 2;
+            max-width: 500px;
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00D4FF, #0099CC);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .app-icon::after {
+            content: '🛡️';
+            font-size: 40px;
+        }
+        
+        .app-name {
+            font-size: 48px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: #00D4FF;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #B0BEC5;
+            font-size: 16px;
+        }
+        
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .right-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: #000;
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: perspective(1000px) rotateY(-15deg);
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #0A0F1A;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Mini app interface */
+        .mini-header {
+            background: linear-gradient(90deg, #0A0F1A, #1A2332);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .mini-header-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #00D4FF, #0099CC);
+            border-radius: 8px;
+        }
+        
+        .mini-header-text {
+            color: #00D4FF;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .mini-content {
+            padding: 15px;
+        }
+        
+        .mini-card {
+            background: #1A2332;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #2A3441;
+        }
+        
+        .mini-card-title {
+            color: #FFFFFF;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .mini-card-value {
+            color: #00D4FF;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .mini-button {
+            background: #FF4444;
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .floating-badges {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            display: flex;
+            gap: 15px;
+            z-index: 3;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge-highlight {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.4);
+            color: #00D4FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="feature-graphic">
+        <!-- Background effects -->
+        <div class="topo-lines"></div>
+        
+        <!-- Floating badges -->
+        <div class="floating-badges">
+            <div class="badge">1000+ Procedures</div>
+            <div class="badge badge-highlight">100% Offline</div>
+        </div>
+        
+        <!-- Left content -->
+        <div class="left-content">
+            <div class="app-icon"></div>
+            <h1 class="app-name">NomadCore</h1>
+            <p class="tagline">Be Prepared Anywhere™</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">🚨</div>
+                    <span>Emergency Response Tools</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <span>Survival Knowledge Base</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🗺️</div>
+                    <span>Offline Maps & Navigation</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎒</div>
+                    <span>Gear & Inventory Tracking</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right content - Phone mockup -->
+        <div class="right-content">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="mini-header">
+                        <div class="mini-header-icon"></div>
+                        <div class="mini-header-text">Emergency Center</div>
+                    </div>
+                    <div class="mini-content">
+                        <div class="mini-card">
+                            <div class="mini-card-title">Current Location</div>
+                            <div class="mini-card-value">92°F</div>
+                        </div>
+                        <div class="mini-button">CALL 911</div>
+                        <div class="mini-card" style="margin-top: 10px;">
+                            <div class="mini-card-title">Quick Access</div>
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <div style="flex: 1; height: 40px; background: #2A3441; border-radius: 8px;"></div>
+                                <div style="flex: 1; height: 40px; background: #2A3441; border-radius: 8px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
