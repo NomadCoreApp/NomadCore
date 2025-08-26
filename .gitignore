@@ -1,0 +1,36 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+
+# Build files
+dist/
+build/
+
+# Dependencies (if any future web components)
+node_modules/
+
+# Private files
+*.private
+private/
