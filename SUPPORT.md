@@ -3,25 +3,12 @@
 **Last Updated: August 26, 2025**
 
 ## Getting Help with NomadCore
-
 We're here to help you get the most out of NomadCore. This page provides information on how to get support, report issues, and find answers to common questions.
 
-## 📧 Contact Support
+## 📧 Contact Support & 🐛 Reporting Issues
 
-### General Support
+### General Support & Technical Issues
 **Email**: support@nomad-core.com  
-**Response Time**: Within 24-48 hours  
-**Hours**: Monday - Friday, 9 AM - 5 PM EST
-
-### Technical Issues
-**Email**: tech@nomad-core.com  
-**Include**: Device model, OS version, app version, description of issue
-
-### Medical Content Questions
-**Email**: medical-info@nomad-core.com  
-**Note**: We cannot provide personal medical advice
-
-## 🐛 Reporting Issues
 
 ### Bug Reports
 Please include:
@@ -33,10 +20,10 @@ Please include:
 - Error messages received
 
 ### Feature Requests
-We welcome suggestions! Email: features@nomad-core.com
+We welcome suggestions! 
 
 ### Content Corrections
-If you find incorrect information: content@nomad-core.com
+If you find incorrect information: support@nomad-core.com
 
 ## ❓ Frequently Asked Questions
 
@@ -116,25 +103,14 @@ We recommend enabling automatic updates to ensure you have the latest features a
 - **999** (United Kingdom)
 - Your local emergency number
 
-## 💬 Community
-
-### Feedback
-We value your feedback! Email: feedback@nomad-core.com
-
-### Beta Testing
-Interested in testing new features? Email: beta@nomad-core.com
-
-## 📝 Legal Inquiries
-
-For legal matters: legal@nomad-core.com
-
 ## 🌐 Additional Resources
 
 ### Website
 www.nomad-core.com (Coming Soon)
 
 ### Social Media
-We currently do not maintain social media presence to respect user privacy.
+FaceBook: nomadcoreai
+X: @nomadcoreai
 
 ## Response Time Expectations
 
