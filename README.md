@@ -57,6 +57,7 @@ Join our community of preparedness-minded individuals:
 
 - **Email**: support@nomad-core.com
 - **Website**: [www.nomad-core.com](https://www.nomad-core.com) (Coming Soon)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/NomadCoreApp/NomadCore/issues)
 
 ## 🔒 Privacy & Security
 
@@ -76,6 +77,16 @@ NomadCore is committed to your privacy and security:
 
 **Survival Information**: While we strive for accuracy, survival situations vary greatly. Use your best judgment and seek professional training when possible.
 
+## 🚀 Roadmap
+
+Future enhancements planned:
+- Enhanced offline AI capabilities
+- Community-contributed procedures (vetted)
+- Mesh networking for off-grid communication
+- AR navigation features
+- Multi-language support
+- Ham radio integration
+
 ## 📄 License
 
 Copyright © 2025 NomadCore. All rights reserved.
@@ -85,3 +96,5 @@ NomadCore is proprietary software. See [EULA](./EULA.md) for details.
 ---
 
 **Be Prepared. Stay Safe. Survive Anything.**
+
+Built with ❤️ for the preparedness community
