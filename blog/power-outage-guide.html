@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Outage Survival: What to Do When the Lights Go Out - NomadCore Blog</title>
+  <meta name="description" content="The U.S. experienced over 1,500 major outages in 2024. Here's everything you need to know to keep your family safe when the power goes out.">
+  <meta property="og:title" content="Power Outage Survival: What to Do When the Lights Go Out">
+  <meta property="og:description" content="The U.S. experienced over 1,500 major outages in 2024. Here's everything you need to know to keep your family safe when the power goes out.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    .warning-box {
+      background: var(--red-light);
+      border: 1px solid #FECACA;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .warning-box p {
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <span>Jan 23, 2026</span>
+        <span class="reading-time">6 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">Power Outage Survival: What to Do When the Lights Go Out</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-outage.png" alt="Power outage survival guide">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>The lights flicker. Then darkness. Whether it's a summer storm, winter ice, or grid failure, power outages happen without warning — and they're happening more frequently. The U.S. experienced over 1,500 major outages in 2024 alone, affecting millions of households.</p>
+
+    <p>Most outages last a few hours. Some last days. A few have lasted weeks. The difference between inconvenience and crisis often comes down to preparation.</p>
+
+    <p>Here's everything you need to know to keep your family safe, comfortable, and informed when the power goes out.</p>
+
+    <hr>
+
+    <h2>The First 5 Minutes</h2>
+
+    <p>When the power cuts, take these immediate steps:</p>
+
+    <h3>1. Stay Calm and Assess</h3>
+    <ul>
+      <li>Check if it's just your home (look outside for neighbor's lights)</li>
+      <li>Check your circuit breaker — it might be a simple fix</li>
+      <li>If it's widespread, it's a utility outage</li>
+    </ul>
+
+    <h3>2. Unplug Sensitive Electronics</h3>
+    <ul>
+      <li>Computers, TVs, gaming systems</li>
+      <li>Prevents damage from power surge when electricity returns</li>
+      <li>Leave one lamp plugged in so you know when power's back</li>
+    </ul>
+
+    <h3>3. Grab Your Light Sources</h3>
+    <ul>
+      <li>Flashlights first (safer than candles)</li>
+      <li>Headlamps are ideal — keeps hands free</li>
+      <li>Avoid opening the refrigerator (more on this below)</li>
+    </ul>
+
+    <h3>4. Check on Vulnerable People</h3>
+    <ul>
+      <li>Elderly neighbors</li>
+      <li>Those dependent on medical equipment</li>
+      <li>Families with infants</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Your emergency plan includes step-by-step procedures for power outages — all accessible offline. Pull up your checklist, ICE contacts, and family plan without needing cell service or internet.</p>
+    </div>
+
+    <hr>
+
+    <h2>Lighting: Safe Options for the Dark</h2>
+
+    <p>Not all light sources are created equal in a power outage.</p>
+
+    <h3>Recommended (Safe)</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Light Source</th>
+          <th>Pros</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>LED Flashlights</strong></td>
+          <td>Bright, long battery life</td>
+          <td>Keep extras in every room</td>
+        </tr>
+        <tr>
+          <td><strong>Headlamps</strong></td>
+          <td>Hands-free</td>
+          <td>Essential for tasks</td>
+        </tr>
+        <tr>
+          <td><strong>Battery lanterns</strong></td>
+          <td>Area lighting</td>
+          <td>Great for rooms</td>
+        </tr>
+        <tr>
+          <td><strong>Glow sticks</strong></td>
+          <td>No fire risk, kid-safe</td>
+          <td>Single use</td>
+        </tr>
+        <tr>
+          <td><strong>Solar lights</strong></td>
+          <td>Bring outdoor lights inside</td>
+          <td>Free to recharge</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Use with Caution</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Light Source</th>
+          <th>Risk</th>
+          <th>Safety Rules</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Candles</strong></td>
+          <td>Fire hazard</td>
+          <td>Never leave unattended, keep away from curtains</td>
+        </tr>
+        <tr>
+          <td><strong>Oil lamps</strong></td>
+          <td>Fire, fumes</td>
+          <td>Use in ventilated areas only</td>
+        </tr>
+        <tr>
+          <td><strong>Propane lanterns</strong></td>
+          <td>Carbon monoxide</td>
+          <td>Outdoor use ONLY</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      <p>More home fires start during power outages than any other time. If using candles, place them in sturdy holders on stable surfaces, away from anything flammable.</p>
+    </blockquote>
+
+    <hr>
+
+    <h2>Food Safety: The Refrigerator Rules</h2>
+
+    <p>Your refrigerator becomes a ticking clock the moment power goes out.</p>
+
+    <h3>Keep It Closed</h3>
+
+    <p>Every time you open the door, you lose cold air. An unopened refrigerator keeps food safe for <strong>4 hours</strong>. An unopened freezer maintains temperature for <strong>24-48 hours</strong> (depending on how full it is).</p>
+
+    <h3>The Temperature Danger Zone</h3>
+
+    <p>Food becomes unsafe when it enters the "danger zone" between 40 degrees F and 140 degrees F.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Appliance</th>
+          <th>Safe Duration (Unopened)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Refrigerator</td>
+          <td>4 hours</td>
+        </tr>
+        <tr>
+          <td>Full freezer</td>
+          <td>48 hours</td>
+        </tr>
+        <tr>
+          <td>Half-full freezer</td>
+          <td>24 hours</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>When Power Returns</h3>
+
+    <p><strong>Check temperatures:</strong></p>
+    <ul>
+      <li>If fridge is above 40 degrees F for more than 2 hours, discard perishables</li>
+      <li>If frozen food still has ice crystals, it can be refrozen</li>
+      <li>When in doubt, throw it out</li>
+    </ul>
+
+    <p><strong>Foods to discard after 4+ hours above 40 degrees F:</strong></p>
+    <ul>
+      <li>Raw or cooked meat, poultry, fish</li>
+      <li>Milk, soft cheeses, yogurt</li>
+      <li>Opened baby formula</li>
+      <li>Cut fruits and vegetables</li>
+      <li>Cooked pasta, rice, potatoes</li>
+    </ul>
+
+    <p><strong>Foods that stay safe:</strong></p>
+    <ul>
+      <li>Hard cheeses</li>
+      <li>Butter, margarine</li>
+      <li>Fresh whole fruits and vegetables</li>
+      <li>Condiments (mustard, ketchup, pickles)</li>
+      <li>Bread, bagels, tortillas</li>
+      <li>Peanut butter, jelly</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> PackMind tracks your refrigerator and freezer food inventory. When power goes out, you know exactly what's at risk without opening the door — and what non-perishable backup food you have on hand.</p>
+    </div>
+
+    <hr>
+
+    <h2>Staying Warm (Winter Outages)</h2>
+
+    <p>Cold weather outages are dangerous. Hypothermia can occur indoors when temperatures drop.</p>
+
+    <h3>Immediate Steps</h3>
+
+    <ol>
+      <li><strong>Close off unused rooms</strong> — Concentrate body heat in one area</li>
+      <li><strong>Seal drafts</strong> — Towels under doors, blankets over windows</li>
+      <li><strong>Layer clothing</strong> — Multiple thin layers beat one thick layer</li>
+      <li><strong>Stay dry</strong> — Wet clothing rapidly accelerates heat loss</li>
+    </ol>
+
+    <h3>Safe Heat Sources</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Safety Level</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Body heat</strong></td>
+          <td>Safe</td>
+          <td>Huddle together under blankets</td>
+        </tr>
+        <tr>
+          <td><strong>Hand warmers</strong></td>
+          <td>Safe</td>
+          <td>Place in pockets, gloves</td>
+        </tr>
+        <tr>
+          <td><strong>Sleeping bags</strong></td>
+          <td>Safe</td>
+          <td>Rated for low temps</td>
+        </tr>
+        <tr>
+          <td><strong>Wood fireplace</strong></td>
+          <td>Caution</td>
+          <td>Only if properly maintained</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>NEVER Use Indoors</h3>
+
+    <ul>
+      <li>Gas ovens or stovetops for heating</li>
+      <li>Charcoal or propane grills</li>
+      <li>Generators</li>
+      <li>Outdoor propane heaters</li>
+      <li>Camp stoves</li>
+    </ul>
+
+    <div class="warning-box">
+      <p>Carbon monoxide kills. It's odorless and colorless. Every year, people die from running generators or grills indoors during outages. Just don't do it.</p>
+    </div>
+
+    <hr>
+
+    <h2>Staying Cool (Summer Outages)</h2>
+
+    <p>Heat emergencies kill more people than any other weather event. Without AC, temperatures can become dangerous quickly.</p>
+
+    <h3>Cooling Strategies</h3>
+
+    <ol>
+      <li><strong>Go low</strong> — Hot air rises; ground floors and basements are cooler</li>
+      <li><strong>Close blinds</strong> — Block solar heat gain</li>
+      <li><strong>Open windows at night</strong> — Cross-ventilation when outdoor temps drop</li>
+      <li><strong>Wet towels</strong> — Place on neck, wrists, forehead</li>
+      <li><strong>Stay hydrated</strong> — Drink water even if not thirsty</li>
+    </ol>
+
+    <h3>Watch for Heat Illness</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Symptoms</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Heat cramps</strong></td>
+          <td>Muscle pain, spasms</td>
+          <td>Rest, drink water, cool down</td>
+        </tr>
+        <tr>
+          <td><strong>Heat exhaustion</strong></td>
+          <td>Heavy sweating, weakness, nausea</td>
+          <td>Move to cool area, hydrate, cool skin</td>
+        </tr>
+        <tr>
+          <td><strong>Heat stroke</strong></td>
+          <td>High temp, confusion, no sweating</td>
+          <td><strong>Call 911 immediately</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Know When to Leave</h3>
+
+    <p>If indoor temperatures exceed 95 degrees F and you can't cool down, go somewhere with power:</p>
+    <ul>
+      <li>Cooling centers (check local emergency management)</li>
+      <li>Malls, libraries, movie theaters</li>
+      <li>Friends or family with power</li>
+    </ul>
+
+    <hr>
+
+    <h2>Communication and Information</h2>
+
+    <p>When the power's out, information becomes critical.</p>
+
+    <h3>Your Lifeline: Battery/Crank Radio</h3>
+
+    <p>Cell towers have backup power, but it's limited. Internet goes down. TV is useless. A NOAA weather radio may be your only source of official information.</p>
+
+    <p><strong>Must-have features:</strong></p>
+    <ul>
+      <li>NOAA weather band</li>
+      <li>Hand crank AND battery backup</li>
+      <li>Flashlight built-in</li>
+      <li>Phone charging port (bonus)</li>
+    </ul>
+
+    <h3>Preserve Phone Battery</h3>
+
+    <p>Your smartphone is precious — treat its battery accordingly:</p>
+
+    <ul>
+      <li><strong>Lower brightness</strong> to minimum</li>
+      <li><strong>Enable airplane mode</strong> when not actively using</li>
+      <li><strong>Disable background apps</strong></li>
+      <li><strong>Turn off Bluetooth, WiFi, location</strong></li>
+      <li><strong>Use for essential communication only</strong></li>
+      <li><strong>Power off completely</strong> if outage will be extended</li>
+    </ul>
+
+    <h3>Stay Informed</h3>
+    <ul>
+      <li>Local emergency management social media (before phones die)</li>
+      <li>NOAA weather radio</li>
+      <li>Battery-powered AM/FM radio</li>
+      <li>Text updates from utility company</li>
+    </ul>
+
+    <blockquote>
+      <p>Text messages use less battery and get through when calls can't. Text "OUT" to your utility's outage number if they have one.</p>
+    </blockquote>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> ICE contacts are one tap away — no scrolling through your phone book. Your family communication plan, rally points, and emergency contacts all work offline, even when cell towers are strained.</p>
+    </div>
+
+    <hr>
+
+    <h2>Medical Considerations</h2>
+
+    <p>Power outages can be life-threatening for those with medical needs.</p>
+
+    <h3>Medications</h3>
+    <ul>
+      <li><strong>Refrigerated meds</strong> (insulin): Use cooler with ice, use within guidelines</li>
+      <li><strong>Nebulizers, CPAP:</strong> Have battery backup or manual alternatives</li>
+      <li><strong>Oxygen concentrators:</strong> Contact supplier for backup plan</li>
+    </ul>
+
+    <h3>Medical Equipment</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Equipment</th>
+          <th>Backup Plan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Oxygen concentrator</td>
+          <td>Portable tanks, notify supplier</td>
+        </tr>
+        <tr>
+          <td>CPAP</td>
+          <td>Battery backup unit</td>
+        </tr>
+        <tr>
+          <td>Refrigerated meds</td>
+          <td>Cooler with ice, know time limits</td>
+        </tr>
+        <tr>
+          <td>Electric wheelchair</td>
+          <td>Keep charged, manual backup</td>
+        </tr>
+        <tr>
+          <td>Home dialysis</td>
+          <td>Contact provider for facility backup</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Register with Your Utility</h3>
+
+    <p>Most power companies maintain a "medical baseline" or "life support" registry. Registered customers get:</p>
+    <ul>
+      <li>Priority restoration</li>
+      <li>Advance notice of planned outages</li>
+      <li>Wellness checks during extended outages</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Store medical info, medication lists, and equipment details in your emergency plan. If a first responder or neighbor needs to help, the info is right there — no searching through drawers in the dark.</p>
+    </div>
+
+    <hr>
+
+    <h2>Generator Safety</h2>
+
+    <p>If you have a generator, use it correctly or not at all.</p>
+
+    <h3>Critical Rules</h3>
+
+    <ol>
+      <li><strong>NEVER run indoors</strong> — Not in garage, basement, or near windows</li>
+      <li><strong>Place 20+ feet from home</strong> — Exhaust must not enter</li>
+      <li><strong>Never refuel while running</strong> — Turn off, let cool first</li>
+      <li><strong>Use heavy-duty extension cords</strong> — Rated for outdoor use</li>
+      <li><strong>Don't backfeed</strong> — Never plug into wall outlet (electrocution risk to lineworkers)</li>
+    </ol>
+
+    <h3>What to Power</h3>
+
+    <p>Prioritize essential loads:</p>
+    <ul>
+      <li>Refrigerator/freezer</li>
+      <li>Medical equipment</li>
+      <li>Sump pump (if flooding risk)</li>
+      <li>A few lights</li>
+      <li>Phone charging</li>
+    </ul>
+
+    <hr>
+
+    <h2>The Power Outage Kit</h2>
+
+    <p>Keep these items together and accessible:</p>
+
+    <h3>Lighting</h3>
+    <ul class="checklist">
+      <li>LED flashlights (multiple)</li>
+      <li>Headlamp</li>
+      <li>Battery lantern</li>
+      <li>Extra batteries</li>
+      <li>Candles + holders (backup)</li>
+      <li>Matches/lighter</li>
+    </ul>
+
+    <h3>Communication</h3>
+    <ul class="checklist">
+      <li>Hand-crank/battery radio (NOAA)</li>
+      <li>Portable phone chargers (charged)</li>
+      <li>Car phone charger</li>
+      <li>Written emergency contacts</li>
+    </ul>
+
+    <h3>Food &amp; Water</h3>
+    <ul class="checklist">
+      <li>Bottled water (1 gallon/person/day)</li>
+      <li>Non-perishable food</li>
+      <li>Manual can opener</li>
+      <li>Cooler + ice packs (freezer)</li>
+    </ul>
+
+    <h3>Comfort &amp; Safety</h3>
+    <ul class="checklist">
+      <li>Blankets</li>
+      <li>Hand/body warmers</li>
+      <li>First aid kit</li>
+      <li>Medications (7-day supply)</li>
+      <li>Cash (ATMs don't work)</li>
+      <li>Battery-powered fans (summer)</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Log your entire power outage kit in PackMind. Track battery expiration dates, flashlight quantities, and food supplies. The app reminds you when it's time to restock — before the next outage hits.</p>
+    </div>
+
+    <hr>
+
+    <h2>When to Leave</h2>
+
+    <p>Shelter in place isn't always the answer. Consider evacuating if:</p>
+
+    <ul>
+      <li>Extreme temperatures (very hot or cold) with no relief</li>
+      <li>Medical equipment cannot be powered</li>
+      <li>Outage expected to last several days</li>
+      <li>Water or sewer systems also affected</li>
+      <li>Vulnerable family members at risk</li>
+    </ul>
+
+    <p>Have a destination in mind before you need it. Family, friends, hotels outside the affected area, or official shelters.</p>
+
+    <hr>
+
+    <h2>After Power Returns</h2>
+
+    <p>The outage is over, but you're not done yet.</p>
+
+    <h3>Checklist</h3>
+    <ul class="checklist">
+      <li>Check food temperatures, discard if unsafe</li>
+      <li>Reset clocks and timers</li>
+      <li>Check sump pump operation</li>
+      <li>Restart medical equipment</li>
+      <li>Restock supplies you used</li>
+      <li>Document damage for insurance</li>
+    </ul>
+
+    <h3>Recharge and Replenish</h3>
+
+    <p>The next outage could be tomorrow. Immediately:</p>
+    <ul>
+      <li>Recharge all devices and battery packs</li>
+      <li>Replace used batteries</li>
+      <li>Refill ice packs and return to freezer</li>
+      <li>Restock any food or water used</li>
+    </ul>
+
+    <hr>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Power outages are inevitable. Extended outages are increasingly common. But with basic preparation and knowledge, an outage becomes an inconvenience, not an emergency.</p>
+
+    <p>The family that has flashlights, a radio, and a plan isn't panicking in the dark. They're playing cards by lantern light, checking on neighbors, and waiting it out safely.</p>
+
+    <hr>
+
+    <p><em>Access offline power outage procedures, food safety guides, and emergency checklists with <a href="https://nomad-core.com">NomadCore</a> — the survival app that works even when nothing else does.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Ready to get prepared?</h2>
+      <p>Download NomadCore and give your family the plan they deserve.</p>
+      <div class="cta-buttons">
+        <a href="../index.html#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="../index.html#download" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../index.html#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

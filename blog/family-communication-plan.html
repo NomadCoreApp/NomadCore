@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build a Family Communication Plan for Emergencies - NomadCore Blog</title>
+  <meta name="description" content="When disaster strikes, cell towers jam and phones die. A family communication plan ensures everyone knows where to go, who to call, and what to do — before panic sets in.">
+  <meta property="og:title" content="How to Build a Family Communication Plan for Emergencies">
+  <meta property="og:description" content="When disaster strikes, cell towers jam and phones die. A family communication plan ensures everyone knows where to go, who to call, and what to do — before panic sets in.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <span>Feb 8, 2026</span>
+        <span class="reading-time">7 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">How to Build a Family Communication Plan for Emergencies</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-communication.png" alt="Family communication plan for emergencies">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>During Hurricane Harvey in 2017, cell networks in Houston were overwhelmed within hours. Millions of people couldn't call, couldn't text, and had no way to know if their family members were safe.</p>
+
+    <p>The families who stayed connected had one thing in common: they'd agreed on a plan <em>before</em> the storm hit.</p>
+
+    <p>A family communication plan isn't complicated. It's a simple set of agreements — who to contact, where to meet, and how to reach each other when normal channels fail. It takes about 30 minutes to set up. And it could be the most important half hour your family ever spends together.</p>
+
+    <hr>
+
+    <h2>Why Your Phone Won't Save You</h2>
+
+    <p>Most of us assume we can always reach family by phone. Here's why that assumption is dangerous:</p>
+
+    <ul>
+      <li><strong>Cell towers have limited backup power.</strong> Most have 4-8 hours of battery backup. After that, they go dark.</li>
+      <li><strong>Networks jam instantly.</strong> Everyone calls at once. During 9/11, call failure rates hit 90% in parts of New York.</li>
+      <li><strong>Voice calls use the most bandwidth.</strong> Texts are far more likely to go through than calls.</li>
+      <li><strong>Your phone battery drains faster</strong> when searching for weak signals — often dying when you need it most.</li>
+      <li><strong>Internet-based apps require data.</strong> If the tower is overloaded, WhatsApp and iMessage won't work either.</li>
+    </ul>
+
+    <p>This doesn't mean phones are useless. It means they can't be your <em>only</em> plan.</p>
+
+    <hr>
+
+    <h2>The 5 Elements of a Communication Plan</h2>
+
+    <p>A solid family communication plan covers five things. Get these right, and you're ahead of 95% of households.</p>
+
+    <h3>1. Out-of-State Contact Person</h3>
+
+    <p>This is the single most important element. During a local disaster, local phone lines jam — but long-distance calls often still work. An out-of-state contact acts as your family's central relay point.</p>
+
+    <p><strong>How it works:</strong></p>
+    <ul>
+      <li>Everyone in the family knows to call or text this one person</li>
+      <li>Each person checks in: "I'm safe, I'm at [location]"</li>
+      <li>The contact relays messages between family members</li>
+    </ul>
+
+    <p><strong>Choose someone who:</strong></p>
+    <ul>
+      <li>Lives in a different state (ideally a different region)</li>
+      <li>Is reliable and available during the day</li>
+      <li>Understands their role and has everyone's numbers</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Add your out-of-state contact as an ICE (In Case of Emergency) contact. Every family member with the app can reach them with one tap — even without searching through their own contacts. You can also add notes like "Call Aunt Maria first" to your family emergency plan so it's always visible.</p>
+    </div>
+
+    <h3>2. Meeting Points</h3>
+
+    <p>If phones are down and you're separated, you need pre-agreed places to find each other. Set up two:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Meeting Point</th>
+          <th>When to Use It</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Near-home</strong></td>
+          <td>House fire, gas leak, localized event</td>
+          <td>Neighbor's mailbox, end of the block</td>
+        </tr>
+        <tr>
+          <td><strong>Out-of-neighborhood</strong></td>
+          <td>Evacuation, widespread disaster</td>
+          <td>Library parking lot, church, school</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Make sure everyone can get there independently.</strong> Kids should know the route on foot. Practice walking it together at least once.</p>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Set rally points on the map within your family emergency plan. Each rally point includes a name, GPS coordinates, and notes (e.g., "Meet at the flagpole entrance"). These work offline — no data connection needed to pull up the map.</p>
+    </div>
+
+    <h3>3. Communication Priority Order</h3>
+
+    <p>When an emergency hits, try these methods in order:</p>
+
+    <ol>
+      <li><strong>Text message (SMS)</strong> — Uses minimal bandwidth, most likely to go through</li>
+      <li><strong>Social media check-in</strong> — Facebook Safety Check, Twitter/X post (if data works)</li>
+      <li><strong>Phone call</strong> — Try your out-of-state contact first, then local family</li>
+      <li><strong>Landline</strong> — If available, landlines often work when cell towers don't</li>
+      <li><strong>Leave a physical message</strong> — Note on the door, message at the meeting point</li>
+    </ol>
+
+    <p><strong>Key rule:</strong> Keep calls short. Say your name, your location, and whether you're safe. Hang up. Free up the network for others.</p>
+
+    <h3>4. Kids' Wallet Cards</h3>
+
+    <p>Children can't always remember phone numbers under stress. A simple card in their backpack or pocket solves this.</p>
+
+    <p><strong>Each card should include:</strong></p>
+
+    <ul class="checklist">
+      <li>Parent/guardian phone numbers</li>
+      <li>Out-of-state contact's phone number</li>
+      <li>Home address</li>
+      <li>Meeting point locations</li>
+      <li>Any medical info (allergies, medications)</li>
+    </ul>
+
+    <p>Laminate it. Keep one in their backpack and one in their coat pocket. For younger kids, schools may allow an emergency info card on file — ask.</p>
+
+    <h3>5. Sharing the Plan with Everyone</h3>
+
+    <p>A plan that only lives in one person's head isn't a plan. Every family member needs access.</p>
+
+    <p><strong>Options for sharing:</strong></p>
+    <ul>
+      <li>Print copies and put one in each go-bag</li>
+      <li>Post one on the fridge</li>
+      <li>Store a digital copy that works offline</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Build your full communication plan in the app, then share it with family members via QR code. Each person gets the complete plan — contacts, rally points, roles, notes — on their own device. It syncs when online and works completely offline when it matters most.</p>
+    </div>
+
+    <hr>
+
+    <h2>Special Situations to Plan For</h2>
+
+    <h3>Kids at School</h3>
+
+    <ul>
+      <li>Know your school's emergency procedures and lockdown policies</li>
+      <li>Know the reunification process — most schools have a specific pickup protocol</li>
+      <li>Make sure the school has updated emergency contacts (not just from September)</li>
+      <li>Teach kids: "If something happens, follow your teacher. Mom/Dad will come to [pickup point]"</li>
+    </ul>
+
+    <h3>Family Members at Work</h3>
+
+    <ul>
+      <li>Know each other's work addresses and commute routes</li>
+      <li>Agree on a threshold: "If [event], go home. If [worse event], go to meeting point B"</li>
+      <li>Know alternate routes home — bridges close, highways flood, tunnels shut down</li>
+    </ul>
+
+    <h3>Elderly or Special-Needs Family Members</h3>
+
+    <ul>
+      <li>Who is responsible for checking on them?</li>
+      <li>Do they have medications that need to stay cold? (Power outage planning)</li>
+      <li>Can they get to meeting points independently, or do they need a ride?</li>
+      <li>Is a neighbor willing to be a backup check-in person?</li>
+    </ul>
+
+    <h3>Pets</h3>
+
+    <ul>
+      <li>Who grabs the pet carrier and leash?</li>
+      <li>Which shelters accept pets? (Many don't)</li>
+      <li>Do you have a pet go-bag with food, medication, and vet records?</li>
+    </ul>
+
+    <hr>
+
+    <h2>Low-Tech Backup Methods</h2>
+
+    <p>When all electronics fail, you need analog options. These aren't outdated — they're <em>resilient.</em></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Range</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>NOAA Weather Radio</strong></td>
+          <td>40+ miles</td>
+          <td>Official alerts, weather updates</td>
+        </tr>
+        <tr>
+          <td><strong>FRS/GMRS Walkie-Talkies</strong></td>
+          <td>1-5 miles</td>
+          <td>Family communication in a neighborhood</td>
+        </tr>
+        <tr>
+          <td><strong>Whistle</strong></td>
+          <td>~1 mile (outdoors)</td>
+          <td>Signaling for help, locating people</td>
+        </tr>
+        <tr>
+          <td><strong>Written notes</strong></td>
+          <td>N/A</td>
+          <td>Messages at meeting points, door notes</td>
+        </tr>
+        <tr>
+          <td><strong>Ham radio</strong></td>
+          <td>Worldwide</td>
+          <td>Total infrastructure failure (requires license)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Minimum recommendation:</strong> A battery or hand-crank NOAA weather radio (~$25) and a set of FRS walkie-talkies (~$30). For under $60, your family has comms when cell networks are down.</p>
+
+    <hr>
+
+    <h2>Build Your Plan in 30 Minutes</h2>
+
+    <p>Sit down with your family — all of them — and fill this out together. Making it a group activity means everyone remembers it.</p>
+
+    <h3>Step 1: Choose Your People (5 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Pick an out-of-state contact and call them to confirm</li>
+      <li>Pick a local backup contact (trusted neighbor or nearby friend)</li>
+      <li>Make sure both contacts have every family member's phone number</li>
+    </ul>
+
+    <h3>Step 2: Choose Your Places (10 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Pick a near-home meeting point everyone can walk to</li>
+      <li>Pick an out-of-neighborhood meeting point with parking</li>
+      <li>Walk or drive to both so everyone knows the route</li>
+    </ul>
+
+    <h3>Step 3: Fill Out the Info (10 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Write down all phone numbers (don't rely on your phone's contacts)</li>
+      <li>Note any medical info, medications, or special needs</li>
+      <li>Include school/work addresses and contact numbers</li>
+      <li>List your insurance company's claims number</li>
+    </ul>
+
+    <h3>Step 4: Share and Practice (5 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Give everyone a copy (digital and/or printed)</li>
+      <li>Make wallet cards for kids</li>
+      <li>Quiz each other: "What's the meeting point? Who do we call?"</li>
+      <li>Set a calendar reminder to review the plan every 6 months</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> You can complete all four steps directly in the app. Create your emergency plan, add contacts and rally points, assign roles to family members, then share via QR code. Everyone gets the full plan on their phone — accessible offline, always up to date.</p>
+    </div>
+
+    <hr>
+
+    <h2>Common Mistakes to Avoid</h2>
+
+    <h3>1. Only Having One Way to Communicate</h3>
+
+    <p>"We'll just call each other." What if you can't? Always have at least three methods: text, out-of-state relay, and a physical meeting point.</p>
+
+    <h3>2. Not Telling the Kids</h3>
+
+    <p>Kids handle emergencies better when they know the plan. Age-appropriate conversations reduce fear, not increase it. Practice makes it feel routine, not scary.</p>
+
+    <h3>3. Forgetting to Update</h3>
+
+    <p>You moved. Your sister changed her number. The school changed its pickup policy. Plans go stale. Review every six months — put it on the calendar.</p>
+
+    <h3>4. Keeping It Only on Your Phone</h3>
+
+    <p>If your phone dies, breaks, or gets lost in an evacuation, your plan goes with it. Have a paper backup. Have a copy in your car. Have a copy in your go-bag.</p>
+
+    <hr>
+
+    <h2>The 60-Second Version</h2>
+
+    <p>If you only remember five things from this article:</p>
+
+    <ol>
+      <li><strong>Pick an out-of-state contact.</strong> Everyone calls that person.</li>
+      <li><strong>Set two meeting points.</strong> One nearby, one further out.</li>
+      <li><strong>Text first, call second.</strong> Texts get through when calls don't.</li>
+      <li><strong>Give kids a wallet card</strong> with phone numbers and meeting points.</li>
+      <li><strong>Share the plan</strong> so it doesn't live in one person's head.</li>
+    </ol>
+
+    <p>Thirty minutes of planning today could prevent hours of panic tomorrow. Your family is worth that time.</p>
+
+    <hr>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> to build your family communication plan, set rally points on an offline map, add ICE contacts, and share everything with your family via QR code — even when the grid goes down.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Keep your family connected</h2>
+      <p>Build your communication plan in NomadCore and share it with your whole family.</p>
+      <div class="cta-buttons">
+        <a href="../index.html#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="../index.html#download" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../index.html#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

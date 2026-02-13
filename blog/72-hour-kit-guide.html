@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete 72-Hour Kit Guide - NomadCore Blog</title>
+  <meta name="description" content="When disaster strikes, you have minutes — not hours — to grab what you need. Here's how to build a 72-hour kit that actually works.">
+  <meta property="og:title" content="The Complete 72-Hour Kit Guide: What You Actually Need">
+  <meta property="og:description" content="When disaster strikes, you have minutes — not hours — to grab what you need. Here's how to build a 72-hour kit that actually works.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <span>Jan 23, 2026</span>
+        <span class="reading-time">6 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">The Complete 72-Hour Kit Guide: What You Actually Need</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-kit.png" alt="Complete 72-hour emergency kit guide">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>When disaster strikes, you have minutes — not hours — to grab what you need and go. Whether it's a wildfire, hurricane, or unexpected evacuation order, the difference between chaos and calm often comes down to one thing: preparation.</p>
+
+    <p>A 72-hour kit (also called a bug-out bag or go-bag) contains everything you need to survive for three days without outside help. Why 72 hours? That's typically how long it takes for emergency services to establish relief operations after a major disaster.</p>
+
+    <p>Here's how to build one that actually works.</p>
+
+    <hr>
+
+    <h2>The Foundation: Water and Food</h2>
+
+    <p><strong>Water</strong> is your most critical supply. The human body can survive weeks without food but only days without water.</p>
+
+    <ul>
+      <li><strong>1 gallon per person per day</strong> (3 gallons total per person)</li>
+      <li>Store in sturdy, portable containers</li>
+      <li>Include water purification tablets or a filter as backup</li>
+      <li>Replace stored water every 6 months</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> PackMind tracks your water supply with expiration dates and quantities. Set it once and get reminded when it's time to rotate — no more guessing when you last swapped out those jugs.</p>
+    </div>
+
+    <p><strong>Food</strong> should be non-perishable, calorie-dense, and require no cooking.</p>
+
+    <ul>
+      <li>Canned goods (beans, tuna, vegetables)</li>
+      <li>Energy bars and granola</li>
+      <li>Dried fruit and nuts</li>
+      <li>Peanut butter</li>
+      <li>Crackers</li>
+    </ul>
+
+    <blockquote>
+      <p>Don't forget a manual can opener. It's a small item that becomes critical when you're staring at a can of beans with no way to open it.</p>
+    </blockquote>
+
+    <hr>
+
+    <h2>First Aid: Beyond the Basics</h2>
+
+    <p>A basic first aid kit is essential, but most pre-made kits are designed for minor cuts, not emergencies. Upgrade yours with:</p>
+
+    <h3>Standard Items</h3>
+    <ul>
+      <li>Adhesive bandages (various sizes)</li>
+      <li>Sterile gauze pads and medical tape</li>
+      <li>Antiseptic wipes</li>
+      <li>Tweezers and scissors</li>
+      <li>Pain relievers (ibuprofen, acetaminophen)</li>
+    </ul>
+
+    <h3>Emergency Additions</h3>
+    <ul>
+      <li>Tourniquet (and know how to use it)</li>
+      <li>Israeli bandage or pressure dressing</li>
+      <li>QuikClot or hemostatic gauze</li>
+      <li>SAM splint</li>
+      <li>Burn gel packets</li>
+      <li>Any prescription medications (rotate every 3 months)</li>
+    </ul>
+
+    <blockquote>
+      <p>A first aid kit is only as good as your knowledge. Take a basic first aid course — many are free through the Red Cross.</p>
+    </blockquote>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Log every first aid item in PackMind with expiration dates. The app also includes offline first aid reference guides — step-by-step procedures you can pull up without cell service.</p>
+    </div>
+
+    <hr>
+
+    <h2>Light, Power, and Communication</h2>
+
+    <p>When the grid goes down, you need alternatives.</p>
+
+    <h3>Lighting</h3>
+    <ul>
+      <li>LED flashlight (with extra batteries)</li>
+      <li>Headlamp (keeps hands free)</li>
+      <li>Emergency candles and waterproof matches</li>
+      <li>Glow sticks (safe, no fire risk)</li>
+    </ul>
+
+    <h3>Power</h3>
+    <ul>
+      <li>Hand-crank or solar radio (NOAA weather bands)</li>
+      <li>Portable phone charger (keep it charged)</li>
+      <li>Extra batteries in common sizes (AA, AAA)</li>
+    </ul>
+
+    <h3>Communication</h3>
+    <ul>
+      <li>Fully charged cell phone</li>
+      <li>Written list of emergency contacts</li>
+      <li>Local area map (phones die, paper doesn't)</li>
+      <li>Whistle for signaling</li>
+    </ul>
+
+    <p>The hand-crank radio is non-negotiable. When cell towers are down and the internet is out, NOAA weather radio may be your only source of official information.</p>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Store ICE contacts for one-tap dialing, download offline maps of your area, and keep your family communication plan accessible without internet. Your phone becomes a self-contained emergency hub.</p>
+    </div>
+
+    <hr>
+
+    <h2>Shelter and Warmth</h2>
+
+    <p>You can't always count on finding shelter. Pack items that let you create your own.</p>
+
+    <ul>
+      <li>Emergency Mylar blankets (compact, retain 90% of body heat)</li>
+      <li>Wool blanket (warm even when wet)</li>
+      <li>Tarp or emergency tent</li>
+      <li>Paracord (50 feet minimum)</li>
+      <li>Hand warmers</li>
+      <li>Rain poncho</li>
+    </ul>
+
+    <h3>Clothing to Include</h3>
+    <ul>
+      <li>Complete change of clothes</li>
+      <li>Sturdy shoes or boots</li>
+      <li>Hat and gloves</li>
+      <li>Extra socks (feet are critical)</li>
+    </ul>
+
+    <blockquote>
+      <p>Hypothermia can occur in temperatures as high as 50 degrees F if you're wet and exposed. Don't underestimate shelter.</p>
+    </blockquote>
+
+    <hr>
+
+    <h2>Documents and Cash</h2>
+
+    <p>In an evacuation, you may need to prove who you are without access to the internet.</p>
+
+    <h3>Keep Copies Of</h3>
+    <ul>
+      <li>Driver's license or ID</li>
+      <li>Passport</li>
+      <li>Insurance policies (home, auto, health)</li>
+      <li>Bank account information</li>
+      <li>Medical records and prescriptions</li>
+      <li>Emergency contact list</li>
+      <li>Recent photos of family members</li>
+    </ul>
+
+    <h3>Store These</h3>
+    <ul>
+      <li>In a waterproof bag or container</li>
+      <li>As physical copies AND on a USB drive</li>
+      <li>Consider a fireproof document bag</li>
+    </ul>
+
+    <p><strong>Cash:</strong> Keep $200-500 in small bills. ATMs don't work without power, and card readers fail during outages.</p>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Store digital copies of critical documents in your emergency plan. Every family member with the app gets access — even offline. No USB drive to lose, no paper to get wet.</p>
+    </div>
+
+    <hr>
+
+    <h2>Tools and Miscellaneous</h2>
+
+    <p>The items that don't fit a category but prove invaluable:</p>
+
+    <ul>
+      <li>Multi-tool or knife</li>
+      <li>Duct tape (wrap around a pencil to save space)</li>
+      <li>Work gloves</li>
+      <li>N95 masks (dust, smoke, debris)</li>
+      <li>Garbage bags (waterproofing, waste, emergency poncho)</li>
+      <li>Zip ties</li>
+      <li>Notepad and pen</li>
+      <li>Deck of cards (morale matters)</li>
+    </ul>
+
+    <h3>Sanitation</h3>
+    <ul>
+      <li>Toilet paper</li>
+      <li>Hand sanitizer</li>
+      <li>Wet wipes</li>
+      <li>Feminine hygiene products</li>
+      <li>Plastic bags for waste</li>
+    </ul>
+
+    <hr>
+
+    <h2>Special Considerations</h2>
+
+    <h3>For Families with Children</h3>
+    <ul>
+      <li>Diapers and formula (if applicable)</li>
+      <li>Comfort items (small toy, blanket)</li>
+      <li>Children's medications</li>
+      <li>Games or activities</li>
+      <li>Copy of custody documents</li>
+    </ul>
+
+    <h3>For Pet Owners</h3>
+    <ul>
+      <li>Pet food (3-day supply)</li>
+      <li>Collapsible water bowl</li>
+      <li>Leash and carrier</li>
+      <li>Vaccination records</li>
+      <li>Recent photo of pet</li>
+    </ul>
+
+    <h3>For Those with Medical Needs</h3>
+    <ul>
+      <li>7-day supply of medications (minimum)</li>
+      <li>Medical equipment and batteries</li>
+      <li>List of doctors and pharmacies</li>
+      <li>Medical alert information</li>
+      <li>Backup glasses or contacts</li>
+    </ul>
+
+    <hr>
+
+    <h2>Choosing the Right Bag</h2>
+
+    <p>Your container matters. A 72-hour kit needs to be:</p>
+
+    <ul>
+      <li><strong>Portable:</strong> You should be able to carry it for extended periods</li>
+      <li><strong>Durable:</strong> It may get thrown in a truck bed or dropped</li>
+      <li><strong>Accessible:</strong> You need to find items quickly</li>
+    </ul>
+
+    <p>A quality hiking backpack (40-60 liters) works well for most people. Avoid suitcases — wheels don't work on debris-covered roads.</p>
+
+    <p><strong>Weight guideline:</strong> Your packed kit should be no more than 20% of your body weight if you expect to move quickly.</p>
+
+    <hr>
+
+    <h2>Storage and Maintenance</h2>
+
+    <p>A kit you can't find or that's expired is useless.</p>
+
+    <h3>Storage</h3>
+    <ul>
+      <li>Keep it somewhere accessible (not the attic)</li>
+      <li>Near an exit door or in your vehicle</li>
+      <li>Tell family members where it is</li>
+    </ul>
+
+    <h3>Maintenance Schedule</h3>
+    <ul>
+      <li><strong>Monthly:</strong> Check flashlight batteries</li>
+      <li><strong>Quarterly:</strong> Rotate medications, check food dates</li>
+      <li><strong>Biannually:</strong> Replace water, update documents</li>
+      <li><strong>Annually:</strong> Full inventory and replacement of expired items</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> PackMind automates your maintenance schedule. Track every item's expiration date, get notifications before things go bad, and do inventory checks right from your phone. No spreadsheet required.</p>
+    </div>
+
+    <hr>
+
+    <h2>The 72-Hour Kit Checklist</h2>
+
+    <h3>Water &amp; Food</h3>
+    <ul class="checklist">
+      <li>Water (1 gallon/person/day)</li>
+      <li>Water purification method</li>
+      <li>3-day food supply (non-perishable)</li>
+      <li>Manual can opener</li>
+    </ul>
+
+    <h3>First Aid</h3>
+    <ul class="checklist">
+      <li>First aid kit (upgraded)</li>
+      <li>Prescription medications</li>
+      <li>First aid manual</li>
+    </ul>
+
+    <h3>Light &amp; Power</h3>
+    <ul class="checklist">
+      <li>Flashlight + batteries</li>
+      <li>Headlamp</li>
+      <li>Hand-crank radio</li>
+      <li>Phone charger</li>
+      <li>Extra batteries</li>
+    </ul>
+
+    <h3>Shelter &amp; Warmth</h3>
+    <ul class="checklist">
+      <li>Emergency blankets</li>
+      <li>Tarp or tent</li>
+      <li>Paracord</li>
+      <li>Change of clothes</li>
+      <li>Rain gear</li>
+    </ul>
+
+    <h3>Documents &amp; Cash</h3>
+    <ul class="checklist">
+      <li>ID copies</li>
+      <li>Insurance documents</li>
+      <li>Cash ($200-500)</li>
+      <li>USB backup</li>
+    </ul>
+
+    <h3>Tools</h3>
+    <ul class="checklist">
+      <li>Multi-tool</li>
+      <li>Duct tape</li>
+      <li>Work gloves</li>
+      <li>N95 masks</li>
+    </ul>
+
+    <h3>Sanitation</h3>
+    <ul class="checklist">
+      <li>Toilet paper</li>
+      <li>Hand sanitizer</li>
+      <li>Wet wipes</li>
+      <li>Garbage bags</li>
+    </ul>
+
+    <hr>
+
+    <h2>Start Today, Not Tomorrow</h2>
+
+    <p>The best time to build a 72-hour kit was yesterday. The second-best time is now.</p>
+
+    <p>You don't need to buy everything at once. Start with water and first aid. Add food next week. Build your kit over a month, and you'll have peace of mind that lasts for years.</p>
+
+    <p>Disasters don't announce themselves. But when the alert hits your phone at 3 AM, you'll be ready.</p>
+
+    <hr>
+
+    <p><em>Track your emergency supplies, manage expiration dates, and build comprehensive emergency plans with <a href="https://nomad-core.com">NomadCore</a> — the offline-first survival app that keeps you prepared when it matters most.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Ready to get prepared?</h2>
+      <p>Download NomadCore and give your family the plan they deserve.</p>
+      <div class="cta-buttons">
+        <a href="../index.html#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="../index.html#download" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../index.html#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

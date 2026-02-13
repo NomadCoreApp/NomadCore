@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account - NomadCore</title>
+  <meta name="description" content="Request deletion of your NomadCore account and all associated data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--navy);
+    }
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--navy); color: white !important; }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: white;
+        padding: 16px 24px;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+    }
+
+    /* ===== Page Header ===== */
+    .page-header {
+      padding: 120px 0 48px;
+      background: linear-gradient(135deg, var(--red-light) 0%, var(--white) 100%);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .page-header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .page-header .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .page-header .back-link:hover { color: var(--blue); }
+    .page-header h1 {
+      font-size: 2.25rem;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+    }
+
+    /* ===== Content ===== */
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .warning-box {
+      background: var(--red-light);
+      border: 1px solid #FECACA;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .warning-box .icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .warning-box p {
+      color: var(--gray-800);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+    .section p {
+      margin-bottom: 12px;
+    }
+
+    .data-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .data-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      padding: 8px 12px;
+      background: var(--gray-50);
+      border-radius: 8px;
+    }
+    .data-list li::before {
+      content: "\2022";
+      color: var(--red);
+      font-weight: bold;
+    }
+
+    @media (max-width: 640px) {
+      .data-list { grid-template-columns: 1fr; }
+    }
+
+    .alt-box {
+      background: var(--blue-light);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .alt-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--blue);
+    }
+    .alt-box p {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+    .alt-box ol {
+      margin: 8px 0 0 20px;
+      font-size: 0.9rem;
+    }
+    .alt-box ol li {
+      margin-bottom: 4px;
+    }
+
+    /* ===== Form ===== */
+    .delete-form {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-top: 32px;
+    }
+    .delete-form h2 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+    .delete-form > p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--gray-800);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--gray-300);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--gray-800);
+      background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .confirm-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 24px 0;
+      cursor: pointer;
+    }
+    .confirm-check input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      accent-color: var(--red);
+      flex-shrink: 0;
+    }
+    .confirm-check span {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .btn-delete {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      background: var(--red);
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-delete:hover { background: #DC2626; }
+    .btn-delete:active { transform: scale(0.98); }
+    .btn-delete:disabled {
+      background: var(--gray-300);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .status-message {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .status-message.success {
+      background: var(--green-light);
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      display: block;
+    }
+    .status-message.error {
+      background: var(--red-light);
+      color: #991B1B;
+      border: 1px solid #FECACA;
+      display: block;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 24px;
+      font-size: 0.9rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="../" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header-inner fade-up">
+        <a href="../" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Home
+        </a>
+        <h1>Delete Your Account</h1>
+        <p>Permanently remove your NomadCore account and all associated data</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="content">
+
+    <div class="warning-box fade-up">
+      <span class="icon">&#9888;&#65039;</span>
+      <div>
+        <p><strong>This action is permanent and cannot be undone.</strong> Once your account is deleted, all of your data will be permanently removed from our servers. You will not be able to recover your account or any associated data.</p>
+      </div>
+    </div>
+
+    <div class="section fade-up">
+      <h2>What gets deleted</h2>
+      <p>When you delete your NomadCore account, the following data will be permanently removed from our servers:</p>
+      <ul class="data-list">
+        <li>Account profile</li>
+        <li>Cloud backups</li>
+        <li>Family group memberships</li>
+        <li>Shared family data</li>
+        <li>Bulletin posts &amp; comments</li>
+        <li>Reactions &amp; acknowledgments</li>
+        <li>Calendar events &amp; RSVPs</li>
+        <li>Group inventory items</li>
+        <li>Maintenance schedules</li>
+        <li>Location sharing data</li>
+        <li>Push notification tokens</li>
+        <li>Analytics &amp; audit logs</li>
+      </ul>
+    </div>
+
+    <div class="section fade-up">
+      <h2>What stays on your device</h2>
+      <p>Your <strong>local data</strong> (emergency plans, documents, offline maps, supply lists) will remain on your device until you uninstall the app. Account deletion only removes cloud-synced data from our servers.</p>
+    </div>
+
+    <div class="alt-box fade-up">
+      <h3>Prefer to delete from within the app?</h3>
+      <p>You can also delete your account directly from the NomadCore app:</p>
+      <ol>
+        <li>Open NomadCore and go to <strong>Settings</strong></li>
+        <li>Scroll down to <strong>Account &amp; Profile</strong></li>
+        <li>Tap <strong>Delete Account</strong></li>
+        <li>Confirm by typing DELETE and entering your email</li>
+      </ol>
+    </div>
+
+    <!-- Deletion Form -->
+    <div class="delete-form fade-up">
+      <h2>Request Account Deletion</h2>
+      <p>Enter the email address associated with your NomadCore account. We will verify your identity and process the deletion.</p>
+
+      <form id="deleteForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="email">Account Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-email">Confirm Email Address</label>
+          <input type="email" id="confirm-email" name="confirm-email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for leaving (optional)</label>
+          <textarea id="reason" name="reason" placeholder="Help us improve by sharing why you're deleting your account..."></textarea>
+        </div>
+
+        <label class="confirm-check">
+          <input type="checkbox" id="confirm-check" required>
+          <span>I understand that deleting my account is <strong>permanent and irreversible</strong>. All my cloud data, family group memberships, bulletin posts, and shared content will be permanently removed.</span>
+        </label>
+
+        <button type="submit" class="btn-delete" id="submitBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+          Permanently Delete My Account
+        </button>
+
+        <div class="status-message" id="statusMessage"></div>
+      </form>
+    </div>
+
+    <div class="section fade-up" style="margin-top: 32px;">
+      <h2>Need help?</h2>
+      <p>If you're having trouble with your account or have questions before deleting, contact us at <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>. We typically respond within 24 hours.</p>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--gray-500);">Account deletion requests are processed within 48 hours. You will receive a confirmation email once your data has been removed.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+
+    // Fade-up animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Form logic
+    const emailInput = document.getElementById('email');
+    const confirmEmailInput = document.getElementById('confirm-email');
+    const confirmCheck = document.getElementById('confirm-check');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMessage = document.getElementById('statusMessage');
+
+    function validateForm() {
+      const emailValid = emailInput.value && emailInput.validity.valid;
+      const emailsMatch = emailInput.value === confirmEmailInput.value;
+      const isChecked = confirmCheck.checked;
+      submitBtn.disabled = !(emailValid && emailsMatch && isChecked);
+    }
+
+    emailInput.addEventListener('input', validateForm);
+    confirmEmailInput.addEventListener('input', validateForm);
+    confirmCheck.addEventListener('change', validateForm);
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+      const reason = document.getElementById('reason').value.trim();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+
+      try {
+        // Send deletion request to Supabase Edge Function
+        const response = await fetch('https://YOUR_SUPABASE_PROJECT.supabase.co/functions/v1/delete-account', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, reason })
+        });
+
+        if (response.ok) {
+          statusMessage.className = 'status-message success';
+          statusMessage.textContent = 'Account deletion request received. You will receive a confirmation email at ' + email + ' within 48 hours once your data has been removed.';
+          document.getElementById('deleteForm').reset();
+          submitBtn.textContent = 'Request Submitted';
+        } else {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.error || 'Failed to process request');
+        }
+      } catch (err) {
+        statusMessage.className = 'status-message error';
+        statusMessage.textContent = 'Unable to process your request automatically. Please email support@nomad-core.com with the subject "Account Deletion Request" and we will process it manually within 48 hours.';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> Permanently Delete My Account';
+      }
+    }
+  </script>
+
+</body>
+</html>

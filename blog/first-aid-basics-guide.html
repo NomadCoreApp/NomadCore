@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Aid Basics Every Family Should Know - NomadCore Blog</title>
+  <meta name="description" content="In an emergency, help may take hours to arrive. Knowing basic first aid can mean the difference between a minor injury and a serious one. Here's what every family needs.">
+  <meta property="og:title" content="First Aid Basics Every Family Should Know">
+  <meta property="og:description" content="In an emergency, help may take hours to arrive. Knowing basic first aid can mean the difference between a minor injury and a serious one. Here's what every family needs.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: var(--red-light);
+      border-left: 4px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .warning-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .warning-box strong {
+      color: var(--red);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <span>Feb 8, 2026</span>
+        <span class="reading-time">8 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">First Aid Basics Every Family Should Know</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-firstaid.png" alt="First aid basics for families">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>During a disaster, the average ambulance response time can jump from 8 minutes to over an hour. In a widespread emergency, it could be much longer — or help might not come at all.</p>
+
+    <p>That gap between injury and professional care is where basic first aid knowledge saves lives. You don't need to be a paramedic. You need to know enough to stop bleeding, keep someone breathing, and avoid making things worse.</p>
+
+    <p>This guide covers what every family needs: what to put in your kit, how to handle the most common emergency injuries, and when good intentions can actually cause harm.</p>
+
+    <hr>
+
+    <h2>Building Your First Aid Kit</h2>
+
+    <p>You can buy a pre-made kit, but most are filled with things you'll never use and missing things you will. Here's what actually matters.</p>
+
+    <h3>The Essentials (Tier 1)</h3>
+
+    <p>Every household should have these. Total cost: $25-40.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>What It's For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Adhesive bandages</strong> (assorted)</td>
+          <td>25+</td>
+          <td>Small cuts, blisters</td>
+        </tr>
+        <tr>
+          <td><strong>Gauze pads</strong> (4x4 sterile)</td>
+          <td>10</td>
+          <td>Wound coverage, bleeding control</td>
+        </tr>
+        <tr>
+          <td><strong>Medical tape</strong></td>
+          <td>1 roll</td>
+          <td>Securing gauze and bandages</td>
+        </tr>
+        <tr>
+          <td><strong>Elastic bandage</strong> (ACE wrap)</td>
+          <td>2</td>
+          <td>Sprains, compression, securing splints</td>
+        </tr>
+        <tr>
+          <td><strong>Antibiotic ointment</strong></td>
+          <td>1 tube</td>
+          <td>Preventing wound infection</td>
+        </tr>
+        <tr>
+          <td><strong>Nitrile gloves</strong></td>
+          <td>4 pairs</td>
+          <td>Infection protection (for both of you)</td>
+        </tr>
+        <tr>
+          <td><strong>Tweezers</strong></td>
+          <td>1</td>
+          <td>Splinter/tick removal</td>
+        </tr>
+        <tr>
+          <td><strong>Scissors</strong> (trauma shears)</td>
+          <td>1</td>
+          <td>Cutting clothing, tape, bandages</td>
+        </tr>
+        <tr>
+          <td><strong>Ibuprofen + Acetaminophen</strong></td>
+          <td>20 each</td>
+          <td>Pain, fever, inflammation</td>
+        </tr>
+        <tr>
+          <td><strong>Diphenhydramine</strong> (Benadryl)</td>
+          <td>10</td>
+          <td>Allergic reactions</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Trauma-Ready (Tier 2)</h3>
+
+    <p>For families in disaster-prone areas or anyone who wants to be more prepared. Additional cost: $30-60.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>What It's For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tourniquet</strong> (CAT or SOFT-T)</td>
+          <td>1</td>
+          <td>Life-threatening limb bleeding</td>
+        </tr>
+        <tr>
+          <td><strong>Hemostatic gauze</strong> (QuikClot)</td>
+          <td>1 pack</td>
+          <td>Severe bleeding that pressure alone won't stop</td>
+        </tr>
+        <tr>
+          <td><strong>Chest seal</strong></td>
+          <td>1</td>
+          <td>Penetrating chest wounds</td>
+        </tr>
+        <tr>
+          <td><strong>Israeli bandage</strong> (emergency bandage)</td>
+          <td>1</td>
+          <td>Heavy bleeding with built-in pressure bar</td>
+        </tr>
+        <tr>
+          <td><strong>SAM splint</strong></td>
+          <td>1</td>
+          <td>Moldable splint for fractures</td>
+        </tr>
+        <tr>
+          <td><strong>CPR pocket mask</strong></td>
+          <td>1</td>
+          <td>Safe rescue breathing</td>
+        </tr>
+        <tr>
+          <td><strong>Emergency blanket</strong> (mylar)</td>
+          <td>2</td>
+          <td>Hypothermia prevention, shock treatment</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Add every item to your PackMind inventory with expiration dates. The app tracks what you have, what's expiring soon, and what's missing. When you open your kit six months from now, you won't have to guess what's still good — the app tells you.</p>
+    </div>
+
+    <hr>
+
+    <h2>The 5 Most Common Emergency Injuries</h2>
+
+    <p>These account for the vast majority of injuries during disasters. Know how to handle these five, and you're prepared for most situations.</p>
+
+    <h3>1. Bleeding (Cuts, Lacerations, Punctures)</h3>
+
+    <p><strong>Why it's common:</strong> Broken glass, debris, tools, falls. During disasters, sharp objects are everywhere and people are moving quickly.</p>
+
+    <p><strong>What to do:</strong></p>
+    <ol>
+      <li><strong>Put on gloves</strong> — protect yourself first</li>
+      <li><strong>Apply direct pressure</strong> with gauze or the cleanest cloth available</li>
+      <li><strong>Maintain pressure for 10-15 minutes</strong> without lifting to check (this is the hardest part — resist the urge to peek)</li>
+      <li><strong>If blood soaks through, add more gauze on top</strong> — don't remove the first layer</li>
+      <li><strong>Elevate the wound above the heart</strong> if possible</li>
+    </ol>
+
+    <div class="warning-box">
+      <p><strong>When to use a tourniquet:</strong> Only for life-threatening limb bleeding that direct pressure can't control — arterial bleeding (bright red, spurting). Apply 2-3 inches above the wound, tighten until bleeding stops, and note the time. Tourniquets are safe for at least 2 hours. Do not loosen once applied.</p>
+    </div>
+
+    <h3>2. Burns</h3>
+
+    <p><strong>Why it's common:</strong> Cooking without power (candles, camp stoves, grills indoors), electrical fires, chemical exposure, sunburn during extended outdoor situations.</p>
+
+    <p><strong>What to do:</strong></p>
+    <ol>
+      <li><strong>Cool the burn</strong> under clean, cool (not ice-cold) running water for 10-20 minutes</li>
+      <li><strong>Remove jewelry or clothing</strong> near the burn before swelling starts</li>
+      <li><strong>Cover loosely</strong> with a sterile non-stick dressing</li>
+      <li><strong>Take ibuprofen</strong> for pain and inflammation</li>
+    </ol>
+
+    <p><strong>Do NOT:</strong></p>
+    <ul>
+      <li>Apply ice directly (causes frostbite on damaged tissue)</li>
+      <li>Use butter, toothpaste, or other home remedies (traps heat, increases infection risk)</li>
+      <li>Pop blisters (they're sterile protection — breaking them invites infection)</li>
+    </ul>
+
+    <h3>3. Sprains and Fractures</h3>
+
+    <p><strong>Why it's common:</strong> Running in the dark, climbing over debris, carrying heavy loads, falls during evacuation.</p>
+
+    <p><strong>What to do (R.I.C.E.):</strong></p>
+    <ul>
+      <li><strong>Rest</strong> — Stop using the injured area</li>
+      <li><strong>Ice</strong> — 20 minutes on, 20 minutes off (wrap ice in cloth, never directly on skin)</li>
+      <li><strong>Compression</strong> — Elastic bandage, snug but not cutting off circulation</li>
+      <li><strong>Elevation</strong> — Above heart level to reduce swelling</li>
+    </ul>
+
+    <p><strong>If you suspect a fracture:</strong> Immobilize the joint above and below the break. A SAM splint works, but so do sticks, rolled magazines, or cardboard secured with tape or cloth strips. Do not try to realign the bone.</p>
+
+    <h3>4. Heat-Related Illness</h3>
+
+    <p><strong>Why it's common:</strong> Power outages during summer, physical exertion during cleanup, lack of air conditioning, dehydration.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Signs</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Heat cramps</strong></td>
+          <td>Muscle cramps, heavy sweating</td>
+          <td>Rest in shade, drink water with electrolytes, gentle stretching</td>
+        </tr>
+        <tr>
+          <td><strong>Heat exhaustion</strong></td>
+          <td>Heavy sweating, weakness, nausea, headache, cool/clammy skin</td>
+          <td>Move to cool area, loosen clothing, cool wet cloths, sip water</td>
+        </tr>
+        <tr>
+          <td><strong>Heat stroke</strong></td>
+          <td>Hot/red/dry skin, confusion, rapid pulse, loss of consciousness</td>
+          <td>Call 911 immediately. Cool aggressively: ice packs at neck, armpits, groin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <p><strong>Heat stroke is a life-threatening emergency.</strong> The person's body has lost the ability to cool itself. If their skin is hot and dry (not sweating), they're confused, or they lose consciousness — cool them by any means available and get help immediately.</p>
+    </div>
+
+    <h3>5. Allergic Reactions</h3>
+
+    <p><strong>Why it's common:</strong> New environments, insect stings, unfamiliar foods from emergency supplies, dust and mold exposure after flooding.</p>
+
+    <p><strong>Mild reaction</strong> (hives, itching, localized swelling):</p>
+    <ul>
+      <li>Diphenhydramine (Benadryl) — 25-50mg for adults</li>
+      <li>Monitor for 30+ minutes for worsening</li>
+    </ul>
+
+    <p><strong>Severe reaction / Anaphylaxis</strong> (throat tightening, difficulty breathing, widespread swelling, dizziness):</p>
+    <ol>
+      <li><strong>Use an EpiPen</strong> if available — inject into outer thigh</li>
+      <li><strong>Call 911</strong></li>
+      <li><strong>Lay the person flat</strong> with legs elevated (unless they're having trouble breathing — then let them sit up)</li>
+      <li><strong>Give Benadryl</strong> as a secondary measure</li>
+      <li>A second EpiPen dose may be needed after 5-15 minutes if no improvement</li>
+    </ol>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> Document family allergies and medications in your emergency plan. If someone in your family carries an EpiPen or takes daily medication, note it where anyone — a neighbor, a first responder, a teacher — can find it quickly. The app's offline access means this info is always available.</p>
+    </div>
+
+    <hr>
+
+    <h2>Medications to Stock (and Rotate)</h2>
+
+    <p>Beyond your first aid kit, keep a small supply of the medications your family actually uses.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Examples</th>
+          <th>Typical Shelf Life</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pain/Fever</strong></td>
+          <td>Ibuprofen, Acetaminophen</td>
+          <td>2-3 years</td>
+        </tr>
+        <tr>
+          <td><strong>Allergy</strong></td>
+          <td>Diphenhydramine, Cetirizine</td>
+          <td>2-3 years</td>
+        </tr>
+        <tr>
+          <td><strong>Digestive</strong></td>
+          <td>Loperamide (Imodium), Antacids</td>
+          <td>1-2 years</td>
+        </tr>
+        <tr>
+          <td><strong>Topical</strong></td>
+          <td>Hydrocortisone cream, Antibiotic ointment</td>
+          <td>2-3 years</td>
+        </tr>
+        <tr>
+          <td><strong>Prescription</strong></td>
+          <td>Your family's specific medications</td>
+          <td>Varies — ask pharmacist</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>The rotation problem:</strong> Medications expire. In a real emergency, expired ibuprofen is better than nothing — most medications lose potency slowly rather than becoming dangerous. But it's better to have fresh supplies.</p>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> PackMind lets you scan or manually enter expiration dates for every item in your kit. You'll get notifications before anything expires, so you can replace it during a normal grocery run — not discover it during an emergency.</p>
+    </div>
+
+    <hr>
+
+    <h2>When to Seek Professional Help</h2>
+
+    <p>First aid is about stabilizing, not curing. Get to a hospital or call 911 when you see:</p>
+
+    <ul>
+      <li><strong>Bleeding that won't stop</strong> after 15 minutes of direct pressure</li>
+      <li><strong>Difficulty breathing</strong> or choking that doesn't resolve</li>
+      <li><strong>Signs of shock</strong> — pale/gray skin, rapid weak pulse, confusion, shallow breathing</li>
+      <li><strong>Suspected spinal injury</strong> — don't move the person, stabilize their head</li>
+      <li><strong>Burns larger than the person's palm</strong> or burns on the face, hands, feet, or genitals</li>
+      <li><strong>Chest pain</strong> or signs of heart attack/stroke</li>
+      <li><strong>Loss of consciousness</strong> for any reason</li>
+      <li><strong>Severe allergic reaction</strong> (even after EpiPen — they need monitoring)</li>
+    </ul>
+
+    <p>When in doubt, err on the side of getting help. You can always be told "it's fine" at the ER. You can't undo a missed serious injury.</p>
+
+    <hr>
+
+    <h2>Skills Worth Learning</h2>
+
+    <p>Reading about first aid is a start. Practicing it makes the difference. These are the highest-value skills to learn hands-on:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Where to Learn</th>
+          <th>Time</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CPR + AED</strong></td>
+          <td>American Red Cross, American Heart Association</td>
+          <td>3-4 hours</td>
+          <td>$30-80</td>
+        </tr>
+        <tr>
+          <td><strong>Basic First Aid</strong></td>
+          <td>Red Cross (often bundled with CPR)</td>
+          <td>3-4 hours</td>
+          <td>$30-80</td>
+        </tr>
+        <tr>
+          <td><strong>Stop the Bleed</strong></td>
+          <td>stopthebleed.org (free!)</td>
+          <td>1-2 hours</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td><strong>Wilderness First Aid</strong></td>
+          <td>NOLS, REI classes</td>
+          <td>16 hours (2 days)</td>
+          <td>$200-350</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>"Stop the Bleed"</strong> is the single best return on time. It's free, takes under two hours, and teaches the skill most likely to save a life in an emergency. Hemorrhage is the number-one cause of preventable death in trauma.</p>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> The app includes offline reference guides covering first aid procedures, wound care, CPR steps, and more — drawn from military field manuals and emergency medicine resources. Think of it as a backup brain for when stress makes it hard to remember what you learned in class.</p>
+    </div>
+
+    <hr>
+
+    <h2>Kit Placement and Maintenance</h2>
+
+    <p>The best first aid kit is useless if you can't find it or everything inside has expired.</p>
+
+    <h3>Where to Keep Kits</h3>
+
+    <ul>
+      <li><strong>Home kit (full size)</strong> — Central, accessible location. Everyone in the house should know where it is.</li>
+      <li><strong>Car kit (medium)</strong> — In the trunk or under a seat. Basics plus an emergency blanket.</li>
+      <li><strong>Go-bag kit (compact)</strong> — Inside your evacuation bag. Grab-and-go ready.</li>
+      <li><strong>Workplace</strong> — A small personal kit in your desk or locker, beyond what the office provides.</li>
+    </ul>
+
+    <h3>Maintenance Schedule</h3>
+
+    <ul class="checklist">
+      <li>Check expiration dates every 6 months (set a calendar reminder)</li>
+      <li>Replace anything you've used immediately</li>
+      <li>Update medications if your family's needs change</li>
+      <li>Check that adhesives still stick and packaging isn't damaged</li>
+      <li>Make sure gloves haven't degraded (nitrile breaks down over time)</li>
+    </ul>
+
+    <hr>
+
+    <h2>Quick Reference: The First 60 Seconds</h2>
+
+    <p>When someone is hurt, these steps apply to <em>every</em> situation:</p>
+
+    <ol>
+      <li><strong>Scene safety.</strong> Is it safe for you to help? (Downed power lines, structural collapse, active threat.) You can't help anyone if you become a second victim.</li>
+      <li><strong>Call for help.</strong> Or designate someone specific: "You in the red shirt — call 911."</li>
+      <li><strong>Gloves on.</strong> Protect yourself from bloodborne pathogens.</li>
+      <li><strong>ABCs.</strong> Airway (is it open?), Breathing (are they breathing?), Circulation (is there severe bleeding?).</li>
+      <li><strong>Stop major bleeding first.</strong> Everything else is secondary to keeping blood inside the body.</li>
+      <li><strong>Keep them calm.</strong> Talk to the person. Tell them what you're doing. Reassurance is genuinely therapeutic.</li>
+    </ol>
+
+    <blockquote>
+      <p>"The most important thing in first aid is not the supplies in your kit — it's the willingness to act. Most people freeze. The ones who help are the ones who decided beforehand that they would."</p>
+    </blockquote>
+
+    <hr>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> to track your first aid supplies, access offline medical reference guides, and keep your family's health info where you can find it — even without cell service.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Be ready when it counts</h2>
+      <p>Track your first aid supplies and access offline guides with NomadCore.</p>
+      <div class="cta-buttons">
+        <a href="../index.html#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="../index.html#download" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../index.html#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

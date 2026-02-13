@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - NomadCore | Everything Your Family Needs for Emergency Readiness</title>
+  <meta name="description" content="Explore every NomadCore feature: Emergency Center with SOS beacon, PackMind supply tracking, 1,300+ offline survival procedures, offline maps, family coordination, and encrypted document storage.">
+  <meta property="og:title" content="NomadCore Features - One App Instead of Six">
+  <meta property="og:description" content="Emergency Center, PackMind inventory, survival guide, offline maps, family planning, and document center. All offline. No subscriptions.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --purple: #9C27B0;
+      --purple-light: #F3E5F5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+    .fade-up.delay-5 { transition-delay: 0.5s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      padding: 140px 0 60px;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .page-hero h1 .highlight {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-hero p {
+      font-size: 1.15rem;
+      color: var(--gray-500);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== Quick Jump Nav ===== */
+    .jump-nav {
+      padding: 24px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      position: sticky;
+      top: 64px;
+      z-index: 100;
+    }
+
+    .jump-nav-inner {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .jump-nav-inner::-webkit-scrollbar { display: none; }
+
+    .jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      transition: all 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .jump-link:hover {
+      background: var(--white);
+      border-color: var(--gray-300);
+      color: var(--gray-900);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .jump-link .icon {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      .jump-nav-inner {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding: 0 8px;
+      }
+      .jump-link {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+      }
+    }
+
+    /* ===== Feature Section ===== */
+    .feature-section {
+      padding: 80px 0;
+    }
+    .feature-section:nth-child(even) {
+      background: var(--gray-50);
+    }
+
+    .feature-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .feature-icon-large {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .feature-header-text h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .feature-header-text .tagline {
+      font-size: 1.1rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .feature-description {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    /* Feature layout: content + screenshot */
+    .feature-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 60px;
+      align-items: start;
+    }
+    .feature-layout.reverse {
+      grid-template-columns: 300px 1fr;
+    }
+    .feature-layout.reverse .feature-screenshot-col {
+      order: -1;
+    }
+
+    @media (max-width: 900px) {
+      .feature-layout,
+      .feature-layout.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .feature-layout.reverse .feature-screenshot-col {
+        order: 0;
+      }
+    }
+
+    /* Screenshot in phone frame */
+    .feature-screenshot-col {
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-frame {
+      position: relative;
+      width: 260px;
+      border-radius: 36px;
+      background: var(--gray-900);
+      padding: 12px;
+      box-shadow: var(--shadow-xl), 0 0 0 1px rgba(0,0,0,0.05);
+    }
+    .phone-frame img {
+      border-radius: 26px;
+      width: 100%;
+      display: block;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 24px;
+      background: var(--gray-900);
+      border-radius: 0 0 14px 14px;
+      z-index: 2;
+    }
+
+    /* Sub-features grid */
+    .sub-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .sub-features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sub-feature-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-section:nth-child(even) .sub-feature-card {
+      background: var(--white);
+    }
+    .sub-feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .sub-feature-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .sub-feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .sub-feature-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .sub-feature-tagline {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .sub-feature-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sub-feature-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    .bullet-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Tip callout */
+    .feature-tip {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+    }
+    .feature-section:nth-child(even) .feature-tip {
+      background: var(--white);
+    }
+
+    .tip-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .feature-tip p {
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* Video placeholder */
+    .video-placeholder {
+      margin-top: 32px;
+      padding: 40px 24px;
+      border-radius: var(--radius-lg);
+      background: var(--gray-50);
+      border: 2px dashed var(--gray-200);
+      text-align: center;
+    }
+    .feature-section:nth-child(even) .video-placeholder {
+      background: var(--white);
+    }
+
+    .video-placeholder .play-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 20px;
+      color: var(--gray-400);
+    }
+
+    .video-placeholder p {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    .video-placeholder .coming {
+      font-size: 0.82rem;
+      color: var(--gray-300);
+      margin-top: 4px;
+    }
+
+    /* ===== Final CTA ===== */
+    .final-cta {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      font-size: 1.15rem;
+      color: var(--gray-500);
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .final-cta .cta-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .btn { padding: 12px 20px; font-size: 0.9rem; }
+      .page-hero { padding: 120px 0 48px; }
+      .feature-section { padding: 60px 0; }
+      .final-cta { padding: 70px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../#features" class="active">Features</a></li>
+        <li><a href="../#scenarios">Who It's For</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../#privacy">Privacy</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="fade-up">
+        Everything <span class="highlight">NomadCore</span> can do
+      </h1>
+      <p class="fade-up delay-1">
+        Six essential tools in one app. All offline. No subscriptions. Here's what's inside.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Jump Navigation -->
+  <div class="jump-nav">
+    <div class="container">
+      <div class="jump-nav-inner">
+        <a href="#command-center" class="jump-link"><span class="icon">&#127919;</span> Command Center</a>
+        <a href="#emergency" class="jump-link"><span class="icon">&#127973;</span> Emergency Center</a>
+        <a href="#packmind" class="jump-link"><span class="icon">&#127890;</span> PackMind</a>
+        <a href="#survival" class="jump-link"><span class="icon">&#128214;</span> Survival Guide</a>
+        <a href="#maps" class="jump-link"><span class="icon">&#128506;</span> Offline Maps</a>
+        <a href="#documents" class="jump-link"><span class="icon">&#128274;</span> Documents</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- FEATURE 1: Command Center      -->
+  <!-- ============================== -->
+  <section class="feature-section" id="command-center">
+    <div class="container">
+      <div class="feature-header fade-up">
+        <div class="feature-icon-large" style="background: var(--cyan-light); color: var(--cyan);">&#127919;</div>
+        <div class="feature-header-text">
+          <h2>Command Center</h2>
+          <div class="tagline">Your preparedness at a glance</div>
+        </div>
+      </div>
+      <p class="feature-description fade-up delay-1">
+        Your dashboard brings together weather, trip planning, and quick scenarios in one place. See what matters right now and take action fast.
+      </p>
+
+      <div class="feature-layout">
+        <div class="feature-content-col">
+          <div class="sub-features-grid">
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--cyan-light);">&#9925;</div>
+                <h4>Weather Center</h4>
+              </div>
+              <div class="sub-feature-tagline">Real-time conditions &amp; forecasts</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Current conditions, wind, humidity &amp; feels-like temp</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Hourly and 7-day forecasts</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Sun arc: sunrise, sunset &amp; daylight hours</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Weather alerts for your saved locations</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-1">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--cyan-light);">&#128205;</div>
+                <h4>Multi-Location Tracking</h4>
+              </div>
+              <div class="sub-feature-tagline">Monitor weather across all your places</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Track weather at home, work, cabin &amp; more</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> See alerts for each saved location</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Quick-add locations by ZIP code</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Custom icons &amp; labels for each spot</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-2">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--cyan-light);">&#128747;</div>
+                <h4>Trip Planning</h4>
+              </div>
+              <div class="sub-feature-tagline">Prepare before you go</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Plan trips with destination weather &amp; resources</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Download offline maps for your route</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Find hospitals, shelters &amp; services at destination</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Import contacts &amp; documents for the trip</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Save &amp; reuse trip plans</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-3">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--cyan-light);">&#9889;</div>
+                <h4>Quick Scenarios</h4>
+              </div>
+              <div class="sub-feature-tagline">Instant guidance for common situations</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Power outage: what to do first</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Medical emergency: step-by-step</li>
+                <li><span class="bullet-dot" style="background: var(--cyan);"></span> Evacuation checklist at your fingertips</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-tip fade-up">
+            <div class="tip-icon" style="background: var(--cyan-light); color: var(--cyan);">&#128161;</div>
+            <p style="color: var(--cyan);">Add your frequently visited locations for personalized weather alerts!</p>
+          </div>
+
+          <div class="video-placeholder fade-up">
+            <div class="play-icon">&#9654;</div>
+            <p>Command Center walkthrough</p>
+            <p class="coming">Video coming soon</p>
+          </div>
+        </div>
+
+        <div class="feature-screenshot-col fade-up delay-2">
+          <div class="phone-frame">
+            <img src="../images/dashboard.jpg" alt="NomadCore Command Center dashboard with weather and quick actions" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FEATURE 2: Emergency Center    -->
+  <!-- ============================== -->
+  <section class="feature-section" id="emergency">
+    <div class="container">
+      <div class="feature-header fade-up">
+        <div class="feature-icon-large" style="background: var(--red-light); color: var(--red);">&#127973;</div>
+        <div class="feature-header-text">
+          <h2>Emergency Center</h2>
+          <div class="tagline">Your complete emergency command center</div>
+        </div>
+      </div>
+      <p class="feature-description fade-up delay-1">
+        When seconds count, NomadCore puts everything you need one tap away. SOS beacon, emergency contacts, step-by-step procedures, local resources, and your family's action plan.
+      </p>
+
+      <div class="feature-layout reverse">
+        <div class="feature-content-col">
+          <div class="sub-features-grid">
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#128242;</div>
+                <h4>Critical Actions</h4>
+              </div>
+              <div class="sub-feature-tagline">Instant emergency response</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> One-tap 911 calling with your GPS location</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Emergency Beacon alerts all your ICE contacts instantly</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Sends your exact location to family members</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-1">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#128214;</div>
+                <h4>Emergency Guide</h4>
+              </div>
+              <div class="sub-feature-tagline">75+ procedures &bull; Works offline</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Medical: CPR, choking, bleeding, burns, shock</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Survival: shelter building, water purification, fire starting</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> First aid: wound care, splints, bites, allergic reactions</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Sourced from Red Cross, FEMA &amp; wilderness experts</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-2">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#128222;</div>
+                <h4>Emergency Contacts</h4>
+              </div>
+              <div class="sub-feature-tagline">Everyone you need, one tap away</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Built-in: 911, Poison Control, 988 Crisis, FEMA hotline</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Your ICE contacts for personal emergencies</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Add doctors, veterinarians, utilities &amp; more</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> All contacts work offline once saved</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-3">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#128205;</div>
+                <h4>Local Resources</h4>
+              </div>
+              <div class="sub-feature-tagline">Nearby help when you need it</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Find hospitals, shelters, police &amp; fire stations</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Download resources for offline access</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> One-tap directions to any location</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-4">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#128203;</div>
+                <h4>Emergency Plan</h4>
+              </div>
+              <div class="sub-feature-tagline">Your family's action plan</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Set up family members with critical info</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Plan evacuation routes &amp; meeting points</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Grab bags: what to pack for 5min, 30min, 2hr scenarios</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Practice drills to build muscle memory</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-5">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#128101;</div>
+                <h4>Family Sharing</h4>
+              </div>
+              <div class="sub-feature-tagline">Keep everyone on the same page</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Create family groups with simple invite codes</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Share emergency plans, contacts &amp; meeting points</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Sync PackMind inventory so everyone knows what you have</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> End-to-end encrypted &mdash; only your family can see</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--red-light);">&#129309;</div>
+                <h4>Community Network</h4>
+              </div>
+              <div class="sub-feature-tagline">Mutual aid &amp; neighborhood support</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Build your trusted neighbor network via QR code</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Share skills &amp; resources (medical training, tools, vehicles)</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Match who can help with who needs assistance</li>
+                <li><span class="bullet-dot" style="background: var(--red);"></span> Privacy-first: share only what you choose</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-tip fade-up">
+            <div class="tip-icon" style="background: var(--red-light); color: var(--red);">&#128161;</div>
+            <p style="color: var(--red);">Set up your ICE contacts first &mdash; they'll be alerted in emergencies!</p>
+          </div>
+
+          <div class="video-placeholder fade-up">
+            <div class="play-icon">&#9654;</div>
+            <p>Emergency Center walkthrough</p>
+            <p class="coming">Video coming soon</p>
+          </div>
+        </div>
+
+        <div class="feature-screenshot-col fade-up delay-2">
+          <div class="phone-frame">
+            <img src="../images/emergency.jpg" alt="NomadCore Emergency Center with SOS beacon, ICE contacts, and emergency procedures" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FEATURE 3: PackMind            -->
+  <!-- ============================== -->
+  <section class="feature-section" id="packmind">
+    <div class="container">
+      <div class="feature-header fade-up">
+        <div class="feature-icon-large" style="background: var(--blue-light); color: var(--blue);">&#127890;</div>
+        <div class="feature-header-text">
+          <h2>PackMind</h2>
+          <div class="tagline">Smart supply tracking</div>
+        </div>
+      </div>
+      <p class="feature-description fade-up delay-1">
+        Track every supply, monitor expiration dates, and get alerts before things go bad. Import in bulk, share with family, and always know exactly what you have.
+      </p>
+
+      <div class="feature-layout">
+        <div class="feature-content-col">
+          <div class="sub-features-grid">
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--blue-light);">&#128230;</div>
+                <h4>Inventory Tracking</h4>
+              </div>
+              <div class="sub-feature-tagline">Know exactly what you have</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Track items with quantity, location &amp; notes</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Organize by category (food, water, medical, tools)</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Set criticality levels for essential items</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> GPS tag where items are stored</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-1">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--blue-light);">&#128197;</div>
+                <h4>Expiration Alerts</h4>
+              </div>
+              <div class="sub-feature-tagline">Never let supplies go bad</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Track expiration dates for food &amp; medications</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Get notified before items expire</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Usage history shows consumption patterns</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Plan restocking based on usage trends</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-2">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--blue-light);">&#10133;</div>
+                <h4>Easy Entry</h4>
+              </div>
+              <div class="sub-feature-tagline">Add items in seconds</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> CSV import for bulk inventory</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> QR code scanning to import shared items</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Quick-add with simple forms</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Duplicate items with one tap</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-3">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--blue-light);">&#128161;</div>
+                <h4>Recommended Gear</h4>
+              </div>
+              <div class="sub-feature-tagline">Expert-curated supply lists</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> 72-hour kit essentials</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Scenario-specific recommendations</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> See what you're missing at a glance</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> One-tap add to your inventory</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-4">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--blue-light);">&#128257;</div>
+                <h4>Share Inventory</h4>
+              </div>
+              <div class="sub-feature-tagline">Family knows what you have</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Share inventory with Family Sharing groups</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> See combined family supplies</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Avoid duplicate purchases</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Coordinate who brings what</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-5">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--blue-light);">&#128295;</div>
+                <h4>Maintenance Tracker</h4>
+              </div>
+              <div class="sub-feature-tagline">Keep your gear ready</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Set recurring maintenance schedules</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Track generators, filters, extinguishers &amp; more</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Get alerts when maintenance is due</li>
+                <li><span class="bullet-dot" style="background: var(--blue);"></span> Log completion with notes &amp; history</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-tip fade-up">
+            <div class="tip-icon" style="background: var(--blue-light); color: var(--blue);">&#128161;</div>
+            <p style="color: var(--blue);">Start with the "Recommended Gear" list to build your 72-hour kit!</p>
+          </div>
+
+          <div class="video-placeholder fade-up">
+            <div class="play-icon">&#9654;</div>
+            <p>PackMind walkthrough</p>
+            <p class="coming">Video coming soon</p>
+          </div>
+        </div>
+
+        <div class="feature-screenshot-col fade-up delay-2">
+          <div class="phone-frame">
+            <img src="../images/packmind.jpg" alt="PackMind inventory tracking with categories and expiration alerts" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FEATURE 4: Survival Guide      -->
+  <!-- ============================== -->
+  <section class="feature-section" id="survival">
+    <div class="container">
+      <div class="feature-header fade-up">
+        <div class="feature-icon-large" style="background: var(--green-light); color: var(--green);">&#128214;</div>
+        <div class="feature-header-text">
+          <h2>Survival Guide</h2>
+          <div class="tagline">1,000+ verified procedures</div>
+        </div>
+      </div>
+      <p class="feature-description fade-up delay-1">
+        Expert knowledge from military field manuals, Red Cross, FEMA, and wilderness experts. Searchable, categorized, and works completely offline. No AI hallucinations &mdash; only verified sources.
+      </p>
+
+      <div class="feature-layout reverse">
+        <div class="feature-content-col">
+          <div class="sub-features-grid">
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--green-light);">&#128270;</div>
+                <h4>Survival Database</h4>
+              </div>
+              <div class="sub-feature-tagline">Verified military &amp; medical sources</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--green);"></span> 1,000+ step-by-step procedures</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Medical emergencies, first aid, trauma care</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Wilderness survival: shelter, water, fire, food</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> No AI hallucinations &mdash; only verified sources</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-1">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--green-light);">&#128221;</div>
+                <h4>Browse by Category</h4>
+              </div>
+              <div class="sub-feature-tagline">Find exactly what you need</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Medical emergency &amp; general care</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Emergency skills &amp; safety</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Navigation &amp; situational awareness</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Mental resilience &amp; preparedness</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-2">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--green-light);">&#127891;</div>
+                <h4>Learn &amp; Prepare</h4>
+              </div>
+              <div class="sub-feature-tagline">Build your skills before you need them</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Study procedures at your own pace</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Search across all survival knowledge</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Filter by category or topic</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Works completely offline</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-3">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--green-light);">&#128225;</div>
+                <h4>Radio Communications</h4>
+              </div>
+              <div class="sub-feature-tagline">Stay connected when phones fail</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Emergency frequencies &amp; channels</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Live scanner links to listen in</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Radio codes &amp; protocols (10-codes, phonetic)</li>
+                <li><span class="bullet-dot" style="background: var(--green);"></span> Morse code with encoder/decoder</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-tip fade-up">
+            <div class="tip-icon" style="background: var(--green-light); color: var(--green);">&#128161;</div>
+            <p style="color: var(--green);">Search for any survival topic &mdash; it's probably in here!</p>
+          </div>
+
+          <div class="video-placeholder fade-up">
+            <div class="play-icon">&#9654;</div>
+            <p>Survival Guide walkthrough</p>
+            <p class="coming">Video coming soon</p>
+          </div>
+        </div>
+
+        <div class="feature-screenshot-col fade-up delay-2">
+          <div class="phone-frame">
+            <img src="../images/guide.jpg" alt="Survival guide with categorized procedures and search" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FEATURE 5: Offline Maps        -->
+  <!-- ============================== -->
+  <section class="feature-section" id="maps">
+    <div class="container">
+      <div class="feature-header fade-up">
+        <div class="feature-icon-large" style="background: var(--amber-light); color: var(--amber);">&#128506;</div>
+        <div class="feature-header-text">
+          <h2>Offline Maps</h2>
+          <div class="tagline">Navigate without internet</div>
+        </div>
+      </div>
+      <p class="feature-description fade-up delay-1">
+        Download maps for your area before you need them. Navigate with GPS, mark waypoints, and find nearby resources &mdash; all without cell service.
+      </p>
+
+      <div class="feature-layout">
+        <div class="feature-content-col">
+          <div class="sub-features-grid">
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--amber-light);">&#11015;</div>
+                <h4>Offline Regions</h4>
+              </div>
+              <div class="sub-feature-tagline">Download maps before you need them</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Download entire areas for offline use</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Multiple map styles (streets, terrain, satellite)</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Works completely without internet</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Automatic updates when online</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-1">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--amber-light);">&#128204;</div>
+                <h4>Waypoints</h4>
+              </div>
+              <div class="sub-feature-tagline">Mark important locations</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> 6 types: camp, water, emergency, landmark, danger, meeting</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Add notes &amp; photos to each waypoint</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> GPS coordinates auto-captured</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Share waypoints via QR code</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-2">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--amber-light);">&#129517;</div>
+                <h4>Navigation</h4>
+              </div>
+              <div class="sub-feature-tagline">Find your way anywhere</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> GPS tracking works without cell service</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Digital compass for orientation</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Search locations by name or coordinates</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Get directions to any point</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-3">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--amber-light);">&#127973;</div>
+                <h4>Points of Interest</h4>
+              </div>
+              <div class="sub-feature-tagline">Find help nearby</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Hospitals, shelters, police &amp; fire stations</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Gas stations, pharmacies &amp; stores</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> Downloaded POIs work offline</li>
+                <li><span class="bullet-dot" style="background: var(--amber);"></span> One-tap directions to any POI</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-tip fade-up">
+            <div class="tip-icon" style="background: var(--amber-light); color: var(--amber);">&#128161;</div>
+            <p style="color: var(--amber);">Download your home area and evacuation routes first!</p>
+          </div>
+
+          <div class="video-placeholder fade-up">
+            <div class="play-icon">&#9654;</div>
+            <p>Offline Maps walkthrough</p>
+            <p class="coming">Video coming soon</p>
+          </div>
+        </div>
+
+        <div class="feature-screenshot-col fade-up delay-2">
+          <div class="phone-frame">
+            <img src="../images/maps.jpg" alt="Offline maps with downloaded regions, waypoints, and GPS navigation" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FEATURE 6: Document Center     -->
+  <!-- ============================== -->
+  <section class="feature-section" id="documents">
+    <div class="container">
+      <div class="feature-header fade-up">
+        <div class="feature-icon-large" style="background: var(--purple-light); color: var(--purple);">&#128274;</div>
+        <div class="feature-header-text">
+          <h2>Document Center</h2>
+          <div class="tagline">Secure offline storage</div>
+        </div>
+      </div>
+      <p class="feature-description fade-up delay-1">
+        Store your most important documents &mdash; IDs, insurance cards, medical records &mdash; encrypted on your device. Protected by PIN or biometrics. Always accessible, even without internet.
+      </p>
+
+      <div class="feature-layout reverse">
+        <div class="feature-content-col">
+          <div class="sub-features-grid">
+            <div class="sub-feature-card fade-up">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--purple-light);">&#128193;</div>
+                <h4>Secure Storage</h4>
+              </div>
+              <div class="sub-feature-tagline">All your important docs in one place</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Store IDs, insurance, medical records</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Organize by category with custom tags</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Multi-page document bundles</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Available offline &mdash; always accessible</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-1">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--purple-light);">&#128272;</div>
+                <h4>Privacy &amp; Security</h4>
+              </div>
+              <div class="sub-feature-tagline">Protected by PIN or biometrics</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> PIN code protection</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Face ID / fingerprint unlock</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Auto-lock after inactivity</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Lockout protection against brute force</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-2">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--purple-light);">&#128276;</div>
+                <h4>Expiration Alerts</h4>
+              </div>
+              <div class="sub-feature-tagline">Never miss a renewal</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Track expiration dates for licenses &amp; IDs</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Get reminded before documents expire</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Notes field for renewal info</li>
+              </ul>
+            </div>
+
+            <div class="sub-feature-card fade-up delay-3">
+              <div class="sub-feature-header">
+                <div class="sub-feature-icon" style="background: var(--purple-light);">&#9889;</div>
+                <h4>Quick Access</h4>
+              </div>
+              <div class="sub-feature-tagline">Show proof in seconds</div>
+              <ul class="sub-feature-bullets">
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Swipe through multi-page docs</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Full-screen viewing mode</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Search by name or tag</li>
+                <li><span class="bullet-dot" style="background: var(--purple);"></span> Recent documents at the top</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-tip fade-up">
+            <div class="tip-icon" style="background: var(--purple-light); color: var(--purple);">&#128161;</div>
+            <p style="color: var(--purple);">Add your insurance cards and IDs first &mdash; you'll need them most!</p>
+          </div>
+
+          <div class="video-placeholder fade-up">
+            <div class="play-icon">&#9654;</div>
+            <p>Document Center walkthrough</p>
+            <p class="coming">Video coming soon</p>
+          </div>
+        </div>
+
+        <div class="feature-screenshot-col fade-up delay-2">
+          <div class="phone-frame">
+            <img src="../images/documents.jpg" alt="Encrypted document center with categories and biometric access" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="fade-up">Ready to get prepared?</h2>
+      <p class="fade-up delay-1">Download NomadCore and give your family the plan they deserve.</p>
+      <div class="cta-buttons fade-up delay-2">
+        <a href="../#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="../#download" class="btn btn-primary" style="background: var(--green);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    // Fade-up animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
