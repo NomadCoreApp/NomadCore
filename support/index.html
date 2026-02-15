@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - NomadCore</title>
+  <meta name="description" content="Get help with NomadCore. Find answers to common questions, troubleshooting tips, and contact our support team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--navy);
+    }
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--navy); color: white !important; }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: white;
+        padding: 16px 24px;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+    }
+
+    /* ===== Page Header ===== */
+    .page-header {
+      padding: 120px 0 48px;
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .page-header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .page-header .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .page-header .back-link:hover { color: var(--blue); }
+    .page-header h1 {
+      font-size: 2.25rem;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+    }
+
+    /* ===== Content ===== */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: var(--blue-light);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .contact-card .icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .contact-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .contact-card p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+    .contact-card a {
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+      }
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin-bottom: 40px;
+    }
+    .faq-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 18px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      text-align: left;
+      gap: 12px;
+    }
+    .faq-question:hover {
+      color: var(--blue);
+    }
+    .faq-question .chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+      color: var(--gray-400);
+    }
+    .faq-item.open .faq-question .chevron {
+      transform: rotate(180deg);
+      color: var(--blue);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .faq-answer-inner {
+      padding: 0 20px 18px;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .faq-answer-inner p {
+      margin-bottom: 8px;
+    }
+    .faq-answer-inner p:last-child {
+      margin-bottom: 0;
+    }
+    .faq-answer-inner strong {
+      color: var(--gray-800);
+    }
+
+    /* Info Boxes */
+    .info-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+    .info-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .info-box p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+
+    /* Links Section */
+    .helpful-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .helpful-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .helpful-links a:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-sm);
+      color: var(--blue);
+    }
+    .helpful-links .link-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .helpful-links { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 24px;
+      font-size: 0.9rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="../" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header-inner fade-up">
+        <a href="../" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Home
+        </a>
+        <h1>Support</h1>
+        <p>Find answers to common questions or get in touch with our team</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- Contact Card -->
+    <div class="contact-card fade-up">
+      <span class="icon">&#9993;&#65039;</span>
+      <div>
+        <h3>Contact Us</h3>
+        <p>Have a question or running into an issue? Email us at <a href="mailto:support@nomad-core.com">support@nomad-core.com</a> and we'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+
+    <!-- Getting Started FAQ -->
+    <div class="faq-section fade-up">
+      <h2>Getting Started</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I create my first emergency plan?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Open the app and tap <strong>Emergency Plan</strong> from the dashboard. You'll be guided through adding family members, setting meeting places, and creating grab-and-go lists. Most families complete their first plan in under 15 minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Does NomadCore work without internet?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes. NomadCore is built offline-first. All 1,300+ emergency guides, your emergency plans, supply lists, saved documents, and downloaded maps work without any internet connection. Some features like family location sharing and cloud sync require a connection when actively used.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is there a subscription or recurring fee?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>No. NomadCore has no subscriptions, no recurring fees, and no ads. Download the app and get access to every feature.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features FAQ -->
+    <div class="faq-section fade-up delay-1">
+      <h2>Features &amp; Usage</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I share my emergency plan with family?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Go to <strong>Emergency Plan</strong> and tap the share icon. NomadCore generates a QR code that family members can scan to join your plan. You can also share plans through your family group if you've set one up under <strong>Family Sharing</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I download maps for offline use?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Open <strong>Offline Maps</strong> from the dashboard. Navigate to the area you want to save, then tap the download button. You can select a region and zoom level. Downloaded maps are stored on your device and available anytime, even with no cell service.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does supply tracking work?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>PackMind</strong> lets you track emergency supplies across 13 categories (water, food, medical, tools, etc.). Add items with quantities and expiration dates, and PackMind will alert you before anything expires. You can also share your inventory with family members.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What sources are the emergency guides from?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>NomadCore's 1,300+ procedures are sourced from 56 trusted references including U.S. military field manuals, medical references, FEMA guidelines, Red Cross protocols, and government emergency management agencies. Every guide includes its source for verification.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy & Security FAQ -->
+    <div class="faq-section fade-up delay-2">
+      <h2>Privacy &amp; Security</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How is my data protected?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>NomadCore uses AES-256 encryption for sensitive documents stored in the Document Vault. Your data is stored locally on your device by default. Cloud features like family sharing use encrypted connections, and we follow a minimal data collection policy. See our <a href="../privacy-policy.html">Privacy Policy</a> for full details.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I delete my account?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>You can delete your account from within the app at <strong>Settings &gt; Account &amp; Profile &gt; Delete Account</strong>, or use our <a href="../delete-account/">web deletion form</a>. Account deletion permanently removes all cloud-synced data. Local data remains on your device until you uninstall the app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="faq-section fade-up">
+      <h2>Troubleshooting</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          The app is running slowly or crashing
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Try these steps:</p>
+            <p><strong>1.</strong> Make sure you're running the latest version from the App Store or Google Play.</p>
+            <p><strong>2.</strong> Close the app completely and reopen it.</p>
+            <p><strong>3.</strong> Restart your device.</p>
+            <p>If the issue persists, email us at <a href="mailto:support@nomad-core.com">support@nomad-core.com</a> with your device model and a description of the problem.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          I'm not receiving expiration alerts
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Make sure notifications are enabled for NomadCore in your device settings. On iOS, go to <strong>Settings &gt; NomadCore &gt; Notifications</strong>. On Android, go to <strong>Settings &gt; Apps &gt; NomadCore &gt; Notifications</strong>. Also check that you've set expiration dates on your supply items in PackMind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Helpful Links -->
+    <div class="fade-up">
+      <h2 style="font-size: 1.5rem; margin-bottom: 4px;">Helpful Links</h2>
+      <p style="color: var(--gray-500); font-size: 0.95rem; margin-bottom: 16px;">Legal documents and additional resources</p>
+      <div class="helpful-links">
+        <a href="../privacy-policy.html">
+          <span class="link-icon">&#128274;</span>
+          Privacy Policy
+        </a>
+        <a href="../terms-of-service.html">
+          <span class="link-icon">&#128220;</span>
+          Terms of Service
+        </a>
+        <a href="../eula.html">
+          <span class="link-icon">&#128221;</span>
+          End User License Agreement
+        </a>
+        <a href="../delete-account/">
+          <span class="link-icon">&#128465;&#65039;</span>
+          Delete Account
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+
+    // Fade-up animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      if (isOpen) {
+        answer.style.maxHeight = null;
+        item.classList.remove('open');
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        item.classList.add('open');
+      }
+    }
+  </script>
+
+</body>
+</html>
