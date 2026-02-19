@@ -419,7 +419,7 @@
         Back to Home
       </a>
       <div class="article-meta fade-up delay-1">
-        <span>Last Updated: February 8, 2026</span>
+        <span>Last Updated: February 19, 2026</span>
       </div>
       <h1 class="fade-up delay-2">Privacy Policy</h1>
     </div>
@@ -440,41 +440,86 @@
     <h2>2. Local Storage</h2>
     <p>All your data is stored locally on your device using secure storage methods, including:</p>
     <ul>
-      <li>Emergency contacts (ICE contacts)</li>
+      <li>Emergency contacts (ICE contacts) — <strong>always local-only, never uploaded</strong></li>
       <li>Inventory items (PackMind)</li>
       <li>Location preferences</li>
       <li>Custom procedures</li>
-      <li>Personal profile information</li>
+      <li>Personal profile information (may include medical details such as blood type, allergies, and medications)</li>
       <li>Emergency plans</li>
       <li>Weather locations</li>
+      <li>Radio frequency favorites and morse code progress</li>
+      <li>Trip plans and saved locations</li>
+      <li>Journal entries</li>
     </ul>
+    <p>If you create an account, most of this data (except contacts — see Section 3) is also backed up to your private cloud storage for sync and recovery purposes. See Section 4 for details on cloud storage.</p>
 
     <h2>3. Permissions</h2>
     <p>NomadCore may request the following permissions:</p>
     <ul>
-      <li><strong>Location:</strong> Used only for weather updates and finding nearby emergency resources. Location data never leaves your device.</li>
+      <li><strong>Location:</strong> Used for weather updates, disaster risk assessment, finding nearby emergency resources, and optional family location sharing. When these features are used, your coordinates are sent to third-party services (see Section 4). Location data is never stored or shared for advertising purposes.</li>
+      <li><strong>Contacts:</strong> Used only to let you quickly select emergency contacts from your address book for your preparedness plan. <strong>Your contacts are never uploaded to our servers or any third party.</strong> Contact data stays entirely on your device and is excluded from cloud backup.</li>
       <li><strong>Storage:</strong> Required to save your data locally on your device.</li>
-      <li><strong>Camera:</strong> Only for QR code scanning in emergency plan sharing (optional feature).</li>
+      <li><strong>Camera:</strong> Used for scanning documents and QR codes in emergency plan sharing (optional features).</li>
       <li><strong>Phone:</strong> To enable quick dialing of emergency contacts and 911.</li>
+      <li><strong>Notifications:</strong> Used for family group alerts and emergency notifications. If enabled, a device push token is registered with Expo's push notification service (see Section 4).</li>
     </ul>
 
     <h2>4. Third-Party Services</h2>
-    <p>When online, NomadCore may connect to:</p>
+    <p>When online, NomadCore may connect to the following services. No personal information beyond what is listed is shared with any of these providers.</p>
+
+    <h3>Cloud Storage &amp; Authentication</h3>
     <ul>
-      <li><strong>OpenWeatherMap:</strong> For weather data (no personal information is shared, only location coordinates)</li>
-      <li><strong>MapTiler:</strong> For offline map downloads (no tracking or personal data)</li>
-      <li><strong>Supabase:</strong> For optional account backup and sync (only if you create an account). Supabase acts as our secure database provider and does not use your data for any other purpose.</li>
+      <li><strong>Supabase:</strong> For optional account backup, sync, and family sharing (only if you create an account). Stores your email, display name, and backed-up app data. Family sharing data (inventories, plans) is end-to-end encrypted before upload — Supabase cannot read it. Bulletin posts and group messages are stored unencrypted. All data is protected by row-level security scoped to your account. Supabase does not use your data for any other purpose.</li>
+    </ul>
+
+    <h3>Weather &amp; Environmental Data</h3>
+    <ul>
+      <li><strong>Open-Meteo:</strong> For weather forecasts and air quality data. Only your location coordinates are sent; no API key or personal information is included.</li>
+      <li><strong>NOAA / National Weather Service:</strong> For severe weather alerts. Your location coordinates are sent to determine your alert zone.</li>
+    </ul>
+
+    <h3>Maps &amp; Geocoding</h3>
+    <ul>
+      <li><strong>OpenStreetMap / Nominatim:</strong> For map tiles and address-to-coordinate lookups. Your search queries or coordinates are sent as URL parameters. No personal information is included.</li>
+      <li><strong>U.S. Census Bureau:</strong> For county and state identification from coordinates. Only location coordinates are sent.</li>
+      <li><strong>MapTiler:</strong> For offline map tile downloads (legacy; being replaced by OpenStreetMap). No personal data is sent beyond tile coordinates.</li>
+    </ul>
+
+    <h3>Notifications</h3>
+    <ul>
+      <li><strong>Expo Push Notification Service:</strong> If you enable notifications, a device push token is sent to Expo's servers to deliver family group alerts. Notification content (which may include display names or alert details) passes through Expo's infrastructure.</li>
+    </ul>
+
+    <h3>Crash Reporting</h3>
+    <ul>
+      <li><strong>Sentry:</strong> In production builds, crash reports are sent to Sentry to help us fix bugs. This may include your user ID, email, device information, and error details. Sensitive fields (passwords, tokens, API keys) are automatically redacted before sending. Sentry data is used solely for debugging and is not shared with any other party.</li>
+    </ul>
+
+    <h3>Other</h3>
+    <ul>
+      <li><strong>OpenMHz:</strong> For radio scanner system data. No personal information is sent.</li>
+      <li><strong>Google:</strong> A connectivity check (no data sent beyond a standard HTTP request) is used to determine if your device is online.</li>
     </ul>
 
     <h2>5. Data Sharing</h2>
     <p>We never share, sell, or transmit your personal data to third parties for marketing or advertising. Your information stays on your device unless:</p>
     <ul>
-      <li>You create an account (data syncs to Supabase for backup)</li>
-      <li>You explicitly export it (such as sharing emergency plans via QR code with trusted contacts)</li>
+      <li>You create an account (data syncs to Supabase for backup — see Section 4)</li>
+      <li>You use weather, maps, or geocoding features (location coordinates are sent to the providers listed in Section 4)</li>
+      <li>You join a family group (group membership, bulletin posts, and shared data are stored in Supabase; shared inventories and plans are end-to-end encrypted before upload)</li>
+      <li>You enable push notifications (device token and notification content pass through Expo's servers)</li>
+      <li>The app encounters an error in production (crash data is sent to Sentry — see Section 4)</li>
+      <li>You explicitly export data (such as sharing emergency plans via QR code with trusted contacts)</li>
     </ul>
 
     <h2>6. Data Security</h2>
-    <p>Your data is protected by your device's built-in security measures. We recommend using device lock screens and keeping your operating system updated.</p>
+    <p>We take multiple steps to protect your data:</p>
+    <ul>
+      <li><strong>Local storage:</strong> Data on your device is protected by your device's built-in security measures. Sensitive tokens are stored in your device's secure keychain/keystore.</li>
+      <li><strong>Cloud storage:</strong> All cloud data is protected by row-level security (RLS), ensuring only you can access your own records. Family-shared inventories and plans are end-to-end encrypted (AES) before upload — our servers cannot read the content.</li>
+      <li><strong>Crash reports:</strong> Sensitive fields (passwords, tokens, API keys, credit card numbers) are automatically redacted before crash reports are sent.</li>
+    </ul>
+    <p>We recommend using device lock screens and keeping your operating system updated.</p>
 
     <h2>7. Data Deletion</h2>
     <p>You have complete control over your data. You can delete all your data at any time through:</p>
@@ -519,9 +564,10 @@
     <h2>9. Analytics and Tracking</h2>
     <p>NomadCore respects your privacy by minimizing data collection:</p>
     <ul>
-      <li><strong>The NomadCore app does not include any analytics or tracking SDKs.</strong> We do not collect usage data, crash reports, or behavioral analytics through the app.</li>
-      <li><strong>The nomad-core.com website does not use cookies or tracking scripts.</strong> We do not use Google Analytics, Facebook Pixel, or any other tracking technology.</li>
-      <li><strong>No personal data is collected through the website.</strong> We do not track your browsing behavior, IP address, or device information when you visit our website.</li>
+      <li><strong>No advertising or behavioral tracking.</strong> The app does not include Google Analytics, Facebook Pixel, ad SDKs, or any behavioral analytics. We do not build user profiles or track your activity for marketing purposes.</li>
+      <li><strong>Crash reporting (Sentry):</strong> In production builds, the app sends crash reports to Sentry to help us identify and fix bugs. These reports may include your user ID, email, device information, and error details. Sensitive data is automatically redacted. Crash data is used solely for debugging.</li>
+      <li><strong>Basic usage events:</strong> If you create an account, the app records basic events (such as login, backup, and restore) to your private account record in Supabase. This data is not shared with any third party and is only accessible to you and our support team for troubleshooting.</li>
+      <li><strong>The nomad-core.com website does not use cookies or tracking scripts.</strong> We do not use any tracking technology on our website.</li>
     </ul>
 
     <h2>10. Children's Privacy</h2>
