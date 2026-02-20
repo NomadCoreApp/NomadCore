@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Confirm Your Email - NomadCore</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --blue: #2E6BD6;
+      --cyan: #22B8CF;
+      --green: #10B981;
+      --red: #EF4444;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-700: #334155;
+      --gray-900: #0F172A;
+      --radius: 12px;
+    }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--gray-50);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1, h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--gray-900);
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--gray-100);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Status icon */
+    .status-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .status-text {
+      font-size: 1rem;
+      color: var(--gray-500);
+      margin-top: 8px;
+    }
+
+    .status-title {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .error-text {
+      color: var(--red);
+      font-size: 0.9rem;
+      margin-top: 12px;
+      padding: 12px;
+      background: #FEF2F2;
+      border-radius: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      margin-top: 24px;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .btn-primary:hover { color: var(--white); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .footer-text {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-text a { color: var(--gray-400); text-decoration: underline; }
+
+    /* Hide states by default */
+    #state-verifying,
+    #state-success,
+    #state-error { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/images/nomadcore-icon.png" alt="" onerror="this.style.display='none'">
+      NomadCore
+    </div>
+
+    <!-- State: Verifying -->
+    <div id="state-verifying">
+      <div class="spinner"></div>
+      <h2 class="status-title">Confirming your email...</h2>
+      <p class="status-text">This will only take a moment.</p>
+    </div>
+
+    <!-- State: Success -->
+    <div id="state-success">
+      <div class="status-icon">&#10003;</div>
+      <h2 class="status-title" style="color: var(--green);">Email Confirmed!</h2>
+      <p class="status-text">Your NomadCore account is ready to go.</p>
+      <div class="btn-group">
+        <a id="open-app-btn" href="nomadcore://email-confirmed" class="btn btn-primary">Open NomadCore App</a>
+        <a href="/" class="btn btn-outline">Visit Website</a>
+      </div>
+    </div>
+
+    <!-- State: Error -->
+    <div id="state-error">
+      <div class="status-icon">&#9888;</div>
+      <h2 class="status-title">Confirmation Failed</h2>
+      <p id="error-message" class="error-text">Something went wrong. The link may have expired.</p>
+      <p class="status-text" style="margin-top: 16px;">
+        Open the NomadCore app and tap <strong>"Resend"</strong> to get a fresh confirmation email.
+      </p>
+      <div class="btn-group">
+        <a href="nomadcore://email-confirmation" class="btn btn-primary">Open App</a>
+        <a href="/" class="btn btn-outline">Visit Website</a>
+      </div>
+    </div>
+
+    <p class="footer-text">
+      &copy; 2026 <a href="https://lostpinescreative.com">Lost Pines Creative LLC</a>
+    </p>
+  </div>
+
+  <script>
+    (function() {
+      // Supabase project URL — used to call the auth verification API
+      var SUPABASE_URL = 'https://twgatpwehkerapwtpkag.supabase.co';
+
+      // Read URL parameters
+      var params = new URLSearchParams(window.location.search);
+      var tokenHash = params.get('token_hash');
+      var type = params.get('type') || 'signup';
+      var redirectTo = params.get('redirect_to');
+
+      // UI state helpers
+      function show(id) { document.getElementById(id).style.display = 'block'; }
+
+      if (!tokenHash) {
+        show('state-error');
+        document.getElementById('error-message').textContent =
+          'Invalid confirmation link — no token found. Please check the link in your email.';
+        return;
+      }
+
+      // Show loading state
+      show('state-verifying');
+
+      // Call Supabase's auth verification endpoint directly
+      // This is the server-side verify endpoint that processes token_hash
+      var verifyUrl = SUPABASE_URL + '/auth/v1/verify?' +
+        'token=' + encodeURIComponent(tokenHash) +
+        '&type=' + encodeURIComponent(type);
+
+      if (redirectTo) {
+        verifyUrl += '&redirect_to=' + encodeURIComponent(redirectTo);
+      }
+
+      // Use fetch with redirect: 'manual' because Supabase will 303-redirect on success
+      fetch(verifyUrl, {
+        method: 'GET',
+        redirect: 'manual'
+      })
+      .then(function(response) {
+        // Supabase returns a 303 redirect on success.
+        // With redirect:'manual', this appears as an opaque-redirect (type 'opaqueredirect')
+        // or a 303 status. Both indicate success.
+        if (response.type === 'opaqueredirect' || response.status === 303 || response.ok) {
+          // Success — email is confirmed
+          document.getElementById('state-verifying').style.display = 'none';
+          show('state-success');
+
+          // If we have a redirect_to, update the app button
+          if (redirectTo && redirectTo.startsWith('nomadcore://')) {
+            document.getElementById('open-app-btn').href = redirectTo;
+          }
+
+          // Track successful confirmation
+          if (typeof gtag === 'function') {
+            gtag('event', 'email_confirmed', { event_category: 'auth' });
+          }
+
+          // Auto-redirect to app after a short delay if redirect_to is a deep link
+          if (redirectTo && redirectTo.startsWith('nomadcore://')) {
+            setTimeout(function() {
+              window.location.href = redirectTo;
+            }, 2000);
+          }
+        } else {
+          // Attempt to get error details
+          return response.text().then(function(text) {
+            throw new Error(text || 'Verification failed (status ' + response.status + ')');
+          });
+        }
+      })
+      .catch(function(err) {
+        document.getElementById('state-verifying').style.display = 'none';
+        show('state-error');
+
+        // Parse Supabase error if possible
+        var message = 'Something went wrong. The link may have expired.';
+        try {
+          var parsed = JSON.parse(err.message);
+          if (parsed.error_description || parsed.msg || parsed.message) {
+            message = parsed.error_description || parsed.msg || parsed.message;
+          }
+        } catch(e) {
+          // not JSON, check for common messages
+          if (err.message && err.message.indexOf('Token has expired') !== -1) {
+            message = 'This confirmation link has expired. Please request a new one from the app.';
+          }
+        }
+
+        document.getElementById('error-message').textContent = message;
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'email_confirm_failed', { event_category: 'auth' });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

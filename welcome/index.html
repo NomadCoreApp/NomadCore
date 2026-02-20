@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Welcome to NomadCore</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --blue: #2E6BD6;
+      --cyan: #22B8CF;
+      --green: #10B981;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-700: #334155;
+      --gray-900: #0F172A;
+      --radius: 12px;
+    }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--gray-50);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1, h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--gray-900);
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #ECFDF5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+      color: var(--green);
+    }
+
+    .title {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--gray-500);
+      margin-bottom: 32px;
+    }
+
+    .next-steps {
+      text-align: left;
+      background: var(--gray-50);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .next-steps h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      font-size: 0.95rem;
+      color: var(--gray-700);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .btn-primary:hover { color: var(--white); }
+
+    .btn-secondary {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .footer-text {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-text a { color: var(--gray-400); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/images/nomadcore-icon.png" alt="" onerror="this.style.display='none'">
+      NomadCore
+    </div>
+
+    <div class="check-icon">&#10003;</div>
+    <h1 class="title">You're all set!</h1>
+    <p class="subtitle">Your email has been confirmed and your NomadCore account is active.</p>
+
+    <div class="next-steps">
+      <h3>What's next</h3>
+      <div class="step">
+        <span class="step-num">1</span>
+        <span class="step-text">Open the NomadCore app on your phone</span>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <span class="step-text">Log in with the email and password you registered with</span>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <span class="step-text">Enable Cloud Backup to sync your data across devices</span>
+      </div>
+    </div>
+
+    <a href="nomadcore://email-confirmed" class="btn btn-primary">Open NomadCore App</a>
+    <br>
+    <a href="/" class="btn-secondary">Visit nomad-core.com</a>
+
+    <p class="footer-text">
+      &copy; 2026 <a href="https://lostpinescreative.com">Lost Pines Creative LLC</a>
+    </p>
+  </div>
+</body>
+</html>
