@@ -11,12 +11,8 @@
     gtag('js', new Date());
     gtag('config', 'G-901VG0NQY2');
   </script>
-  <title>Terms of Service - NomadCore</title>
-  <meta name="description" content="Terms of Service for NomadCore - Emergency preparedness app for families. Review our terms, conditions, and legal policies.">
-  <meta property="og:title" content="Terms of Service - NomadCore">
-  <meta property="og:description" content="Terms of Service for NomadCore - Emergency preparedness app for families.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <title>Accessibility - NomadCore</title>
+  <meta name="description" content="NomadCore Accessibility Statement - Learn about the accessibility features we support across iOS and Android.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -203,46 +199,10 @@
       .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
     }
 
-    /* ===== Buttons ===== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: var(--radius-full);
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-      text-decoration: none;
-    }
-    .btn-primary {
-      background: var(--gray-900);
-      color: white;
-    }
-    .btn-primary:hover {
-      background: var(--gray-800);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    .btn-secondary {
-      background: var(--white);
-      color: var(--gray-700);
-      border: 2px solid var(--gray-200);
-    }
-    .btn-secondary:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      transform: translateY(-2px);
-    }
-    .btn svg { width: 20px; height: 20px; }
-
     /* ===== Article Layout ===== */
     .article-header {
       padding: 120px 0 40px;
-      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+      background: linear-gradient(180deg, var(--cyan-light) 0%, var(--white) 100%);
     }
     .article-header-inner {
       max-width: 760px;
@@ -319,13 +279,6 @@
       margin-bottom: 0;
       font-style: italic;
     }
-    .article-body blockquote.warning-box {
-      border-left: 4px solid var(--red);
-      background: var(--red-light);
-    }
-    .article-body blockquote.warning-box p {
-      color: var(--gray-700);
-    }
     .article-body hr {
       border: none;
       height: 1px;
@@ -335,6 +288,77 @@
     .article-body strong {
       color: var(--gray-800);
     }
+
+    /* Highlight box */
+    .highlight-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .highlight-box strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    @media (max-width: 600px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+    .feature-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+    }
+    .feature-card .icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 1.3rem;
+    }
+    .feature-card .icon.green { background: var(--green-light); }
+    .feature-card .icon.amber { background: var(--amber-light); }
+    .feature-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    .feature-card .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 4px;
+    }
+    .badge-supported { background: var(--green-light); color: #065F46; }
+    .badge-planned { background: var(--amber-light); color: #92400E; }
 
     /* ===== Footer ===== */
     .footer {
@@ -390,13 +414,6 @@
     }
     .footer-bottom a { color: rgba(255,255,255,0.4); }
     .footer-bottom a:hover { color: white; }
-
-    @media (max-width: 768px) {
-      .footer-links {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -428,124 +445,137 @@
         Back to Home
       </a>
       <div class="article-meta fade-up delay-1">
-        <span>Last Updated: February 8, 2026</span>
+        <span>Last Updated: February 26, 2026</span>
       </div>
-      <h1 class="fade-up delay-2">Terms of Service</h1>
+      <h1 class="fade-up delay-2">Accessibility</h1>
     </div>
   </header>
 
   <!-- Article Body -->
   <article class="article-body">
 
-    <blockquote class="warning-box">
-      <p><strong>IMPORTANT:</strong> NomadCore is provided "as-is" for emergency preparedness and survival information purposes only. Always prioritize professional help and official emergency services when available. In life-threatening emergencies, call 911 or your local emergency services immediately.</p>
+    <div class="highlight-box">
+      <p><strong>Our Commitment:</strong> NomadCore is designed to be usable by everyone, including people who rely on assistive technologies. Emergency preparedness shouldn't require perfect vision, hearing, or dexterity.</p>
+    </div>
+
+    <h2>Supported Features</h2>
+    <p>NomadCore supports the following accessibility features on both iOS and Android:</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon green">&#128483;</div>
+        <div>
+          <span class="badge badge-supported">Supported</span>
+          <h4>Screen Readers</h4>
+          <p>VoiceOver (iOS) and TalkBack (Android). All 29 screens have descriptive labels on every interactive element.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon green">&#127908;</div>
+        <div>
+          <span class="badge badge-supported">Supported</span>
+          <h4>Voice Control</h4>
+          <p>Voice Control (iOS) and Voice Access (Android). Navigate and interact with every button, input, and control using voice commands.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon green">&#127763;</div>
+        <div>
+          <span class="badge badge-supported">Supported</span>
+          <h4>Dark Mode</h4>
+          <p>Full dark and light themes. Reduces eye strain in low-light environments and supports users with light sensitivity.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon green">&#127912;</div>
+        <div>
+          <span class="badge badge-supported">Supported</span>
+          <h4>Color Independence</h4>
+          <p>All information conveyed by color is also available through icons, text labels, or shape changes. Usable with all forms of color vision deficiency.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon green">&#128300;</div>
+        <div>
+          <span class="badge badge-supported">Supported</span>
+          <h4>Sufficient Contrast</h4>
+          <p>Text and interactive elements meet WCAG AA contrast ratios (4.5:1 for text, 3:1 for large text) in both light and dark themes.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon green">&#9724;&#65039;</div>
+        <div>
+          <span class="badge badge-supported">Supported</span>
+          <h4>Reduced Motion</h4>
+          <p>Respects the "Reduce Motion" (iOS) and "Remove Animations" (Android) system settings. Animations are simplified or disabled.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon amber">&#128289;</div>
+        <div>
+          <span class="badge badge-planned">Planned</span>
+          <h4>Dynamic Text Size</h4>
+          <p>Support for Dynamic Type (iOS) and system font scaling (Android) is planned for a future update.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon amber">&#128196;</div>
+        <div>
+          <span class="badge badge-planned">Planned</span>
+          <h4>Captions</h4>
+          <p>Transcription for voice journal recordings is planned for a future update.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>How We Build for Accessibility</h2>
+    <p>Accessibility is part of our development process, not an afterthought:</p>
+    <ul>
+      <li><strong>Semantic labels:</strong> Every button, input, toggle, tab, and card has a descriptive accessibility label that conveys its purpose, current state, and any relevant context.</li>
+      <li><strong>Dynamic state announcements:</strong> Labels update to reflect the current state of controls (e.g., "Emergency filter, selected" or "Save entry, currently saving").</li>
+      <li><strong>Touch targets:</strong> Icon-only buttons include expanded hit areas (minimum 44x44 points) to meet platform guidelines for motor accessibility.</li>
+      <li><strong>Contrast auditing:</strong> Color palettes are tested against WCAG AA standards. Light and dark themes are independently verified.</li>
+      <li><strong>Non-color indicators:</strong> Selected tabs and filters use bold text and border changes in addition to color, so they remain distinguishable without color perception.</li>
+    </ul>
+
+    <h2>Standards</h2>
+    <p>NomadCore is developed following these accessibility guidelines:</p>
+    <ul>
+      <li><a href="https://developer.apple.com/design/human-interface-guidelines/accessibility" target="_blank" rel="noopener noreferrer">Apple Human Interface Guidelines &mdash; Accessibility</a></li>
+      <li><a href="https://developer.android.com/guide/topics/ui/accessibility" target="_blank" rel="noopener noreferrer">Android Accessibility Developer Guide</a></li>
+      <li><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</a> (contrast and color criteria)</li>
+    </ul>
+
+    <h2>Known Limitations</h2>
+    <p>We are transparent about areas where accessibility support is still in progress:</p>
+    <ul>
+      <li><strong>Dynamic text sizing:</strong> Layouts have not yet been fully tested at the largest system font sizes. Some screens may clip or overflow at extreme settings.</li>
+      <li><strong>Voice note captions:</strong> The journal feature supports voice recordings but does not yet provide text transcriptions.</li>
+      <li><strong>Map interactions:</strong> The offline map component relies on gesture-based controls (pinch, pan) that may be difficult for some motor accessibility needs. Waypoint management is fully accessible via labeled buttons.</li>
+    </ul>
+
+    <h2>Feedback</h2>
+    <p>If you experience an accessibility barrier in NomadCore, we want to hear about it. Your feedback directly shapes our development priorities.</p>
+
+    <blockquote>
+      <p>Email us at <a href="mailto:support@nomad-core.com">support@nomad-core.com</a> with "Accessibility" in the subject line. Please describe what you were trying to do and what assistive technology you were using.</p>
     </blockquote>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By downloading, installing, or using NomadCore ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the App.</p>
+    <hr>
 
-    <h2>2. Use at Your Own Risk</h2>
-    <p>All survival procedures, emergency guidance, and preparedness information provided in the App are for reference and educational purposes only. You acknowledge that:</p>
-    <ul>
-      <li>Survival situations are inherently dangerous</li>
-      <li>Every emergency is unique and may require different approaches</li>
-      <li>Information that works in one scenario may be dangerous in another</li>
-      <li>You should always prioritize calling 911 or local emergency services</li>
-      <li>You should seek professional training when possible</li>
-    </ul>
-
-    <h2>3. No Warranty</h2>
-    <p>NomadCore is provided without warranty of any kind, express or implied. We do not guarantee:</p>
-    <ul>
-      <li>The accuracy, completeness, or timeliness of any information</li>
-      <li>The suitability of information for your specific situation</li>
-      <li>That the App will be error-free or uninterrupted</li>
-      <li>That defects will be corrected</li>
-    </ul>
-
-    <h2>4. Limitation of Liability</h2>
-    <p>In no event shall NomadCore, its creators, developers, or contributors be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from:</p>
-    <ul>
-      <li>Your use or inability to use the App</li>
-      <li>Any information provided in the App</li>
-      <li>Actions taken based on App content</li>
-      <li>Errors or omissions in content</li>
-      <li>Loss of data</li>
-    </ul>
-
-    <h2>5. Medical Disclaimer</h2>
-    <p>The App is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of qualified health providers with any questions regarding medical conditions. In medical emergencies, call 911 immediately.</p>
-
-    <h2>6. Content and Intellectual Property</h2>
-    <p>The App contains content from various sources, including military field manuals, medical references, and survival guides. While we strive to respect all intellectual property rights, if you believe any content infringes your rights, please contact us.</p>
-
-    <h2>7. User Responsibilities</h2>
-    <p>You agree to:</p>
-    <ul>
-      <li>Use the App responsibly and legally</li>
-      <li>Verify information from multiple sources</li>
-      <li>Not rely solely on the App in emergency situations</li>
-      <li>Keep the App updated to the latest version</li>
-      <li>Not modify, reverse engineer, or redistribute the App</li>
-    </ul>
-
-    <h2>8. Account Services (Optional)</h2>
-    <p>NomadCore works fully without an account. If you choose to create an account for backup and sync:</p>
-    <ul>
-      <li>You are responsible for maintaining the security of your login credentials</li>
-      <li>You may delete your account and all associated cloud data at any time through the App settings or at <a href="delete-account/">nomad-core.com/delete-account</a></li>
-      <li>We reserve the right to suspend accounts that violate these terms</li>
-      <li>Account services may be modified or discontinued with reasonable notice</li>
-      <li>We are not liable for data loss due to account deletion or service changes</li>
-    </ul>
-
-    <h2>9. Age Requirement</h2>
-    <p>You must be at least 13 years old to use NomadCore. If you are under 18 years of age, you must have the consent of a parent or legal guardian to use the App.</p>
-    <p>Parents and guardians are responsible for monitoring and supervising their minor children's use of NomadCore. By allowing a minor to use the App, you agree to these Terms of Service on their behalf and take full responsibility for their use.</p>
-
-    <h2>10. Dispute Resolution</h2>
-    <p><strong>Informal Resolution:</strong> Before initiating any formal dispute resolution process, you agree to first contact us at <a href="mailto:support@nomad-core.com">support@nomad-core.com</a> to attempt to resolve the dispute informally. We will work with you in good faith to reach a mutually acceptable resolution.</p>
-
-    <p><strong>Binding Arbitration:</strong> If we cannot resolve a dispute informally within 30 days, you agree that any claim, dispute, or controversy arising out of or relating to these Terms of Service or your use of NomadCore shall be resolved by binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules.</p>
-
-    <p>The arbitration shall be conducted in Travis County, Texas, and shall be governed by the laws of the State of Texas. The arbitrator's decision shall be final and binding, and judgment on the award may be entered in any court having jurisdiction.</p>
-
-    <p><strong>Class Action Waiver:</strong> You agree that any arbitration or legal proceeding shall be conducted on an individual basis and not as part of a class, consolidated, or representative action. You waive any right to participate in a class action lawsuit or class-wide arbitration.</p>
-
-    <p><strong>Small Claims Exception:</strong> Either party may bring a claim in small claims court as an alternative to arbitration, provided the claim qualifies for small claims court jurisdiction.</p>
-
-    <h2>11. Third-Party Content</h2>
-    <p>The App may include links or references to third-party content, including YouTube channels, websites, and products. We do not endorse or assume responsibility for any third-party content or services.</p>
-
-    <h2>12. Privacy</h2>
-    <p>Your use of the App is also governed by our Privacy Policy, available at <a href="privacy-policy.html">nomad-core.com/privacy-policy</a></p>
-
-    <h2>13. Modifications</h2>
-    <p>We reserve the right to modify these terms at any time. Continued use of the App after changes constitutes acceptance of the modified terms. We will make reasonable efforts to notify users of material changes.</p>
-
-    <h2>14. Governing Law</h2>
-    <p>These terms shall be governed by the laws of the State of Texas, without regard to conflict of law principles. Any legal action or proceeding related to these Terms of Service shall be brought exclusively in the courts located in Travis County, Texas.</p>
-
-    <h2>15. Severability</h2>
-    <p>If any provision of these Terms of Service is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms of Service shall otherwise remain in full force and effect.</p>
-
-    <h2>16. Contact</h2>
-    <p>NomadCore is developed by Lost Pines Creative LLC. For questions about these terms, contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:support@nomad-core.com">support@nomad-core.com</a></li>
-      <li>Website: <a href="https://nomad-core.com">nomad-core.com</a></li>
-    </ul>
-
-    <blockquote class="warning-box">
-      <p><strong>Remember:</strong> In life-threatening emergencies, always call 911 or your local emergency services immediately. NomadCore is a tool for preparedness, not a replacement for professional emergency response.</p>
-    </blockquote>
-
-    <div style="margin-top: 40px;">
+    <p style="text-align: center;">
       <a href="index.html" class="article-back">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         Back to Home
       </a>
-    </div>
+    </p>
 
   </article>
 
