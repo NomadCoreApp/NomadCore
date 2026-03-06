@@ -11,10 +11,10 @@
     gtag('js', new Date());
     gtag('config', 'G-901VG0NQY2');
   </script>
-  <title>Insights & Guides - NomadCore Blog</title>
-  <meta name="description" content="Practical emergency preparedness guides for real families. No jargon, no fear-mongering — just actionable knowledge.">
-  <meta property="og:title" content="Insights & Guides - NomadCore Blog">
-  <meta property="og:description" content="Practical emergency preparedness guides for real families. No jargon, no fear-mongering — just actionable knowledge.">
+  <title>Release Notes - NomadCore Updates</title>
+  <meta name="description" content="See what's new in NomadCore. Release notes, feature updates, and bug fixes for your family emergency preparedness app.">
+  <meta property="og:title" content="NomadCore Release Notes">
+  <meta property="og:description" content="See what's new in NomadCore. Release notes, feature updates, and bug fixes.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,147 +205,191 @@
       .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
     }
 
-    /* ===== Buttons ===== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: var(--radius-full);
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-      text-decoration: none;
-    }
-    .btn-primary {
-      background: var(--gray-900);
-      color: white;
-    }
-    .btn-primary:hover {
-      background: var(--gray-800);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    .btn-secondary {
-      background: var(--white);
-      color: var(--gray-700);
-      border: 2px solid var(--gray-200);
-    }
-    .btn-secondary:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      transform: translateY(-2px);
-    }
-    .btn svg { width: 20px; height: 20px; }
-
-    /* ===== Blog Hero ===== */
-    .blog-hero {
+    /* ===== Updates Hero ===== */
+    .updates-hero {
       padding: 140px 0 60px;
-      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+      background: linear-gradient(180deg, var(--cyan-light) 0%, var(--white) 100%);
       text-align: center;
     }
-    .blog-hero h1 {
+    .updates-hero h1 {
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
       margin-bottom: 16px;
     }
-    .blog-hero p {
+    .updates-hero p {
       font-size: 1.15rem;
       color: var(--gray-500);
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.7;
+    }
+    .current-version-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 10px 20px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      box-shadow: var(--shadow-sm);
+    }
+    .current-version-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
     }
 
-    /* ===== Blog Grid ===== */
-    .blog-grid {
+    /* ===== Release Cards ===== */
+    .releases-section {
       padding: 60px 0 100px;
     }
-    .blog-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+    .releases-container {
+      max-width: 760px;
+      margin: 0 auto;
     }
-    @media (max-width: 768px) {
-      .blog-cards { grid-template-columns: 1fr; }
-    }
-
-    .blog-card {
+    .release-card {
+      position: relative;
       background: var(--white);
+      border: 1px solid var(--gray-200);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--gray-100);
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: box-shadow 0.2s;
     }
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+    .release-card:hover {
+      box-shadow: var(--shadow-md);
     }
-
-    .blog-card-image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+    .release-card.latest {
+      border-color: var(--blue);
+      border-width: 2px;
     }
-
-    .blog-card-body {
-      padding: 24px;
+    .release-card.critical {
+      border-color: var(--red);
+      border-width: 2px;
     }
-
-    .blog-card-meta {
+    .release-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .release-version {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 0.85rem;
-      color: var(--gray-400);
-      margin-bottom: 12px;
     }
-    .blog-card-meta .reading-time {
+    .release-version h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .release-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .release-badge.latest-badge {
       background: var(--blue-light);
       color: var(--blue);
-      padding: 2px 10px;
-      border-radius: var(--radius-full);
-      font-weight: 500;
+    }
+    .release-badge.critical-badge {
+      background: var(--red-light);
+      color: var(--red);
+    }
+    .release-date {
+      font-size: 0.9rem;
+      color: var(--gray-400);
+    }
+    .release-highlights {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .release-highlights li {
+      position: relative;
+      padding: 6px 0 6px 24px;
+      font-size: 1rem;
+      color: var(--gray-700);
+    }
+    .release-highlights li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+    .release-details {
+      border-top: 1px solid var(--gray-100);
+      padding-top: 16px;
+    }
+    .release-category {
+      margin-bottom: 12px;
+    }
+    .release-category-title {
       font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
     }
-
-    .blog-card h3 {
-      font-size: 1.2rem;
+    .release-category-title.features { color: var(--blue); }
+    .release-category-title.fixes { color: var(--amber); }
+    .release-category-list {
+      list-style: none;
+    }
+    .release-category-list li {
+      padding: 3px 0 3px 20px;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+    .release-category-list.features li::before {
+      content: '+';
+      position: absolute;
+      left: 4px;
       font-weight: 700;
-      margin-bottom: 10px;
-      line-height: 1.4;
+      color: var(--blue);
     }
-    .blog-card h3 a {
-      color: var(--gray-900);
-      text-decoration: none;
-      transition: color 0.2s;
+    .release-category-list.fixes li::before {
+      content: '\2022';
+      position: absolute;
+      left: 6px;
+      color: var(--amber);
     }
-    .blog-card h3 a:hover { color: var(--blue); }
 
-    .blog-card-excerpt {
-      font-size: 0.95rem;
-      color: var(--gray-500);
-      line-height: 1.6;
+    /* ===== Loading / Error ===== */
+    .loading-state, .error-state {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--gray-400);
+      font-size: 1.1rem;
     }
 
     /* ===== Footer ===== */
     .footer {
-      padding: 48px 0 32px;
-      background: var(--gray-900);
-      color: rgba(255,255,255,0.5);
+      background: linear-gradient(135deg, var(--navy) 0%, #1a2a3a 100%);
+      color: var(--gray-300);
+      padding: 60px 0 30px;
     }
-
     .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 40px;
+      margin-bottom: 40px;
     }
-
     .footer-brand {
       display: flex;
       align-items: center;
@@ -359,37 +403,30 @@
     .footer-brand .nav-logo-icon {
       width: 28px;
       height: 28px;
+      border-radius: 6px;
     }
-
     .footer-links {
       display: flex;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 16px 32px;
       list-style: none;
     }
     .footer-links a {
-      color: rgba(255,255,255,0.5);
+      color: var(--gray-400);
       font-size: 0.9rem;
-      transition: color 0.2s;
     }
     .footer-links a:hover { color: white; }
-
     .footer-bottom {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.1);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
       font-size: 0.85rem;
     }
-    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a { color: var(--gray-400); }
     .footer-bottom a:hover { color: white; }
-
-    @media (max-width: 480px) {
-      .blog-hero { padding: 120px 0 40px; }
-      .blog-grid { padding: 40px 0 70px; }
-    }
   </style>
 </head>
 <body>
@@ -397,7 +434,7 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
+      <a href="../" class="nav-logo">
         <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
         NomadCore
       </a>
@@ -406,112 +443,32 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="../features/">Features</a></li>
-        <li><a href="../index.html#scenarios">Who It's For</a></li>
-        <li><a href="index.html" class="active">Blog</a></li>
-        <li><a href="../updates/">Updates</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+        <li><a href="../#scenarios">Who It's For</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="./" class="active">Updates</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#download" class="nav-cta">Download</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Blog Hero -->
-  <section class="blog-hero">
+  <!-- Hero -->
+  <section class="updates-hero">
     <div class="container">
-      <h1 class="fade-up">Insights and Guides</h1>
-      <p class="fade-up delay-1">Practical emergency preparedness guides for real families. No jargon, no fear-mongering — just actionable knowledge.</p>
+      <h1 class="fade-up">Release Notes</h1>
+      <p class="fade-up delay-1">What's new in NomadCore. Every feature, fix, and improvement.</p>
+      <div class="current-version-badge fade-up delay-2" id="currentVersionBadge">
+        <span class="dot"></span>
+        <span id="latestVersionText">Loading...</span>
+      </div>
     </div>
   </section>
 
-  <!-- Blog Grid -->
-  <section class="blog-grid">
+  <!-- Releases -->
+  <section class="releases-section">
     <div class="container">
-      <div class="blog-cards">
-
-        <article class="blog-card fade-up">
-          <a href="emergency-preparedness-guide.html">
-            <img src="../images/blog-preparedness.png" alt="Emergency preparedness guide for families" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
-            </div>
-            <h3><a href="emergency-preparedness-guide.html">Emergency Preparedness: A Complete Guide for Families</a></h3>
-            <p class="blog-card-excerpt">Most families are one disaster away from chaos. Not because they don't care — because life is busy. This guide breaks it down into manageable steps.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-1">
-          <a href="72-hour-kit-guide.html">
-            <img src="../images/blog-kit.png" alt="Complete 72-hour kit guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
-            </div>
-            <h3><a href="72-hour-kit-guide.html">The Complete 72-Hour Kit Guide</a></h3>
-            <p class="blog-card-excerpt">When disaster strikes, you have minutes — not hours — to grab what you need. Here's how to build a kit that actually works.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-2">
-          <a href="power-outage-guide.html">
-            <img src="../images/blog-outage.png" alt="Power outage survival guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
-            </div>
-            <h3><a href="power-outage-guide.html">Power Outage Survival: What to Do When the Lights Go Out</a></h3>
-            <p class="blog-card-excerpt">The U.S. experienced over 1,500 major outages in 2024. The difference between inconvenience and crisis comes down to preparation.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-3">
-          <a href="water-purification-guide.html">
-            <img src="../images/blog-water.png" alt="Water purification methods guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
-            </div>
-            <h3><a href="water-purification-guide.html">5 Ways to Purify Water in an Emergency</a></h3>
-            <p class="blog-card-excerpt">Not all water is safe to drink. Here are five proven methods — each with different strengths and ideal use cases.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-4">
-          <a href="family-communication-plan.html">
-            <img src="../images/blog-communication.png" alt="Family communication plan for emergencies" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Feb 8, 2026</span>
-              <span class="reading-time">7 min read</span>
-            </div>
-            <h3><a href="family-communication-plan.html">How to Build a Family Communication Plan for Emergencies</a></h3>
-            <p class="blog-card-excerpt">Cell towers jam. Phones die. Networks overload. A communication plan ensures your family stays connected when it matters most.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-4">
-          <a href="first-aid-basics-guide.html">
-            <img src="../images/blog-firstaid.png" alt="First aid basics for families" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Feb 8, 2026</span>
-              <span class="reading-time">8 min read</span>
-            </div>
-            <h3><a href="first-aid-basics-guide.html">First Aid Basics Every Family Should Know</a></h3>
-            <p class="blog-card-excerpt">When help is hours away, basic first aid knowledge fills the gap. Here's what to stock, what to do, and what to avoid.</p>
-          </div>
-        </article>
-
+      <div class="releases-container" id="releasesContainer">
+        <div class="loading-state">Loading release notes...</div>
       </div>
     </div>
   </section>
@@ -534,7 +491,7 @@
           <li><a href="../accessibility.html">Accessibility</a></li>
           <li><a href="../delete-account/">Delete Account</a></li>
           <li><a href="../support/">Support</a></li>
-          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../#about">About</a></li>
           <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
         </ul>
       </div>
@@ -546,6 +503,7 @@
   </footer>
 
   <script>
+    // Nav scroll + toggle
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 10);
@@ -564,13 +522,94 @@
       });
     });
 
+    // Fade-in observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Format date for display
+    function formatDate(dateStr) {
+      const date = new Date(dateStr + 'T00:00:00');
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    // Render a single release card
+    function renderRelease(release, isLatest) {
+      const cardClass = release.critical ? 'release-card critical' : (isLatest ? 'release-card latest' : 'release-card');
+      const badge = release.critical
+        ? '<span class="release-badge critical-badge">Critical</span>'
+        : (isLatest ? '<span class="release-badge latest-badge">Latest</span>' : '');
+
+      let categoriesHtml = '';
+      if (release.categories) {
+        categoriesHtml = '<div class="release-details">';
+        if (release.categories.features && release.categories.features.length > 0) {
+          categoriesHtml += `
+            <div class="release-category">
+              <div class="release-category-title features">New &amp; Improved</div>
+              <ul class="release-category-list features">
+                ${release.categories.features.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>`;
+        }
+        if (release.categories.fixes && release.categories.fixes.length > 0) {
+          categoriesHtml += `
+            <div class="release-category">
+              <div class="release-category-title fixes">Bug Fixes</div>
+              <ul class="release-category-list fixes">
+                ${release.categories.fixes.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>`;
+        }
+        categoriesHtml += '</div>';
+      }
+
+      return `
+        <div class="${cardClass} fade-up">
+          <div class="release-header">
+            <div class="release-version">
+              <h2>v${release.version}</h2>
+              ${badge}
+            </div>
+            <span class="release-date">${formatDate(release.date)} &middot; Build ${release.buildNumber}</span>
+          </div>
+          <ul class="release-highlights">
+            ${release.highlights.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+          ${categoriesHtml}
+        </div>`;
+    }
+
+    // Fetch and render
+    fetch('../api/updates.json')
+      .then(res => res.json())
+      .then(data => {
+        // Update hero badge
+        const latest = data.latest.ios;
+        document.getElementById('latestVersionText').textContent =
+          `Latest: v${latest.version} (Build ${latest.buildNumber})`;
+
+        // Render releases
+        const container = document.getElementById('releasesContainer');
+        if (data.releases && data.releases.length > 0) {
+          container.innerHTML = data.releases
+            .map((release, i) => renderRelease(release, i === 0))
+            .join('');
+
+          // Re-observe new fade-up elements
+          container.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        } else {
+          container.innerHTML = '<div class="loading-state">No releases yet. Stay tuned!</div>';
+        }
+      })
+      .catch(() => {
+        document.getElementById('releasesContainer').innerHTML =
+          '<div class="error-state">Unable to load release notes. Please try again later.</div>';
+        document.getElementById('latestVersionText').textContent = 'Unable to load version info';
+      });
   </script>
 
 </body>

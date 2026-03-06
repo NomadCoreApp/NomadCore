@@ -1,0 +1,102 @@
+{
+  "latest": {
+    "ios": {
+      "version": "1.0.67",
+      "buildNumber": "67",
+      "minSupportedBuild": "60",
+      "releaseDate": "2026-03-04",
+      "storeUrl": "https://apps.apple.com/app/nomadcore/id6738976881"
+    },
+    "android": {
+      "version": "1.0.67",
+      "versionCode": "67",
+      "minSupportedBuild": "60",
+      "releaseDate": "2026-03-04",
+      "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcore.app"
+    }
+  },
+  "releases": [
+    {
+      "version": "1.0.67",
+      "buildNumber": "67",
+      "date": "2026-03-04",
+      "critical": false,
+      "highlights": [
+        "Family Sharing hardening — improved encryption, sync, and permissions",
+        "Fixed PBKDF2 salt generation crash on React Native",
+        "Fixed owner SELECT RLS policy for shared family data"
+      ],
+      "categories": {
+        "features": [
+          "Complete Family Sharing hardening (Phases 0-5)"
+        ],
+        "fixes": [
+          "PBKDF2 salt generation crash on React Native",
+          "Owner SELECT RLS policy for shared family data",
+          "Profile update modal re-appearing after accepting medications change",
+          "Workplace address/phone change detection for fields that can't be applied"
+        ]
+      }
+    },
+    {
+      "version": "1.0.66",
+      "buildNumber": "66",
+      "date": "2026-02-27",
+      "critical": false,
+      "highlights": [
+        "Offline map download fixes",
+        "Location upload reliability improvements",
+        "In-app browser for all external links"
+      ],
+      "categories": {
+        "fixes": [
+          "Offline map download progress overlay stuck at 100%",
+          "Persistent location upload loop — GPS data now uploads regardless of screen",
+          "Use in-app browser for all external links (App Review 5.1.1)"
+        ]
+      }
+    },
+    {
+      "version": "1.0.65",
+      "buildNumber": "65",
+      "date": "2026-02-25",
+      "critical": false,
+      "highlights": [
+        "Android text clipping fixes across all screens",
+        "Trip planning improvements with share modal and summary redesign"
+      ],
+      "categories": {
+        "features": [
+          "Trip planning — share modal, summary redesign, geocoding service"
+        ],
+        "fixes": [
+          "Android text clipping fixes across multiple screens",
+          "Build 66 audit remediation — compliance, encryption, UX fixes"
+        ]
+      }
+    },
+    {
+      "version": "1.0.64",
+      "buildNumber": "64",
+      "date": "2026-02-20",
+      "critical": false,
+      "highlights": [
+        "COPPA age gate and medical disclaimers",
+        "CI/CD pipeline hardening",
+        "Itinerary photo display fixes"
+      ],
+      "categories": {
+        "features": [
+          "COPPA age gate, medical disclaimers, AI transparency, location consent",
+          "CI/CD pipeline hardening — pinned actions, permissions, CODEOWNERS"
+        ],
+        "fixes": [
+          "Itinerary photos not showing until modal re-opened",
+          "ActionSheet pickers inside Modal on Lodging and Transport screens",
+          "ExpoStoreReview fatal crash prevention",
+          "iOS hardening — privacy manifest, permissions, SafeAreaView edges"
+        ]
+      }
+    }
+  ]
+}
