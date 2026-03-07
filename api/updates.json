@@ -1,21 +1,44 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.67",
-      "buildNumber": "67",
+      "version": "1.0.68",
+      "buildNumber": "68",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-04",
+      "releaseDate": "2026-03-07",
       "storeUrl": "https://apps.apple.com/app/nomadcore/id6738976881"
     },
     "android": {
-      "version": "1.0.67",
-      "versionCode": "67",
+      "version": "1.0.68",
+      "versionCode": "68",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-04",
+      "releaseDate": "2026-03-07",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcore.app"
     }
   },
   "releases": [
+    {
+      "version": "1.0.68",
+      "buildNumber": "68",
+      "date": "2026-03-07",
+      "critical": false,
+      "highlights": [
+        "Auto-backup and restore encryption keys via server",
+        "Fixed infinite recursion in family_groups INSERT policy",
+        "Encryption key restore before shared data fetch after reinstall"
+      ],
+      "categories": {
+        "features": [
+          "Auto-backup and restore encryption keys via server for seamless reinstall experience"
+        ],
+        "fixes": [
+          "Infinite recursion in family_groups INSERT RLS policy",
+          "Encryption keys now restored before fetching shared data after reinstall",
+          "Re-fetch shared data after server key restore completes",
+          "Hide encryption key warning banner when group no longer exists",
+          "Prevent invite code / key package desync and hide undecryptable locations"
+        ]
+      }
+    },
     {
       "version": "1.0.67",
       "buildNumber": "67",
