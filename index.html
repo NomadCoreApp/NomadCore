@@ -769,7 +769,8 @@
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 16px 24px;
       list-style: none;
     }
     .footer-links a {
@@ -798,6 +799,13 @@
       .features, .spotlight, .problem, .scenarios, .privacy-section, .story, .final-cta {
         padding: 70px 0;
       }
+      .footer-inner { flex-direction: column; }
+      .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 24px;
+      }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -954,7 +962,7 @@
           <h3>Survival Guide</h3>
           <p>1,300+ verified procedures from military, medical, and government sources. Searchable and always offline.</p>
           <div class="feature-screenshot">
-            <img src="images/guide.jpg" alt="Survival guide with categorized procedures and search" loading="lazy">
+            <img src="images/guide2.png" alt="Survival guide with categorized procedures and search" loading="lazy">
           </div>
         </div>
 
@@ -1011,7 +1019,7 @@
         </div>
         <div class="spotlight-image fade-up delay-2">
           <div class="phone-frame">
-            <img src="images/guide.jpg" alt="Survival guide with searchable procedures" loading="lazy">
+            <img src="images/guide2.png" alt="Survival guide with searchable procedures" loading="lazy">
           </div>
         </div>
       </div>
