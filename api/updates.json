@@ -2,14 +2,14 @@
   "latest": {
     "ios": {
       "version": "1.0.68",
-      "buildNumber": "68",
+      "buildNumber": "69",
       "minSupportedBuild": "60",
       "releaseDate": "2026-03-07",
       "storeUrl": "https://apps.apple.com/app/nomadcore/id6738976881"
     },
     "android": {
       "version": "1.0.68",
-      "versionCode": "68",
+      "versionCode": "69",
       "minSupportedBuild": "60",
       "releaseDate": "2026-03-07",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcore.app"
@@ -18,22 +18,26 @@
   "releases": [
     {
       "version": "1.0.68",
-      "buildNumber": "68",
+      "buildNumber": "69",
       "date": "2026-03-07",
       "critical": false,
       "highlights": [
         "Auto-backup and restore encryption keys via server",
-        "Fixed infinite recursion in family_groups INSERT policy",
+        "Profile name now syncs to Family Network groups in real time",
         "Encryption key restore before shared data fetch after reinstall"
       ],
       "categories": {
         "features": [
-          "Auto-backup and restore encryption keys via server for seamless reinstall experience"
+          "Auto-backup and restore encryption keys via server for seamless reinstall experience",
+          "Profile display name syncs to Supabase so group member lists stay current"
         ],
         "fixes": [
           "Infinite recursion in family_groups INSERT RLS policy",
           "Encryption keys now restored before fetching shared data after reinstall",
           "Re-fetch shared data after server key restore completes",
+          "Family Sharing screen reloads groups after profile name change",
+          "Android text clipping on 'Skip for now' button during onboarding",
+          "Backup error now logs actual message instead of [object Object]",
           "Hide encryption key warning banner when group no longer exists",
           "Prevent invite code / key package desync and hide undecryptable locations"
         ]
