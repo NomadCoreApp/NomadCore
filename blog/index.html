@@ -390,6 +390,65 @@
       .blog-hero { padding: 120px 0 40px; }
       .blog-grid { padding: 40px 0 70px; }
     }
+
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius-full);
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+    @media (max-width: 480px) {
+      .newsletter { padding: 60px 0; }
+    }
   </style>
 </head>
 <body>
@@ -512,6 +571,105 @@
           </div>
         </article>
 
+        <article class="blog-card fade-up">
+          <a href="wildfire-evacuation-checklist.html">
+            <img src="../images/blog-wildfire.png" alt="Wildfire evacuation checklist for families" class="blog-card-image" loading="lazy">
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>Mar 10, 2026</span>
+              <span class="reading-time">7 min read</span>
+            </div>
+            <h3><a href="wildfire-evacuation-checklist.html">Wildfire Evacuation: A Family Readiness Checklist</a></h3>
+            <p class="blog-card-excerpt">Wildfires can force evacuation in minutes, not hours. This checklist ensures your family can leave safely with everything that matters.</p>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-1">
+          <a href="severe-storms-tornadoes-guide.html">
+            <img src="../images/blog-storms.png" alt="Severe storm and tornado preparedness guide" class="blog-card-image" loading="lazy">
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>Mar 17, 2026</span>
+              <span class="reading-time">8 min read</span>
+            </div>
+            <h3><a href="severe-storms-tornadoes-guide.html">How to Prepare Your Family for Severe Storms and Tornadoes</a></h3>
+            <p class="blog-card-excerpt">Tornadoes give an average of 13 minutes warning. The difference between safety and disaster comes down to preparation.</p>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-2">
+          <a href="emergency-document-kit.html">
+            <img src="../images/blog-documents.png" alt="Family emergency document kit guide" class="blog-card-image" loading="lazy">
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>Mar 24, 2026</span>
+              <span class="reading-time">7 min read</span>
+            </div>
+            <h3><a href="emergency-document-kit.html">Building a Family Emergency Document Kit</a></h3>
+            <p class="blog-card-excerpt">After a disaster, proving who you are and what you own becomes urgent. Here's how to organize the documents your family can't afford to lose.</p>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-3">
+          <a href="emergency-preparedness-kids.html">
+            <img src="../images/blog-kids.png" alt="Emergency preparedness conversations with kids" class="blog-card-image" loading="lazy">
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>Mar 31, 2026</span>
+              <span class="reading-time">8 min read</span>
+            </div>
+            <h3><a href="emergency-preparedness-kids.html">Emergency Preparedness with Kids: Age-Appropriate Conversations</a></h3>
+            <p class="blog-card-excerpt">Kids handle emergencies better when they understand the plan. Here's how to talk about preparedness at every age — without creating fear.</p>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-4">
+          <a href="shelter-in-place-vs-evacuate.html">
+            <img src="../images/blog-shelter.png" alt="Shelter-in-place vs evacuate decision guide" class="blog-card-image" loading="lazy">
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>Apr 7, 2026</span>
+              <span class="reading-time">7 min read</span>
+            </div>
+            <h3><a href="shelter-in-place-vs-evacuate.html">Shelter-in-Place vs. Evacuate: How to Know Which One to Choose</a></h3>
+            <p class="blog-card-excerpt">When disaster strikes, do you stay or go? The wrong choice can be deadly. Here's a clear framework for making the right call — fast.</p>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-4">
+          <a href="first-15-minutes-emergency.html">
+            <img src="../images/blog-15minutes.png" alt="What to do in the first 15 minutes of any emergency" class="blog-card-image" loading="lazy">
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>Apr 14, 2026</span>
+              <span class="reading-time">6 min read</span>
+            </div>
+            <h3><a href="first-15-minutes-emergency.html">What to Do in the First 15 Minutes of Any Emergency</a></h3>
+            <p class="blog-card-excerpt">The first 15 minutes determine how the rest plays out. Here's a universal action framework that works for any crisis.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday — practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="https://e6529709.sibforms.com/serve/MUIFAJsF5ykTpz6p6Tn-0RlUh83L0INNUWzCfvgBvSmsgXClGBkllRnT66zQkYV0bvHQdRQGkrsIg1Xo1-6q0eqy9T_ciPwxq465Hx4ePgK2F2JTlBXOsClPLdmfidNlrBzpBbUYlIlXR9_ZrQ0JMI4d3RjhIEdYSg-8SyVDTLXRZTlN1FP7TtrFQf21w9803uzpSxaHZJyQhidPMg==" class="btn-subscribe" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
       </div>
     </div>
   </section>
@@ -571,6 +729,7 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
   </script>
 
 </body>
