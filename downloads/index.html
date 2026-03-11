@@ -11,10 +11,10 @@
     gtag('js', new Date());
     gtag('config', 'G-901VG0NQY2');
   </script>
-  <title>Insights & Guides - NomadCore Blog</title>
-  <meta name="description" content="Practical emergency preparedness guides for real families. No jargon, no fear-mongering — just actionable knowledge.">
-  <meta property="og:title" content="Insights & Guides - NomadCore Blog">
-  <meta property="og:description" content="Practical emergency preparedness guides for real families. No jargon, no fear-mongering — just actionable knowledge.">
+  <title>Free Printable Checklists — NomadCore</title>
+  <meta name="description" content="Free printable emergency preparedness checklists for your family. Evacuation plans, document kits, communication templates, and more.">
+  <meta property="og:title" content="Free Printable Checklists — NomadCore">
+  <meta property="og:description" content="Free printable emergency preparedness checklists for your family. Evacuation plans, document kits, communication templates, and more.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nomad-core.com/images/og-homepage.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -230,19 +230,9 @@
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
     }
-    .btn-secondary {
-      background: var(--white);
-      color: var(--gray-700);
-      border: 2px solid var(--gray-200);
-    }
-    .btn-secondary:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      transform: translateY(-2px);
-    }
     .btn svg { width: 20px; height: 20px; }
 
-    /* ===== Blog Hero ===== */
+    /* ===== Downloads Hero ===== */
     .blog-hero {
       padding: 140px 0 60px;
       background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
@@ -261,135 +251,88 @@
       line-height: 1.7;
     }
 
-    /* ===== Blog Grid ===== */
-    .blog-grid {
+    /* ===== Checklist Grid ===== */
+    .checklist-grid {
       padding: 60px 0 100px;
     }
-    .blog-cards {
+    .checklist-cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
-    @media (max-width: 768px) {
-      .blog-cards { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .checklist-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .checklist-cards { grid-template-columns: 1fr; }
     }
 
-    .blog-card {
+    .checklist-card {
       background: var(--white);
       border-radius: var(--radius-lg);
       border: 1px solid var(--gray-100);
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
     }
-    .blog-card:hover {
+    .checklist-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
     }
 
-    .blog-card-image {
+    .checklist-card-accent {
+      height: 4px;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
     }
 
-    .blog-card-body {
-      padding: 24px;
+    .checklist-card-body {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
-    .blog-card-meta {
+    .checklist-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 0.85rem;
-      color: var(--gray-400);
-      margin-bottom: 12px;
+      justify-content: center;
+      margin-bottom: 20px;
     }
-    .blog-card-meta .reading-time {
-      background: var(--blue-light);
-      color: var(--blue);
-      padding: 2px 10px;
-      border-radius: var(--radius-full);
-      font-weight: 500;
-      font-size: 0.8rem;
+    .checklist-card-icon svg {
+      width: 24px;
+      height: 24px;
     }
 
-    .blog-card h3 {
-      font-size: 1.2rem;
+    .checklist-card h3 {
+      font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 10px;
       line-height: 1.4;
-    }
-    .blog-card h3 a {
       color: var(--gray-900);
-      text-decoration: none;
-      transition: color 0.2s;
     }
-    .blog-card h3 a:hover { color: var(--blue); }
 
-    .blog-card-excerpt {
+    .checklist-card-desc {
       font-size: 0.95rem;
       color: var(--gray-500);
       line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
     }
 
-    /* ===== Footer ===== */
-    .footer {
-      padding: 48px 0 32px;
-      background: var(--gray-900);
-      color: rgba(255,255,255,0.5);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    .footer-brand {
-      display: flex;
+    .checklist-card-link {
+      display: inline-flex;
       align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+    .checklist-card:hover .checklist-card-link {
       gap: 10px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: white;
-      margin-bottom: 8px;
-    }
-    .footer-brand .nav-logo-icon {
-      width: 28px;
-      height: 28px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    .footer-links a {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: white; }
-
-    .footer-bottom {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.85rem;
-    }
-    .footer-bottom a { color: rgba(255,255,255,0.4); }
-    .footer-bottom a:hover { color: white; }
-
-    @media (max-width: 480px) {
-      .blog-hero { padding: 120px 0 40px; }
-      .blog-grid { padding: 40px 0 70px; }
     }
 
     /* ===== Quiz CTA ===== */
@@ -506,6 +449,66 @@
     @media (max-width: 480px) {
       .newsletter { padding: 60px 0; }
     }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .blog-hero { padding: 120px 0 40px; }
+      .checklist-grid { padding: 40px 0 70px; }
+    }
   </style>
 </head>
 <body>
@@ -523,7 +526,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="../features/">Features</a></li>
         <li><a href="../index.html#scenarios">Who It's For</a></li>
-        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../blog/">Blog</a></li>
         <li><a href="../updates/">Updates</a></li>
         <li><a href="../index.html#about">About</a></li>
         <li><a href="../index.html#download" class="nav-cta">Download</a></li>
@@ -531,186 +534,83 @@
     </div>
   </nav>
 
-  <!-- Blog Hero -->
+  <!-- Hero -->
   <section class="blog-hero">
     <div class="container">
-      <h1 class="fade-up">Insights and Guides</h1>
-      <p class="fade-up delay-1">Practical emergency preparedness guides for real families. No jargon, no fear-mongering — just actionable knowledge.</p>
+      <h1 class="fade-up">Free Printable Checklists</h1>
+      <p class="fade-up delay-1">Print them. Post them on the fridge. Be ready.</p>
     </div>
   </section>
 
-  <!-- Blog Grid -->
-  <section class="blog-grid">
+  <!-- Checklist Grid -->
+  <section class="checklist-grid">
     <div class="container">
-      <div class="blog-cards">
+      <div class="checklist-cards">
 
-        <article class="blog-card fade-up">
-          <a href="emergency-preparedness-guide.html">
-            <img src="../images/blog-preparedness.png" alt="Emergency preparedness guide for families" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
+        <!-- 1. Family Readiness Checklist -->
+        <div class="checklist-card fade-up">
+          <div class="checklist-card-accent" style="background: #22B8CF;"></div>
+          <div class="checklist-card-body">
+            <div class="checklist-card-icon" style="background: var(--cyan-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#22B8CF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3><a href="emergency-preparedness-guide.html">Emergency Preparedness: A Complete Guide for Families</a></h3>
-            <p class="blog-card-excerpt">Most families are one disaster away from chaos. Not because they don't care — because life is busy. This guide breaks it down into manageable steps.</p>
+            <h3>Family Readiness Checklist</h3>
+            <p class="checklist-card-desc">The complete 34-point family preparedness checklist. Covers emergency plan, supplies, documents, home safety, evacuation, and skills.</p>
+            <a href="family-readiness-checklist.html" class="checklist-card-link" style="color: #22B8CF;">Print this checklist <span>&rarr;</span></a>
           </div>
-        </article>
+        </div>
 
-        <article class="blog-card fade-up delay-1">
-          <a href="72-hour-kit-guide.html">
-            <img src="../images/blog-kit.png" alt="Complete 72-hour kit guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
+        <!-- 2. Wildfire Evacuation Checklist -->
+        <div class="checklist-card fade-up delay-1">
+          <div class="checklist-card-accent" style="background: #EF4444;"></div>
+          <div class="checklist-card-body">
+            <div class="checklist-card-icon" style="background: var(--red-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3><a href="72-hour-kit-guide.html">The Complete 72-Hour Kit Guide</a></h3>
-            <p class="blog-card-excerpt">When disaster strikes, you have minutes — not hours — to grab what you need. Here's how to build a kit that actually works.</p>
+            <h3>Wildfire Evacuation Checklist</h3>
+            <p class="checklist-card-desc">Everything you need before, during, and after a wildfire evacuation. Go-bag essentials, vehicle readiness, and defensible space.</p>
+            <a href="wildfire-evacuation-checklist.html" class="checklist-card-link" style="color: #EF4444;">Print this checklist <span>&rarr;</span></a>
           </div>
-        </article>
+        </div>
 
-        <article class="blog-card fade-up delay-2">
-          <a href="power-outage-guide.html">
-            <img src="../images/blog-outage.png" alt="Power outage survival guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
+        <!-- 3. Emergency Document Kit -->
+        <div class="checklist-card fade-up delay-2">
+          <div class="checklist-card-accent" style="background: #F59E0B;"></div>
+          <div class="checklist-card-body">
+            <div class="checklist-card-icon" style="background: var(--amber-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3><a href="power-outage-guide.html">Power Outage Survival: What to Do When the Lights Go Out</a></h3>
-            <p class="blog-card-excerpt">The U.S. experienced over 1,500 major outages in 2024. The difference between inconvenience and crisis comes down to preparation.</p>
+            <h3>Emergency Document Kit</h3>
+            <p class="checklist-card-desc">Secure every critical document — IDs, insurance, medical records, financial info. Digital and physical backup checklist.</p>
+            <a href="emergency-document-kit.html" class="checklist-card-link" style="color: #F59E0B;">Print this checklist <span>&rarr;</span></a>
           </div>
-        </article>
+        </div>
 
-        <article class="blog-card fade-up delay-3">
-          <a href="water-purification-guide.html">
-            <img src="../images/blog-water.png" alt="Water purification methods guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Jan 23, 2026</span>
-              <span class="reading-time">6 min read</span>
+        <!-- 4. Family Communication Plan -->
+        <div class="checklist-card fade-up delay-3">
+          <div class="checklist-card-accent" style="background: #2E6BD6;"></div>
+          <div class="checklist-card-body">
+            <div class="checklist-card-icon" style="background: var(--blue-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2E6BD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3><a href="water-purification-guide.html">5 Ways to Purify Water in an Emergency</a></h3>
-            <p class="blog-card-excerpt">Not all water is safe to drink. Here are five proven methods — each with different strengths and ideal use cases.</p>
+            <h3>Family Communication Plan</h3>
+            <p class="checklist-card-desc">Fill-in-the-blank template for emergency contacts, meeting points, medical info, evacuation routes, and communication rules.</p>
+            <a href="family-communication-plan.html" class="checklist-card-link" style="color: #2E6BD6;">Print this checklist <span>&rarr;</span></a>
           </div>
-        </article>
+        </div>
 
-        <article class="blog-card fade-up delay-4">
-          <a href="family-communication-plan.html">
-            <img src="../images/blog-communication.png" alt="Family communication plan for emergencies" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Feb 8, 2026</span>
-              <span class="reading-time">7 min read</span>
+        <!-- 5. The First 15 Minutes -->
+        <div class="checklist-card fade-up delay-4">
+          <div class="checklist-card-accent" style="background: #10B981;"></div>
+          <div class="checklist-card-body">
+            <div class="checklist-card-icon" style="background: var(--green-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3><a href="family-communication-plan.html">How to Build a Family Communication Plan for Emergencies</a></h3>
-            <p class="blog-card-excerpt">Cell towers jam. Phones die. Networks overload. A communication plan ensures your family stays connected when it matters most.</p>
+            <h3>The First 15 Minutes</h3>
+            <p class="checklist-card-desc">A minute-by-minute action card for any emergency. Color-coded timeline plus scenario quick-reference for 7 threat types.</p>
+            <a href="first-15-minutes.html" class="checklist-card-link" style="color: #10B981;">Print this checklist <span>&rarr;</span></a>
           </div>
-        </article>
-
-        <article class="blog-card fade-up delay-4">
-          <a href="first-aid-basics-guide.html">
-            <img src="../images/blog-firstaid.png" alt="First aid basics for families" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Feb 8, 2026</span>
-              <span class="reading-time">8 min read</span>
-            </div>
-            <h3><a href="first-aid-basics-guide.html">First Aid Basics Every Family Should Know</a></h3>
-            <p class="blog-card-excerpt">When help is hours away, basic first aid knowledge fills the gap. Here's what to stock, what to do, and what to avoid.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up">
-          <a href="wildfire-evacuation-checklist.html">
-            <img src="../images/blog-wildfire.png" alt="Wildfire evacuation checklist for families" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Mar 10, 2026</span>
-              <span class="reading-time">7 min read</span>
-            </div>
-            <h3><a href="wildfire-evacuation-checklist.html">Wildfire Evacuation: A Family Readiness Checklist</a></h3>
-            <p class="blog-card-excerpt">Wildfires can force evacuation in minutes, not hours. This checklist ensures your family can leave safely with everything that matters.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-1">
-          <a href="severe-storms-tornadoes-guide.html">
-            <img src="../images/blog-storms.png" alt="Severe storm and tornado preparedness guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Mar 17, 2026</span>
-              <span class="reading-time">8 min read</span>
-            </div>
-            <h3><a href="severe-storms-tornadoes-guide.html">How to Prepare Your Family for Severe Storms and Tornadoes</a></h3>
-            <p class="blog-card-excerpt">Tornadoes give an average of 13 minutes warning. The difference between safety and disaster comes down to preparation.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-2">
-          <a href="emergency-document-kit.html">
-            <img src="../images/blog-documents.png" alt="Family emergency document kit guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Mar 24, 2026</span>
-              <span class="reading-time">7 min read</span>
-            </div>
-            <h3><a href="emergency-document-kit.html">Building a Family Emergency Document Kit</a></h3>
-            <p class="blog-card-excerpt">After a disaster, proving who you are and what you own becomes urgent. Here's how to organize the documents your family can't afford to lose.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-3">
-          <a href="emergency-preparedness-kids.html">
-            <img src="../images/blog-kids.png" alt="Emergency preparedness conversations with kids" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Mar 31, 2026</span>
-              <span class="reading-time">8 min read</span>
-            </div>
-            <h3><a href="emergency-preparedness-kids.html">Emergency Preparedness with Kids: Age-Appropriate Conversations</a></h3>
-            <p class="blog-card-excerpt">Kids handle emergencies better when they understand the plan. Here's how to talk about preparedness at every age — without creating fear.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-4">
-          <a href="shelter-in-place-vs-evacuate.html">
-            <img src="../images/blog-shelter.png" alt="Shelter-in-place vs evacuate decision guide" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Apr 7, 2026</span>
-              <span class="reading-time">7 min read</span>
-            </div>
-            <h3><a href="shelter-in-place-vs-evacuate.html">Shelter-in-Place vs. Evacuate: How to Know Which One to Choose</a></h3>
-            <p class="blog-card-excerpt">When disaster strikes, do you stay or go? The wrong choice can be deadly. Here's a clear framework for making the right call — fast.</p>
-          </div>
-        </article>
-
-        <article class="blog-card fade-up delay-4">
-          <a href="first-15-minutes-emergency.html">
-            <img src="../images/blog-15minutes.png" alt="What to do in the first 15 minutes of any emergency" class="blog-card-image" loading="lazy">
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span>Apr 14, 2026</span>
-              <span class="reading-time">6 min read</span>
-            </div>
-            <h3><a href="first-15-minutes-emergency.html">What to Do in the First 15 Minutes of Any Emergency</a></h3>
-            <p class="blog-card-excerpt">The first 15 minutes determine how the rest plays out. Here's a universal action framework that works for any crisis.</p>
-          </div>
-        </article>
+        </div>
 
       </div>
     </div>

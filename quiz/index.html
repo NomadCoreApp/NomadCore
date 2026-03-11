@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>How Prepared Is Your Family? - Free Readiness Quiz | NomadCore</title>
+  <meta name="description" content="Take this 2-minute quiz to find out how prepared your family is for emergencies. Get a personalized readiness score and action plan.">
+  <meta property="og:title" content="How Prepared Is Your Family? Take the Quiz">
+  <meta property="og:description" content="2-minute quiz with a personalized readiness score and action plan for your family.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomad-core.com/quiz/">
+  <meta property="og:image" content="https://nomad-core.com/images/og-quiz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/quiz/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--gray-50);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Animations */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-in { opacity: 0; transition: opacity 0.4s ease-out; }
+    .fade-in.visible { opacity: 1; }
+
+    /* ===== Navigation ===== */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--gray-900); text-decoration: none; }
+    .nav-logo:hover { color: var(--gray-900); }
+    .nav-logo-icon { width: 32px; height: 32px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+    .nav-cta { background: var(--blue); color: white !important; padding: 8px 20px; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; transition: background 0.2s, transform 0.2s; }
+    .nav-cta:hover { background: var(--navy); color: white !important; transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--gray-700); margin: 6px 0; transition: transform 0.3s, opacity 0.3s; border-radius: 2px; }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); padding: 16px 24px 24px; gap: 4px; border-bottom: 1px solid var(--gray-100); box-shadow: var(--shadow-lg); }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Quiz Container ===== */
+    .quiz-wrapper {
+      margin-top: 64px;
+      min-height: calc(100vh - 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+    .quiz-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      max-width: 640px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* ===== Intro Screen ===== */
+    .quiz-intro {
+      text-align: center;
+      padding: 48px 40px;
+    }
+    .quiz-intro-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--cyan-light);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .quiz-intro-icon svg { color: var(--cyan); }
+    .quiz-intro h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .quiz-intro p {
+      color: var(--gray-500);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .quiz-intro .quiz-meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 24px 0 32px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+    }
+    .quiz-intro .quiz-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-start {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--blue);
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-start:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Progress Bar ===== */
+    .quiz-progress {
+      padding: 20px 40px 0;
+      background: var(--white);
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .progress-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-400);
+    }
+    .progress-bar {
+      height: 6px;
+      background: var(--gray-100);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    /* ===== Question Screen ===== */
+    .quiz-question {
+      padding: 32px 40px 40px;
+    }
+    .question-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+    .cat-plan { background: var(--blue-light); color: var(--blue); }
+    .cat-supplies { background: var(--green-light); color: var(--green); }
+    .cat-docs { background: var(--amber-light); color: var(--amber); }
+    .cat-skills { background: var(--cyan-light); color: var(--cyan); }
+    .cat-home { background: var(--red-light); color: var(--red); }
+
+    .question-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .question-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 20px;
+      background: var(--gray-50);
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--gray-700);
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .option-btn:hover {
+      border-color: var(--blue);
+      background: var(--blue-light);
+      color: var(--gray-900);
+    }
+    .option-btn.selected {
+      border-color: var(--blue);
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 600;
+    }
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      transition: all 0.2s;
+    }
+    .option-btn:hover .option-letter,
+    .option-btn.selected .option-letter {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+    }
+
+    /* ===== Navigation Buttons ===== */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px 32px;
+    }
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      color: var(--gray-400);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .btn-back:hover { color: var(--gray-700); }
+    .btn-back svg { width: 18px; height: 18px; }
+    .btn-next {
+      padding: 12px 32px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-next:hover { background: var(--navy); transform: translateY(-1px); }
+    .btn-next:disabled {
+      background: var(--gray-200);
+      color: var(--gray-400);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ===== Results Screen ===== */
+    .quiz-results {
+      text-align: center;
+      padding: 48px 40px;
+    }
+    .result-score-ring {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 24px;
+    }
+    .result-score-ring svg {
+      width: 160px;
+      height: 160px;
+      transform: rotate(-90deg);
+    }
+    .ring-bg {
+      fill: none;
+      stroke: var(--gray-100);
+      stroke-width: 10;
+    }
+    .ring-fill {
+      fill: none;
+      stroke-width: 10;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1.2s ease-out;
+    }
+    .result-score-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .result-score-number .score-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1;
+    }
+    .result-score-number .score-label {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    .result-tier {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .result-description {
+      color: var(--gray-500);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    /* ===== Action Items ===== */
+    .result-actions {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .result-actions h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--gray-900);
+    }
+    .action-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      transition: transform 0.2s;
+    }
+    .action-item:hover { transform: translateX(4px); }
+    .action-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .action-item a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--gray-900);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .action-item a:hover { color: var(--blue); }
+    .action-item p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ===== Share & CTA ===== */
+    .result-share {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .share-btn:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+    .share-btn svg { width: 16px; height: 16px; }
+
+    .result-cta {
+      background: var(--gray-900);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .result-cta h3 {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .result-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .btn-download {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-download:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+
+    .btn-retake {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.2s;
+    }
+    .btn-retake:hover { color: var(--gray-700); }
+
+    /* ===== Screen visibility ===== */
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    /* ===== Email Capture ===== */
+    .result-email-capture {
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .result-email-capture h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 6px;
+    }
+    .result-email-capture > p {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .email-form {
+      display: flex;
+      gap: 8px;
+      max-width: 400px;
+      margin: 0 auto 12px;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input[type="email"]:focus {
+      border-color: var(--blue);
+    }
+    .email-form button {
+      padding: 12px 24px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .email-form button:hover {
+      background: var(--navy);
+    }
+    .newsletter-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+    .newsletter-check input[type="checkbox"] {
+      accent-color: var(--blue);
+      width: 16px;
+      height: 16px;
+    }
+    .email-success {
+      display: none;
+      text-align: center;
+    }
+    .email-success .success-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .email-success .success-icon svg { color: var(--green); }
+    .email-success h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .email-success p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+    .email-success a {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .checklist-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 8px;
+    }
+    .checklist-link:hover { color: var(--blue); }
+    @media (max-width: 480px) {
+      .email-form { flex-direction: column; }
+      .email-form button { width: 100%; }
+    }
+
+    /* ===== Newsletter ===== */
+    .newsletter { padding: 60px 0; background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%); color: white; }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-icon { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 { font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 800; color: white; margin-bottom: 10px; border: none; padding: 0; }
+    .newsletter p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.7; margin-bottom: 24px; }
+    .newsletter .btn-subscribe { display: inline-block; padding: 14px 32px; border-radius: 9999px; background: var(--cyan); color: var(--gray-900); font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .newsletter .btn-subscribe:hover { background: white; color: var(--gray-900); transform: translateY(-2px); }
+    .newsletter-note { margin-top: 12px; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+    /* ===== Footer ===== */
+    .footer { padding: 48px 0 32px; background: var(--gray-900); color: rgba(255,255,255,0.5); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.1rem; color: white; margin-bottom: 8px; }
+    .footer-brand .nav-logo-icon { width: 28px; height: 28px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; gap: 24px; }
+      .footer-links { flex-direction: column; gap: 12px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 480px) {
+      .quiz-intro { padding: 32px 24px; }
+      .quiz-progress { padding: 16px 24px 0; }
+      .quiz-question { padding: 24px 24px 32px; }
+      .quiz-nav { padding: 0 24px 24px; }
+      .quiz-results { padding: 32px 24px; }
+      .result-share { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Quiz -->
+  <div class="quiz-wrapper">
+    <div class="quiz-card">
+
+      <!-- Intro Screen -->
+      <div class="screen active" id="screen-intro">
+        <div class="quiz-intro">
+          <div class="quiz-intro-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h1>How Prepared Is Your Family?</h1>
+          <p>Answer 10 quick questions to get your family's readiness score and a personalized action plan.</p>
+          <div class="quiz-meta">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2 minutes
+            </span>
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              10 questions
+            </span>
+          </div>
+          <button class="btn-start" onclick="startQuiz()">Start the quiz</button>
+        </div>
+      </div>
+
+      <!-- Question Screen -->
+      <div class="screen" id="screen-question">
+        <div class="quiz-progress">
+          <div class="progress-header">
+            <span class="progress-label" id="progressLabel">Question 1 of 10</span>
+            <span class="progress-label" id="progressPercent">10%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 10%"></div>
+          </div>
+        </div>
+        <div class="quiz-question" id="questionContent">
+          <!-- Populated by JS -->
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-back" id="btnBack" onclick="prevQuestion()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+          <button class="btn-next" id="btnNext" onclick="nextQuestion()" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results Screen -->
+      <div class="screen" id="screen-results">
+        <div class="quiz-results" id="resultsContent">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Stay prepared. Stay informed.</h2>
+        <p>Get weekly preparedness guides, safety tips, and NomadCore updates — straight to your inbox. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Nav =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => { toggle.classList.toggle('active'); links.classList.toggle('open'); });
+    links.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { toggle.classList.remove('active'); links.classList.remove('open'); }); });
+
+    // ===== Fade-up =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ===== Quiz Data =====
+    const questions = [
+      {
+        category: 'plan',
+        catLabel: 'Emergency Plan',
+        catClass: 'cat-plan',
+        text: 'Does your family have a written emergency plan that everyone knows about?',
+        options: [
+          { text: 'Yes — written down, and we\'ve reviewed it together', points: 3 },
+          { text: 'We\'ve discussed it, but nothing is written', points: 2 },
+          { text: 'I\'ve thought about it, but the family hasn\'t talked about it', points: 1 },
+          { text: 'No plan at all', points: 0 }
+        ]
+      },
+      {
+        category: 'plan',
+        catLabel: 'Meeting Point',
+        catClass: 'cat-plan',
+        text: 'Does your family have a designated meeting point if you get separated during an emergency?',
+        options: [
+          { text: 'Yes — a specific location everyone knows', points: 3 },
+          { text: 'We\'ve mentioned it but never confirmed a spot', points: 1 },
+          { text: 'No meeting point set', points: 0 }
+        ]
+      },
+      {
+        category: 'supplies',
+        catLabel: 'Emergency Supplies',
+        catClass: 'cat-supplies',
+        text: 'Do you have an emergency kit or go-bag packed and ready?',
+        options: [
+          { text: 'Yes — stocked, checked within the last 6 months', points: 3 },
+          { text: 'We have some supplies, but not organized into a kit', points: 2 },
+          { text: 'There\'s a half-packed bag somewhere...', points: 1 },
+          { text: 'No emergency kit', points: 0 }
+        ]
+      },
+      {
+        category: 'supplies',
+        catLabel: 'Water & Food',
+        catClass: 'cat-supplies',
+        text: 'How many days of water and non-perishable food could your household survive on right now?',
+        options: [
+          { text: '3+ days (1 gallon per person per day)', points: 3 },
+          { text: '1-2 days', points: 2 },
+          { text: 'Less than a day', points: 1 },
+          { text: 'I haven\'t thought about it', points: 0 }
+        ]
+      },
+      {
+        category: 'docs',
+        catLabel: 'Critical Documents',
+        catClass: 'cat-docs',
+        text: 'Are your family\'s critical documents (IDs, insurance, medical records) backed up and accessible in an emergency?',
+        options: [
+          { text: 'Yes — digital copies stored securely + physical copies in a go-bag', points: 3 },
+          { text: 'Digital copies exist, but scattered across devices', points: 2 },
+          { text: 'Only physical originals — no backups', points: 1 },
+          { text: 'I\'d have to search for them', points: 0 }
+        ]
+      },
+      {
+        category: 'plan',
+        catLabel: 'Communication',
+        catClass: 'cat-plan',
+        text: 'Does your family have an out-of-area emergency contact who everyone can reach independently?',
+        options: [
+          { text: 'Yes — name and number memorized or saved on every phone', points: 3 },
+          { text: 'We have someone in mind, but not everyone has the number', points: 1 },
+          { text: 'No designated contact', points: 0 }
+        ]
+      },
+      {
+        category: 'home',
+        catLabel: 'Home Safety',
+        catClass: 'cat-home',
+        text: 'Do you know how to shut off your home\'s gas, water, and electricity in an emergency?',
+        options: [
+          { text: 'Yes — I know where the shutoffs are and how to operate them', points: 3 },
+          { text: 'I know where some of them are', points: 2 },
+          { text: 'I\'d have to figure it out', points: 0 }
+        ]
+      },
+      {
+        category: 'skills',
+        catLabel: 'First Aid',
+        catClass: 'cat-skills',
+        text: 'Could someone in your household perform basic first aid (stop bleeding, CPR, treat burns)?',
+        options: [
+          { text: 'Yes — trained and have a first aid kit', points: 3 },
+          { text: 'Some training, but it\'s been a while', points: 2 },
+          { text: 'We have a kit but no training', points: 1 },
+          { text: 'No training and no kit', points: 0 }
+        ]
+      },
+      {
+        category: 'home',
+        catLabel: 'Evacuation',
+        catClass: 'cat-home',
+        text: 'Do you have a planned evacuation route from your home (and an alternate)?',
+        options: [
+          { text: 'Yes — primary and alternate routes identified', points: 3 },
+          { text: 'I have a general idea of where I\'d go', points: 2 },
+          { text: 'I\'d just follow traffic or GPS', points: 1 },
+          { text: 'Haven\'t thought about it', points: 0 }
+        ]
+      },
+      {
+        category: 'skills',
+        catLabel: 'Practice',
+        catClass: 'cat-skills',
+        text: 'When was the last time your family practiced or discussed your emergency plan?',
+        options: [
+          { text: 'Within the last 3 months', points: 3 },
+          { text: 'Within the last year', points: 2 },
+          { text: 'More than a year ago', points: 1 },
+          { text: 'We\'ve never practiced', points: 0 }
+        ]
+      }
+    ];
+
+    const maxScore = questions.reduce((sum, q) => sum + Math.max(...q.options.map(o => o.points)), 0);
+    let currentQuestion = 0;
+    let answers = new Array(questions.length).fill(-1);
+
+    // ===== Tier Definitions =====
+    const tiers = [
+      {
+        min: 0, max: 0.25,
+        name: 'Just Getting Started',
+        color: 'var(--red)',
+        colorLight: 'var(--red-light)',
+        description: 'You have some work to do — but the good news is that the biggest improvements come from the first few steps. Even 30 minutes of planning this week will make a real difference.',
+        actions: [
+          { icon: '1', bg: 'var(--red-light)', label: 'Create a family emergency plan', desc: 'Sit down for 15 minutes and answer: Where do we meet? Who do we call? What do we grab?', link: '../blog/family-communication-plan.html' },
+          { icon: '2', bg: 'var(--amber-light)', label: 'Start a basic emergency kit', desc: 'Water, flashlight, first aid kit, phone charger, copies of IDs. Start small.', link: '../blog/emergency-document-kit.html' },
+          { icon: '3', bg: 'var(--blue-light)', label: 'Download NomadCore', desc: 'Get your plan, contacts, documents, and procedures in one offline app.', link: '../index.html#download' }
+        ]
+      },
+      {
+        min: 0.25, max: 0.5,
+        name: 'Building a Foundation',
+        color: 'var(--amber)',
+        colorLight: 'var(--amber-light)',
+        description: 'You\'ve taken some important first steps. Now it\'s about filling gaps and making sure your whole family is on the same page.',
+        actions: [
+          { icon: '1', bg: 'var(--amber-light)', label: 'Protect your critical documents', desc: 'Digitize IDs, insurance cards, and medical records. Store them encrypted.', link: '../blog/emergency-document-kit.html' },
+          { icon: '2', bg: 'var(--blue-light)', label: 'Set a family meeting point', desc: 'Pick a specific spot and make sure every family member knows it by heart.', link: '../blog/family-communication-plan.html' },
+          { icon: '3', bg: 'var(--green-light)', label: 'Practice your plan', desc: 'Walk through your evacuation route and review your plan as a family.', link: '../blog/first-15-minutes-emergency.html' }
+        ]
+      },
+      {
+        min: 0.5, max: 0.75,
+        name: 'Well Prepared',
+        color: 'var(--blue)',
+        colorLight: 'var(--blue-light)',
+        description: 'Your family is ahead of most. You have the basics covered — now focus on the details that matter when minutes count.',
+        actions: [
+          { icon: '1', bg: 'var(--blue-light)', label: 'Learn the first 15 minutes', desc: 'The universal action framework that works for any emergency scenario.', link: '../blog/first-15-minutes-emergency.html' },
+          { icon: '2', bg: 'var(--cyan-light)', label: 'Know when to stay vs. go', desc: 'Not every emergency means evacuation. Learn the decision framework.', link: '../blog/shelter-in-place-vs-evacuate.html' },
+          { icon: '3', bg: 'var(--green-light)', label: 'Involve the whole family', desc: 'Age-appropriate conversations and practice drills make readiness stick.', link: '../blog/emergency-preparedness-kids.html' }
+        ]
+      },
+      {
+        min: 0.75, max: 1.01,
+        name: 'Highly Prepared',
+        color: 'var(--green)',
+        colorLight: 'var(--green-light)',
+        description: 'Your family is in excellent shape. You\'ve planned, prepared, and practiced. Keep it up — and help others get started too.',
+        actions: [
+          { icon: '1', bg: 'var(--green-light)', label: 'Review and refresh seasonally', desc: 'Check supplies, update contacts, and rotate perishable items.', link: '../blog/wildfire-evacuation-checklist.html' },
+          { icon: '2', bg: 'var(--cyan-light)', label: 'Prepare for specific threats', desc: 'Customize your plan for your region\'s top risks — wildfire, tornado, flood.', link: '../blog/severe-storms-tornadoes-guide.html' },
+          { icon: '3', bg: 'var(--blue-light)', label: 'Share what you know', desc: 'Help a neighbor or friend get started. Preparedness is a community effort.', link: '../blog/' }
+        ]
+      }
+    ];
+
+    // ===== Quiz Logic =====
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function startQuiz() {
+      gtag('event', 'quiz_start', { event_category: 'engagement' });
+      showScreen('screen-question');
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = questions[currentQuestion];
+      const pct = Math.round(((currentQuestion + 1) / questions.length) * 100);
+
+      document.getElementById('progressLabel').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+      document.getElementById('progressPercent').textContent = `${pct}%`;
+      document.getElementById('progressFill').style.width = `${pct}%`;
+
+      const letters = ['A', 'B', 'C', 'D'];
+      let html = `
+        <span class="question-category ${q.catClass}">${q.catLabel}</span>
+        <h2 class="question-text">${q.text}</h2>
+        <div class="question-options">
+      `;
+      q.options.forEach((opt, i) => {
+        const selected = answers[currentQuestion] === i ? ' selected' : '';
+        html += `
+          <button class="option-btn${selected}" onclick="selectOption(${i})">
+            <span class="option-letter">${letters[i]}</span>
+            <span>${opt.text}</span>
+          </button>
+        `;
+      });
+      html += '</div>';
+      document.getElementById('questionContent').innerHTML = html;
+
+      document.getElementById('btnBack').style.visibility = currentQuestion === 0 ? 'hidden' : 'visible';
+      document.getElementById('btnNext').disabled = answers[currentQuestion] === -1;
+      document.getElementById('btnNext').textContent = currentQuestion === questions.length - 1 ? 'See my results' : 'Next';
+    }
+
+    function selectOption(index) {
+      answers[currentQuestion] = index;
+      document.querySelectorAll('.option-btn').forEach((btn, i) => {
+        btn.classList.toggle('selected', i === index);
+      });
+      document.getElementById('btnNext').disabled = false;
+    }
+
+    function nextQuestion() {
+      if (answers[currentQuestion] === -1) return;
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        renderQuestion();
+      }
+    }
+
+    function showResults() {
+      const score = answers.reduce((sum, ans, i) => sum + questions[i].options[ans].points, 0);
+      const pct = score / maxScore;
+      const displayPct = Math.round(pct * 100);
+
+      const tier = tiers.find(t => pct >= t.min && pct < t.max) || tiers[tiers.length - 1];
+
+      gtag('event', 'quiz_complete', {
+        event_category: 'engagement',
+        event_label: tier.name,
+        value: displayPct
+      });
+
+      // SVG ring math
+      const radius = 65;
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - (pct * circumference);
+
+      let html = `
+        <div class="result-score-ring">
+          <svg viewBox="0 0 160 160">
+            <circle class="ring-bg" cx="80" cy="80" r="${radius}"/>
+            <circle class="ring-fill" cx="80" cy="80" r="${radius}"
+              stroke="${tier.color}"
+              stroke-dasharray="${circumference}"
+              stroke-dashoffset="${circumference}"
+              id="ringFill"/>
+          </svg>
+          <div class="result-score-number">
+            <div class="score-value">${displayPct}%</div>
+            <div class="score-label">ready</div>
+          </div>
+        </div>
+
+        <h2 class="result-tier" style="color: ${tier.color}">${tier.name}</h2>
+        <p class="result-description">${tier.description}</p>
+
+        <div class="result-actions">
+          <h3>Your top 3 next steps:</h3>
+          ${tier.actions.map(a => `
+            <a href="${a.link}" class="action-item" style="text-decoration: none;">
+              <div class="action-icon" style="background: ${a.bg};">${a.icon}</div>
+              <div>
+                <span style="font-weight: 600; font-size: 0.95rem; color: var(--gray-900); display: block; margin-bottom: 2px;">${a.label}</span>
+                <p>${a.desc}</p>
+              </div>
+            </a>
+          `).join('')}
+        </div>
+
+        <div class="result-share">
+          <button class="share-btn" onclick="shareResults('twitter', ${displayPct}, '${tier.name}')">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Share on X
+          </button>
+          <button class="share-btn" onclick="copyResults(${displayPct}, '${tier.name}')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy result
+          </button>
+        </div>
+
+        <div class="result-email-capture" id="emailCapture">
+          <h3>Get your free printable readiness checklist</h3>
+          <p>A fridge-worthy family preparedness checklist based on your results. No account required.</p>
+          <div class="email-form" id="emailForm">
+            <input type="email" id="captureEmail" placeholder="your@email.com" aria-label="Email address">
+            <button onclick="submitEmail()">Send it</button>
+          </div>
+          <label class="newsletter-check">
+            <input type="checkbox" id="newsletterCheck" checked>
+            Also send me weekly preparedness guides
+          </label>
+          <a href="../downloads/family-readiness-checklist.html" target="_blank" class="checklist-link">
+            or download directly without email &rarr;
+          </a>
+          <div class="email-success" id="emailSuccess">
+            <div class="success-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Check your inbox!</h4>
+            <p>Your checklist is on the way.</p>
+            <a href="../downloads/family-readiness-checklist.html" target="_blank">Download it now &rarr;</a>
+          </div>
+        </div>
+
+        <div class="result-cta">
+          <h3>Your family's emergency plan, in your pocket.</h3>
+          <p>Offline maps. Encrypted documents. Family sharing. 1,300+ procedures.</p>
+          <a href="../index.html#download" class="btn-download">Download NomadCore</a>
+        </div>
+
+        <button class="btn-retake" onclick="retakeQuiz()">Retake the quiz</button>
+      `;
+
+      document.getElementById('resultsContent').innerHTML = html;
+      showScreen('screen-results');
+
+      // Animate ring
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.getElementById('ringFill').style.strokeDashoffset = offset;
+        });
+      });
+    }
+
+    function shareResults(platform, score, tier) {
+      const text = `My family's emergency readiness score: ${score}% (${tier}). How prepared is yours?`;
+      const url = 'https://nomad-core.com/quiz/';
+      if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+      }
+      gtag('event', 'quiz_share', { event_category: 'engagement', event_label: platform });
+    }
+
+    function copyResults(score, tier) {
+      const text = `My family's emergency readiness score: ${score}% (${tier}). How prepared is yours? Take the quiz: https://nomad-core.com/quiz/`;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target.closest('.share-btn');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+        setTimeout(() => { btn.innerHTML = original; }, 2000);
+      });
+      gtag('event', 'quiz_share', { event_category: 'engagement', event_label: 'copy' });
+    }
+
+    function retakeQuiz() {
+      currentQuestion = 0;
+      answers = new Array(questions.length).fill(-1);
+      showScreen('screen-intro');
+      gtag('event', 'quiz_retake', { event_category: 'engagement' });
+    }
+
+    function submitEmail() {
+      const email = document.getElementById('captureEmail').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('captureEmail').style.borderColor = 'var(--red)';
+        return;
+      }
+
+      const wantsNewsletter = document.getElementById('newsletterCheck').checked;
+
+      // Submit to Brevo via hidden iframe
+      const brevoUrl = 'https://e6529709.sibforms.com/serve/MUIFAJsF5ykTpz6p6Tn-0RlUh83L0INNUWzCfvgBvSmsgXClGBkllRnT66zQkYV0bvHQdRQGkrsIg1Xo1-6q0eqy9T_ciPwxq465Hx4ePgK2F2JTlBXOsClPLdmfidNlrBzpBbUYlIlXR9_ZrQ0JMI4d3RjhIEdYSg-8SyVDTLXRZTlN1FP7TtrFQf21w9803uzpSxaHZJyQhidPMg==';
+
+      if (wantsNewsletter) {
+        window.open(brevoUrl, '_blank', 'width=600,height=700');
+      }
+
+      // Show success state
+      document.getElementById('emailForm').style.display = 'none';
+      document.querySelector('.newsletter-check').style.display = 'none';
+      document.querySelector('.checklist-link').style.display = 'none';
+      document.getElementById('emailSuccess').style.display = 'block';
+
+      gtag('event', 'quiz_email_capture', {
+        event_category: 'conversion',
+        event_label: wantsNewsletter ? 'with_newsletter' : 'checklist_only'
+      });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('screen-question').classList.contains('active')) return;
+      const q = questions[currentQuestion];
+      if (e.key >= '1' && e.key <= String(q.options.length)) {
+        selectOption(parseInt(e.key) - 1);
+      }
+      if (e.key === 'Enter' && answers[currentQuestion] !== -1) {
+        nextQuestion();
+      }
+    });
+  </script>
+
+</body>
+</html>

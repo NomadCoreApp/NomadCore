@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildfire Evacuation Checklist — NomadCore</title>
+    <meta name="description" content="A printable wildfire evacuation checklist. Prepare before fire season with defensible space, go-bag essentials, vehicle readiness, and evacuation steps.">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #334155;
+            background: #f1f5f9;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .screen-header {
+            background: #0F172A;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .screen-header h1 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: #22B8CF;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .print-btn:hover {
+            background: #1ba3b8;
+        }
+
+        .checklist-body {
+            padding: 24px 28px 16px;
+        }
+
+        .checklist-header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .checklist-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 2px;
+        }
+
+        .checklist-subtitle {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Two-column grid for categories */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 24px;
+        }
+
+        .category {
+            break-inside: avoid;
+        }
+
+        .category-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #22B8CF;
+            padding: 2px 0 2px 8px;
+            margin-bottom: 4px;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 2px 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        .checkbox {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #94a3b8;
+            border-radius: 2px;
+            margin-top: 1.5px;
+        }
+
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .footer strong {
+            color: #0F172A;
+        }
+
+        .footer a {
+            color: #22B8CF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Print styles --- */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .screen-header {
+                display: none !important;
+            }
+
+            .page-wrapper {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .checklist-body {
+                padding: 12px 16px 8px;
+            }
+
+            .checklist-header {
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .checklist-title {
+                font-size: 20px;
+            }
+
+            .checklist-grid {
+                gap: 10px 20px;
+            }
+
+            .category-header {
+                font-size: 11px;
+                margin-bottom: 3px;
+            }
+
+            .checklist li {
+                padding: 1.5px 0;
+                font-size: 10.5px;
+            }
+
+            .checkbox {
+                width: 11px;
+                height: 11px;
+            }
+
+            .footer {
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            @page {
+                margin: 0.4in;
+                size: letter;
+            }
+        }
+
+        /* Mobile: single column */
+        @media screen and (max-width: 600px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            .checklist-body {
+                padding: 20px;
+            }
+        }
+
+        /* Screen shadow */
+        @media screen {
+            .page-wrapper {
+                margin-top: 24px;
+                margin-bottom: 48px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+                overflow: hidden;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-901VG0NQY2');
+    </script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="screen-header">
+        <h1>NomadCore</h1>
+        <button class="print-btn" onclick="gtag('event', 'checklist_print', { event_category: 'conversion', event_label: 'wildfire-evacuation-checklist' }); window.print()">Print this checklist</button>
+    </div>
+
+    <div class="checklist-body">
+        <div class="checklist-header">
+            <h2 class="checklist-title">Wildfire Evacuation Checklist</h2>
+            <p class="checklist-subtitle">Complete before fire season. Review annually.</p>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="category">
+                <h3 class="category-header">Before Fire Season</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Create defensible space (30ft around home)</span></li>
+                    <li><div class="checkbox"></div><span>Clear gutters, roof, and deck of leaves/debris</span></li>
+                    <li><div class="checkbox"></div><span>Trim tree branches within 10ft of chimney</span></li>
+                    <li><div class="checkbox"></div><span>Store important documents in fireproof safe or digitally</span></li>
+                    <li><div class="checkbox"></div><span>Know 2+ evacuation routes from your neighborhood</span></li>
+                    <li><div class="checkbox"></div><span>Identify rally point for family outside evacuation zone</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Go-Bag Essentials</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>N95 masks for each family member</span></li>
+                    <li><div class="checkbox"></div><span>Prescription medications (7-day supply)</span></li>
+                    <li><div class="checkbox"></div><span>Phone chargers and portable battery pack</span></li>
+                    <li><div class="checkbox"></div><span>Cash and credit cards</span></li>
+                    <li><div class="checkbox"></div><span>Copies of IDs, insurance, and medical records</span></li>
+                    <li><div class="checkbox"></div><span>Change of clothes and sturdy shoes per person</span></li>
+                    <li><div class="checkbox"></div><span>Water bottles and non-perishable snacks</span></li>
+                    <li><div class="checkbox"></div><span>Pet carrier, food, and leash</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">When Evacuation Is Ordered</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Load go-bag into vehicle immediately</span></li>
+                    <li><div class="checkbox"></div><span>Close all windows, doors, and vents</span></li>
+                    <li><div class="checkbox"></div><span>Turn off gas at the meter</span></li>
+                    <li><div class="checkbox"></div><span>Leave lights on (helps firefighters see in smoke)</span></li>
+                    <li><div class="checkbox"></div><span>Move flammable furniture away from windows</span></li>
+                    <li><div class="checkbox"></div><span>Take irreplaceable items (photos, heirlooms)</span></li>
+                    <li><div class="checkbox"></div><span>Text your out-of-area emergency contact</span></li>
+                    <li><div class="checkbox"></div><span>Check on neighbors who may need help</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Vehicle Readiness</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Gas tank kept above half at all times</span></li>
+                    <li><div class="checkbox"></div><span>Engine air filter clean</span></li>
+                    <li><div class="checkbox"></div><span>Emergency kit in trunk (water, blanket, flashlight)</span></li>
+                    <li><div class="checkbox"></div><span>Paper maps of evacuation routes (GPS may fail)</span></li>
+                    <li><div class="checkbox"></div><span>Car seats / boosters installed and ready</span></li>
+                    <li><div class="checkbox"></div><span>Charger cable in vehicle</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">After Evacuation</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Do NOT return until authorities say it's safe</span></li>
+                    <li><div class="checkbox"></div><span>Document damage with photos for insurance</span></li>
+                    <li><div class="checkbox"></div><span>Check for hotspots and embers before entering home</span></li>
+                    <li><div class="checkbox"></div><span>Test water before drinking (contamination risk)</span></li>
+                    <li><div class="checkbox"></div><span>Contact insurance company within 24 hours</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div><strong>NomadCore</strong> &mdash; Your family's emergency plan, in your pocket. <a href="https://nomad-core.com">nomad-core.com</a></div>
+        <div>Read the full guide: <a href="https://nomad-core.com/blog/wildfire-evacuation-checklist.html">nomad-core.com/blog/wildfire-evacuation-checklist.html</a></div>
+    </div>
+</div>
+
+</body>
+</html>

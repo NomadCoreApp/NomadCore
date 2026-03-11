@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First 15 Minutes — NomadCore</title>
+    <meta name="description" content="A printable quick-reference action card for the first 15 minutes of any emergency. Time-coded steps to protect your family when every second counts.">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #334155;
+            background: #f1f5f9;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .screen-header {
+            background: #0F172A;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .screen-header h1 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: #22B8CF;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .print-btn:hover {
+            background: #1ba3b8;
+        }
+
+        .checklist-body {
+            padding: 24px 28px 16px;
+        }
+
+        .checklist-header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .checklist-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 2px;
+        }
+
+        .checklist-subtitle {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Two-column grid for categories */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 24px;
+        }
+
+        .category {
+            break-inside: avoid;
+        }
+
+        .category-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #22B8CF;
+            padding: 2px 0 2px 8px;
+            margin-bottom: 4px;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 2px 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        .checkbox {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #94a3b8;
+            border-radius: 2px;
+            margin-top: 1.5px;
+        }
+
+        /* Scenario items without checkboxes */
+        .scenario-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 2px 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        .scenario-item strong {
+            color: #0F172A;
+        }
+
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .footer strong {
+            color: #0F172A;
+        }
+
+        .footer a {
+            color: #22B8CF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Print styles --- */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .screen-header {
+                display: none !important;
+            }
+
+            .page-wrapper {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .checklist-body {
+                padding: 12px 16px 8px;
+            }
+
+            .checklist-header {
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .checklist-title {
+                font-size: 20px;
+            }
+
+            .checklist-grid {
+                gap: 10px 20px;
+            }
+
+            .category-header {
+                font-size: 11px;
+                margin-bottom: 3px;
+            }
+
+            .checklist li {
+                padding: 1.5px 0;
+                font-size: 10.5px;
+            }
+
+            .scenario-item {
+                padding: 1.5px 0;
+                font-size: 10.5px;
+            }
+
+            .checkbox {
+                width: 11px;
+                height: 11px;
+            }
+
+            .footer {
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            @page {
+                margin: 0.4in;
+                size: letter;
+            }
+        }
+
+        /* Mobile: single column */
+        @media screen and (max-width: 600px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            .checklist-body {
+                padding: 20px;
+            }
+        }
+
+        /* Screen shadow */
+        @media screen {
+            .page-wrapper {
+                margin-top: 24px;
+                margin-bottom: 48px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+                overflow: hidden;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-901VG0NQY2');
+    </script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="screen-header">
+        <h1>NomadCore</h1>
+        <button class="print-btn" onclick="gtag('event', 'checklist_print', { event_category: 'conversion', event_label: 'first-15-minutes' }); window.print()">Print this card</button>
+    </div>
+
+    <div class="checklist-body">
+        <div class="checklist-header">
+            <h2 class="checklist-title">The First 15 Minutes</h2>
+            <p class="checklist-subtitle">A universal action framework for any emergency.</p>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="category">
+                <h3 class="category-header" style="border-left-color: #EF4444">Minutes 0&ndash;1: Stop &amp; Assess</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Am I safe right now?</span></li>
+                    <li><div class="checkbox"></div><span>Is anyone injured?</span></li>
+                    <li><div class="checkbox"></div><span>Do we stay or go?</span></li>
+                    <li><div class="checkbox"></div><span>Identify the threat type</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header" style="border-left-color: #F59E0B">Minutes 1&ndash;3: Protect Life</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Move to safety (away from threat)</span></li>
+                    <li><div class="checkbox"></div><span>Account for all family members</span></li>
+                    <li><div class="checkbox"></div><span>Administer first aid if needed</span></li>
+                    <li><div class="checkbox"></div><span>Protect airway (smoke, dust, chemicals)</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header" style="border-left-color: #2E6BD6">Minutes 3&ndash;5: Communicate</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Text (don&rsquo;t call) &mdash; &ldquo;I&rsquo;m OK&rdquo; or &ldquo;Need help&rdquo;</span></li>
+                    <li><div class="checkbox"></div><span>Contact out-of-area relay person</span></li>
+                    <li><div class="checkbox"></div><span>Check on children / elderly / pets</span></li>
+                    <li><div class="checkbox"></div><span>Monitor emergency alerts (radio, phone)</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header" style="border-left-color: #22B8CF">Minutes 5&ndash;10: Stabilize</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Grab go-bag if evacuating</span></li>
+                    <li><div class="checkbox"></div><span>Shut off gas / water / electricity if needed</span></li>
+                    <li><div class="checkbox"></div><span>Take medications, shoes, keys, phone charger</span></li>
+                    <li><div class="checkbox"></div><span>Lock up if leaving; open garage for access if staying</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header" style="border-left-color: #10B981">Minutes 10&ndash;15: Document &amp; Help</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Photograph damage (insurance)</span></li>
+                    <li><div class="checkbox"></div><span>Check on neighbors</span></li>
+                    <li><div class="checkbox"></div><span>Monitor official channels for updates</span></li>
+                    <li><div class="checkbox"></div><span>Begin longer-term plan (shelter, supplies, routes)</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Scenario Quick-Reference</h3>
+                <ul class="checklist">
+                    <li class="scenario-item"><span><strong>Fire:</strong> GET OUT. Low to ground. Don&rsquo;t open hot doors.</span></li>
+                    <li class="scenario-item"><span><strong>Earthquake:</strong> DROP, COVER, HOLD. Stay indoors until shaking stops.</span></li>
+                    <li class="scenario-item"><span><strong>Tornado:</strong> Interior room, lowest floor. Cover your head.</span></li>
+                    <li class="scenario-item"><span><strong>Flood:</strong> Move to higher ground. Never drive through water.</span></li>
+                    <li class="scenario-item"><span><strong>Active threat:</strong> RUN &rarr; HIDE &rarr; FIGHT (last resort)</span></li>
+                    <li class="scenario-item"><span><strong>Power outage:</strong> Check breakers. Conserve phone battery. Open fridge minimally.</span></li>
+                    <li class="scenario-item"><span><strong>Chemical spill:</strong> Seal room. Wet towel under door. Wait for all-clear.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div><strong>NomadCore</strong> &mdash; Your family's emergency plan, in your pocket. <a href="https://nomad-core.com">nomad-core.com</a></div>
+        <div>Read the full guide: <a href="https://nomad-core.com/blog/first-15-minutes-emergency.html">nomad-core.com/blog/first-15-minutes-emergency.html</a></div>
+    </div>
+</div>
+
+</body>
+</html>

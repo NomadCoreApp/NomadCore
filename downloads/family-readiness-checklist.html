@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Readiness Checklist — NomadCore</title>
+    <meta name="description" content="A printable family emergency readiness checklist. Cover your emergency plan, supplies, documents, home safety, evacuation, and skills.">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #334155;
+            background: #f1f5f9;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .screen-header {
+            background: #0F172A;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .screen-header h1 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: #22B8CF;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .print-btn:hover {
+            background: #1ba3b8;
+        }
+
+        .checklist-body {
+            padding: 24px 28px 16px;
+        }
+
+        .checklist-header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .checklist-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 2px;
+        }
+
+        .checklist-subtitle {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Two-column grid for categories */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 24px;
+        }
+
+        .category {
+            break-inside: avoid;
+        }
+
+        .category-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #22B8CF;
+            padding: 2px 0 2px 8px;
+            margin-bottom: 4px;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 2px 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        .checkbox {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #94a3b8;
+            border-radius: 2px;
+            margin-top: 1.5px;
+        }
+
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .footer strong {
+            color: #0F172A;
+        }
+
+        .footer a {
+            color: #22B8CF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Print styles --- */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .screen-header {
+                display: none !important;
+            }
+
+            .page-wrapper {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .checklist-body {
+                padding: 12px 16px 8px;
+            }
+
+            .checklist-header {
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .checklist-title {
+                font-size: 20px;
+            }
+
+            .checklist-grid {
+                gap: 10px 20px;
+            }
+
+            .category-header {
+                font-size: 11px;
+                margin-bottom: 3px;
+            }
+
+            .checklist li {
+                padding: 1.5px 0;
+                font-size: 10.5px;
+            }
+
+            .checkbox {
+                width: 11px;
+                height: 11px;
+            }
+
+            .footer {
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            @page {
+                margin: 0.4in;
+                size: letter;
+            }
+        }
+
+        /* Mobile: single column */
+        @media screen and (max-width: 600px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            .checklist-body {
+                padding: 20px;
+            }
+        }
+
+        /* Screen shadow */
+        @media screen {
+            .page-wrapper {
+                margin-top: 24px;
+                margin-bottom: 48px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+                overflow: hidden;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-901VG0NQY2');
+    </script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="screen-header">
+        <h1>NomadCore</h1>
+        <button class="print-btn" onclick="gtag('event', 'checklist_print', { event_category: 'conversion', event_label: 'family-readiness-checklist' }); window.print()">Print this checklist</button>
+    </div>
+
+    <div class="checklist-body">
+        <div class="checklist-header">
+            <h2 class="checklist-title">Family Readiness Checklist</h2>
+            <p class="checklist-subtitle">Check off each item as you complete it. Review every 6 months.</p>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="category">
+                <h3 class="category-header">Emergency Plan</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Written emergency plan that all family members know</span></li>
+                    <li><div class="checkbox"></div><span>Designated family meeting point (near home)</span></li>
+                    <li><div class="checkbox"></div><span>Secondary meeting point (outside neighborhood)</span></li>
+                    <li><div class="checkbox"></div><span>Out-of-area emergency contact assigned</span></li>
+                    <li><div class="checkbox"></div><span>Emergency contact numbers memorized or on cards</span></li>
+                    <li><div class="checkbox"></div><span>Plan reviewed/practiced in the last 6 months</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Emergency Supplies</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Go-bag packed and accessible</span></li>
+                    <li><div class="checkbox"></div><span>3+ days of water (1 gallon/person/day)</span></li>
+                    <li><div class="checkbox"></div><span>3+ days of non-perishable food</span></li>
+                    <li><div class="checkbox"></div><span>Flashlight + extra batteries</span></li>
+                    <li><div class="checkbox"></div><span>First aid kit (stocked and current)</span></li>
+                    <li><div class="checkbox"></div><span>Battery-powered or hand-crank radio</span></li>
+                    <li><div class="checkbox"></div><span>Phone charger (portable battery pack)</span></li>
+                    <li><div class="checkbox"></div><span>Cash in small bills</span></li>
+                    <li><div class="checkbox"></div><span>Prescription medications (7-day supply)</span></li>
+                    <li><div class="checkbox"></div><span>Supplies rotated/checked in last 6 months</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Critical Documents</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>IDs (driver's license, passport) &mdash; copies secured</span></li>
+                    <li><div class="checkbox"></div><span>Insurance policies &mdash; copies secured</span></li>
+                    <li><div class="checkbox"></div><span>Medical records &amp; prescriptions &mdash; copies secured</span></li>
+                    <li><div class="checkbox"></div><span>Financial account information &mdash; copies secured</span></li>
+                    <li><div class="checkbox"></div><span>Property deeds / lease agreements &mdash; copies secured</span></li>
+                    <li><div class="checkbox"></div><span>Digital backup stored securely (encrypted)</span></li>
+                    <li><div class="checkbox"></div><span>Physical copies in go-bag or fireproof safe</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Home Safety</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Know how to shut off gas</span></li>
+                    <li><div class="checkbox"></div><span>Know how to shut off water main</span></li>
+                    <li><div class="checkbox"></div><span>Know how to shut off electricity (breaker panel)</span></li>
+                    <li><div class="checkbox"></div><span>Smoke detectors tested (monthly)</span></li>
+                    <li><div class="checkbox"></div><span>Fire extinguisher accessible and current</span></li>
+                    <li><div class="checkbox"></div><span>Evacuation route from every room identified</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Evacuation Readiness</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Primary evacuation route planned</span></li>
+                    <li><div class="checkbox"></div><span>Alternate evacuation route planned</span></li>
+                    <li><div class="checkbox"></div><span>Destination identified (hotel, family, shelter)</span></li>
+                    <li><div class="checkbox"></div><span>Vehicle gas tank kept above half</span></li>
+                    <li><div class="checkbox"></div><span>Pet supplies and carrier ready</span></li>
+                    <li><div class="checkbox"></div><span>Important items pre-staged near exit</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Skills &amp; Training</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Someone trained in basic first aid</span></li>
+                    <li><div class="checkbox"></div><span>Someone trained in CPR</span></li>
+                    <li><div class="checkbox"></div><span>Kids know how to call 911</span></li>
+                    <li><div class="checkbox"></div><span>Family has practiced an emergency drill</span></li>
+                    <li><div class="checkbox"></div><span>Know when to shelter-in-place vs. evacuate</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div><strong>NomadCore</strong> &mdash; Your family's emergency plan, in your pocket. <a href="https://nomad-core.com">nomad-core.com</a></div>
+        <div>Take the quiz: <a href="https://nomad-core.com/quiz/">nomad-core.com/quiz</a></div>
+    </div>
+</div>
+
+</body>
+</html>

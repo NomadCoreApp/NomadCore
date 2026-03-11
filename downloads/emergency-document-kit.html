@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Document Kit — NomadCore</title>
+    <meta name="description" content="A printable emergency document kit checklist. Secure copies of your critical family documents — IDs, financial records, insurance, medical records, and more.">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #334155;
+            background: #f1f5f9;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .screen-header {
+            background: #0F172A;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .screen-header h1 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: #22B8CF;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .print-btn:hover {
+            background: #1ba3b8;
+        }
+
+        .checklist-body {
+            padding: 24px 28px 16px;
+        }
+
+        .checklist-header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .checklist-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 2px;
+        }
+
+        .checklist-subtitle {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Two-column grid for categories */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 24px;
+        }
+
+        .category {
+            break-inside: avoid;
+        }
+
+        .category-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #22B8CF;
+            padding: 2px 0 2px 8px;
+            margin-bottom: 4px;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 2px 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        .checkbox {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #94a3b8;
+            border-radius: 2px;
+            margin-top: 1.5px;
+        }
+
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .footer strong {
+            color: #0F172A;
+        }
+
+        .footer a {
+            color: #22B8CF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Print styles --- */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .screen-header {
+                display: none !important;
+            }
+
+            .page-wrapper {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .checklist-body {
+                padding: 12px 16px 8px;
+            }
+
+            .checklist-header {
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .checklist-title {
+                font-size: 20px;
+            }
+
+            .checklist-grid {
+                gap: 10px 20px;
+            }
+
+            .category-header {
+                font-size: 11px;
+                margin-bottom: 3px;
+            }
+
+            .checklist li {
+                padding: 1.5px 0;
+                font-size: 10.5px;
+            }
+
+            .checkbox {
+                width: 11px;
+                height: 11px;
+            }
+
+            .footer {
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            @page {
+                margin: 0.4in;
+                size: letter;
+            }
+        }
+
+        /* Mobile: single column */
+        @media screen and (max-width: 600px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            .checklist-body {
+                padding: 20px;
+            }
+        }
+
+        /* Screen shadow */
+        @media screen {
+            .page-wrapper {
+                margin-top: 24px;
+                margin-bottom: 48px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+                overflow: hidden;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-901VG0NQY2');
+    </script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="screen-header">
+        <h1>NomadCore</h1>
+        <button class="print-btn" onclick="gtag('event', 'checklist_print', { event_category: 'conversion', event_label: 'emergency-document-kit' }); window.print()">Print this checklist</button>
+    </div>
+
+    <div class="checklist-body">
+        <div class="checklist-header">
+            <h2 class="checklist-title">Emergency Document Kit</h2>
+            <p class="checklist-subtitle">Secure copies of everything that matters. Update every 6 months.</p>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="category">
+                <h3 class="category-header">Personal Identification</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Driver's license / state ID &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Passport &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Social Security cards &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Birth certificates &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Marriage / divorce certificates &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Adoption / custody papers &mdash; copy secured</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Financial Records</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Bank account numbers and contact info</span></li>
+                    <li><div class="checkbox"></div><span>Credit card numbers and company phone numbers</span></li>
+                    <li><div class="checkbox"></div><span>Investment / retirement account details</span></li>
+                    <li><div class="checkbox"></div><span>Mortgage / loan documents</span></li>
+                    <li><div class="checkbox"></div><span>Tax returns (last 2 years)</span></li>
+                    <li><div class="checkbox"></div><span>Safe deposit box location and key info</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Insurance Policies</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Homeowner's / renter's insurance &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Auto insurance &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Health insurance cards &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Life insurance &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Policy numbers and agent contact info written down</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Medical Records</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Current prescriptions list with dosages</span></li>
+                    <li><div class="checkbox"></div><span>Allergies and medical conditions documented</span></li>
+                    <li><div class="checkbox"></div><span>Doctor and pharmacy contact information</span></li>
+                    <li><div class="checkbox"></div><span>Vaccination records</span></li>
+                    <li><div class="checkbox"></div><span>Medical power of attorney</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Property &amp; Legal</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Property deed / lease agreement &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Vehicle titles &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Will / trust documents &mdash; copy secured</span></li>
+                    <li><div class="checkbox"></div><span>Power of attorney documents</span></li>
+                    <li><div class="checkbox"></div><span>Pet ownership / vaccination records</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Digital Backup</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>All documents scanned to digital format</span></li>
+                    <li><div class="checkbox"></div><span>Stored in encrypted cloud backup or app</span></li>
+                    <li><div class="checkbox"></div><span>USB drive copy in fireproof safe or go-bag</span></li>
+                    <li><div class="checkbox"></div><span>Backup updated within last 6 months</span></li>
+                    <li><div class="checkbox"></div><span>Shared access with trusted family member</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div><strong>NomadCore</strong> &mdash; Your family's emergency plan, in your pocket. <a href="https://nomad-core.com">nomad-core.com</a></div>
+        <div>Read the full guide: <a href="https://nomad-core.com/blog/emergency-document-kit.html">nomad-core.com/blog/emergency-document-kit.html</a></div>
+    </div>
+</div>
+
+</body>
+</html>
