@@ -1,21 +1,40 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.68",
-      "buildNumber": "69",
+      "version": "1.0.70",
+      "buildNumber": "70",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-07",
+      "releaseDate": "2026-03-11",
       "storeUrl": "https://apps.apple.com/app/nomadcore/id6738976881"
     },
     "android": {
-      "version": "1.0.68",
-      "versionCode": "69",
+      "version": "1.0.70",
+      "versionCode": "70",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-07",
+      "releaseDate": "2026-03-11",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.70",
+      "buildNumber": "70",
+      "date": "2026-03-11",
+      "critical": false,
+      "highlights": [
+        "Removed unused packages that injected unnecessary Android permissions",
+        "Light/dark theme support for onboarding profile screen",
+        "Improved Android birth date picker UX with spinner mode"
+      ],
+      "categories": {
+        "fixes": [
+          "Removed expo-sensors (ACTIVITY_RECOGNITION permission), expo-audio, expo-network, expo-status-bar — all unused",
+          "PersonalProfileOnboarding now uses theme system for proper light/dark mode support",
+          "Android birth date picker uses spinner mode for better year selection UX",
+          "Removed stale RevenueCat reference from privacy policy"
+        ]
+      }
+    },
     {
       "version": "1.0.68",
       "buildNumber": "69",
