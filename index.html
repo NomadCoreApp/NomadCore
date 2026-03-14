@@ -367,6 +367,14 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     }
 
+    /* ===== Why It Matters ===== */
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 480px) {
+      .why-grid { grid-template-columns: 1fr !important; }
+    }
+
     /* ===== Shared Section Styles ===== */
     .section-label {
       display: inline-block;
@@ -1186,6 +1194,45 @@
           <div class="stat-number">0</div>
           <div class="stat-label">Data collected</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section class="why-it-matters" style="padding: 80px 0; background: var(--gray-50); border-top: 1px solid var(--gray-100);">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <span class="section-label fade-up">Why It Matters</span>
+        <h2 class="section-title fade-up delay-1">The systems you depend on are thinner than you think</h2>
+        <p class="section-subtitle fade-up delay-2" style="margin-bottom: 40px;">You don't need to prepare for the apocalypse. You need to cover the gap between when something goes wrong and when help arrives.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 900px; margin: 0 auto;" class="why-grid">
+        <div class="fade-up" style="text-align: center; padding: 24px 16px;">
+          <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--amber); margin-bottom: 4px;">72 hrs</div>
+          <div style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500; margin-bottom: 8px;">FEMA's minimum</div>
+          <p style="font-size: 0.88rem; color: var(--gray-500); line-height: 1.5;">Every household should sustain itself for 3 days without outside help.</p>
+        </div>
+        <div class="fade-up delay-1" style="text-align: center; padding: 24px 16px;">
+          <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--red); margin-bottom: 4px;">3 days</div>
+          <div style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500; margin-bottom: 8px;">Store inventory</div>
+          <p style="font-size: 0.88rem; color: var(--gray-500); line-height: 1.5;">The average grocery store's total stock at normal demand. Storm forecast? Hours.</p>
+        </div>
+        <div class="fade-up delay-2" style="text-align: center; padding: 24px 16px;">
+          <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--blue); margin-bottom: 4px;">4–8 hrs</div>
+          <div style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500; margin-bottom: 8px;">Tower backup</div>
+          <p style="font-size: 0.88rem; color: var(--gray-500); line-height: 1.5;">Most cell towers run on batteries that last hours, not days.</p>
+        </div>
+        <div class="fade-up delay-3" style="text-align: center; padding: 24px 16px;">
+          <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--green); margin-bottom: 4px;">~$100</div>
+          <div style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500; margin-bottom: 8px;">To close the gap</div>
+          <p style="font-size: 0.88rem; color: var(--gray-500); line-height: 1.5;">Water, food, light, and a plan. One afternoon, under a hundred dollars.</p>
+        </div>
+      </div>
+      <div class="fade-up delay-4" style="text-align: center; margin-top: 32px;">
+        <a href="blog/72-hour-gap.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem; font-weight: 600; color: var(--blue);">
+          Read: The 72-Hour Gap
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
       </div>
     </div>
   </section>

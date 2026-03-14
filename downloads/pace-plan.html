@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family PACE Plan — NomadCore</title>
+    <meta name="description" content="A printable PACE plan template for families. Fill in your Primary, Alternate, Contingency, and Emergency communication methods, contacts, and meeting points.">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #334155;
+            background: #f1f5f9;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .screen-header {
+            background: #0F172A;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .screen-header h1 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: #22B8CF;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .print-btn:hover {
+            background: #1ba3b8;
+        }
+
+        .checklist-body {
+            padding: 24px 28px 16px;
+        }
+
+        .checklist-header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .checklist-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 2px;
+        }
+
+        .checklist-subtitle {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* PACE tier layout */
+        .pace-tiers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .pace-tier {
+            border-radius: 6px;
+            padding: 12px 14px;
+            break-inside: avoid;
+        }
+
+        .pace-tier-p {
+            background: #ecfdf5;
+            border-left: 4px solid #10B981;
+        }
+        .pace-tier-a {
+            background: #ebf2ff;
+            border-left: 4px solid #2E6BD6;
+        }
+        .pace-tier-c {
+            background: #fff8e6;
+            border-left: 4px solid #F59E0B;
+        }
+        .pace-tier-e {
+            background: #fef2f2;
+            border-left: 4px solid #EF4444;
+        }
+
+        .pace-tier-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .pace-tier-desc {
+            font-size: 10.5px;
+            color: #64748b;
+            margin-bottom: 6px;
+            font-style: italic;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 2px 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        .checkbox {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #94a3b8;
+            border-radius: 2px;
+            margin-top: 1.5px;
+        }
+
+        /* Two-column grid for bottom sections */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 24px;
+        }
+
+        .category {
+            break-inside: avoid;
+        }
+
+        .category-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #22B8CF;
+            padding: 2px 0 2px 8px;
+            margin-bottom: 4px;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 16px 0;
+        }
+
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .footer strong {
+            color: #0F172A;
+        }
+
+        .footer a {
+            color: #22B8CF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Print styles --- */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .screen-header {
+                display: none !important;
+            }
+
+            .page-wrapper {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .checklist-body {
+                padding: 12px 16px 8px;
+            }
+
+            .checklist-header {
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .checklist-title {
+                font-size: 20px;
+            }
+
+            .pace-tiers {
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+
+            .pace-tier {
+                padding: 10px 12px;
+            }
+
+            .pace-tier-label {
+                font-size: 11px;
+                margin-bottom: 4px;
+            }
+
+            .pace-tier-desc {
+                font-size: 9.5px;
+                margin-bottom: 4px;
+            }
+
+            .checklist-grid {
+                gap: 10px 20px;
+            }
+
+            .category-header {
+                font-size: 11px;
+                margin-bottom: 3px;
+            }
+
+            .checklist li {
+                padding: 1.5px 0;
+                font-size: 10.5px;
+            }
+
+            .checkbox {
+                width: 11px;
+                height: 11px;
+            }
+
+            .footer {
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            @page {
+                margin: 0.4in;
+                size: letter;
+            }
+        }
+
+        /* Mobile: single column */
+        @media screen and (max-width: 600px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            .checklist-body {
+                padding: 20px;
+            }
+        }
+
+        /* Screen shadow */
+        @media screen {
+            .page-wrapper {
+                margin-top: 24px;
+                margin-bottom: 48px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+                overflow: hidden;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-901VG0NQY2');
+    </script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="screen-header">
+        <h1>NomadCore</h1>
+        <button class="print-btn" onclick="gtag('event', 'checklist_print', { event_category: 'conversion', event_label: 'pace-plan' }); window.print()">Print this plan</button>
+    </div>
+
+    <div class="checklist-body">
+        <div class="checklist-header">
+            <h2 class="checklist-title">Family PACE Plan</h2>
+            <p class="checklist-subtitle">If your first method fails, move to the next tier. Fill in, share with everyone, and review every 6 months.</p>
+        </div>
+
+        <div class="pace-tiers">
+            <div class="pace-tier pace-tier-p">
+                <div class="pace-tier-label">P &mdash; Primary (everyday method)</div>
+                <div class="pace-tier-desc">Your default, first-try communication method.</div>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Method: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Family group chat or number: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>All family members have each other's numbers saved</span></li>
+                </ul>
+            </div>
+
+            <div class="pace-tier pace-tier-a">
+                <div class="pace-tier-label">A &mdash; Alternate (different path, same infrastructure)</div>
+                <div class="pace-tier-desc">Uses technology but a different route &mdash; try when calls are jammed.</div>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Method: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Out-of-state contact name: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Phone: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Relationship: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>This person knows they are our relay contact</span></li>
+                    <li><div class="checkbox"></div><span>This person has every family member's phone number</span></li>
+                </ul>
+            </div>
+
+            <div class="pace-tier pace-tier-c">
+                <div class="pace-tier-label">C &mdash; Contingency (completely different system)</div>
+                <div class="pace-tier-desc">Doesn't depend on cell networks at all.</div>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Method: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Walkie-talkie channel / tone: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Landline number (neighbor/work): ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Known Wi-Fi location nearby: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Equipment stored and batteries checked</span></li>
+                </ul>
+            </div>
+
+            <div class="pace-tier pace-tier-e">
+                <div class="pace-tier-label">E &mdash; Emergency (no technology required)</div>
+                <div class="pace-tier-desc">Works when everything electronic fails. Pre-agreed actions only.</div>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Near-home meeting point: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Out-of-neighborhood meeting point: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Note-leaving spot (e.g., front door): ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>All family members know routes to both meeting points</span></li>
+                    <li><div class="checkbox"></div><span>Kids have practiced walking to the near-home point</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="checklist-grid">
+            <div class="category">
+                <h3 class="category-header">Key Contacts</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Parent/Guardian 1: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Phone: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Work address: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Parent/Guardian 2: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Phone: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Work address: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Local backup contact: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Phone: ___________________________</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">School / Daycare</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>School name: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Phone: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Emergency pickup person: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Daycare name: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Phone: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>School reunification procedure reviewed</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Medical Info</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Allergies: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Medications: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Doctor: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Insurance ID: ___________________________</span></li>
+                    <li><div class="checkbox"></div><span>Poison Control: 1-800-222-1222</span></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3 class="category-header">Maintenance</h3>
+                <ul class="checklist">
+                    <li><div class="checkbox"></div><span>Wallet cards made for each child</span></li>
+                    <li><div class="checkbox"></div><span>Copy posted on fridge or bulletin board</span></li>
+                    <li><div class="checkbox"></div><span>Copy in each go-bag and vehicle</span></li>
+                    <li><div class="checkbox"></div><span>Digital copy in NomadCore (works offline)</span></li>
+                    <li><div class="checkbox"></div><span>Next review date: ______ / ______ / ______</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div><strong>NomadCore</strong> &mdash; Your family's emergency plan, in your pocket. <a href="https://nomad-core.com">nomad-core.com</a></div>
+        <div>Read the full guide: <a href="https://nomad-core.com/blog/pace-plan-guide.html">nomad-core.com/blog/pace-plan-guide.html</a></div>
+    </div>
+</div>
+
+</body>
+</html>

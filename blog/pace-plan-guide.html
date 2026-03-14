@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>What Is a PACE Plan — And Why Your Family Needs One - NomadCore Blog</title>
+  <meta name="description" content="A PACE plan gives your family four layers of communication backup — Primary, Alternate, Contingency, Emergency — so you're never stuck with a single point of failure when disaster strikes.">
+  <meta property="og:title" content="What Is a PACE Plan — And Why Your Family Needs One">
+  <meta property="og:description" content="A PACE plan gives your family four layers of communication backup — Primary, Alternate, Contingency, Emergency — so you're never stuck with a single point of failure when disaster strikes.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://nomad-core.com/images/blog-pace.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* PACE tier cards */
+    .pace-tier {
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+      border-left: 4px solid var(--blue);
+    }
+    .pace-tier.tier-p { border-left-color: var(--green); }
+    .pace-tier.tier-a { border-left-color: var(--blue); }
+    .pace-tier.tier-c { border-left-color: var(--amber); }
+    .pace-tier.tier-e { border-left-color: var(--red); }
+    .pace-tier h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .pace-tier p {
+      margin-bottom: 12px;
+    }
+    .pace-tier ul {
+      margin-bottom: 0;
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+    /* ===== Quiz CTA ===== */
+    .quiz-cta-inline {
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      text-align: center;
+    }
+    .quiz-cta-inline h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .quiz-cta-inline p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .btn-quiz {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gray-900);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-quiz:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      color: white;
+    }
+    .btn-quiz svg { width: 18px; height: 18px; }
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      border: none;
+      padding: 0;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <span>Mar 13, 2026</span>
+        <span class="reading-time">8 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">What Is a PACE Plan — And Why Your Family Needs One</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-pace.png" alt="Family PACE plan for emergency communication">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>Picture this: a severe thunderstorm rolls through your area on a Tuesday afternoon. Your spouse is at work downtown. Your kids are at two different schools. You're at home when the power goes out. You grab your phone to text everyone — but the messages won't send. You try calling. Nothing. The cell tower nearest you has lost power, and everyone in the county is trying to reach someone at the same time.</p>
+
+    <p>Now what?</p>
+
+    <p>If you're like most families, this is where the plan falls apart — because the plan was just "call each other." And when calling doesn't work, there's no Plan B.</p>
+
+    <p>That's exactly the problem a PACE plan solves.</p>
+
+    <hr>
+
+    <h2>What Is a PACE Plan?</h2>
+
+    <p>PACE is a simple framework for building layers of backup into any important system. The acronym stands for four tiers:</p>
+
+    <ul>
+      <li><strong>P</strong> — Primary</li>
+      <li><strong>A</strong> — Alternate</li>
+      <li><strong>C</strong> — Contingency</li>
+      <li><strong>E</strong> — Emergency</li>
+    </ul>
+
+    <p>The idea is straightforward: if your first method fails, you automatically move to the second. If that fails, you move to the third. And if <em>everything</em> goes sideways, you still have one last option that doesn't depend on technology, infrastructure, or luck.</p>
+
+    <p>The concept was originally developed for communication planning in high-stakes environments, but there's nothing complicated or specialized about it. It's just structured common sense. And it's remarkably useful for families.</p>
+
+    <blockquote>
+      <p>Think of it like this: you probably wouldn't drive across the country with no spare tire, no roadside assistance, and no idea where the nearest gas station is. A PACE plan is that same kind of layered thinking — applied to how your family stays connected when things go wrong.</p>
+    </blockquote>
+
+    <hr>
+
+    <h2>Why One Communication Method Isn't Enough</h2>
+
+    <p>Most of us rely on a single point of contact: our cell phone. It's so reliable in daily life that we forget how fragile it actually is.</p>
+
+    <p>Here's what can knock out your phone — partially or completely — in a matter of minutes:</p>
+
+    <ul>
+      <li><strong>Network congestion.</strong> After the 2011 Virginia earthquake, cell networks along the entire East Coast were jammed for hours. Millions of people couldn't make a single call.</li>
+      <li><strong>Power outages.</strong> Cell towers run on backup batteries, but most only last 4 to 8 hours. Extended outages knock towers offline entirely.</li>
+      <li><strong>Physical damage.</strong> Hurricanes, tornadoes, and ice storms can take down towers, fiber lines, and power substations in one sweep.</li>
+      <li><strong>Battery drain.</strong> Your phone burns through its battery faster when searching for a weak or missing signal — dying at the worst possible moment.</li>
+      <li><strong>Internet-dependent apps.</strong> WhatsApp, iMessage, and Messenger all need data. If the network is overloaded, they fail just like a phone call.</li>
+    </ul>
+
+    <p>None of this means your phone is useless. It means your phone can't be your <em>only</em> method. One is none. Two is one. Four is a PACE plan.</p>
+
+    <hr>
+
+    <h2>The Four Tiers — Explained for Families</h2>
+
+    <p>Let's walk through each tier with practical examples. As you read, think about what would work for <em>your</em> family — your daily routines, where your kids go to school, and what resources you already have.</p>
+
+    <div class="pace-tier tier-p">
+      <h3>P — Primary: Your Everyday Method</h3>
+      <p>This is whatever your family already uses on a normal day. It should be the fastest, most familiar way to reach each other.</p>
+      <ul>
+        <li><strong>Cell phone call or text.</strong> For most families, this is it. You call, they pick up. Simple.</li>
+        <li><strong>Family group chat.</strong> A shared iMessage or WhatsApp thread where everyone checks in.</li>
+      </ul>
+      <p><strong>When it fails:</strong> Network congestion, tower outage, dead battery, phone lost or damaged.</p>
+    </div>
+
+    <div class="pace-tier tier-a">
+      <h3>A — Alternate: A Different Path on the Same Infrastructure</h3>
+      <p>The Alternate still uses technology, but it takes a different route. It's your "try this next" option — something that works when voice calls are jammed but the underlying network is still partially functional.</p>
+      <ul>
+        <li><strong>SMS text messages.</strong> If your Primary is a phone call, switch to texting. Texts use far less bandwidth and often get through when calls can't.</li>
+        <li><strong>Email.</strong> Sends in small packets and queues for delivery. It may arrive late, but it often arrives.</li>
+        <li><strong>An out-of-state contact.</strong> Long-distance calls frequently work when local networks are overloaded. Designate someone — an aunt in another state, a college friend across the country — as your family's relay point. Everyone calls or texts <em>that</em> person to check in.</li>
+      </ul>
+      <p><strong>When it fails:</strong> Total network outage, internet backbone damage, extended power loss across a region.</p>
+    </div>
+
+    <div class="pace-tier tier-c">
+      <h3>C — Contingency: A Completely Different System</h3>
+      <p>Now we step away from cell networks entirely. The Contingency uses a fundamentally different way to communicate — one that doesn't depend on your phone carrier staying online.</p>
+      <ul>
+        <li><strong>Landline telephone.</strong> Copper landlines draw power from the phone company's central office, which has its own backup generators. They often work when everything else is dark.</li>
+        <li><strong>FRS walkie-talkies.</strong> Cheap, license-free, and work within a 1- to 2-mile range. Perfect if your family is separated by a few blocks. Keep a pair in a kitchen drawer and one in each car.</li>
+        <li><strong>Wi-Fi calling from a different location.</strong> If your cell tower is down but a coffee shop two blocks away has working Wi-Fi, you may be able to call over Wi-Fi instead.</li>
+        <li><strong>Social media check-in.</strong> Facebook Safety Check and similar tools can broadcast "I'm safe" to many people at once — if you can get any data connection.</li>
+      </ul>
+      <p><strong>When it fails:</strong> Widespread infrastructure destruction, multi-day power outage, no access to any electronic device.</p>
+    </div>
+
+    <div class="pace-tier tier-e">
+      <h3>E — Emergency: No Technology Required</h3>
+      <p>This is your last resort — and it's designed to work when <em>nothing</em> electronic does. It relies on pre-agreed actions and physical locations, not devices.</p>
+      <ul>
+        <li><strong>Pre-designated meeting points.</strong> A specific spot near your home (the neighbor's mailbox, the end of the block) and a second spot outside your neighborhood (a library, a church, a park). Everyone knows: if we can't reach each other by any means, we go <em>there</em>.</li>
+        <li><strong>Physical notes.</strong> Leave a message taped to your front door or at the meeting point: "Gone to Mom's. Kids with me. 3:15 PM Tuesday." A piece of paper and a marker work when satellites don't.</li>
+        <li><strong>Neighborhood check-in.</strong> Walk to a neighbor's house. Ask if they've heard from anyone. In a true grid-down scenario, human-to-human communication is the oldest and most reliable network there is.</li>
+      </ul>
+      <p><strong>When it fails:</strong> It doesn't — as long as everyone knows the plan ahead of time.</p>
+    </div>
+
+    <hr>
+
+    <h2>A Sample PACE Plan for a Typical Family</h2>
+
+    <p>Here's what a completed PACE plan might look like for a family of four — two parents, two kids in elementary school:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Method</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Primary</strong></td>
+          <td>Cell phone call</td>
+          <td>Call spouse first, then check in with school</td>
+        </tr>
+        <tr>
+          <td><strong>Alternate</strong></td>
+          <td>Text + out-of-state relay</td>
+          <td>Text the family group chat; if no reply, text Aunt Lisa in Colorado</td>
+        </tr>
+        <tr>
+          <td><strong>Contingency</strong></td>
+          <td>FRS walkie-talkies</td>
+          <td>Channel 7, tone 15. One radio at home, one in each car, one with the neighbor</td>
+        </tr>
+        <tr>
+          <td><strong>Emergency</strong></td>
+          <td>Meeting points</td>
+          <td>Near-home: Johnson's mailbox. Out-of-area: First Baptist Church parking lot on Oak St.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>That's it. Four layers. No expensive equipment. No specialized training. Just a clear set of agreements that everyone in the family understands.</p>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> You can build your PACE plan inside your family emergency plan. Add ICE contacts for your out-of-state relay, set rally points on the offline map for your meeting locations, and share the whole plan with family members via QR code. Every layer of your PACE plan stays accessible on each person's phone — even without cell service or internet.</p>
+    </div>
+
+    <hr>
+
+    <h2>Build Your Family's PACE Plan This Afternoon</h2>
+
+    <p>This doesn't need to be a weekend project. You can build a working PACE plan in about an hour — and most of that time is just talking through scenarios with your family over lunch or dinner.</p>
+
+    <h3>Step 1: Map Your Current Reality (10 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Where is each family member during a typical weekday? (Work, school, daycare, home)</li>
+      <li>What's each person's primary phone number?</li>
+      <li>Does anyone already have a landline, walkie-talkies, or a weather radio?</li>
+    </ul>
+
+    <h3>Step 2: Fill In the Four Tiers (15 minutes)</h3>
+
+    <ul class="checklist">
+      <li><strong>Primary:</strong> Confirm your default communication method (probably cell phone)</li>
+      <li><strong>Alternate:</strong> Pick an out-of-state contact and call them to confirm they're willing to be your relay</li>
+      <li><strong>Contingency:</strong> Decide on a non-cell option — walkie-talkies, a neighbor's landline, or Wi-Fi calling from a known hotspot</li>
+      <li><strong>Emergency:</strong> Choose two meeting points and make sure every family member knows how to get to each one on foot</li>
+    </ul>
+
+    <h3>Step 3: Write It Down (10 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Write out all four tiers with specific names, phone numbers, radio channels, and addresses</li>
+      <li>Make wallet cards for kids with the most critical info (contacts, meeting points, medical notes)</li>
+      <li>Put a printed copy on the fridge, one in each go-bag, and one in each car's glove box</li>
+    </ul>
+
+    <h3>Step 4: Talk It Through (15 minutes)</h3>
+
+    <ul class="checklist">
+      <li>Walk through a scenario together: "It's 2 PM, the power goes out, and phones aren't working. What does everyone do?"</li>
+      <li>Make sure kids can explain the plan in their own words</li>
+      <li>Quiz each other: "Who's our out-of-state contact? What's Meeting Point B?"</li>
+      <li>Set a calendar reminder to review and update the plan every six months</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>In NomadCore:</strong> All four steps can happen inside the app. Add your contacts, set your rally points on the map, write notes for each tier, and share the plan with every family member via QR code. The next time someone asks "what's our plan?" — everyone already has it, right on their phone, working offline.</p>
+    </div>
+
+    <hr>
+
+    <h2>Making It Stick: Practice and Maintenance</h2>
+
+    <p>A plan that lives in a drawer doesn't help anyone. Here are a few simple ways to keep your PACE plan alive:</p>
+
+    <ul>
+      <li><strong>Dinner-table drill.</strong> Once a season, toss out a scenario at dinner: "Tornado warning just went off and your phone is dead. What do you do?" Make it conversational, not stressful.</li>
+      <li><strong>Walk the route.</strong> Take a family walk to your near-home meeting point. Drive past the out-of-area one so the kids recognize it. Familiarity reduces panic.</li>
+      <li><strong>Test the gear.</strong> If you have walkie-talkies, turn them on once a quarter. Check that batteries work. Make sure everyone remembers the channel. This takes five minutes.</li>
+      <li><strong>Update after changes.</strong> Someone changed their phone number? You moved? Your out-of-state contact relocated? Update the plan right away — don't wait for the six-month review.</li>
+    </ul>
+
+    <hr>
+
+    <h2>PACE Beyond Communication</h2>
+
+    <p>Once you understand the PACE framework, you'll start seeing places to apply it everywhere. The same layered thinking works for:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>P</th>
+          <th>A</th>
+          <th>C</th>
+          <th>E</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Getting home</strong></td>
+          <td>Drive your usual route</td>
+          <td>Take the back roads</td>
+          <td>Walk or bike</td>
+          <td>Shelter-in-place until safe</td>
+        </tr>
+        <tr>
+          <td><strong>Water</strong></td>
+          <td>Tap water</td>
+          <td>Stored bottled water</td>
+          <td>Water filter or purification tablets</td>
+          <td>Boil from a natural source</td>
+        </tr>
+        <tr>
+          <td><strong>Power</strong></td>
+          <td>Grid electricity</td>
+          <td>Portable battery bank</td>
+          <td>Car charger / inverter</td>
+          <td>Hand-crank or solar charger</td>
+        </tr>
+        <tr>
+          <td><strong>Shelter</strong></td>
+          <td>Your home</td>
+          <td>A friend or family member's house</td>
+          <td>Public shelter</td>
+          <td>Vehicle or improvised shelter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>You don't need to build a PACE plan for every aspect of life. But for the things that matter most — reaching your family, getting to safety, and accessing water and shelter — having four layers of backup turns uncertainty into confidence.</p>
+
+    <hr>
+
+    <h2>The 60-Second Version</h2>
+
+    <p>If you only remember five things from this article:</p>
+
+    <ol>
+      <li><strong>PACE stands for Primary, Alternate, Contingency, Emergency.</strong> Four layers of backup, each more resilient than the last.</li>
+      <li><strong>Your cell phone is your Primary, not your whole plan.</strong> Always have methods that work when the network doesn't.</li>
+      <li><strong>An out-of-state contact is your best Alternate.</strong> Long-distance calls often work when local ones can't.</li>
+      <li><strong>Pre-agreed meeting points are your Emergency layer.</strong> No technology needed — just a shared understanding.</li>
+      <li><strong>Write it down and share it.</strong> A plan in one person's head isn't a plan.</li>
+    </ol>
+
+    <p>One afternoon of planning gives your family a communication system that doesn't depend on any single tower, device, or app staying online. That's not paranoid — that's just good parenting.</p>
+
+    <hr>
+
+    <p><em>Ready to build your family's PACE plan? <a href="https://nomad-core.com">Download NomadCore</a> to set up emergency contacts, rally points, and a complete family plan that works offline. For a deeper dive on the communication side, check out our guide on <a href="family-communication-plan.html">how to build a family communication plan</a>.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Checklist Download -->
+  <div style="text-align: center; padding: 32px 0; background: var(--gray-50); border-top: 1px solid var(--gray-200);">
+    <div class="container" style="max-width: 760px;">
+      <p style="font-size: 1rem; color: var(--gray-600); margin-bottom: 12px;">Want a printable version?</p>
+      <a href="../downloads/pace-plan.html" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--white); border: 2px solid var(--gray-200); border-radius: 9999px; color: var(--gray-900); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--cyan)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.transform='none'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M12 3v12"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg>
+        Print the Family PACE Plan
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Four layers of backup, one app</h2>
+      <p>Build your family's PACE plan in NomadCore — contacts, rally points, and everything in between.</p>
+      <div class="cta-buttons">
+        <a href="../index.html#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="../index.html#download" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta-inline">
+    <div class="container" style="max-width: 760px;">
+      <div class="fade-up">
+        <h3>How prepared is your family?</h3>
+        <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
+        <a href="../quiz/" class="btn-quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Take the quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container" style="max-width: 760px;">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday. Practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
