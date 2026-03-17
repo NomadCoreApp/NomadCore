@@ -1,21 +1,40 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.70",
-      "buildNumber": "70",
+      "version": "1.0.71",
+      "buildNumber": "71",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-11",
+      "releaseDate": "2026-03-17",
       "storeUrl": "https://apps.apple.com/app/nomadcore/id6738976881"
     },
     "android": {
-      "version": "1.0.70",
-      "versionCode": "70",
+      "version": "1.0.71",
+      "versionCode": "71",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-11",
+      "releaseDate": "2026-03-17",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.71",
+      "buildNumber": "71",
+      "date": "2026-03-17",
+      "critical": false,
+      "highlights": [
+        "Date picker fixes for birth date and emergency plan screens",
+        "Family sharing store reliability improvements",
+        "Google Play resubmission — all pre-release checks passing"
+      ],
+      "categories": {
+        "fixes": [
+          "Fixed date picker minimum date handling on birth date and emergency plan screens",
+          "Improved family sharing store sync reliability",
+          "Added missing theme import on profile onboarding screen",
+          "Fixed dynamic import replaced with static InteractionManager import"
+        ]
+      }
+    },
     {
       "version": "1.0.70",
       "buildNumber": "70",
