@@ -1,21 +1,39 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.71",
-      "buildNumber": "71",
+      "version": "1.0.72",
+      "buildNumber": "48",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-17",
+      "releaseDate": "2026-03-30",
       "storeUrl": "https://apps.apple.com/app/nomadcore/id6738976881"
     },
     "android": {
-      "version": "1.0.71",
-      "versionCode": "71",
+      "version": "1.0.72",
+      "versionCode": "48",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-17",
+      "releaseDate": "2026-03-30",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.72",
+      "buildNumber": "48",
+      "date": "2026-03-30",
+      "critical": false,
+      "highlights": [
+        "Fix iOS App Store rejection: location permission flow and donation removal",
+        "Improved Skia background rendering to reduce app hangs on iOS"
+      ],
+      "categories": {
+        "fixes": [
+          "Location consent modal now uses single 'Continue' button per Apple guideline 5.1.1(iv)",
+          "Removed in-app PayPal donation to comply with Apple guideline 3.1.1",
+          "Rate Us button now uses native StoreReview API instead of placeholder",
+          "Increased Skia transition delays and added InteractionManager to mitigate Metal pipeline stalls"
+        ]
+      }
+    },
     {
       "version": "1.0.71",
       "buildNumber": "71",
