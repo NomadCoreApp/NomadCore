@@ -10,10 +10,10 @@
     gtag('js', new Date());
     gtag('config', 'G-901VG0NQY2');
   </script>
-  <title>How Prepared Is Your Family? - Free Readiness Quiz | NomadCore</title>
-  <meta name="description" content="Take this 2-minute quiz to find out how prepared your family is for emergencies. Get a personalized readiness score and action plan.">
-  <meta property="og:title" content="How Prepared Is Your Family? Take the Quiz">
-  <meta property="og:description" content="2-minute quiz with a personalized readiness score and action plan for your family.">
+  <title>How Prepared Are You? - Free Readiness Quiz | NomadCore</title>
+  <meta name="description" content="Take this 2-minute quiz to find out how prepared you are for emergencies. Get a personalized readiness score and action plan.">
+  <meta property="og:title" content="How Prepared Are You? Take the Quiz">
+  <meta property="og:description" content="2-minute quiz with a personalized readiness score and action plan tailored to your situation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nomad-core.com/quiz/">
   <meta property="og:image" content="https://nomad-core.com/images/og-quiz.png">
@@ -522,6 +522,99 @@
     }
     .btn-retake:hover { color: var(--gray-700); }
 
+    /* ===== Profile Qualifier Screen ===== */
+    .qualifier-screen {
+      padding: 40px 40px 48px;
+    }
+    .qualifier-screen h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .qualifier-screen > p {
+      text-align: center;
+      color: var(--gray-500);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+    .qualifier-group {
+      margin-bottom: 28px;
+    }
+    .qualifier-group:last-of-type {
+      margin-bottom: 32px;
+    }
+    .qualifier-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gray-400);
+      margin-bottom: 10px;
+    }
+    .qualifier-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .qualifier-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--gray-50);
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .qualifier-btn:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+    .qualifier-btn.selected {
+      border-color: var(--blue);
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 600;
+    }
+    .qualifier-btn .q-icon {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .btn-continue {
+      display: block;
+      width: 100%;
+      padding: 14px 32px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-continue:hover { background: var(--navy); transform: translateY(-1px); }
+    .btn-continue:disabled {
+      background: var(--gray-200);
+      color: var(--gray-400);
+      cursor: not-allowed;
+      transform: none;
+    }
+    @media (max-width: 480px) {
+      .qualifier-screen { padding: 28px 24px 36px; }
+      .qualifier-options { gap: 6px; }
+      .qualifier-btn { padding: 8px 14px; font-size: 0.85rem; }
+    }
+
     /* ===== Screen visibility ===== */
     .screen { display: none; }
     .screen.active { display: block; }
@@ -710,8 +803,8 @@
           <div class="quiz-intro-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <h1>How Prepared Is Your Family?</h1>
-          <p>Answer 10 quick questions to get your family's readiness score and a personalized action plan.</p>
+          <h1>How Prepared Are You?</h1>
+          <p>Answer a few quick questions to get your readiness score and a personalized action plan — tailored to your situation.</p>
           <div class="quiz-meta">
             <span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -722,7 +815,68 @@
               10 questions
             </span>
           </div>
-          <button class="btn-start" onclick="startQuiz()">Start the quiz</button>
+          <button class="btn-start" onclick="showProfile()">Start the quiz</button>
+        </div>
+      </div>
+
+      <!-- Profile Qualifier Screen -->
+      <div class="screen" id="screen-profile">
+        <div class="qualifier-screen">
+          <h2>Tell us about your situation</h2>
+          <p>We'll tailor the questions to match your reality.</p>
+
+          <div class="qualifier-group">
+            <div class="qualifier-label">Household</div>
+            <div class="qualifier-options" id="q-household">
+              <button class="qualifier-btn" data-value="solo" onclick="selectQualifier('household', this)">
+                <span class="q-icon">&#128100;</span> Just me
+              </button>
+              <button class="qualifier-btn" data-value="couple" onclick="selectQualifier('household', this)">
+                <span class="q-icon">&#128101;</span> Me &amp; partner
+              </button>
+              <button class="qualifier-btn" data-value="family" onclick="selectQualifier('household', this)">
+                <span class="q-icon">&#128106;</span> Family with kids
+              </button>
+              <button class="qualifier-btn" data-value="multi" onclick="selectQualifier('household', this)">
+                <span class="q-icon">&#127968;</span> Multi-generational
+              </button>
+            </div>
+          </div>
+
+          <div class="qualifier-group">
+            <div class="qualifier-label">Setting</div>
+            <div class="qualifier-options" id="q-setting">
+              <button class="qualifier-btn" data-value="urban" onclick="selectQualifier('setting', this)">
+                <span class="q-icon">&#127961;</span> Urban
+              </button>
+              <button class="qualifier-btn" data-value="suburban" onclick="selectQualifier('setting', this)">
+                <span class="q-icon">&#127969;</span> Suburban
+              </button>
+              <button class="qualifier-btn" data-value="rural" onclick="selectQualifier('setting', this)">
+                <span class="q-icon">&#127806;</span> Rural
+              </button>
+              <button class="qualifier-btn" data-value="homestead" onclick="selectQualifier('setting', this)">
+                <span class="q-icon">&#128004;</span> Homestead / Farm
+              </button>
+            </div>
+          </div>
+
+          <div class="qualifier-group">
+            <div class="qualifier-label">Primary strategy</div>
+            <div class="qualifier-options" id="q-strategy">
+              <button class="qualifier-btn" data-value="shelter" onclick="selectQualifier('strategy', this)">
+                <span class="q-icon">&#128737;</span> Shelter in place
+              </button>
+              <button class="qualifier-btn" data-value="evacuate" onclick="selectQualifier('strategy', this)">
+                <span class="q-icon">&#128663;</span> Evacuate / Bug out
+              </button>
+              <button class="qualifier-btn" data-value="depends" onclick="selectQualifier('strategy', this)">
+                <span class="q-icon">&#9878;</span> Depends on the situation
+              </button>
+            </div>
+          </div>
+
+          <button class="btn-continue" id="btnContinue" onclick="startQuiz()" disabled>Continue to quiz</button>
         </div>
       </div>
 
@@ -819,181 +973,321 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
     // ===== Quiz Data =====
-    const questions = [
-      {
-        category: 'plan',
-        catLabel: 'Emergency Plan',
-        catClass: 'cat-plan',
-        text: 'Does your family have a written emergency plan that everyone knows about?',
-        options: [
-          { text: 'Yes — written down, and we\'ve reviewed it together', points: 3 },
-          { text: 'We\'ve discussed it, but nothing is written', points: 2 },
-          { text: 'I\'ve thought about it, but the family hasn\'t talked about it', points: 1 },
-          { text: 'No plan at all', points: 0 }
-        ]
-      },
-      {
-        category: 'plan',
-        catLabel: 'Meeting Point',
-        catClass: 'cat-plan',
-        text: 'Does your family have a designated meeting point if you get separated during an emergency?',
-        options: [
-          { text: 'Yes — a specific location everyone knows', points: 3 },
-          { text: 'We\'ve mentioned it but never confirmed a spot', points: 1 },
-          { text: 'No meeting point set', points: 0 }
-        ]
-      },
-      {
-        category: 'supplies',
-        catLabel: 'Emergency Supplies',
-        catClass: 'cat-supplies',
-        text: 'Do you have an emergency kit or go-bag packed and ready?',
-        options: [
-          { text: 'Yes — stocked, checked within the last 6 months', points: 3 },
-          { text: 'We have some supplies, but not organized into a kit', points: 2 },
-          { text: 'There\'s a half-packed bag somewhere...', points: 1 },
-          { text: 'No emergency kit', points: 0 }
-        ]
-      },
-      {
-        category: 'supplies',
-        catLabel: 'Water & Food',
-        catClass: 'cat-supplies',
-        text: 'How many days of water and non-perishable food could your household survive on right now?',
-        options: [
-          { text: '3+ days (1 gallon per person per day)', points: 3 },
-          { text: '1-2 days', points: 2 },
-          { text: 'Less than a day', points: 1 },
-          { text: 'I haven\'t thought about it', points: 0 }
-        ]
-      },
-      {
-        category: 'docs',
-        catLabel: 'Critical Documents',
-        catClass: 'cat-docs',
-        text: 'Are your family\'s critical documents (IDs, insurance, medical records) backed up and accessible in an emergency?',
-        options: [
-          { text: 'Yes — digital copies stored securely + physical copies in a go-bag', points: 3 },
-          { text: 'Digital copies exist, but scattered across devices', points: 2 },
-          { text: 'Only physical originals — no backups', points: 1 },
-          { text: 'I\'d have to search for them', points: 0 }
-        ]
-      },
-      {
-        category: 'plan',
-        catLabel: 'Communication',
-        catClass: 'cat-plan',
-        text: 'Does your family have an out-of-area emergency contact who everyone can reach independently?',
-        options: [
-          { text: 'Yes — name and number memorized or saved on every phone', points: 3 },
-          { text: 'We have someone in mind, but not everyone has the number', points: 1 },
-          { text: 'No designated contact', points: 0 }
-        ]
-      },
-      {
-        category: 'home',
-        catLabel: 'Home Safety',
-        catClass: 'cat-home',
-        text: 'Do you know how to shut off your home\'s gas, water, and electricity in an emergency?',
-        options: [
-          { text: 'Yes — I know where the shutoffs are and how to operate them', points: 3 },
-          { text: 'I know where some of them are', points: 2 },
-          { text: 'I\'d have to figure it out', points: 0 }
-        ]
-      },
-      {
-        category: 'skills',
-        catLabel: 'First Aid',
-        catClass: 'cat-skills',
-        text: 'Could someone in your household perform basic first aid (stop bleeding, CPR, treat burns)?',
-        options: [
-          { text: 'Yes — trained and have a first aid kit', points: 3 },
-          { text: 'Some training, but it\'s been a while', points: 2 },
-          { text: 'We have a kit but no training', points: 1 },
-          { text: 'No training and no kit', points: 0 }
-        ]
-      },
-      {
-        category: 'home',
-        catLabel: 'Evacuation',
-        catClass: 'cat-home',
-        text: 'Do you have a planned evacuation route from your home (and an alternate)?',
-        options: [
-          { text: 'Yes — primary and alternate routes identified', points: 3 },
-          { text: 'I have a general idea of where I\'d go', points: 2 },
-          { text: 'I\'d just follow traffic or GPS', points: 1 },
-          { text: 'Haven\'t thought about it', points: 0 }
-        ]
-      },
-      {
-        category: 'skills',
-        catLabel: 'Practice',
-        catClass: 'cat-skills',
-        text: 'When was the last time your family practiced or discussed your emergency plan?',
-        options: [
-          { text: 'Within the last 3 months', points: 3 },
-          { text: 'Within the last year', points: 2 },
-          { text: 'More than a year ago', points: 1 },
-          { text: 'We\'ve never practiced', points: 0 }
-        ]
-      }
-    ];
+    // ===== Profile State =====
+    const profile = { household: null, setting: null, strategy: null };
+    const isSolo = () => profile.household === 'solo';
+    const isFamily = () => ['family', 'multi'].includes(profile.household);
+    const isRural = () => ['rural', 'homestead'].includes(profile.setting);
+    const isHomestead = () => profile.setting === 'homestead';
+    const isShelter = () => profile.strategy === 'shelter';
+    const isEvac = () => profile.strategy === 'evacuate';
 
-    const maxScore = questions.reduce((sum, q) => sum + Math.max(...q.options.map(o => o.points)), 0);
+    // Helper: "your family" / "your household" / "you"
+    const who = () => isSolo() ? 'you' : isFamily() ? 'your family' : 'your household';
+    const Who = () => isSolo() ? 'You' : isFamily() ? 'Your family' : 'Your household';
+    const whoHas = () => isSolo() ? 'you have' : isFamily() ? 'your family has' : 'your household has';
+    const everyone = () => isSolo() ? 'you' : 'everyone';
+
+    function getQuestions() {
+      return [
+        {
+          category: 'plan',
+          catLabel: 'Emergency Plan',
+          catClass: 'cat-plan',
+          text: isSolo()
+            ? 'Do you have a written emergency plan?'
+            : `Does ${who()} have a written emergency plan that ${everyone()} knows about?`,
+          options: isSolo() ? [
+            { text: 'Yes — written down and reviewed recently', points: 3 },
+            { text: 'I\'ve thought it through, but nothing is written', points: 2 },
+            { text: 'I have a rough idea, but no real plan', points: 1 },
+            { text: 'No plan at all', points: 0 }
+          ] : [
+            { text: 'Yes — written down, and we\'ve reviewed it together', points: 3 },
+            { text: 'We\'ve discussed it, but nothing is written', points: 2 },
+            { text: 'I\'ve thought about it, but we haven\'t talked about it', points: 1 },
+            { text: 'No plan at all', points: 0 }
+          ]
+        },
+        {
+          category: 'plan',
+          catLabel: isShelter() ? 'Safe Area' : isHomestead() ? 'Property Plan' : 'Meeting Point',
+          catClass: 'cat-plan',
+          text: isSolo()
+            ? (isShelter()
+              ? 'Do you have a hardened safe area identified in your home?'
+              : 'Do you have a check-in person who would notice if something happened to you?')
+            : (isShelter()
+              ? `Does ${who()} have a designated safe area in your home for sheltering?`
+              : (isHomestead()
+                ? `Does ${who()} have a plan for your property and animals if you must leave?`
+                : `Does ${who()} have a designated meeting point if you get separated during an emergency?`)),
+          options: isSolo() ? (isShelter() ? [
+            { text: 'Yes — identified and stocked with supplies', points: 3 },
+            { text: 'I know which room, but it\'s not prepared', points: 1 },
+            { text: 'No safe area identified', points: 0 }
+          ] : [
+            { text: 'Yes — someone who checks on me regularly', points: 3 },
+            { text: 'A few people might notice, but no formal arrangement', points: 1 },
+            { text: 'Not really — no one would know for a while', points: 0 }
+          ]) : (isShelter() ? [
+            { text: 'Yes — a specific room or area everyone knows, stocked with supplies', points: 3 },
+            { text: 'We have a general idea, but haven\'t prepared the space', points: 1 },
+            { text: 'No designated safe area', points: 0 }
+          ] : (isHomestead() ? [
+            { text: 'Yes — livestock plan, neighbor arrangements, and staged supplies', points: 3 },
+            { text: 'Partial plan — we\'ve discussed it but not everything is covered', points: 1 },
+            { text: 'No plan for the property or animals', points: 0 }
+          ] : [
+            { text: 'Yes — a specific location everyone knows', points: 3 },
+            { text: 'We\'ve mentioned it but never confirmed a spot', points: 1 },
+            { text: 'No meeting point set', points: 0 }
+          ]))
+        },
+        {
+          category: 'supplies',
+          catLabel: 'Emergency Supplies',
+          catClass: 'cat-supplies',
+          text: isHomestead()
+            ? 'Are emergency supplies staged and accessible on your property?'
+            : (isShelter()
+              ? `Do ${who() === 'you' ? 'you' : who()} have shelter-in-place supplies stocked and organized?`
+              : `Do ${who() === 'you' ? 'you' : who()} have an emergency kit or go-bag packed and ready?`),
+          options: isHomestead() ? [
+            { text: 'Yes — multiple caches, checked regularly', points: 3 },
+            { text: 'We have supplies, but they\'re scattered around the property', points: 2 },
+            { text: 'Some supplies, but not organized for emergencies', points: 1 },
+            { text: 'No staged emergency supplies', points: 0 }
+          ] : (isShelter() ? [
+            { text: 'Yes — stocked, organized, and checked within the last 6 months', points: 3 },
+            { text: 'We have some supplies, but not organized for sheltering', points: 2 },
+            { text: 'A few things scattered around', points: 1 },
+            { text: 'No shelter-in-place supplies', points: 0 }
+          ] : [
+            { text: 'Yes — stocked, checked within the last 6 months', points: 3 },
+            { text: isSolo() ? 'I have some supplies, but not organized into a kit' : 'We have some supplies, but not organized into a kit', points: 2 },
+            { text: 'There\'s a half-packed bag somewhere...', points: 1 },
+            { text: 'No emergency kit', points: 0 }
+          ])
+        },
+        {
+          category: 'supplies',
+          catLabel: 'Water & Food',
+          catClass: 'cat-supplies',
+          text: isHomestead()
+            ? 'How many days of water and food could you sustain — including livestock and garden needs?'
+            : `How many days of water and non-perishable food could ${who()} survive on right now?`,
+          options: isHomestead() ? [
+            { text: '7+ days for people, animals, and irrigation', points: 3 },
+            { text: '3-7 days for people, partial coverage for animals', points: 2 },
+            { text: '1-2 days, and animals would be in trouble', points: 1 },
+            { text: 'Haven\'t planned water logistics beyond daily use', points: 0 }
+          ] : [
+            { text: '3+ days (1 gallon per person per day)', points: 3 },
+            { text: '1-2 days', points: 2 },
+            { text: 'Less than a day', points: 1 },
+            { text: 'I haven\'t thought about it', points: 0 }
+          ]
+        },
+        {
+          category: 'docs',
+          catLabel: 'Critical Documents',
+          catClass: 'cat-docs',
+          text: isSolo()
+            ? 'Are your critical documents (IDs, insurance, medical records) backed up and accessible in an emergency?'
+            : `Are ${who()}'s critical documents (IDs, insurance, medical records) backed up and accessible in an emergency?`,
+          options: isHomestead() ? [
+            { text: 'Yes — digital copies secured + physical copies, including property deeds and livestock records', points: 3 },
+            { text: 'Digital copies exist, but scattered across devices', points: 2 },
+            { text: 'Only physical originals — no backups', points: 1 },
+            { text: 'I\'d have to search for them', points: 0 }
+          ] : [
+            { text: isEvac() ? 'Yes — digital copies stored securely + physical copies in a go-bag' : 'Yes — digital copies stored securely + physical copies in a safe spot', points: 3 },
+            { text: 'Digital copies exist, but scattered across devices', points: 2 },
+            { text: 'Only physical originals — no backups', points: 1 },
+            { text: 'I\'d have to search for them', points: 0 }
+          ]
+        },
+        {
+          category: 'plan',
+          catLabel: 'Communication',
+          catClass: 'cat-plan',
+          text: isSolo()
+            ? 'Do you have an emergency contact who knows your plans and can act on your behalf?'
+            : `Does ${who()} have an out-of-area emergency contact who ${everyone()} can reach independently?`,
+          options: isSolo() ? [
+            { text: 'Yes — they know my plans and have my key info', points: 3 },
+            { text: 'Someone would help, but they don\'t know my plans', points: 1 },
+            { text: 'No designated emergency contact', points: 0 }
+          ] : [
+            { text: `Yes — name and number memorized or saved on ${everyone()}'s phone`, points: 3 },
+            { text: `We have someone in mind, but not ${everyone()} has the number`, points: 1 },
+            { text: 'No designated contact', points: 0 }
+          ]
+        },
+        {
+          category: 'home',
+          catLabel: isHomestead() ? 'Property Safety' : 'Home Safety',
+          catClass: 'cat-home',
+          text: isHomestead()
+            ? 'Do you know how to shut off utilities, secure outbuildings, and protect water sources in an emergency?'
+            : 'Do you know how to shut off your home\'s gas, water, and electricity in an emergency?',
+          options: isHomestead() ? [
+            { text: 'Yes — utilities, well pump, outbuildings, and water sources all covered', points: 3 },
+            { text: 'I know the house systems, but not everything on the property', points: 2 },
+            { text: 'I\'d have to figure most of it out', points: 0 }
+          ] : [
+            { text: 'Yes — I know where the shutoffs are and how to operate them', points: 3 },
+            { text: 'I know where some of them are', points: 2 },
+            { text: 'I\'d have to figure it out', points: 0 }
+          ]
+        },
+        {
+          category: 'skills',
+          catLabel: 'First Aid',
+          catClass: 'cat-skills',
+          text: isSolo()
+            ? 'Could you perform basic first aid on yourself (stop bleeding, treat burns, splint a limb)?'
+            : `Could someone in ${who() === 'your family' ? who() : 'your household'} perform basic first aid (stop bleeding, CPR, treat burns)?`,
+          options: isSolo() ? [
+            { text: 'Yes — trained and have a first aid kit', points: 3 },
+            { text: 'Some training, but it\'s been a while', points: 2 },
+            { text: 'I have a kit but no real training', points: 1 },
+            { text: 'No training and no kit', points: 0 }
+          ] : [
+            { text: 'Yes — trained and have a first aid kit', points: 3 },
+            { text: 'Some training, but it\'s been a while', points: 2 },
+            { text: 'We have a kit but no training', points: 1 },
+            { text: 'No training and no kit', points: 0 }
+          ]
+        },
+        {
+          category: 'home',
+          catLabel: isShelter() ? 'Contingency Plan' : 'Evacuation',
+          catClass: 'cat-home',
+          text: isShelter()
+            ? (isHomestead()
+              ? 'If sheltering becomes unsafe, do you have a plan to leave — including for livestock and property?'
+              : `If sheltering becomes unsafe, do ${who() === 'you' ? 'you' : who()} have a backup plan to evacuate?`)
+            : (isHomestead()
+              ? 'Do you have a planned evacuation route that accounts for livestock trailers, equipment, and rural road conditions?'
+              : `Do ${who() === 'you' ? 'you' : who()} have a planned evacuation route from your home (and an alternate)?`),
+          options: isShelter() ? (isHomestead() ? [
+            { text: 'Yes — routes planned, trailer ready, neighbor backup arranged', points: 3 },
+            { text: 'General idea, but logistics aren\'t nailed down', points: 2 },
+            { text: 'We\'d figure it out if it came to that', points: 1 },
+            { text: 'Haven\'t thought about leaving', points: 0 }
+          ] : [
+            { text: 'Yes — backup routes and a destination identified', points: 3 },
+            { text: 'I have a general idea of where I\'d go', points: 2 },
+            { text: 'I\'d figure it out in the moment', points: 1 },
+            { text: 'Haven\'t thought about a backup plan', points: 0 }
+          ]) : (isHomestead() ? [
+            { text: 'Yes — routes for trucks/trailers, staging area, and neighbor coordination', points: 3 },
+            { text: 'General route, but livestock logistics aren\'t planned', points: 2 },
+            { text: 'I\'d just head out and hope for the best', points: 1 },
+            { text: 'Haven\'t thought about it', points: 0 }
+          ] : [
+            { text: 'Yes — primary and alternate routes identified', points: 3 },
+            { text: 'I have a general idea of where I\'d go', points: 2 },
+            { text: 'I\'d just follow traffic or GPS', points: 1 },
+            { text: 'Haven\'t thought about it', points: 0 }
+          ])
+        },
+        {
+          category: 'skills',
+          catLabel: 'Practice',
+          catClass: 'cat-skills',
+          text: isSolo()
+            ? 'When was the last time you reviewed or practiced your emergency plan?'
+            : `When was the last time ${who()} practiced or discussed your emergency plan?`,
+          options: isSolo() ? [
+            { text: 'Within the last 3 months', points: 3 },
+            { text: 'Within the last year', points: 2 },
+            { text: 'More than a year ago', points: 1 },
+            { text: 'I\'ve never done a real review', points: 0 }
+          ] : [
+            { text: 'Within the last 3 months', points: 3 },
+            { text: 'Within the last year', points: 2 },
+            { text: 'More than a year ago', points: 1 },
+            { text: 'We\'ve never practiced', points: 0 }
+          ]
+        }
+      ];
+    }
+
+    let questions = [];
+    let maxScore = 0;
     let currentQuestion = 0;
-    let answers = new Array(questions.length).fill(-1);
+    let answers = [];
 
-    // ===== Tier Definitions =====
-    const tiers = [
-      {
-        min: 0, max: 0.25,
-        name: 'Just Getting Started',
-        color: 'var(--red)',
-        colorLight: 'var(--red-light)',
-        description: 'You have some work to do — but the good news is that the biggest improvements come from the first few steps. Even 30 minutes of planning this week will make a real difference.',
-        actions: [
-          { icon: '1', bg: 'var(--red-light)', label: 'Create a family emergency plan', desc: 'Sit down for 15 minutes and answer: Where do we meet? Who do we call? What do we grab?', link: '../blog/family-communication-plan.html' },
-          { icon: '2', bg: 'var(--amber-light)', label: 'Start a basic emergency kit', desc: 'Water, flashlight, first aid kit, phone charger, copies of IDs. Start small.', link: '../blog/emergency-document-kit.html' },
-          { icon: '3', bg: 'var(--blue-light)', label: 'Download NomadCore', desc: 'Get your plan, contacts, documents, and procedures in one offline app.', link: '../index.html#download' }
-        ]
-      },
-      {
-        min: 0.25, max: 0.5,
-        name: 'Building a Foundation',
-        color: 'var(--amber)',
-        colorLight: 'var(--amber-light)',
-        description: 'You\'ve taken some important first steps. Now it\'s about filling gaps and making sure your whole family is on the same page.',
-        actions: [
-          { icon: '1', bg: 'var(--amber-light)', label: 'Protect your critical documents', desc: 'Digitize IDs, insurance cards, and medical records. Store them encrypted.', link: '../blog/emergency-document-kit.html' },
-          { icon: '2', bg: 'var(--blue-light)', label: 'Set a family meeting point', desc: 'Pick a specific spot and make sure every family member knows it by heart.', link: '../blog/family-communication-plan.html' },
-          { icon: '3', bg: 'var(--green-light)', label: 'Practice your plan', desc: 'Walk through your evacuation route and review your plan as a family.', link: '../blog/first-15-minutes-emergency.html' }
-        ]
-      },
-      {
-        min: 0.5, max: 0.75,
-        name: 'Well Prepared',
-        color: 'var(--blue)',
-        colorLight: 'var(--blue-light)',
-        description: 'Your family is ahead of most. You have the basics covered — now focus on the details that matter when minutes count.',
-        actions: [
-          { icon: '1', bg: 'var(--blue-light)', label: 'Learn the first 15 minutes', desc: 'The universal action framework that works for any emergency scenario.', link: '../blog/first-15-minutes-emergency.html' },
-          { icon: '2', bg: 'var(--cyan-light)', label: 'Know when to stay vs. go', desc: 'Not every emergency means evacuation. Learn the decision framework.', link: '../blog/shelter-in-place-vs-evacuate.html' },
-          { icon: '3', bg: 'var(--green-light)', label: 'Involve the whole family', desc: 'Age-appropriate conversations and practice drills make readiness stick.', link: '../blog/emergency-preparedness-kids.html' }
-        ]
-      },
-      {
-        min: 0.75, max: 1.01,
-        name: 'Highly Prepared',
-        color: 'var(--green)',
-        colorLight: 'var(--green-light)',
-        description: 'Your family is in excellent shape. You\'ve planned, prepared, and practiced. Keep it up — and help others get started too.',
-        actions: [
-          { icon: '1', bg: 'var(--green-light)', label: 'Review and refresh seasonally', desc: 'Check supplies, update contacts, and rotate perishable items.', link: '../blog/wildfire-evacuation-checklist.html' },
-          { icon: '2', bg: 'var(--cyan-light)', label: 'Prepare for specific threats', desc: 'Customize your plan for your region\'s top risks — wildfire, tornado, flood.', link: '../blog/severe-storms-tornadoes-guide.html' },
-          { icon: '3', bg: 'var(--blue-light)', label: 'Share what you know', desc: 'Help a neighbor or friend get started. Preparedness is a community effort.', link: '../blog/' }
-        ]
-      }
-    ];
+    // ===== Tier Definitions (adaptive) =====
+    function getTiers() {
+      const s = isSolo();
+      const youOrFamily = s ? 'You' : 'Your family';
+      return [
+        {
+          min: 0, max: 0.25,
+          name: 'Just Getting Started',
+          color: 'var(--red)',
+          colorLight: 'var(--red-light)',
+          description: `${youOrFamily} ${s ? 'have' : 'has'} some work to do — but the good news is that the biggest improvements come from the first few steps. Even 30 minutes of planning this week will make a real difference.`,
+          actions: [
+            { icon: '1', bg: 'var(--red-light)', label: s ? 'Create your emergency plan' : 'Create a family emergency plan', desc: s ? 'Spend 15 minutes writing down: where do I go, who do I call, what do I grab?' : 'Sit down for 15 minutes and answer: Where do we meet? Who do we call? What do we grab?', link: '../blog/family-communication-plan.html' },
+            { icon: '2', bg: 'var(--amber-light)', label: 'Start a basic emergency kit', desc: 'Water, flashlight, first aid kit, phone charger, copies of IDs. Start small.', link: '../blog/emergency-document-kit.html' },
+            { icon: '3', bg: 'var(--blue-light)', label: 'Download NomadCore', desc: 'Get your plan, contacts, documents, and procedures in one offline app.', link: 'https://apps.apple.com/us/app/nomadcore/id6751544385' }
+          ]
+        },
+        {
+          min: 0.25, max: 0.5,
+          name: 'Building a Foundation',
+          color: 'var(--amber)',
+          colorLight: 'var(--amber-light)',
+          description: s ? 'You\'ve taken some important first steps. Now it\'s about filling gaps and making sure everything is documented.' : 'You\'ve taken some important first steps. Now it\'s about filling gaps and making sure everyone is on the same page.',
+          actions: [
+            { icon: '1', bg: 'var(--amber-light)', label: 'Protect your critical documents', desc: 'Digitize IDs, insurance cards, and medical records. Store them encrypted.', link: '../blog/emergency-document-kit.html' },
+            { icon: '2', bg: 'var(--blue-light)', label: s ? 'Set up a check-in system' : 'Set a family meeting point', desc: s ? 'Arrange for someone to check on you during emergencies. Share your plan with them.' : 'Pick a specific spot and make sure every family member knows it by heart.', link: '../blog/family-communication-plan.html' },
+            { icon: '3', bg: 'var(--green-light)', label: 'Practice your plan', desc: isShelter() ? 'Walk through your sheltering setup and test your supplies.' : 'Walk through your evacuation route and review your plan.', link: '../blog/first-15-minutes-emergency.html' }
+          ]
+        },
+        {
+          min: 0.5, max: 0.75,
+          name: 'Well Prepared',
+          color: 'var(--blue)',
+          colorLight: 'var(--blue-light)',
+          description: `${youOrFamily} ${s ? 'are' : 'is'} ahead of most. You have the basics covered — now focus on the details that matter when minutes count.`,
+          actions: [
+            { icon: '1', bg: 'var(--blue-light)', label: 'Learn the first 15 minutes', desc: 'The universal action framework that works for any emergency scenario.', link: '../blog/first-15-minutes-emergency.html' },
+            { icon: '2', bg: 'var(--cyan-light)', label: 'Know when to stay vs. go', desc: 'Not every emergency means evacuation. Learn the decision framework.', link: '../blog/shelter-in-place-vs-evacuate.html' },
+            { icon: '3', bg: 'var(--green-light)', label: isFamily() ? 'Involve the whole family' : 'Refine your plan', desc: isFamily() ? 'Age-appropriate conversations and practice drills make readiness stick.' : 'Stress-test your plan by walking through different scenarios.', link: isFamily() ? '../blog/emergency-preparedness-kids.html' : '../blog/first-15-minutes-emergency.html' }
+          ]
+        },
+        {
+          min: 0.75, max: 1.01,
+          name: 'Highly Prepared',
+          color: 'var(--green)',
+          colorLight: 'var(--green-light)',
+          description: `${youOrFamily} ${s ? 'are' : 'is'} in excellent shape. You've planned, prepared, and practiced. Keep it up — and help others get started too.`,
+          actions: [
+            { icon: '1', bg: 'var(--green-light)', label: 'Review and refresh seasonally', desc: 'Check supplies, update contacts, and rotate perishable items.', link: '../blog/wildfire-evacuation-checklist.html' },
+            { icon: '2', bg: 'var(--cyan-light)', label: 'Prepare for specific threats', desc: 'Customize your plan for your region\'s top risks — wildfire, tornado, flood.', link: '../blog/severe-storms-tornadoes-guide.html' },
+            { icon: '3', bg: 'var(--blue-light)', label: 'Share what you know', desc: 'Help a neighbor or friend get started. Preparedness is a community effort.', link: '../blog/' }
+          ]
+        }
+      ];
+    }
+
+    // ===== Profile Qualifier Logic =====
+    function selectQualifier(group, btn) {
+      document.querySelectorAll(`#q-${group} .qualifier-btn`).forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      profile[group] = btn.dataset.value;
+      document.getElementById('btnContinue').disabled = !(profile.household && profile.setting && profile.strategy);
+    }
+
+    function showProfile() {
+      showScreen('screen-profile');
+    }
 
     // ===== Quiz Logic =====
     function showScreen(id) {
@@ -1003,7 +1297,15 @@
     }
 
     function startQuiz() {
-      gtag('event', 'quiz_start', { event_category: 'engagement' });
+      questions = getQuestions();
+      maxScore = questions.reduce((sum, q) => sum + Math.max(...q.options.map(o => o.points)), 0);
+      answers = new Array(questions.length).fill(-1);
+      currentQuestion = 0;
+
+      gtag('event', 'quiz_start', {
+        event_category: 'engagement',
+        event_label: `${profile.household}|${profile.setting}|${profile.strategy}`
+      });
       showScreen('screen-question');
       renderQuestion();
     }
@@ -1069,6 +1371,7 @@
       const pct = score / maxScore;
       const displayPct = Math.round(pct * 100);
 
+      const tiers = getTiers();
       const tier = tiers.find(t => pct >= t.min && pct < t.max) || tiers[tiers.length - 1];
 
       gtag('event', 'quiz_complete', {
@@ -1127,7 +1430,7 @@
 
         <div class="result-email-capture" id="emailCapture">
           <h3>Get your free printable readiness checklist</h3>
-          <p>A fridge-worthy family preparedness checklist based on your results. No account required.</p>
+          <p>A ${isSolo() ? 'personal' : 'fridge-worthy family'} preparedness checklist based on your results. No account required.</p>
           <div class="email-form" id="emailForm">
             <input type="email" id="captureEmail" placeholder="your@email.com" aria-label="Email address">
             <button onclick="submitEmail()">Send it</button>
@@ -1150,8 +1453,8 @@
         </div>
 
         <div class="result-cta">
-          <h3>Your family's emergency plan, in your pocket.</h3>
-          <p>Offline maps. Encrypted documents. Family sharing. 1,300+ procedures.</p>
+          <h3>${isSolo() ? 'Your emergency plan, in your pocket.' : 'Your family\'s emergency plan, in your pocket.'}</h3>
+          <p>Offline maps. Encrypted documents. ${isSolo() ? '1,300+ procedures.' : 'Family sharing. 1,300+ procedures.'}</p>
           <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn-download">Download NomadCore</a>
         </div>
 
@@ -1170,7 +1473,8 @@
     }
 
     function shareResults(platform, score, tier) {
-      const text = `My family's emergency readiness score: ${score}% (${tier}). How prepared is yours?`;
+      const prefix = isSolo() ? 'My' : 'My family\'s';
+      const text = `${prefix} emergency readiness score: ${score}% (${tier}). How prepared are you?`;
       const url = 'https://nomad-core.com/quiz/';
       if (platform === 'twitter') {
         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
@@ -1179,7 +1483,8 @@
     }
 
     function copyResults(score, tier) {
-      const text = `My family's emergency readiness score: ${score}% (${tier}). How prepared is yours? Take the quiz: https://nomad-core.com/quiz/`;
+      const prefix = isSolo() ? 'My' : 'My family\'s';
+      const text = `${prefix} emergency readiness score: ${score}% (${tier}). How prepared are you? Take the quiz: https://nomad-core.com/quiz/`;
       navigator.clipboard.writeText(text).then(() => {
         const btn = event.target.closest('.share-btn');
         const original = btn.innerHTML;
@@ -1191,8 +1496,8 @@
 
     function retakeQuiz() {
       currentQuestion = 0;
-      answers = new Array(questions.length).fill(-1);
-      showScreen('screen-intro');
+      answers = [];
+      showScreen('screen-profile');
       gtag('event', 'quiz_retake', { event_category: 'engagement' });
     }
 
