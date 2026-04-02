@@ -2,24 +2,24 @@
   "latest": {
     "ios": {
       "version": "1.0.72",
-      "buildNumber": "48",
+      "buildNumber": "72",
       "minSupportedBuild": "60",
       "releaseDate": "2026-03-30",
       "storeUrl": "https://apps.apple.com/us/app/nomadcore/id6751544385"
     },
     "android": {
       "version": "1.0.72",
-      "versionCode": "48",
+      "versionCode": "72",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-30",
+      "releaseDate": "2026-04-02",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
     {
       "version": "1.0.72",
-      "buildNumber": "48",
-      "date": "2026-03-30",
+      "buildNumber": "72",
+      "date": "2026-04-02",
       "critical": false,
       "highlights": [
         "Fix iOS App Store rejection: location permission flow and donation removal",
