@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nomad-core.com/sitemap.xml
+
+# Internal/utility pages
+Disallow: /auth/
+Disallow: /emails/
+Disallow: /welcome/
+Disallow: /subscribed/
