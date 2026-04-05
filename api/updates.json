@@ -1,21 +1,48 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.72",
-      "buildNumber": "72",
+      "version": "1.0.73",
+      "buildNumber": "73",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-03-30",
+      "releaseDate": "2026-04-05",
       "storeUrl": "https://apps.apple.com/us/app/nomadcore/id6751544385"
     },
     "android": {
-      "version": "1.0.72",
-      "versionCode": "72",
+      "version": "1.0.73",
+      "versionCode": "73",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-04-02",
+      "releaseDate": "2026-04-05",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.73",
+      "buildNumber": "73",
+      "date": "2026-04-05",
+      "critical": false,
+      "highlights": [
+        "Adaptive Dashboard with personalized 6-zone layout",
+        "Risk Intelligence Card with seasonal awareness and FEMA data",
+        "Customizable Quick Actions grid with haptic feedback"
+      ],
+      "categories": {
+        "features": [
+          "Onboarding profile quiz personalizes dashboard shortcuts and alerts",
+          "Risk Intelligence Card shows seasonal risks and FEMA hazard data",
+          "Quick Actions grid: 6 customizable shortcuts with long-press edit mode",
+          "Needs Attention section aggregates maintenance, supplies, documents, and more",
+          "Extreme Heat disaster scenario with preparation guidance",
+          "Seasonal status indicators on hazard risk cards",
+          "Unified risk narrative in hazard detail modal"
+        ],
+        "fixes": [
+          "FEMA score labels now consistent across all views",
+          "Emergency Plan quick action routing corrected",
+          "Needs Attention now wired to all 7 data sources"
+        ]
+      }
+    },
     {
       "version": "1.0.72",
       "buildNumber": "72",
