@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Your Emergency Document Vault: What to Store and Why It Matters - NomadCore Blog</title>
+  <meta name="description" content="After a house fire, the average family spends months reconstructing lost documents. Here's exactly what to digitize, how to store it securely, and why an emergency journal could be your most valuable record.">
+  <meta name="keywords" content="emergency document storage, important documents for emergency, digital document vault app, emergency journal, documents to save for emergency, encrypted document storage">
+  <meta property="og:title" content="Your Emergency Document Vault: What to Store and Why It Matters">
+  <meta property="og:description" content="After a house fire, the average family spends months reconstructing lost documents. Here's exactly what to digitize, how to store it securely, and why an emergency journal could be your most valuable record.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://nomad-core.com/images/blog-docs.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/blog/emergency-document-storage.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+    /* ===== Quiz CTA ===== */
+    .quiz-cta-inline {
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      text-align: center;
+    }
+    .quiz-cta-inline h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .quiz-cta-inline p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .btn-quiz {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gray-900);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-quiz:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      color: white;
+    }
+    .btn-quiz svg { width: 18px; height: 18px; }
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      border: none;
+      padding: 0;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Your Emergency Document Vault: What to Store and Why It Matters",
+    "description": "After a house fire, the average family spends months reconstructing lost documents. Here's exactly what to digitize, how to store it securely, and why an emergency journal could be your most valuable record.",
+    "image": "https://nomad-core.com/images/blog-docs.png",
+    "datePublished": "2026-04-05",
+    "author": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nomad-core.com/images/nomadcore-icon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nomad-core.com/blog/emergency-document-storage.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <time datetime="2026-04-05">Apr 5, 2026</time>
+        <span class="reading-time">8 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">Your Emergency Document Vault: What to Store and Why It Matters</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-docs.png" alt="Emergency document storage and digital vault">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>On December 30, 2021, the Marshall Fire swept through Boulder County, Colorado — the most destructive wildfire in the state's history. Over 1,000 families lost their homes in a matter of hours. Many escaped with nothing but the clothes they were wearing. Wind gusts of 100+ mph turned a grass fire into an urban firestorm so fast that some residents had less than 15 minutes to get out.</p>
+
+    <p>In the weeks that followed, community support was overwhelming. Housing was found. Clothing was donated. Food was delivered. But the most common challenge families faced wasn't physical — it was bureaucratic. Reconstructing documents. Birth certificates. Insurance policies. Mortgage papers. Medical records. Prescription information. Vehicle titles. Social Security cards. Every piece of paper that proves who you are, what you own, and what you're owed — gone.</p>
+
+    <p>Families spent 3 to 6 months and hundreds of dollars replacing documents that could have been digitized in an afternoon. This guide is designed to make sure that doesn't happen to you.</p>
+
+    <hr>
+
+    <h2>The Document Problem</h2>
+
+    <p>We keep our most important papers in the least protected places. A filing cabinet. A desk drawer. A shoebox in the closet. Maybe a fireproof safe — which, despite the name, is rated for 30 to 60 minutes at best, and only if the fire department arrives in time.</p>
+
+    <p>Here's the uncomfortable truth: any disaster that damages your home destroys your documents too. Fire, flood, tornado, hurricane — the paper doesn't survive.</p>
+
+    <p>And those documents aren't just sentimental. They're functional. Insurance claims require documentation of what you owned and what your policy covers. FEMA disaster aid requires government-issued identification. Medical care in a new city requires your health records and prescription information. Enrolling your kids in a temporary school requires birth certificates.</p>
+
+    <p>Replacing a birth certificate takes 4 to 8 weeks. Replacing a passport takes 6 to 8 weeks. Replacing a Social Security card takes 2 to 4 weeks. During those weeks, you can't prove your identity, your ownership, or your coverage. You're stuck in a bureaucratic holding pattern while trying to rebuild your life.</p>
+
+    <p>The solution isn't a better safe. It's a digital backup that exists independently of your home.</p>
+
+    <hr>
+
+    <h2>The Essential Document Checklist</h2>
+
+    <p>Not all documents are equally urgent. This checklist is organized by priority — start with Tier 1 and work your way down. If you only have 30 minutes, Tier 1 alone will save you months of recovery time.</p>
+
+    <h3>Tier 1: Replace immediately if lost (digitize these first)</h3>
+
+    <p>These are the documents that, if lost, will cause the most immediate disruption to your recovery. They take the longest to replace and are required for almost every post-disaster process.</p>
+
+    <ul class="checklist">
+      <li><strong>Government-issued IDs</strong> — driver's license, passport, Social Security card for every family member</li>
+      <li><strong>Birth certificates and marriage certificate</strong> — required for replacement IDs and dependent verification</li>
+      <li><strong>Insurance policies</strong> — home, auto, health, and life. Capture the declarations pages especially, which summarize your coverage limits and deductibles</li>
+      <li><strong>Mortgage or lease documents and property deed</strong> — proof of where you live and what you own</li>
+      <li><strong>Vehicle titles and registrations</strong> — needed if your car is damaged or you need to sell/replace it</li>
+      <li><strong>Medical records and current prescriptions</strong> — medication names, dosages, prescribing doctor, and pharmacy. Critical if you take daily medication</li>
+      <li><strong>Power of attorney and advance directives / living will</strong> — if a family member is incapacitated during the disaster, you need these immediately</li>
+    </ul>
+
+    <h3>Tier 2: Important for recovery</h3>
+
+    <p>These documents won't block your immediate safety, but they'll significantly speed up your financial and logistical recovery.</p>
+
+    <ul class="checklist">
+      <li><strong>Bank and investment account numbers</strong> — not passwords, just account numbers and institution names so you can contact them</li>
+      <li><strong>Credit card numbers and issuer contact info</strong> — to report cards as lost and request replacements</li>
+      <li><strong>Tax returns (last 2 years)</strong> — needed for FEMA applications, rental applications, and insurance claims</li>
+      <li><strong>Employment records</strong> — pay stubs, employer contact info, employment verification letters</li>
+      <li><strong>Pet vaccination records and microchip numbers</strong> — required by emergency shelters and boarding facilities</li>
+      <li><strong>Professional licenses and certifications</strong> — may be needed to continue working while displaced</li>
+      <li><strong>Wills and trust documents</strong> — your estate plan shouldn't depend on your house surviving</li>
+    </ul>
+
+    <h3>Tier 3: Valuable for insurance claims</h3>
+
+    <p>This tier is about money. The more you can document before a disaster, the stronger your insurance claim and the higher your payout.</p>
+
+    <ul class="checklist">
+      <li><strong>Home inventory video</strong> — a slow walk-through of every room, opening drawers and cabinets, narrating what you see</li>
+      <li><strong>Photos of valuables with serial numbers</strong> — electronics, jewelry, art, musical instruments, tools</li>
+      <li><strong>Receipts for high-value purchases</strong> — anything over $100 is worth photographing the receipt</li>
+      <li><strong>Appraisals</strong> — jewelry, art, antiques, collectibles. Without an appraisal, the insurance company decides the value</li>
+      <li><strong>Home improvement records</strong> — permits, contractor invoices, before/after photos. These add to your home's replacement value</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Store documents in NomadCore's encrypted document vault — AES-256 encryption, the same standard used by the U.S. military. Your documents are protected from both physical loss and digital theft.</p>
+    </div>
+
+    <hr>
+
+    <h2>How to Digitize: The 30-Minute Method</h2>
+
+    <p>You don't need a scanner. You don't need special software. Your phone camera is enough.</p>
+
+    <p><strong>For paper documents:</strong> Lay each document flat on a dark, contrasting surface (a dark countertop or table). Use your phone's built-in document scan mode — on iPhone, open the Notes app and tap the camera icon, then "Scan Documents." On Android, open Google Drive and tap the "+" button, then "Scan." These modes automatically detect edges, correct perspective, and enhance contrast. The result is cleaner than a photo and often cleaner than a flatbed scanner.</p>
+
+    <p><strong>For the home inventory:</strong> Walk slowly through each room. Hold your phone in landscape mode and narrate what you see. "This is the living room. The TV is a 65-inch Samsung, purchased in 2024. The couch is a West Elm sectional." Open drawers. Open closets. Open cabinets. Point at serial numbers on electronics. This feels awkward — do it anyway. A 20-minute video per room creates a record that could be worth tens of thousands of dollars in insurance claims.</p>
+
+    <p><strong>Total time:</strong> 30 to 60 minutes for all Tier 1 and Tier 2 documents. Add 20 minutes per room for the home inventory video. For a three-bedroom house, you're looking at about 2 hours total. That's one Saturday morning to protect everything you own.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Documents stored in NomadCore are on your device and accessible completely offline — no internet needed to pull up your insurance policy after a disaster. When cell towers are down and cloud drives are unreachable, your documents are still right there on your phone.</p>
+    </div>
+
+    <hr>
+
+    <h2>Storing Documents Securely</h2>
+
+    <p>Digitizing documents solves the physical vulnerability problem. But it creates a new one: digital security. These documents contain everything an identity thief needs — your Social Security number, account numbers, signatures, dates of birth, addresses.</p>
+
+    <p><strong>The wrong way: email them to yourself.</strong> Email is unencrypted in transit and at rest. Your email account is one phished password away from being compromised. Sending a photo of your Social Security card to your Gmail is like mailing it on a postcard.</p>
+
+    <p><strong>The mediocre way: a cloud drive.</strong> Google Drive, iCloud, Dropbox — better than email, because they encrypt data at rest. But the provider holds the encryption key, not you. A data breach, a government subpoena, or a compromised account gives someone access to everything.</p>
+
+    <p><strong>The right way: end-to-end encrypted storage that works offline.</strong> You hold the encryption key. The data is encrypted before it leaves your device. Even if someone intercepts it, they can't read it without your key. And critically, it works without internet — because disasters don't wait for Wi-Fi.</p>
+
+    <p>Your storage solution needs to pass two tests simultaneously: Is it secure enough to hold your Social Security card? And is it accessible enough to use during a hurricane? If the answer to either question is no, keep looking.</p>
+
+    <hr>
+
+    <h2>The Emergency Journal: Your Most Underrated Tool</h2>
+
+    <p>This is the feature most people don't think about until they're in the middle of a crisis and wish they had it.</p>
+
+    <p>During a disaster, decisions happen fast and details blur together. Stress degrades memory. Days blend into each other. A week after the event, you won't remember exactly when things happened or what was said. But the details matter — they matter to your insurance company, to FEMA, and to your own financial recovery.</p>
+
+    <p>An emergency journal captures what your memory won't:</p>
+
+    <ul>
+      <li><strong>When did you evacuate?</strong> Your insurance company needs the exact date and time to establish the timeline of loss.</li>
+      <li><strong>What was damaged and when?</strong> FEMA requires specific damage documentation with dates for disaster aid applications.</li>
+      <li><strong>What did the adjuster say?</strong> Names, phone numbers, claim numbers, what was promised. If there's a dispute later, your notes are evidence.</li>
+      <li><strong>What supplies did you use from your kit?</strong> Helps you restock and identifies gaps in your preparedness plan.</li>
+      <li><strong>What expenses did you incur?</strong> Hotel stays, meals, gas, clothing, medication refills — most homeowner policies include Additional Living Expenses coverage that reimburses these costs. But you need receipts and records.</li>
+      <li><strong>Who did you talk to?</strong> Names, phone numbers, reference numbers, dates. Every call to an insurance company, every FEMA representative, every contractor who gives you a quote.</li>
+    </ul>
+
+    <p>Keeping a journal during a crisis creates a legal and financial record that protects you. Memory is unreliable under stress — writing it down is insurance for your insurance claim. People who maintain detailed records during recovery consistently receive higher insurance payouts and faster FEMA processing, because they can substantiate every line item.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Use the journal feature to track decisions, expenses, and contacts during an emergency — it creates a protected, timestamped record for insurance and FEMA claims. Entries are encrypted and stored locally, so you can write even when you have no signal.</p>
+    </div>
+
+    <hr>
+
+    <h2>The Recovery Advantage</h2>
+
+    <p>Disaster recovery case workers see the same pattern over and over: families with digitized documents recover faster. They file insurance claims within days instead of weeks. They receive FEMA aid at the first available disbursement instead of waiting for document replacement. They replace IDs in weeks instead of months. They return to normalcy while their unprepared neighbors are still on the phone with the vital records office.</p>
+
+    <p>The numbers tell the story. Without digital copies, replacing a full set of family documents — IDs, birth certificates, insurance records, medical records — takes 3 to 6 months and costs $200 to $500 in fees, expedited processing charges, and notarization. During those months, you can't rent an apartment (no ID verification), you can't prove your insurance coverage (no declarations page), and you can't refill prescriptions (no medical records on file at the new pharmacy).</p>
+
+    <p>With digital copies, you walk into the insurance office on day one with your policy number, declarations page, and home inventory video on your phone. You file your FEMA application with your ID photos and tax returns ready to upload. You hand your new pharmacy a photo of your prescription list and get your medication that afternoon.</p>
+
+    <p>The 30 minutes you spend digitizing today could save you 3 to 6 months of recovery time. That's not an exaggeration — it's what disaster recovery professionals consistently report.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Share document access with family members through family sharing — if one person's phone is lost, the documents aren't. Everyone in your family group can access the shared vault, so your recovery doesn't depend on a single device surviving.</p>
+    </div>
+
+    <hr>
+
+    <p>You don't get to choose when disaster strikes. But you get to choose whether your documents survive it. Grab your phone, set a 30-minute timer, and start with Tier 1. By the time the timer goes off, you'll have protected your family from months of unnecessary suffering.</p>
+
+    <p>That filing cabinet full of irreplaceable papers? It's only irreplaceable if you haven't made copies. Make the copies.</p>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> to store your important documents in an encrypted vault with offline access, home inventory tools, emergency journaling, and family sharing — all accessible when you need them most.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Your documents should survive what your house doesn't</h2>
+      <p>Encrypted document storage, home inventory, and emergency journal — accessible offline, shared with your family.</p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta-inline">
+    <div class="container" style="max-width: 760px;">
+      <div class="fade-up">
+        <h3>How prepared is your family?</h3>
+        <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
+        <a href="../quiz/" class="btn-quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Take the quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container" style="max-width: 760px;">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday. Practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

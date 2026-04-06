@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>How to Find Emergency Help Near You — Before You Need It - NomadCore Blog</title>
+  <meta name="description" content="Most people can't name their nearest emergency shelter or their fire station's response time. Here's how to map your local emergency resources before disaster strikes.">
+  <meta property="og:title" content="How to Find Emergency Help Near You — Before You Need It">
+  <meta property="og:description" content="Most people can't name their nearest emergency shelter or their fire station's response time. Here's how to map your local emergency resources before disaster strikes.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://nomad-core.com/images/blog-resources.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/blog/emergency-resources-near-you.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+    /* ===== Quiz CTA ===== */
+    .quiz-cta-inline {
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      text-align: center;
+    }
+    .quiz-cta-inline h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .quiz-cta-inline p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .btn-quiz {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gray-900);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-quiz:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      color: white;
+    }
+    .btn-quiz svg { width: 18px; height: 18px; }
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      border: none;
+      padding: 0;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Find Emergency Help Near You — Before You Need It",
+    "description": "Most people can't name their nearest emergency shelter or their fire station's response time. Here's how to map your local emergency resources before disaster strikes.",
+    "image": "https://nomad-core.com/images/blog-resources.png",
+    "datePublished": "2026-04-05",
+    "author": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nomad-core.com/images/nomadcore-icon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nomad-core.com/blog/emergency-resources-near-you.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <time datetime="2026-04-05">Apr 5, 2026</time>
+        <span class="reading-time">7 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">How to Find Emergency Help Near You — Before You Need It</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-resources.png" alt="Finding emergency resources in your community">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>When Hurricane Ida hit Louisiana in 2021, thousands of residents tried to Google "emergency shelters near me" — with no cell service. The ones who already knew where to go got there. The ones who didn't drove in circles burning gas they couldn't replace. Over a million people lost power. Cell towers across eight parishes went dark. And the people who had mapped their local emergency resources ahead of time were the ones who found help first.</p>
+
+    <p>The time to find your local emergency resources is right now, while you're reading this on a working internet connection.</p>
+
+    <p>A 2023 FEMA survey found that only 48% of American households have a disaster plan — and of those, fewer than half have identified specific local resources like shelters, emergency management offices, or utility emergency numbers. That means roughly three out of four families would be searching for help from scratch during a crisis.</p>
+
+    <p>This guide walks you through exactly what to find, where to find it, and how to organize it so it's available when you need it most — including when the internet isn't.</p>
+
+    <hr>
+
+    <h2>What You Should Know Before Disaster Strikes</h2>
+
+    <p>Most people know to call 911. But emergencies create situations where 911 isn't enough — or isn't reachable. The resources below are the ones that matter when the standard systems are overwhelmed.</p>
+
+    <ul class="checklist">
+      <li><strong>Fire station locations and response times</strong> — your nearest station may not be the one that responds to your address. Call your local department's non-emergency line and ask.</li>
+      <li><strong>Nearest hospital and urgent care</strong> — know the difference. Urgent care closes at night. During a mass casualty event, the nearest hospital may be on diversion. Identify your second-closest option.</li>
+      <li><strong>Police non-emergency number</strong> — 911 lines overflow during disasters. The non-emergency line handles welfare checks, road closures, and resource information without tying up dispatch.</li>
+      <li><strong>Nearest Red Cross shelter</strong> — these activate during declared emergencies. Know the location before one is declared.</li>
+      <li><strong>Utility emergency numbers</strong> — gas leak hotline, power outage reporting line, water main break number. These are different from the utility's general customer service line and operate 24/7.</li>
+      <li><strong>Local emergency management office</strong> — every county has one. They coordinate disaster response and can tell you exactly what resources exist in your area.</li>
+    </ul>
+
+    <p>Write these down. Not in your phone's notes app — on paper, stored with your emergency supplies. Phones die. Paper doesn't.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Save all community resources in NomadCore's Community Resources feature — accessible offline when you need them most. Unlike a notes app that requires cloud sync, NomadCore stores your data locally on the device. No internet required to pull up addresses, phone numbers, and notes during an emergency.</p>
+    </div>
+
+    <hr>
+
+    <h2>Community Resources Most People Don't Know About</h2>
+
+    <p>Beyond fire, police, and hospitals, your community has an entire network of emergency resources that most residents never discover until it's too late. Here are the ones worth finding now.</p>
+
+    <h3>CERT — Community Emergency Response Teams</h3>
+
+    <p>FEMA's CERT program trains ordinary citizens in basic disaster response: light search and rescue, fire suppression, first aid triage, and neighborhood damage assessment. There are over 2,700 CERT programs across the country. Your local team is staffed by your neighbors — and they activate when professional first responders are overwhelmed. Find your local CERT at <strong>ready.gov/cert</strong> or by calling your county's emergency management office.</p>
+
+    <h3>Ham radio operators</h3>
+
+    <p>When cell towers fail — and they do fail, regularly, in every major disaster — amateur radio operators become the communication backbone. The Amateur Radio Emergency Service (ARES) and Radio Amateur Civil Emergency Service (RACES) provide emergency communication when nothing else works. During Hurricane Maria in 2017, ham radio was the only way some Puerto Rico communities could call for help for weeks. Your local amateur radio club can tell you where their emergency repeaters are located.</p>
+
+    <h3>Other critical resources</h3>
+
+    <ul>
+      <li><strong>Community cooling and warming centers</strong> — during extreme heat or cold events, these save lives. Libraries, community centers, and churches often serve this role. Your city's 311 line or website will list active locations.</li>
+      <li><strong>Food banks and distribution points</strong> — organizations like Feeding America coordinate emergency food distribution after disasters. Know your nearest food bank before you need it.</li>
+      <li><strong>Sandbag locations</strong> — many municipalities provide free sandbags and fill stations before floods. By the time flooding starts, the lines are hours long. Know where they are and go early.</li>
+      <li><strong>Pet-friendly shelters vs. general shelters</strong> — not all shelters accept animals. The PETS Act of 2006 requires FEMA-funded shelters to accommodate pets, but not every shelter is FEMA-funded. Know which ones in your area will take your animals.</li>
+      <li><strong>Pharmacies with emergency dispensing protocols</strong> — during declared emergencies, many states allow pharmacists to dispense emergency supplies of prescription medications without a current prescription. Know which pharmacies near you participate.</li>
+    </ul>
+
+    <hr>
+
+    <h2>How to Find Your Local Resources</h2>
+
+    <p>You don't need to be an emergency management expert to map your local resources. Here's where to start, in order of effectiveness.</p>
+
+    <ol>
+      <li><strong>Call your county emergency management office.</strong> This is the single most productive call you can make. Tell them you're a resident building an emergency resource list. They will often email or mail you a complete guide to local resources — many counties publish these but few residents know they exist.</li>
+      <li><strong>Check your city or county website.</strong> Search for "emergency preparedness" or "disaster resources." Most municipalities maintain a page with shelter locations, evacuation routes, and emergency contacts. Download and save it offline.</li>
+      <li><strong>Visit Ready.gov's local resources page.</strong> FEMA maintains a searchable directory of emergency resources organized by state and county.</li>
+      <li><strong>Download the FEMA app.</strong> It includes a shelter finder, disaster resource locator, and real-time alerts for your area. It works when online — but save the results while you have connectivity.</li>
+      <li><strong>Attend a local CERT training.</strong> Even if you don't plan to volunteer, the training (typically 20 hours over several weeks) teaches you how your local emergency response system works — and you'll meet the people who run it.</li>
+      <li><strong>Ask at your local fire station.</strong> Walk in during non-emergency hours. Firefighters have resource lists, know shelter locations, and can tell you things about your neighborhood's specific risks that no website can.</li>
+    </ol>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Add contact numbers, addresses, and notes for each resource you discover. Include details like hours of operation, whether they're pet-friendly, and any access requirements. The more detail you capture now, the less you'll have to figure out during a crisis.</p>
+    </div>
+
+    <hr>
+
+    <h2>Building Your Resource Map</h2>
+
+    <p>Finding resources is step one. Organizing them so they're actually useful under stress is step two. A list of names is not enough — you need actionable details.</p>
+
+    <h3>Save addresses, not just names</h3>
+
+    <p>GPS navigation needs a street address. "The Red Cross shelter at the community center" doesn't help when you're driving through smoke or floodwater at night. Record the full street address for every resource.</p>
+
+    <h3>Note hours of operation</h3>
+
+    <p>Some resources are 24/7 (hospitals, fire stations). Others only activate during declared emergencies (shelters, sandbag stations). Still others operate on business hours only (emergency management offices, food banks outside of disaster activation). Mark each resource with its availability so you don't drive to a locked building at 2 AM.</p>
+
+    <h3>Identify resources along your evacuation routes</h3>
+
+    <p>Most people only map resources near their home. But if you're evacuating, your home-area resources are behind you. Identify hospitals, gas stations, shelters, and rest areas along each of your planned evacuation routes — not just at your starting point.</p>
+
+    <h3>Include backup options</h3>
+
+    <p>For every critical resource, identify at least one alternative. If your nearest hospital is on diversion, where's the next one? If your primary shelter is full, what's the backup? During Hurricane Katrina, the Superdome — the primary shelter — exceeded capacity by thousands. Families with a second option had somewhere else to go.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Share your resource list with family members so everyone knows where to go. NomadCore's family sharing means every person in your household has the same resource information, the same addresses, the same backup plans — even if you're separated during an emergency.</p>
+    </div>
+
+    <hr>
+
+    <h2>Resources for Specific Needs</h2>
+
+    <p>Standard emergency resource lists assume a healthy adult with a car and no dependents. Most families don't fit that profile. Here's what to find for specific situations.</p>
+
+    <h3>Families with elderly members</h3>
+
+    <ul class="checklist">
+      <li>Transportation services for non-drivers (many counties offer emergency medical transport)</li>
+      <li>Oxygen supply companies with emergency delivery</li>
+      <li>Shelters with medical staff or nearby medical facilities</li>
+      <li>Meals on Wheels and similar programs that activate during emergencies</li>
+    </ul>
+
+    <h3>Families with disabilities</h3>
+
+    <ul class="checklist">
+      <li>ADA-compliant shelters (not all are — verify in advance)</li>
+      <li>Medical equipment providers with emergency replacement programs</li>
+      <li>Paratransit services for emergency evacuation</li>
+      <li>Registry programs — many counties maintain a voluntary special needs registry so first responders know who needs extra assistance</li>
+    </ul>
+
+    <h3>Families with pets</h3>
+
+    <ul class="checklist">
+      <li>Pet-friendly shelters (search the ASPCA's disaster preparedness resources)</li>
+      <li>Emergency veterinary clinics open 24/7</li>
+      <li>Boarding facilities that accept animals during evacuations</li>
+      <li>Local animal rescue organizations that assist during disasters</li>
+    </ul>
+
+    <h3>Families with infants</h3>
+
+    <ul class="checklist">
+      <li>Formula distribution points (WIC offices often coordinate these during emergencies)</li>
+      <li>Diaper banks — the National Diaper Bank Network has over 200 member organizations</li>
+      <li>Shelters with dedicated family areas or quiet rooms</li>
+      <li>Pediatric urgent care locations along evacuation routes</li>
+    </ul>
+
+    <h3>Non-English speakers</h3>
+
+    <ul class="checklist">
+      <li>Multilingual resource centers (often at community organizations or churches)</li>
+      <li>211 hotline — available in most areas with multilingual operators</li>
+      <li>Consulate or embassy emergency services for foreign nationals</li>
+      <li>Community organizations that serve specific language populations</li>
+    </ul>
+
+    <hr>
+
+    <h2>The 30-Minute Exercise</h2>
+
+    <p>You've read this far. Now spend 30 minutes — right now, today — and find your 10 most critical local resources. Set a timer. Here's your checklist:</p>
+
+    <ul class="checklist">
+      <li><strong>Minutes 1-5:</strong> Find your county emergency management office phone number and website. Save both.</li>
+      <li><strong>Minutes 5-10:</strong> Look up your nearest hospital, urgent care, and fire station. Save full addresses.</li>
+      <li><strong>Minutes 10-15:</strong> Find your police non-emergency number and all utility emergency numbers (gas, electric, water). Write them down.</li>
+      <li><strong>Minutes 15-20:</strong> Search for your nearest Red Cross chapter and any designated emergency shelters in your county. Note which are pet-friendly.</li>
+      <li><strong>Minutes 20-25:</strong> Look up your local CERT program, nearest food bank, and community cooling/warming center locations.</li>
+      <li><strong>Minutes 25-30:</strong> Find any special-needs resources your family requires (medical transport, ADA shelters, pet boarding, pediatric care). Save with addresses and phone numbers.</li>
+    </ul>
+
+    <p>That's it. Thirty minutes. You now know more about your community's emergency resources than the vast majority of your neighbors. The information isn't hard to find — the hard part is finding it before you need it, when the stakes are low and the internet is working.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Map your resource locations alongside your evacuation routes in NomadCore. When you're driving out of a disaster zone, you'll be able to see exactly which resources are ahead of you on your route — hospitals, shelters, gas stations — all on one screen, all available offline.</p>
+    </div>
+
+    <hr>
+
+    <p>The pattern in every major disaster is the same. The people who prepared — who knew where the shelters were, who had phone numbers written down, who had mapped their resources before the crisis — are the ones who get help fastest. The people who didn't are the ones standing in the longest lines, driving to the wrong locations, and calling numbers that don't connect.</p>
+
+    <p>You don't get to choose when disaster hits your community. But you absolutely get to choose whether you've done the 30 minutes of homework that makes the difference.</p>
+
+    <hr>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> to save your community's emergency resources with offline access, family sharing, and everything your household needs to find help fast — even when the internet isn't available.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Know where help is before you need it</h2>
+      <p>Save your community's emergency resources in NomadCore — accessible even when the internet isn't.</p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta-inline">
+    <div class="container" style="max-width: 760px;">
+      <div class="fade-up">
+        <h3>How prepared is your family?</h3>
+        <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
+        <a href="../quiz/" class="btn-quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Take the quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container" style="max-width: 760px;">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday. Practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

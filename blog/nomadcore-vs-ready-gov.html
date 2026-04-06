@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>NomadCore vs Government Emergency Apps: A Practical Comparison - NomadCore Blog</title>
+  <meta name="description" content="How does NomadCore compare to FEMA, Ready.gov, and Red Cross emergency apps? An honest, feature-by-feature comparison for families who want to be genuinely prepared.">
+  <meta property="og:title" content="NomadCore vs Government Emergency Apps: A Practical Comparison">
+  <meta property="og:description" content="How does NomadCore compare to FEMA, Ready.gov, and Red Cross emergency apps? An honest, feature-by-feature comparison for families who want to be genuinely prepared.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://nomad-core.com/images/blog-comparison.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/blog/nomadcore-vs-ready-gov.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* Comparison table responsive */
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+    .comparison-table-wrapper table {
+      min-width: 640px;
+    }
+    .comparison-table-wrapper td:first-child,
+    .comparison-table-wrapper th:first-child {
+      font-weight: 600;
+      color: var(--gray-800);
+      white-space: nowrap;
+    }
+    .check { color: var(--green); font-weight: 600; }
+    .cross { color: var(--gray-400); }
+    .partial { color: var(--amber); font-weight: 500; }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+    /* ===== Quiz CTA ===== */
+    .quiz-cta-inline {
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      text-align: center;
+    }
+    .quiz-cta-inline h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .quiz-cta-inline p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .btn-quiz {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gray-900);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-quiz:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      color: white;
+    }
+    .btn-quiz svg { width: 18px; height: 18px; }
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      border: none;
+      padding: 0;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NomadCore vs Government Emergency Apps: A Practical Comparison",
+    "description": "How does NomadCore compare to FEMA, Ready.gov, and Red Cross emergency apps? An honest, feature-by-feature comparison for families who want to be genuinely prepared.",
+    "image": "https://nomad-core.com/images/blog-comparison.png",
+    "datePublished": "2026-04-05",
+    "author": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nomad-core.com/images/nomadcore-icon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nomad-core.com/blog/nomadcore-vs-ready-gov.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <time datetime="2026-04-05">Apr 5, 2026</time>
+        <span class="reading-time">9 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">NomadCore vs Government Emergency Apps: A Practical Comparison</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-comparison.png" alt="NomadCore vs government emergency apps comparison">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>There's no shortage of emergency preparedness apps. FEMA has one. The Red Cross has several. Ready.gov has resources. They're all free, and they all have value.</p>
+
+    <p>So why did we build NomadCore?</p>
+
+    <p>Not because government apps are bad — but because they were designed to solve a different problem. Government emergency apps are built to distribute information from institutions to individuals. They push alerts, provide educational content, and connect people to government resources during declared disasters. They do that job well.</p>
+
+    <p>NomadCore was built to solve the other half of the equation: what does your family actually <em>do</em> with that information? Where is your plan? Where are your supplies tracked? Where are your documents stored? And what happens when the cell towers go down and you can't reach any of those government services?</p>
+
+    <p>Here's an honest, feature-by-feature comparison.</p>
+
+    <hr>
+
+    <h2>The Landscape: What's Available</h2>
+
+    <p>Before comparing features, it's worth understanding what each option actually is and what it was designed to do. These are fundamentally different tools built by different organizations with different mandates.</p>
+
+    <h3>FEMA App</h3>
+
+    <p>The Federal Emergency Management Agency's official app provides real-time weather alerts sourced from the National Weather Service, safety tips for various disaster types, a disaster resources locator, and a shelter finder. It's free, well-maintained, and backed by the full authority of the federal government. Most features require an active internet connection.</p>
+
+    <h3>Red Cross Apps</h3>
+
+    <p>The American Red Cross publishes several separate apps: Emergency (alerts and shelter info), First Aid (step-by-step instructions), Blood Donor, and others. The Emergency app provides weather alerts and shelter locations during declared disasters. The First Aid app includes some offline content. Each app does one thing. Together they cover a reasonable range, but you'll need to download and manage multiple apps.</p>
+
+    <h3>Ready.gov</h3>
+
+    <p>Ready.gov is not an app — it's a website run by the Department of Homeland Security. And honestly, it's excellent. The educational content is written by emergency management professionals and covers everything from building a kit to making a family communication plan. The planning guides and checklists are comprehensive and authoritative. If you haven't read through Ready.gov, you should. It's the gold standard for emergency preparedness information.</p>
+
+    <h3>NomadCore</h3>
+
+    <p>NomadCore is an all-in-one, offline-first emergency preparedness app. It combines emergency procedures, supply tracking with expiration alerts, offline maps, encrypted document storage, emergency plans, and family coordination into a single app. It's free on iOS and Android. Everything works without an internet connection.</p>
+
+    <hr>
+
+    <h2>Feature-by-Feature Comparison</h2>
+
+    <p>Numbers and checkmarks can't capture every nuance, but this table gives a fair overview of what each option offers.</p>
+
+    <div class="comparison-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>FEMA App</th>
+            <th>Red Cross</th>
+            <th>Ready.gov</th>
+            <th>NomadCore</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Emergency alerts</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td class="cross">No (website)</td>
+            <td class="partial">Planned</td>
+          </tr>
+          <tr>
+            <td>Offline procedures</td>
+            <td class="partial">Limited</td>
+            <td class="partial">Some first aid</td>
+            <td class="cross">No</td>
+            <td class="check">1,300+</td>
+          </tr>
+          <tr>
+            <td>Supply tracking</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="partial">Checklists (PDF)</td>
+            <td class="check">Yes, with expiration alerts</td>
+          </tr>
+          <tr>
+            <td>Offline maps</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="check">Yes</td>
+          </tr>
+          <tr>
+            <td>Document storage</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="check">Yes, encrypted</td>
+          </tr>
+          <tr>
+            <td>Family coordination</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="cross">No</td>
+            <td class="check">Yes</td>
+          </tr>
+          <tr>
+            <td>Emergency plans</td>
+            <td class="partial">Templates (online)</td>
+            <td class="cross">No</td>
+            <td class="partial">Templates (online)</td>
+            <td class="check">Yes, fully offline</td>
+          </tr>
+          <tr>
+            <td>Works without internet</td>
+            <td class="cross">Mostly no</td>
+            <td class="partial">Partially</td>
+            <td class="cross">No</td>
+            <td class="check">Yes, fully</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td class="check">Free</td>
+            <td class="check">Free</td>
+            <td class="check">Free</td>
+            <td class="check">Free</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>A few things stand out. Government apps and resources dominate on real-time alerts and institutional authority. NomadCore fills the operational gaps — the daily, practical work of being prepared — that government tools were never designed to address.</p>
+
+    <hr>
+
+    <h2>Where Government Apps Win</h2>
+
+    <p>We want to be genuinely fair here, because it matters. If we only told you what NomadCore does well, you'd have reason to distrust everything we say. The truth is that government emergency resources do several things that we can't replicate — and some that we wouldn't try to.</p>
+
+    <p><strong>FEMA's real-time alerts are hard to beat.</strong> The FEMA app ties directly into the National Weather Service alert system. When a tornado warning is issued for your county, FEMA pushes it to your phone within seconds. This infrastructure has been built over decades with billions of dollars of investment. It saves lives every year, and we're not going to pretend a startup can casually replicate it.</p>
+
+    <p><strong>Ready.gov's content is written by professionals.</strong> The planning guides on Ready.gov are authored by emergency management experts with decades of field experience. Their content is reviewed, updated, and carries the weight of institutional knowledge. When Ready.gov tells you how to prepare for a hurricane, that advice is backed by people who have managed hurricane response firsthand.</p>
+
+    <p><strong>The Red Cross shelter finder is invaluable during disasters.</strong> When a disaster is declared, Red Cross shelters are tracked in real-time through their app. Knowing which shelters are open, how full they are, and where to find one — that's a capability that requires boots on the ground and organizational infrastructure that no app alone can provide.</p>
+
+    <p><strong>Institutional trust carries authority.</strong> When FEMA says "evacuate," people listen. That authority comes from the government's role in disaster response, and it's not something any private app can or should try to replace. During an active emergency, the official word from FEMA and the Red Cross is the word that matters.</p>
+
+    <p><strong>Physical resources matter.</strong> FEMA and the Red Cross deploy real resources — food, water, temporary shelter, medical teams. No app replaces a truck full of water or a volunteer with a first aid kit. The government's ability to mobilize physical infrastructure during a disaster is something we deeply respect.</p>
+
+    <hr>
+
+    <h2>Where NomadCore Is Different</h2>
+
+    <p>Not "better" — different. Different design philosophy, different problem being solved. Government tools are designed to push information from institutions to individuals. NomadCore is designed to help families organize, plan, and act — especially when those institutions are unreachable.</p>
+
+    <p><strong>Offline-first architecture.</strong> This is the fundamental difference. Government apps assume you have connectivity. The FEMA app needs internet to load alerts, find shelters, and access most content. Ready.gov is a website — no connection, no content. NomadCore assumes you won't have internet, because in the emergencies that matter most, you often don't. Cell towers go down. Power grids fail. Networks get overloaded. Everything in NomadCore — all 1,300+ procedures, your maps, your documents, your emergency plan — lives on your device and works without a single bar of signal.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> NomadCore's 1,300+ procedures are sourced from military field manuals, FEMA guidelines, Red Cross protocols, and medical references. They're available offline because that's when you need them most.</p>
+    </div>
+
+    <p><strong>All-in-one vs. fragmented.</strong> The Red Cross publishes separate apps for emergencies, first aid, swimming safety, and blood donation. FEMA has its own app. Ready.gov is a separate website. That's at least three or four things to download, learn, and keep updated. NomadCore puts emergency procedures, supply tracking, document storage, offline maps, and family coordination in one place. When stress is high and time is short, fumbling between apps costs you both.</p>
+
+    <p><strong>Family-centric design.</strong> Government apps are designed for individuals receiving information. NomadCore is designed for families coordinating together. The family sharing feature lets everyone in your household access the same emergency plan, supply inventory, and important documents. When you update the plan, everyone sees the update. When you mark supplies as packed, the whole family knows. During an emergency, the question isn't just "what should I do?" — it's "what is everyone else doing, and how do we stay coordinated?"</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> The family sharing feature lets everyone in your household access the same emergency plan, supply inventory, and documents. Share your family's plan via QR code in under a minute.</p>
+    </div>
+
+    <p><strong>Supply management with accountability.</strong> No government app tracks your physical emergency supplies. Ready.gov will tell you to buy 72 hours of water, a first aid kit, and a flashlight. That's useful advice. But it won't tell you that the water you bought 18 months ago expired last March, or that you used the batteries from your flashlight during the last power outage and never replaced them. NomadCore tracks what you have, when it expires, and what's missing — turning a one-time checklist into an ongoing state of readiness.</p>
+
+    <p><strong>Encrypted document storage.</strong> Government apps don't store your insurance cards, medical records, property deeds, or passports. After a disaster, these are the documents you need immediately — for insurance claims, medical treatment, and identity verification. NomadCore stores them on-device with AES-256 encryption, the same standard used by the U.S. military. If you choose cloud backup, documents are encrypted before they ever leave your phone.</p>
+
+    <p><strong>Privacy by design.</strong> NomadCore works fully offline by default. No data is uploaded unless you explicitly choose cloud backup. No tracking. No analytics. No ads. No behavioral profiling. Government apps are generally trustworthy with data, but they do require internet connections that route through government servers. If data minimization matters to your family, NomadCore's architecture means your preparedness data never has to leave your device.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> All data is encrypted with AES-256 — the same standard used by the U.S. military. Cloud backup is optional, and when enabled, everything is encrypted before it leaves your device.</p>
+    </div>
+
+    <hr>
+
+    <h2>The Case for Using Both</h2>
+
+    <p>This is the section that matters most. Emergency preparedness is not a zero-sum game. The best setup isn't choosing one app over another — it's building a system where each tool covers what the others don't.</p>
+
+    <p>Here's what we'd recommend:</p>
+
+    <ul>
+      <li><strong>Use the FEMA app for real-time alerts and shelter locations during active disasters.</strong> When a hurricane is bearing down or a wildfire is spreading, FEMA's connection to the National Weather Service is the fastest way to get authoritative information. Keep it installed. Enable notifications.</li>
+      <li><strong>Use Ready.gov to educate yourself on threats specific to your region.</strong> Spend an afternoon reading through the guides relevant to where you live. If you're in tornado country, read the tornado section. If you're on a coast, read the hurricane and storm surge sections. This is foundational knowledge.</li>
+      <li><strong>Use the Red Cross First Aid app as a backup reference.</strong> Its offline first aid content is solid. Having a second source for medical procedures is smart.</li>
+      <li><strong>Use NomadCore as your family's operational hub.</strong> This is where your plan lives. Where your supplies are tracked. Where your documents are stored. Where your offline maps are saved. Where your family coordinates. It's the place that works when everything else is down.</li>
+    </ul>
+
+    <p>Government resources provide the authority, the real-time data, and the institutional response. NomadCore provides the personal infrastructure — your family's specific plan, your specific supplies, your specific documents — that no government agency can build for you.</p>
+
+    <hr>
+
+    <h2>What We're Building Next</h2>
+
+    <p>NomadCore is actively developed. Here's what's coming:</p>
+
+    <ul>
+      <li><strong>Weather alerts integration</strong> — bringing real-time severe weather notifications into the app, so you have alerts and action plans in the same place.</li>
+      <li><strong>Community features</strong> — connecting with neighbors and local networks for mutual aid during emergencies.</li>
+      <li><strong>Continued expansion of the procedure library</strong> — adding more scenarios, more detail, and more regional relevance to the 1,300+ procedures already available.</li>
+    </ul>
+
+    <p>We're building in the open and listening to the families who use the app. Every feature is driven by what real users tell us they need.</p>
+
+    <hr>
+
+    <p>The best emergency preparedness setup isn't one app — it's a system. Government resources provide authority, real-time alerts, and institutional support. NomadCore provides the operational foundation — your family's plan, your supplies, your documents, your maps — all accessible when the grid goes down.</p>
+
+    <p>They complement each other. Use both. Be ready.</p>
+
+    <hr>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> free on iOS and Android. Build your family's emergency plan with offline procedures, supply tracking, encrypted documents, and family coordination — all accessible when cell towers and internet go down.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>One app for your whole family's emergency plan</h2>
+      <p>Offline procedures, supply tracking, encrypted documents, and family coordination — free on iOS and Android.</p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta-inline">
+    <div class="container" style="max-width: 760px;">
+      <div class="fade-up">
+        <h3>How prepared is your family?</h3>
+        <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
+        <a href="../quiz/" class="btn-quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Take the quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container" style="max-width: 760px;">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday. Practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

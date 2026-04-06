@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Emergency Kit Maintenance: The System That Keeps Your Supplies Ready - NomadCore Blog</title>
+  <meta name="description" content="An emergency kit you packed two years ago is probably full of expired supplies. Here's a practical system for organizing, tracking, and maintaining your emergency supplies.">
+  <meta property="og:title" content="Emergency Kit Maintenance: The System That Keeps Your Supplies Ready">
+  <meta property="og:description" content="An emergency kit you packed two years ago is probably full of expired supplies. Here's a practical system for organizing, tracking, and maintaining your emergency supplies.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://nomad-core.com/images/blog-maintenance.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/blog/emergency-kit-maintenance.html">
+  <meta name="keywords" content="emergency kit checklist app, emergency supply tracker, go bag checklist, bug out bag inventory, emergency kit organization, emergency kit maintenance">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+    /* ===== Quiz CTA ===== */
+    .quiz-cta-inline {
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      text-align: center;
+    }
+    .quiz-cta-inline h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .quiz-cta-inline p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .btn-quiz {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gray-900);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-quiz:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      color: white;
+    }
+    .btn-quiz svg { width: 18px; height: 18px; }
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      border: none;
+      padding: 0;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Emergency Kit Maintenance: The System That Keeps Your Supplies Ready",
+    "description": "An emergency kit you packed two years ago is probably full of expired supplies. Here's a practical system for organizing, tracking, and maintaining your emergency supplies.",
+    "image": "https://nomad-core.com/images/blog-maintenance.png",
+    "datePublished": "2026-04-05",
+    "author": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nomad-core.com/images/nomadcore-icon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nomad-core.com/blog/emergency-kit-maintenance.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <time datetime="2026-04-05">Apr 5, 2026</time>
+        <span class="reading-time">8 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">Emergency Kit Maintenance: The System That Keeps Your Supplies Ready</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-maintenance.png" alt="Emergency kit maintenance and organization">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>There's a particular kind of false confidence that comes from having an emergency kit in the garage. You packed it, you checked the box, you're "prepared." Until you open it during an actual emergency and discover the water tastes like plastic, the granola bars crumbled into dust, the batteries corroded and leaked acid onto your flashlight, and the first aid kit's adhesive bandages won't stick to anything.</p>
+
+    <p>A survey by the American Red Cross found that 60% of Americans who say they have an emergency kit haven't checked it in over a year. That kit sitting in your closet right now? There's a better-than-even chance something critical inside it has expired, degraded, or stopped working.</p>
+
+    <p>Your kit isn't a set-it-and-forget-it purchase. It's a system that needs maintenance. Here's how to build that system so your supplies are actually ready when you need them.</p>
+
+    <hr>
+
+    <h2>The Five Kits Every Family Should Maintain</h2>
+
+    <p>Most people think of "emergency kit" as a single thing. In practice, preparedness means maintaining several kits in different locations, each with a different purpose and a different maintenance schedule.</p>
+
+    <h3>1. Home kit (the big one)</h3>
+    <p>This is your primary supply cache, stored inside your home. It should sustain your family for at least 72 hours without outside help — no power, no running water, no trip to the store. FEMA recommends 72 hours as a minimum because that's how long it typically takes for emergency services to reach everyone after a major disaster. Many preparedness experts suggest two weeks as a more realistic target.</p>
+
+    <h3>2. Car kit (one per vehicle)</h3>
+    <p>You might not be home when disaster strikes. A car kit keeps basic supplies wherever you drive. It also covers non-disaster emergencies: breakdowns, getting stranded in weather, unexpected detours. This kit needs seasonal adjustments — what you need in January in Minnesota is very different from July in Arizona.</p>
+
+    <h3>3. Go-bag / Bug-out bag</h3>
+    <p>A grab-and-go backpack stored near your front door with 24-48 hours of essentials. The key constraint: it has to be light enough to carry while running. If you can't move quickly with it on your back, it's too heavy. Every family member old enough to carry a pack should have their own.</p>
+
+    <h3>4. Office / work kit</h3>
+    <p>Basic supplies for sheltering in place at your workplace. After the 2001 Northridge earthquake, thousands of office workers walked miles home in dress shoes through broken glass and debris. A small kit in your desk drawer prevents that.</p>
+
+    <h3>5. EDC (everyday carry)</h3>
+    <p>These are the items on your person at all times: phone, portable charger, cash, daily medications, and a pocket flashlight. No bag required — these live in your pockets, purse, or briefcase. EDC items are your absolute last line of preparedness.</p>
+
+    <hr>
+
+    <h2>What Goes In Each Kit</h2>
+
+    <h3>Home kit checklist</h3>
+
+    <ul class="checklist">
+      <li><strong>Water</strong> — 1 gallon per person per day for at least 3 days (a family of four needs 12 gallons minimum)</li>
+      <li><strong>Food</strong> — non-perishable items totaling 2,000 calories per person per day (canned goods, freeze-dried meals, energy bars, peanut butter, crackers)</li>
+      <li><strong>First aid kit</strong> — bandages, gauze, antiseptic, pain relievers, tweezers, medical tape, trauma shears</li>
+      <li><strong>Flashlights</strong> — at least two, with extra batteries stored separately</li>
+      <li><strong>Battery-powered or hand-crank NOAA weather radio</strong></li>
+      <li><strong>Medications</strong> — 7-day supply of all prescription medications, plus OTC basics (ibuprofen, antihistamines, antidiarrheal)</li>
+      <li><strong>Important documents</strong> — copies of IDs, insurance policies, medical records, property deeds in a waterproof bag</li>
+      <li><strong>Cash</strong> — $200-500 in small bills (ATMs and card readers don't work without power)</li>
+      <li><strong>Clothing</strong> — one change per person, including sturdy shoes and weather-appropriate layers</li>
+      <li><strong>Hygiene supplies</strong> — toilet paper, soap, hand sanitizer, feminine products, toothbrushes, trash bags</li>
+      <li><strong>Tools</strong> — multi-tool, duct tape, wrench (to turn off utilities), work gloves, fire extinguisher</li>
+      <li><strong>Whistle</strong> — to signal for help without shouting</li>
+      <li><strong>Dust masks / N95 respirators</strong></li>
+      <li><strong>Plastic sheeting and duct tape</strong> — for shelter-in-place air sealing</li>
+      <li><strong>Can opener</strong> — manual, not electric</li>
+    </ul>
+
+    <h3>Car kit checklist</h3>
+
+    <ul class="checklist">
+      <li>Jumper cables or a portable jump starter</li>
+      <li>Basic tool kit (screwdriver, pliers, adjustable wrench)</li>
+      <li>Phone charger (car adapter and cable)</li>
+      <li>Flashlight with extra batteries</li>
+      <li>First aid kit</li>
+      <li>2-3 bottles of water</li>
+      <li>Non-perishable snacks (energy bars, nuts)</li>
+      <li>Reflective emergency blanket</li>
+      <li>Tire pressure gauge and tire inflator</li>
+      <li>Road flares or reflective triangles</li>
+    </ul>
+
+    <p><strong>Seasonal additions:</strong> In winter, add wool blankets, an ice scraper, a bag of sand or cat litter for traction, hand warmers, and extra warm clothing. In summer, add extra water (double your supply), sun protection, and an extra gallon of coolant.</p>
+
+    <h3>Go-bag checklist</h3>
+
+    <ul class="checklist">
+      <li>Water (two 1-liter bottles) and water purification tablets</li>
+      <li>Food for 24-48 hours (energy bars, freeze-dried meals, trail mix)</li>
+      <li>Compact first aid kit</li>
+      <li>Flashlight or headlamp</li>
+      <li>Phone charger and portable battery pack</li>
+      <li>Copies of critical documents in a waterproof pouch</li>
+      <li>Cash ($100 in small bills)</li>
+      <li>Change of clothes and rain poncho</li>
+      <li>Prescription medications (3-day supply)</li>
+      <li>N95 mask and work gloves</li>
+      <li>Emergency whistle</li>
+      <li>Printed list of emergency contacts and rally points</li>
+    </ul>
+
+    <h3>Office kit checklist</h3>
+
+    <ul class="checklist">
+      <li>Walking shoes (kept in your desk or locker — you may need to walk home)</li>
+      <li>Water (at least 2 bottles)</li>
+      <li>Non-perishable snacks for one day</li>
+      <li>Flashlight</li>
+      <li>Dust mask or N95 respirator</li>
+      <li>Small first aid kit</li>
+      <li>Prescription medications (1-day supply)</li>
+      <li>Phone charger</li>
+      <li>Printed emergency contact list</li>
+    </ul>
+
+    <h3>EDC essentials</h3>
+
+    <ul class="checklist">
+      <li>Phone (your most versatile emergency tool)</li>
+      <li>Portable battery pack (at least 5,000 mAh)</li>
+      <li>Cash — $50-100 in small bills ($5s and $10s work best)</li>
+      <li>Daily medications</li>
+      <li>Pocket flashlight or keychain light</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> PackMind lets you track every item across all your kits — organized by category with expiration date alerts. Create a separate inventory for each kit and never lose track of what's where.</p>
+    </div>
+
+    <hr>
+
+    <h2>The Maintenance Calendar</h2>
+
+    <p>Having the right supplies is only half the job. Keeping them in working condition is the other half. Here's a schedule that prevents the "open the kit and discover everything expired" scenario.</p>
+
+    <h3>Monthly</h3>
+
+    <ul class="checklist">
+      <li>Check medications for expiration dates — medications lose effectiveness and some become harmful after expiration</li>
+      <li>Test flashlights, headlamps, and radios — turn them on, confirm they work, check for battery corrosion</li>
+      <li>Verify phone chargers and battery packs are charged and functional</li>
+    </ul>
+
+    <h3>Quarterly (every 3 months)</h3>
+
+    <ul class="checklist">
+      <li>Rotate food supplies — check expiration dates, replace anything expiring within the next quarter</li>
+      <li>Rotate water — commercially bottled water is good for 1-2 years, but check for leaks and contamination</li>
+      <li>Check battery expiration dates and replace any that are within 6 months of expiring</li>
+      <li>Inspect first aid supplies — check that bandages are sealed, ointments haven't separated, medications are current</li>
+      <li>Verify cash amounts haven't been raided for pizza delivery</li>
+    </ul>
+
+    <h3>Semi-annually (daylight saving time — spring and fall)</h3>
+
+    <ul class="checklist">
+      <li>Conduct a full kit audit — open every bag, check every item, compare against your inventory list</li>
+      <li>Update important documents — new insurance cards, updated medical records, changed phone numbers</li>
+      <li>Adjust seasonal items in car kits — swap winter gear for summer gear and vice versa</li>
+      <li>Check clothing for fit — especially for growing children</li>
+      <li>Test and replace smoke detector and carbon monoxide detector batteries (if applicable)</li>
+    </ul>
+
+    <h3>Annually</h3>
+
+    <ul class="checklist">
+      <li>Replace all stored water, even if it looks and smells fine</li>
+      <li>Swap out clothing sizes for growing kids — that toddler jacket from last year won't fit your preschooler</li>
+      <li>Update your family emergency plan — new school, new workplace, new neighbors, new routes</li>
+      <li>Review and update emergency contact lists</li>
+      <li>Replace sunscreen and insect repellent (both degrade after 1-2 years)</li>
+      <li>Audit your insurance coverage and update document copies</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Set up separate categories for each kit type (Home, Car, Go-Bag, Office, EDC) in PackMind. Assign expiration dates to every perishable item and let the app track the calendar for you.</p>
+    </div>
+
+    <hr>
+
+    <h2>The FIFO Rotation System</h2>
+
+    <p>FIFO stands for First In, First Out — the same inventory system used by grocery stores and restaurants. Applied to your emergency supplies, it eliminates waste and keeps everything fresh without extra trips to the store.</p>
+
+    <p>Here's how it works: When you buy new canned goods for your pantry, move the oldest pantry items into your emergency kit. Then move the emergency kit's oldest items into daily use (if they're not expired) or into the disposal pile if they are. The same principle applies to batteries, medications, and water.</p>
+
+    <p>For example:</p>
+
+    <ol>
+      <li>You buy a 24-pack of water bottles at the store</li>
+      <li>The new pack goes into your pantry for daily use</li>
+      <li>The current pantry water moves to the emergency kit</li>
+      <li>The emergency kit's old water gets used for cooking, pet bowls, or watering plants</li>
+    </ol>
+
+    <p>Nothing sits unused until it expires. Everything cycles through. This is the single most effective maintenance habit you can build, because it turns emergency supply maintenance into something that happens automatically as part of your regular grocery routine.</p>
+
+    <hr>
+
+    <h2>Common Maintenance Mistakes</h2>
+
+    <p>Even diligent preppers make these errors. Check yourself against this list.</p>
+
+    <ul>
+      <li><strong>Storing kits in the garage.</strong> Temperature extremes destroy food, medications, and batteries faster than anything else. A garage in Phoenix can hit 150 degrees in summer. Medications lose potency, canned food degrades, batteries leak, and water stored in plastic absorbs chemicals. Store kits in a temperature-controlled part of your home — a hallway closet, under a bed, or in a basement.</li>
+      <li><strong>Borrowing from the emergency kit.</strong> "I'll just grab the emergency flashlight for this camping trip and replace it later." You won't. The flashlight won't be there when you need it. Emergency supplies are not everyday supplies. Treat the kit as sealed.</li>
+      <li><strong>Packing food your family won't eat.</strong> An emergency is the worst time to discover your kids refuse to eat canned beef stew. Stock foods your family actually eats. Rotate them through the FIFO system so everyone stays familiar with the taste.</li>
+      <li><strong>Packing clothes that no longer fit.</strong> Kids grow. Adults change sizes. If you packed your go-bag two years ago, the clothes inside it probably don't fit someone in your family. Check sizes at every semi-annual audit.</li>
+      <li><strong>Forgetting to update medications.</strong> When prescriptions change — new dosage, new medication, discontinued medication — the emergency kit must change too. A kit with outdated heart medication is worse than useless; it's dangerous.</li>
+      <li><strong>Keeping only one copy of documents.</strong> A waterproof bag in your home kit is good. A second copy in a safe deposit box, a third with a trusted relative, and a fourth in encrypted digital storage is better. Your home might be the thing the disaster destroys.</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Get push notifications before items expire — no more discovering expired supplies during an emergency. PackMind alerts you days or weeks in advance, so replacements happen on your schedule, not during a crisis.</p>
+    </div>
+
+    <hr>
+
+    <h2>Teaching Your Family the System</h2>
+
+    <p>A maintenance system that only one person understands is a single point of failure. If that person isn't home when disaster strikes, everyone else is staring at a kit they've never opened. Spread the knowledge.</p>
+
+    <h3>Assign kit owners</h3>
+
+    <p>Teenagers are fully capable of managing their own go-bag. Assign each family member responsibility for at least one kit or one aspect of maintenance. Ownership creates accountability. A 14-year-old who packed their own go-bag knows exactly where the flashlight is and how to use the water purification tablets.</p>
+
+    <h3>Make the quarterly check a family activity</h3>
+
+    <p>Set a recurring calendar event. Pull out all the kits, spread everything on the living room floor, and work through the checklists together. It takes 30-45 minutes and doubles as a teaching moment for kids. Let them check expiration dates, test the flashlights, and practice using the weather radio. The more familiar they are with the supplies, the less panic they'll feel during an actual emergency.</p>
+
+    <h3>Keep an inventory list</h3>
+
+    <p>You should be able to know exactly what's in each kit without opening it. An inventory list — digital or printed, attached to the outside of the bag — lets anyone in the family check on supplies. It also makes it obvious when something is missing or needs replacement.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Share your inventory with family members so everyone knows what's where. PackMind's family sharing feature means every family member can view the complete inventory from their own device — no need to dig through bags to find out if the first aid kit has been restocked.</p>
+    </div>
+
+    <hr>
+
+    <h2>Start Today, Not Tomorrow</h2>
+
+    <p>You don't need to build five perfect kits this weekend. Start with one. Pick the kit that matters most for your situation — if you live in a wildfire zone, start with the go-bag; if you live in tornado country, start with the home kit. Get it packed, get it inventoried, and put the first maintenance check on your calendar.</p>
+
+    <p>Then build out from there. Add the car kit next month. The office kit the month after that. Each kit you add is another layer of resilience for your family.</p>
+
+    <p>The families who fare best in emergencies aren't the ones with the most expensive gear. They're the ones who maintain what they have. An expired kit is just a box of garbage with a false sense of security attached to it. A maintained kit is a system that works when everything else doesn't.</p>
+
+    <hr>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> to track your emergency supplies with PackMind's inventory management, expiration alerts, and family sharing — so your kit is always ready when you need it.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Your kit is only as good as its last inspection</h2>
+      <p>Track every supply, get expiration alerts, and share your inventory with your family — all in PackMind.</p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta-inline">
+    <div class="container" style="max-width: 760px;">
+      <div class="fade-up">
+        <h3>How prepared is your family?</h3>
+        <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
+        <a href="../quiz/" class="btn-quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Take the quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container" style="max-width: 760px;">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday. Practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

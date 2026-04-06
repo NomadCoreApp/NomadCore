@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Family Emergency Drills: The 20-Minute Practice That Could Save Lives - NomadCore Blog</title>
+  <meta name="description" content="Families who practice emergency drills are twice as likely to evacuate safely. Here's how to run fire, earthquake, severe weather, and evacuation drills with your family.">
+  <meta name="keywords" content="family emergency drill, home fire drill, earthquake drill at home, how to practice emergency plan, emergency drill for kids">
+  <meta property="og:title" content="Family Emergency Drills: The 20-Minute Practice That Could Save Lives">
+  <meta property="og:description" content="Families who practice emergency drills are twice as likely to evacuate safely. Here's how to run fire, earthquake, severe weather, and evacuation drills with your family.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://nomad-core.com/images/blog-drills.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/blog/family-emergency-drills.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #122B52;
+      --blue: #2E6BD6;
+      --blue-light: #EBF2FF;
+      --cyan: #22B8CF;
+      --cyan-light: #E6FAFB;
+      --amber: #F59E0B;
+      --amber-light: #FFF8E6;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #10B981;
+      --green-light: #ECFDF5;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--gray-900); }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .nav-cta { display: inline-block; margin-top: 8px; text-align: center; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--gray-800);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* ===== Article Layout ===== */
+    .article-header {
+      padding: 120px 0 0;
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+    }
+    .article-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--blue); }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .article-meta .reading-time {
+      background: var(--blue-light);
+      color: var(--blue);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.25;
+    }
+    .article-hero-image {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== Article Body ===== */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .article-body h3 {
+      font-size: 1.2rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .article-body th {
+      background: var(--gray-50);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+    .article-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--blue);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+    .article-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Checklist styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .checklist li::before {
+      content: "\2610";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--cyan-light);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .tip-box p {
+      color: var(--gray-700);
+      margin-bottom: 0;
+    }
+    .tip-box strong {
+      color: var(--navy);
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .cta-banner-inner {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-banner-inner h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+    .cta-banner-inner p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 48px 0 32px;
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-brand .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .cta-banner-inner { padding: 32px 20px; }
+      .cta-banner-inner h2 { font-size: 1.4rem; }
+    }
+    /* ===== Quiz CTA ===== */
+    .quiz-cta-inline {
+      padding: 40px 0;
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--blue-light) 100%);
+      text-align: center;
+    }
+    .quiz-cta-inline h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .quiz-cta-inline p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .btn-quiz {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gray-900);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-quiz:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      color: white;
+    }
+    .btn-quiz svg { width: 18px; height: 18px; }
+    /* ===== Newsletter Signup ===== */
+    .newsletter {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--navy) 100%);
+      color: white;
+    }
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .newsletter-icon svg { color: var(--cyan); }
+    .newsletter h2 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+      border: none;
+      padding: 0;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .newsletter .btn-subscribe {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      background: var(--cyan);
+      color: var(--gray-900);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter .btn-subscribe:hover {
+      background: white;
+      color: var(--gray-900);
+      transform: translateY(-2px);
+    }
+    .newsletter-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Family Emergency Drills: The 20-Minute Practice That Could Save Lives",
+    "description": "Families who practice emergency drills are twice as likely to evacuate safely. Here's how to run fire, earthquake, severe weather, and evacuation drills with your family.",
+    "image": "https://nomad-core.com/images/blog-drills.png",
+    "datePublished": "2026-04-05",
+    "author": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NomadCore",
+      "url": "https://nomad-core.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nomad-core.com/images/nomadcore-icon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nomad-core.com/blog/family-emergency-drills.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../index.html#scenarios">Who It's For</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../updates/">Updates</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <a href="index.html" class="article-back fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+      <div class="article-meta fade-up delay-1">
+        <time datetime="2026-04-05">Apr 5, 2026</time>
+        <span class="reading-time">8 min read</span>
+      </div>
+      <h1 class="fade-up delay-2">Family Emergency Drills: The 20-Minute Practice That Could Save Lives</h1>
+    </div>
+  </header>
+
+  <div class="article-hero-image fade-up">
+    <img src="../images/blog-drills.png" alt="Family practicing emergency drill">
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>The National Fire Protection Association found that only 26% of families have developed and practiced a home fire escape plan. Of those who have a plan, less than half have actually practiced it. Here's what that means in real terms: when a smoke alarm goes off at 2 AM, three out of four families are making it up as they go, in the dark, half asleep, with children who have never been taught what to do.</p>
+
+    <p>A plan you haven't practiced is a plan that doesn't exist.</p>
+
+    <p>The good news is that changing this takes less time than a single episode of television. Twenty minutes, four times a year, can mean the difference between a family that freezes and a family that moves.</p>
+
+    <hr>
+
+    <h2>Why Drills Matter More Than Plans</h2>
+
+    <p>Under stress, the human brain doesn't think clearly. It reverts to trained behaviors. This is why firefighters, paramedics, and pilots drill the same procedures hundreds of times -- not because they don't understand them, but because understanding isn't enough when adrenaline floods the brain and fine motor skills degrade.</p>
+
+    <p>The same principle applies to your family. A printed escape plan on the refrigerator is a start, but it means nothing if your eight-year-old has never actually walked the route from their bedroom to the meeting spot outside. Studies on emergency response consistently show that practiced responses are <strong>2-3x faster</strong> than unpracticed ones. In a house fire, where you may have less than two minutes to get out, that speed difference is everything.</p>
+
+    <p>For children especially, repetition creates confidence instead of panic. A child who has practiced crawling low under smoke five times will do it automatically. A child who has only heard about it will stand up, breathe in hot gases, and freeze. Drills replace fear with familiarity. They turn abstract danger into a specific set of actions your child already knows how to do.</p>
+
+    <hr>
+
+    <h2>The Home Fire Drill</h2>
+
+    <p>House fires are the most common emergency families face, and nighttime fires are the most deadly. Your fire drill should simulate the worst-case scenario: it's dark, everyone is asleep, and the smoke alarm is going off.</p>
+
+    <h3>Before the drill</h3>
+
+    <ul class="checklist">
+      <li>Test all smoke alarms -- replace batteries if needed</li>
+      <li>Identify two escape routes from every room in the house</li>
+      <li>Pick a meeting spot outside: the mailbox, a specific tree, or a neighbor's driveway</li>
+      <li>Make sure everyone knows to never go back inside for anything</li>
+    </ul>
+
+    <h3>During the drill</h3>
+
+    <ul class="checklist">
+      <li>Sound the smoke alarm (use the test button)</li>
+      <li>Everyone exits using the nearest safe route -- practice in the dark</li>
+      <li>Practice with bedroom doors closed (feel the door for heat before opening)</li>
+      <li>Crawl low under imaginary smoke -- air is clearest near the floor</li>
+      <li>Meet at the designated spot outside</li>
+      <li>Account for every family member -- do a headcount</li>
+      <li>Time it: the goal is everyone out in under 2 minutes</li>
+    </ul>
+
+    <h3>Special considerations</h3>
+
+    <ul>
+      <li><strong>Sleeping with doors closed:</strong> A closed door is one of the most effective fire safety measures. In a house fire, a room with an open door can reach 900 degrees Fahrenheit. A room with a closed door stays closer to 100 degrees. Teach your kids to sleep with doors shut.</li>
+      <li><strong>Two-story homes:</strong> Every bedroom on the second floor needs an escape ladder. Buy them, store them under the bed or in the closet, and practice deploying them. The first time your child uses an escape ladder should not be during a real fire.</li>
+      <li><strong>Young children:</strong> Do they know to get low? Do they know not to hide under the bed or in the closet? Children's instinct during a fire is to hide from the noise and confusion. Drills teach them to move instead.</li>
+    </ul>
+
+    <p><strong>Frequency:</strong> Practice your home fire drill at least twice a year. The NFPA recommends once at night and once during the day, since escape feels very different in the dark.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> NomadCore's emergency plans include drill scheduling -- set reminders to practice quarterly so drills don't fall off your radar. After each practice, log what worked and what didn't directly in the app.</p>
+    </div>
+
+    <hr>
+
+    <h2>The Severe Weather Drill</h2>
+
+    <p>Severe weather drills vary by threat. The key is matching the drill to the hazards in your region.</p>
+
+    <h3>Tornado drill</h3>
+
+    <ul class="checklist">
+      <li>Everyone to the interior room on the lowest floor, away from windows</li>
+      <li>Get under a sturdy table or mattress if possible</li>
+      <li>Cover your head and neck with your arms</li>
+      <li>Time it: everyone should be in position in under 60 seconds</li>
+      <li>Practice the "alert" sound -- play the actual Emergency Alert System tone so kids recognize it instantly</li>
+    </ul>
+
+    <h3>Hurricane evacuation drill</h3>
+
+    <ul class="checklist">
+      <li>Practice the full evacuation sequence: grab go-bags, load the car, review the route</li>
+      <li>Assign roles: who loads the car, who grabs the pet, who secures the house</li>
+      <li>Know your evacuation zone and shelter locations</li>
+      <li>Practice with a realistic timeline -- you may have 24 hours, or you may have 6</li>
+    </ul>
+
+    <h3>Winter storm shelter-in-place drill</h3>
+
+    <ul class="checklist">
+      <li>Locate all emergency supplies: blankets, flashlights, batteries, camp stove</li>
+      <li>Practice setting up an emergency heat source safely</li>
+      <li>Know where the water shut-off valve is (pipes may freeze and burst)</li>
+      <li>Test your backup power plan: do you have a generator? Portable battery? Are they charged?</li>
+    </ul>
+
+    <hr>
+
+    <h2>The Earthquake Drill</h2>
+
+    <p>Earthquakes give zero warning. There is no alarm, no forecast, no 30-minute head start. The shaking starts and you react with whatever your body has been trained to do.</p>
+
+    <p>The correct response is <strong>Drop, Cover, Hold On</strong>:</p>
+
+    <ul class="checklist">
+      <li><strong>Drop</strong> to your hands and knees before the shaking knocks you down</li>
+      <li><strong>Cover</strong> your head and neck under a sturdy desk or table</li>
+      <li><strong>Hold On</strong> to the table leg so it doesn't shake away from you</li>
+    </ul>
+
+    <p>Practice this in different rooms. What do you do if you're in the kitchen when it hits? The bathroom? In bed? Each room has different hazards and different cover options. Walk through each scenario so the response is automatic regardless of where you are in the house.</p>
+
+    <h3>Post-earthquake protocol</h3>
+
+    <ul class="checklist">
+      <li>Check every family member for injuries</li>
+      <li>Check for gas leaks (smell for gas, listen for hissing)</li>
+      <li>Grab your go-bag</li>
+      <li>Exit the building if you see structural damage -- cracks in walls, shifted foundation, broken chimney</li>
+      <li>Move to an open area away from buildings, power lines, and trees</li>
+      <li>Do not re-enter the building until it has been inspected</li>
+    </ul>
+
+    <p><strong>Important myth to correct:</strong> Doorways are NOT safer than other parts of the house. That advice dates back to unreinforced adobe buildings where the door frame was the strongest part of the structure. In modern construction, you are far better off under a sturdy table than standing in a doorway.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Kora's Guide has step-by-step procedures for each emergency type, including earthquake response. Review them with your family before drilling so everyone understands the "why" behind each step.</p>
+    </div>
+
+    <hr>
+
+    <h2>The Evacuation Drill</h2>
+
+    <p>Whether it's a wildfire, a chemical spill, or a flood warning, the evacuation drill tests your family's ability to leave the house quickly with everything that matters.</p>
+
+    <h3>The full sequence</h3>
+
+    <ul class="checklist">
+      <li>Alarm sounds (use a timer or verbal cue)</li>
+      <li>Everyone grabs their assigned go-bag</li>
+      <li>Load the car -- bags, pets, critical supplies</li>
+      <li>Driver reviews evacuation route (primary and backup)</li>
+      <li>Car is moving -- clock stops</li>
+    </ul>
+
+    <p>Time the entire sequence from alarm to car moving. Identify bottlenecks: Who took too long? What was forgotten? Was the go-bag where it was supposed to be? Did the pet cooperate?</p>
+
+    <h3>Practice two scenarios</h3>
+
+    <ul>
+      <li><strong>30-minute warning:</strong> You have time to be deliberate. Grab extra supplies, secure the house, take a final walkthrough.</li>
+      <li><strong>5-minute warning:</strong> Grab people, pets, go-bags, keys. Nothing else. This is the scenario that reveals whether your system actually works under pressure.</li>
+    </ul>
+
+    <h3>The "what if we're separated" plan</h3>
+
+    <p>Practice the scenario where the family isn't together when the emergency happens. Kids are at school, one parent is at work, the other is at home. Who picks up the kids? Where does everyone meet? What's the out-of-area contact number everyone has memorized? This plan needs to be drilled verbally, not just written down.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> Use the family sharing feature so everyone has the same emergency plan on their device. When the family is separated, each person can check the plan independently -- same meeting points, same routes, same contact numbers.</p>
+    </div>
+
+    <hr>
+
+    <h2>Making Drills Work With Kids</h2>
+
+    <p>The biggest mistake parents make with emergency drills is scaring their children. A drill that creates anxiety defeats its own purpose. The goal is confidence, not fear.</p>
+
+    <ul>
+      <li><strong>Frame it as a game, not a threat.</strong> "We're going to practice being really fast helpers today" works better than "We need to practice in case the house catches fire."</li>
+      <li><strong>Use age-appropriate language.</strong> For young children: "We're going to practice our special exit plan." For teens: give them the real information and a real role.</li>
+      <li><strong>Praise participation, don't scold mistakes.</strong> "You remembered to close your door -- great job!" matters more than "You forgot to stay low."</li>
+      <li><strong>Let kids lead the drill sometimes.</strong> Hand a teenager the stopwatch and let them call "go." Give a younger child the job of checking that the meeting spot is clear. Ownership builds buy-in.</li>
+      <li><strong>Assign real roles to teens:</strong> "You're in charge of the pet." "You grab the go-bag from the hall closet." "You help your little brother with his shoes." Real responsibility creates real readiness.</li>
+    </ul>
+
+    <p><strong>Debrief afterward:</strong> Sit down together and ask: "What did we do well? What was hard? What should we change?" Let the kids answer first. Their perspective often reveals gaps adults miss -- the window that's too stiff for small hands, the escape route that's blocked by furniture, the meeting spot that's confusing in the dark.</p>
+
+    <hr>
+
+    <h2>The Drill Debrief</h2>
+
+    <p>Every drill should end with a short evaluation. This is what turns a one-time practice into a system that improves over time.</p>
+
+    <h3>What to evaluate</h3>
+
+    <ul class="checklist">
+      <li>Did everyone know what to do without being told?</li>
+      <li>How long did it take? Is it faster than last time?</li>
+      <li>What was forgotten or left behind?</li>
+      <li>Were there any physical obstacles -- locked windows, blocked paths, missing supplies?</li>
+      <li>Did everyone make it to the meeting spot?</li>
+      <li>Does anything in the emergency plan need to change based on what we learned?</li>
+    </ul>
+
+    <p>Write down your findings. Update your plan. Then schedule the next drill. The families who are best prepared aren't the ones with the most elaborate plans -- they're the ones who practice the basics until those basics are automatic.</p>
+
+    <div class="tip-box">
+      <p><strong>NomadCore tip:</strong> After each drill, update your plan in the app with lessons learned. Over time, you'll build a record of what works and what doesn't -- and your plan will get tighter with every practice session.</p>
+    </div>
+
+    <hr>
+
+    <p><em>Download <a href="https://nomad-core.com">NomadCore</a> to build your family emergency plan with drill scheduling, step-by-step procedures, family sharing, and offline access -- everything you need to practice before it matters.</em></p>
+
+    <div style="margin-top: 40px;">
+      <a href="index.html" class="article-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Practice before it matters</h2>
+      <p>Build your emergency plan in NomadCore, share it with your family, and drill until it's muscle memory.</p>
+      <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+          Download for Android
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta-inline">
+    <div class="container" style="max-width: 760px;">
+      <div class="fade-up">
+        <h3>How prepared is your family?</h3>
+        <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
+        <a href="../quiz/" class="btn-quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Take the quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter">
+    <div class="container" style="max-width: 760px;">
+      <div class="newsletter-inner fade-up">
+        <div class="newsletter-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Get weekly preparedness guides</h2>
+        <p>New guides every Monday. Practical tips your family can use today. No spam, unsubscribe anytime.</p>
+        <a href="../subscribe/" class="btn-subscribe">Subscribe to the newsletter</a>
+        <p class="newsletter-note">Join families already using NomadCore to stay prepared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer" style="color: var(--amber);">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
