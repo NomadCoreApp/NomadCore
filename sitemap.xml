@@ -69,6 +69,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://nomad-core.com/blog/recommended-emergency-gear.html</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://nomad-core.com/blog/emergency-supply-expiration.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
