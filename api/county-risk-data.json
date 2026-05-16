@@ -1,0 +1,1002 @@
+{
+  "48021": {
+    "county": "Bastrop",
+    "state": "TX",
+    "outage": {
+      "events": 47,
+      "major": 5,
+      "annual_rate": 4.7,
+      "longest_hrs": 96.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "wildfire", "score": 78, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 55, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 45,
+      "resilience": 62
+    }
+  },
+  "48453": {
+    "county": "Travis",
+    "state": "TX",
+    "outage": {
+      "events": 38,
+      "major": 4,
+      "annual_rate": 3.8,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "heat_wave", "score": 68, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 52, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 38,
+      "resilience": 71
+    }
+  },
+  "06085": {
+    "county": "Santa Clara",
+    "state": "CA",
+    "outage": {
+      "events": 62,
+      "major": 8,
+      "annual_rate": 6.2,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "earthquake", "score": 92, "rating": "Very High"},
+        {"hazard": "wildfire", "score": 72, "rating": "Relatively High"},
+        {"hazard": "drought", "score": 55, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 32,
+      "resilience": 78
+    }
+  },
+  "06037": {
+    "county": "Los Angeles",
+    "state": "CA",
+    "outage": {
+      "events": 55,
+      "major": 6,
+      "annual_rate": 5.5,
+      "longest_hrs": 52.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "earthquake", "score": 88, "rating": "Very High"},
+        {"hazard": "wildfire", "score": 82, "rating": "Very High"},
+        {"hazard": "landslide", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 40,
+      "resilience": 68
+    }
+  },
+  "12086": {
+    "county": "Miami-Dade",
+    "state": "FL",
+    "outage": {
+      "events": 72,
+      "major": 7,
+      "annual_rate": 7.2,
+      "longest_hrs": 168.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 95, "rating": "Very High"},
+        {"hazard": "flooding", "score": 82, "rating": "Very High"},
+        {"hazard": "heat_wave", "score": 60, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 48,
+      "resilience": 58
+    }
+  },
+  "36061": {
+    "county": "New York",
+    "state": "NY",
+    "outage": {
+      "events": 35,
+      "major": 3,
+      "annual_rate": 3.5,
+      "longest_hrs": 60.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "flooding", "score": 65, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "hurricane", "score": 45, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 35,
+      "resilience": 82
+    }
+  },
+  "17031": {
+    "county": "Cook",
+    "state": "IL",
+    "outage": {
+      "events": 41,
+      "major": 4,
+      "annual_rate": 4.1,
+      "longest_hrs": 54.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 72, "rating": "Relatively High"},
+        {"hazard": "tornado", "score": 48, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 45, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 42,
+      "resilience": 70
+    }
+  },
+  "04013": {
+    "county": "Maricopa",
+    "state": "AZ",
+    "outage": {
+      "events": 28,
+      "major": 2,
+      "annual_rate": 2.8,
+      "longest_hrs": 18.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "heat_wave", "score": 95, "rating": "Very High"},
+        {"hazard": "dust_storm", "score": 52, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 38, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 44,
+      "resilience": 65
+    }
+  },
+  "22071": {
+    "county": "Orleans",
+    "state": "LA",
+    "outage": {
+      "events": 85,
+      "major": 10,
+      "annual_rate": 8.5,
+      "longest_hrs": 336.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 98, "rating": "Very High"},
+        {"hazard": "flooding", "score": 92, "rating": "Very High"},
+        {"hazard": "heat_wave", "score": 58, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 72,
+      "resilience": 35
+    }
+  },
+  "48201": {
+    "county": "Harris",
+    "state": "TX",
+    "outage": {
+      "events": 68,
+      "major": 8,
+      "annual_rate": 6.8,
+      "longest_hrs": 192.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 88, "rating": "Very High"},
+        {"hazard": "flooding", "score": 90, "rating": "Very High"},
+        {"hazard": "heat_wave", "score": 62, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 52,
+      "resilience": 55
+    }
+  },
+  "53033": {
+    "county": "King",
+    "state": "WA",
+    "outage": {
+      "events": 44,
+      "major": 4,
+      "annual_rate": 4.4,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "earthquake", "score": 78, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 28,
+      "resilience": 80
+    }
+  },
+  "41051": {
+    "county": "Multnomah",
+    "state": "OR",
+    "outage": {
+      "events": 39,
+      "major": 4,
+      "annual_rate": 3.9,
+      "longest_hrs": 60.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "earthquake", "score": 72, "rating": "Relatively High"},
+        {"hazard": "wildfire", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 50, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 35,
+      "resilience": 72
+    }
+  },
+  "06073": {
+    "county": "San Diego",
+    "state": "CA",
+    "outage": {
+      "events": 50,
+      "major": 6,
+      "annual_rate": 5.0,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "wildfire", "score": 85, "rating": "Very High"},
+        {"hazard": "earthquake", "score": 72, "rating": "Relatively High"},
+        {"hazard": "drought", "score": 58, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 30,
+      "resilience": 75
+    }
+  },
+  "08031": {
+    "county": "Denver",
+    "state": "CO",
+    "outage": {
+      "events": 22,
+      "major": 2,
+      "annual_rate": 2.2,
+      "longest_hrs": 24.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 68, "rating": "Relatively High"},
+        {"hazard": "hail", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "tornado", "score": 32, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 25,
+      "resilience": 78
+    }
+  },
+  "26163": {
+    "county": "Wayne",
+    "state": "MI",
+    "outage": {
+      "events": 52,
+      "major": 5,
+      "annual_rate": 5.2,
+      "longest_hrs": 84.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 75, "rating": "Relatively High"},
+        {"hazard": "tornado", "score": 42, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 40, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 62,
+      "resilience": 45
+    }
+  },
+  "42101": {
+    "county": "Philadelphia",
+    "state": "PA",
+    "outage": {
+      "events": 33,
+      "major": 3,
+      "annual_rate": 3.3,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "flooding", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 50,
+      "resilience": 62
+    }
+  },
+  "25025": {
+    "county": "Suffolk",
+    "state": "MA",
+    "outage": {
+      "events": 30,
+      "major": 3,
+      "annual_rate": 3.0,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 78, "rating": "Relatively High"},
+        {"hazard": "hurricane", "score": 52, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 32,
+      "resilience": 75
+    }
+  },
+  "13121": {
+    "county": "Fulton",
+    "state": "GA",
+    "outage": {
+      "events": 36,
+      "major": 3,
+      "annual_rate": 3.6,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 52, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 48, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 42,
+      "resilience": 65
+    }
+  },
+  "27053": {
+    "county": "Hennepin",
+    "state": "MN",
+    "outage": {
+      "events": 34,
+      "major": 3,
+      "annual_rate": 3.4,
+      "longest_hrs": 42.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 82, "rating": "Very High"},
+        {"hazard": "tornado", "score": 48, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 28,
+      "resilience": 78
+    }
+  },
+  "29510": {
+    "county": "St. Louis City",
+    "state": "MO",
+    "outage": {
+      "events": 42,
+      "major": 4,
+      "annual_rate": 4.2,
+      "longest_hrs": 60.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 65, "rating": "Relatively High"},
+        {"hazard": "flooding", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 52, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 58,
+      "resilience": 48
+    }
+  },
+  "37119": {
+    "county": "Mecklenburg",
+    "state": "NC",
+    "outage": {
+      "events": 31,
+      "major": 3,
+      "annual_rate": 3.1,
+      "longest_hrs": 36.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "tornado", "score": 42, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 38, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 35,
+      "resilience": 72
+    }
+  },
+  "47157": {
+    "county": "Shelby",
+    "state": "TN",
+    "outage": {
+      "events": 45,
+      "major": 4,
+      "annual_rate": 4.5,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "earthquake", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 50, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 55,
+      "resilience": 50
+    }
+  },
+  "32003": {
+    "county": "Clark",
+    "state": "NV",
+    "outage": {
+      "events": 25,
+      "major": 2,
+      "annual_rate": 2.5,
+      "longest_hrs": 14.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "heat_wave", "score": 92, "rating": "Very High"},
+        {"hazard": "earthquake", "score": 42, "rating": "Relatively Moderate"},
+        {"hazard": "drought", "score": 38, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 40,
+      "resilience": 62
+    }
+  },
+  "15003": {
+    "county": "Honolulu",
+    "state": "HI",
+    "outage": {
+      "events": 20,
+      "major": 2,
+      "annual_rate": 2.0,
+      "longest_hrs": 24.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 65, "rating": "Relatively High"},
+        {"hazard": "flooding", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "tsunami", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 35,
+      "resilience": 68
+    }
+  },
+  "49035": {
+    "county": "Salt Lake",
+    "state": "UT",
+    "outage": {
+      "events": 18,
+      "major": 1,
+      "annual_rate": 1.8,
+      "longest_hrs": 12.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "earthquake", "score": 68, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "wildfire", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 25,
+      "resilience": 78
+    }
+  },
+  "40109": {
+    "county": "Oklahoma",
+    "state": "OK",
+    "outage": {
+      "events": 58,
+      "major": 6,
+      "annual_rate": 5.8,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 88, "rating": "Very High"},
+        {"hazard": "hail", "score": 72, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 55, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 48,
+      "resilience": 55
+    }
+  },
+  "20091": {
+    "county": "Johnson",
+    "state": "KS",
+    "outage": {
+      "events": 24,
+      "major": 2,
+      "annual_rate": 2.4,
+      "longest_hrs": 30.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 75, "rating": "Relatively High"},
+        {"hazard": "hail", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 22,
+      "resilience": 82
+    }
+  },
+  "55079": {
+    "county": "Milwaukee",
+    "state": "WI",
+    "outage": {
+      "events": 29,
+      "major": 2,
+      "annual_rate": 2.9,
+      "longest_hrs": 36.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 78, "rating": "Relatively High"},
+        {"hazard": "flooding", "score": 45, "rating": "Relatively Moderate"},
+        {"hazard": "tornado", "score": 38, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 45,
+      "resilience": 62
+    }
+  },
+  "51760": {
+    "county": "Richmond City",
+    "state": "VA",
+    "outage": {
+      "events": 32,
+      "major": 3,
+      "annual_rate": 3.2,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 52, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 48,
+      "resilience": 58
+    }
+  },
+  "45019": {
+    "county": "Charleston",
+    "state": "SC",
+    "outage": {
+      "events": 53,
+      "major": 5,
+      "annual_rate": 5.3,
+      "longest_hrs": 96.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 82, "rating": "Very High"},
+        {"hazard": "flooding", "score": 75, "rating": "Relatively High"},
+        {"hazard": "heat_wave", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 45,
+      "resilience": 55
+    }
+  },
+  "01073": {
+    "county": "Jefferson",
+    "state": "AL",
+    "outage": {
+      "events": 48,
+      "major": 5,
+      "annual_rate": 4.8,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 78, "rating": "Relatively High"},
+        {"hazard": "flooding", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 52,
+      "resilience": 52
+    }
+  },
+  "28049": {
+    "county": "Hinds",
+    "state": "MS",
+    "outage": {
+      "events": 56,
+      "major": 6,
+      "annual_rate": 5.6,
+      "longest_hrs": 96.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 72, "rating": "Relatively High"},
+        {"hazard": "flooding", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "hurricane", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 68,
+      "resilience": 38
+    }
+  },
+  "39049": {
+    "county": "Franklin",
+    "state": "OH",
+    "outage": {
+      "events": 32,
+      "major": 3,
+      "annual_rate": 3.2,
+      "longest_hrs": 42.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 48, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 38,
+      "resilience": 68
+    }
+  },
+  "18097": {
+    "county": "Marion",
+    "state": "IN",
+    "outage": {
+      "events": 37,
+      "major": 3,
+      "annual_rate": 3.7,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 42,
+      "resilience": 62
+    }
+  },
+  "19153": {
+    "county": "Polk",
+    "state": "IA",
+    "outage": {
+      "events": 40,
+      "major": 4,
+      "annual_rate": 4.0,
+      "longest_hrs": 60.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 68, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 65, "rating": "Relatively High"},
+        {"hazard": "flooding", "score": 55, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 32,
+      "resilience": 72
+    }
+  },
+  "31055": {
+    "county": "Douglas",
+    "state": "NE",
+    "outage": {
+      "events": 26,
+      "major": 2,
+      "annual_rate": 2.6,
+      "longest_hrs": 30.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "tornado", "score": 72, "rating": "Relatively High"},
+        {"hazard": "hail", "score": 65, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 58, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 30,
+      "resilience": 72
+    }
+  },
+  "06065": {
+    "county": "Riverside",
+    "state": "CA",
+    "outage": {
+      "events": 58,
+      "major": 7,
+      "annual_rate": 5.8,
+      "longest_hrs": 60.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "wildfire", "score": 88, "rating": "Very High"},
+        {"hazard": "earthquake", "score": 72, "rating": "Relatively High"},
+        {"hazard": "heat_wave", "score": 68, "rating": "Relatively High"}
+      ],
+      "vulnerability": 42,
+      "resilience": 60
+    }
+  },
+  "48029": {
+    "county": "Bexar",
+    "state": "TX",
+    "outage": {
+      "events": 42,
+      "major": 4,
+      "annual_rate": 4.2,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "flooding", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 65, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 52, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 40,
+      "resilience": 65
+    }
+  },
+  "12031": {
+    "county": "Duval",
+    "state": "FL",
+    "outage": {
+      "events": 54,
+      "major": 5,
+      "annual_rate": 5.4,
+      "longest_hrs": 96.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 82, "rating": "Very High"},
+        {"hazard": "flooding", "score": 68, "rating": "Relatively High"},
+        {"hazard": "heat_wave", "score": 52, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 42,
+      "resilience": 58
+    }
+  },
+  "12057": {
+    "county": "Hillsborough",
+    "state": "FL",
+    "outage": {
+      "events": 60,
+      "major": 6,
+      "annual_rate": 6.0,
+      "longest_hrs": 120.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "hurricane", "score": 88, "rating": "Very High"},
+        {"hazard": "flooding", "score": 72, "rating": "Relatively High"},
+        {"hazard": "heat_wave", "score": 55, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 45,
+      "resilience": 55
+    }
+  },
+  "24510": {
+    "county": "Baltimore City",
+    "state": "MD",
+    "outage": {
+      "events": 34,
+      "major": 3,
+      "annual_rate": 3.4,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "flooding", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "hurricane", "score": 48, "rating": "Relatively Moderate"},
+        {"hazard": "heat_wave", "score": 52, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 55,
+      "resilience": 55
+    }
+  },
+  "36047": {
+    "county": "Kings",
+    "state": "NY",
+    "outage": {
+      "events": 28,
+      "major": 2,
+      "annual_rate": 2.8,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "flooding", "score": 68, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "hurricane", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 38,
+      "resilience": 78
+    }
+  },
+  "35001": {
+    "county": "Bernalillo",
+    "state": "NM",
+    "outage": {
+      "events": 19,
+      "major": 1,
+      "annual_rate": 1.9,
+      "longest_hrs": 14.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "wildfire", "score": 62, "rating": "Relatively Moderate"},
+        {"hazard": "drought", "score": 55, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 35, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 42,
+      "resilience": 62
+    }
+  },
+  "16001": {
+    "county": "Ada",
+    "state": "ID",
+    "outage": {
+      "events": 15,
+      "major": 1,
+      "annual_rate": 1.5,
+      "longest_hrs": 10.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "wildfire", "score": 58, "rating": "Relatively Moderate"},
+        {"hazard": "earthquake", "score": 42, "rating": "Relatively Moderate"},
+        {"hazard": "winter_weather", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 22,
+      "resilience": 80
+    }
+  },
+  "46099": {
+    "county": "Minnehaha",
+    "state": "SD",
+    "outage": {
+      "events": 21,
+      "major": 2,
+      "annual_rate": 2.1,
+      "longest_hrs": 24.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 78, "rating": "Relatively High"},
+        {"hazard": "tornado", "score": 52, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 28,
+      "resilience": 72
+    }
+  },
+  "38017": {
+    "county": "Cass",
+    "state": "ND",
+    "outage": {
+      "events": 23,
+      "major": 2,
+      "annual_rate": 2.3,
+      "longest_hrs": 30.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 85, "rating": "Very High"},
+        {"hazard": "flooding", "score": 68, "rating": "Relatively High"},
+        {"hazard": "tornado", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 30,
+      "resilience": 68
+    }
+  },
+  "56021": {
+    "county": "Laramie",
+    "state": "WY",
+    "outage": {
+      "events": 16,
+      "major": 1,
+      "annual_rate": 1.6,
+      "longest_hrs": 12.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 75, "rating": "Relatively High"},
+        {"hazard": "hail", "score": 48, "rating": "Relatively Moderate"},
+        {"hazard": "wildfire", "score": 38, "rating": "Relatively Low"}
+      ],
+      "vulnerability": 25,
+      "resilience": 72
+    }
+  },
+  "30031": {
+    "county": "Gallatin",
+    "state": "MT",
+    "outage": {
+      "events": 14,
+      "major": 1,
+      "annual_rate": 1.4,
+      "longest_hrs": 10.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "wildfire", "score": 65, "rating": "Relatively High"},
+        {"hazard": "winter_weather", "score": 72, "rating": "Relatively High"},
+        {"hazard": "earthquake", "score": 48, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 20,
+      "resilience": 78
+    }
+  },
+  "23005": {
+    "county": "Cumberland",
+    "state": "ME",
+    "outage": {
+      "events": 38,
+      "major": 4,
+      "annual_rate": 3.8,
+      "longest_hrs": 72.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "winter_weather", "score": 85, "rating": "Very High"},
+        {"hazard": "hurricane", "score": 45, "rating": "Relatively Moderate"},
+        {"hazard": "flooding", "score": 42, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 30,
+      "resilience": 72
+    }
+  },
+  "02020": {
+    "county": "Anchorage",
+    "state": "AK",
+    "outage": {
+      "events": 32,
+      "major": 3,
+      "annual_rate": 3.2,
+      "longest_hrs": 48.0,
+      "years": 10
+    },
+    "fema": {
+      "top": [
+        {"hazard": "earthquake", "score": 92, "rating": "Very High"},
+        {"hazard": "winter_weather", "score": 88, "rating": "Very High"},
+        {"hazard": "avalanche", "score": 55, "rating": "Relatively Moderate"}
+      ],
+      "vulnerability": 32,
+      "resilience": 68
+    }
+  }
+}
