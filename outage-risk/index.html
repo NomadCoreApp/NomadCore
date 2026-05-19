@@ -10,10 +10,10 @@
     gtag('js', new Date());
     gtag('config', 'G-901VG0NQY2');
   </script>
-  <title>Power Outage Risk Lookup - Check Your County | NomadCore</title>
-  <meta name="description" content="See your county's real power outage history based on 10 years of DOE data. Free, private, no data collected.">
-  <meta property="og:title" content="Power Outage Risk Lookup - Check Your County">
-  <meta property="og:description" content="See your county's real power outage history based on 10 years of DOE data. Free, private, no data collected.">
+  <title>How Long Could You Lose Power? Check Your ZIP | NomadCore</title>
+  <meta name="description" content="Get a general preparedness estimate for your area based on wildfire, hurricane, and storm risk data from FEMA and DOE. Free, private, no data collected.">
+  <meta property="og:title" content="How Long Could You Lose Power? Check Your ZIP">
+  <meta property="og:description" content="Get a general preparedness estimate for your area based on wildfire, hurricane, and storm risk data from FEMA and DOE. Free, private, no data collected.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nomad-core.com/outage-risk/">
   <meta property="og:image" content="https://nomad-core.com/images/og-quiz.png">
@@ -283,35 +283,121 @@
       letter-spacing: 0.5px;
     }
     .rating-badge svg { width: 18px; height: 18px; }
-    .rating-SEVERE { background: var(--red-light); color: var(--red); }
+    .rating-SEVERE, .rating-EXTREME { background: var(--red-light); color: var(--red); }
     .rating-HIGH { background: var(--amber-light); color: #D97706; }
     .rating-MODERATE { background: #FFF8E6; color: #B45309; }
     .rating-LOW { background: var(--green-light); color: var(--green); }
 
-    /* Stat Cards */
+    /* Preparedness Recommendation */
+    .prep-recommendation {
+      text-align: center;
+      margin-bottom: 28px;
+      padding: 28px 24px;
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-100);
+    }
+    .prep-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .prep-days {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .prep-days-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+    .prep-reason {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .prep-reason strong { color: var(--gray-800); }
+    .prep-disclaimer {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 14px;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* Top Threat Callout */
+    .top-threat {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--amber-light);
+      border-radius: var(--radius);
+      margin-bottom: 28px;
+      border: 1px solid rgba(245, 158, 11, 0.15);
+    }
+    .top-threat-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .top-threat-text {
+      flex: 1;
+    }
+    .top-threat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #B45309;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+    .top-threat-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--gray-900);
+    }
+
+    /* Stat Cards (secondary, inside disclosure) */
     .stat-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-bottom: 28px;
+      margin-top: 16px;
     }
     .stat-card {
-      background: var(--gray-50);
+      background: var(--white);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 16px;
       text-align: center;
       border: 1px solid var(--gray-100);
     }
     .stat-value {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.75rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--gray-900);
       line-height: 1.1;
       margin-bottom: 4px;
     }
     .stat-label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--gray-500);
       text-transform: uppercase;
@@ -319,7 +405,7 @@
       margin-bottom: 2px;
     }
     .stat-sublabel {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--gray-400);
     }
 
@@ -566,7 +652,8 @@
     @media (max-width: 480px) {
       .intro { padding: 32px 24px; }
       .results { padding: 28px 20px; }
-      .stat-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .prep-recommendation { padding: 24px 20px; }
       .error-screen { padding: 40px 24px; }
       .loading { padding: 60px 24px; }
       .cta-buttons { flex-direction: column; align-items: center; }
@@ -609,8 +696,8 @@
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
             </svg>
           </div>
-          <h1>Is Your Power Grid Reliable?</h1>
-          <p class="subtitle">Enter your ZIP code to see your county's actual outage history — based on 10 years of Department of Energy data.</p>
+          <h1>How Long Could You Lose Power?</h1>
+          <p class="subtitle">Enter your ZIP code for a general preparedness estimate based on your area's hazard profile. This is not a prediction or guarantee — always follow guidance from local emergency management.</p>
           <div class="zip-input-group">
             <input type="text" class="zip-input" id="zipInput" placeholder="ZIP code" maxlength="5" inputmode="numeric" pattern="[0-9]*" aria-label="Enter your 5-digit ZIP code" autocomplete="postal-code">
           </div>
@@ -622,7 +709,7 @@
           <div class="trust-badges">
             <span class="trust-badge"><span class="trust-badge-dot"></span> No data collected</span>
             <span class="trust-badge"><span class="trust-badge-dot"></span> 100% client-side</span>
-            <span class="trust-badge"><span class="trust-badge-dot"></span> DOE EAGLE-I data</span>
+            <span class="trust-badge"><span class="trust-badge-dot"></span> FEMA + DOE sourced</span>
           </div>
         </div>
       </div>
@@ -643,19 +730,21 @@
             <div id="ratingBadge"></div>
           </div>
 
-          <div class="stat-grid" id="statGrid"></div>
+          <div class="prep-recommendation" id="prepRecommendation"></div>
 
-          <div class="explainer">
-            <button class="explainer-toggle" id="explainerToggle" onclick="toggleExplainer()">
-              What This Means
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="explainer-content" id="explainerContent"></div>
-          </div>
+          <div id="topThreat"></div>
 
           <div class="hazards-section" id="hazardsSection" style="display:none;">
             <h3>Top Natural Hazards</h3>
             <div id="hazardsList"></div>
+          </div>
+
+          <div class="explainer">
+            <button class="explainer-toggle" id="explainerToggle" onclick="toggleExplainer()">
+              About This Data
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="explainer-content" id="explainerContent"></div>
           </div>
 
           <div class="result-cta">
@@ -806,56 +895,76 @@
       }
     }
 
-    // ===== Rating Logic =====
-    function getRating(data) {
-      var o = data.outage;
-      var years = o.years || 10;
-      var majorPerYear = o.major / years;
+    // ===== Hazard icons =====
+    var HAZARD_ICONS = {
+      'Wildfire': '🔥', 'Hurricane': '🌀', 'Tornado': '🌪️',
+      'Earthquake': '🫨', 'Riverine Flooding': '🌊', 'Coastal Flooding': '🌊',
+      'Winter Weather': '❄️', 'Ice Storm': '🧊', 'Cold Wave': '🥶',
+      'Heat Wave': '🌡️', 'Drought': '☀️', 'Strong Wind': '💨',
+      'Hail': '🌨️', 'Lightning': '⚡', 'Landslide': '⛰️',
+      'Avalanche': '🏔️', 'Tsunami': '🌊'
+    };
 
-      if (majorPerYear >= 2 || o.longest_hrs >= 72) return 'SEVERE';
-      if (majorPerYear >= 1 || o.longest_hrs >= 24) return 'HIGH';
-      if (o.annual_rate >= 2.0) return 'MODERATE';
-      return 'LOW';
+    // Hazards known to cause multi-week outages, weighted by typical grid impact.
+    // Hurricane/Wildfire/Ice Storm damage grid infrastructure directly;
+    // Earthquake/Tornado/Winter Weather cause outages but restoration is usually faster.
+    var EXTENDED_OUTAGE_HAZARDS = {
+      'Hurricane': 1.0, 'Wildfire': 1.0, 'Ice Storm': 0.9,
+      'Tornado': 0.7, 'Winter Weather': 0.6, 'Earthquake': 0.6
+    };
+
+    // ===== Preparedness Tier Logic =====
+    function getPrep(data) {
+      var hazards = data.fema || [];
+
+      // Find top hazard among extended-outage hazards, weighted by grid impact.
+      // e.g., Wildfire 70 * 1.0 = 70 beats Earthquake 76 * 0.6 = 45.6
+      var topExtendedHazard = '';
+      var bestWeighted = 0;
+      for (var i = 0; i < hazards.length; i++) {
+        var weight = EXTENDED_OUTAGE_HAZARDS[hazards[i].name];
+        if (weight !== undefined) {
+          var weighted = hazards[i].score * weight;
+          if (weighted > bestWeighted) {
+            bestWeighted = weighted;
+            topExtendedHazard = hazards[i].name;
+          }
+        }
+      }
+
+      var topHazard = hazards.length > 0 ? hazards[0] : { name: 'Unknown', score: 0 };
+
+      // Tier determination based on weighted hazard score.
+      // Floor is 3 days (FEMA 72-hour minimum). Distribution: ~13% Extreme, ~26% High, ~51% Moderate, ~10% Low
+      if (bestWeighted >= 70) {
+        return { tier: 'EXTREME', days: '7\u201314', label: 'Extreme Risk', topHazard: topHazard, topExtended: topExtendedHazard };
+      }
+      if (bestWeighted >= 55) {
+        return { tier: 'HIGH', days: '5\u20137', label: 'High Risk', topHazard: topHazard, topExtended: topExtendedHazard || topHazard.name };
+      }
+      if (bestWeighted >= 35) {
+        return { tier: 'MODERATE', days: '3\u20135', label: 'Moderate Risk', topHazard: topHazard, topExtended: topExtendedHazard || topHazard.name };
+      }
+      return { tier: 'LOW', days: '3', label: 'Low Risk', topHazard: topHazard, topExtended: topExtendedHazard || topHazard.name };
     }
 
-    function getRatingLabel(rating) {
-      var labels = {
-        'SEVERE': 'Severe Risk',
-        'HIGH': 'High Risk',
-        'MODERATE': 'Moderate Risk',
-        'LOW': 'Low Risk'
-      };
-      return labels[rating] || rating;
-    }
-
-    function getRatingIcon(rating) {
-      if (rating === 'SEVERE' || rating === 'HIGH') {
+    // ===== Rating display helpers =====
+    function getRatingIcon(tier) {
+      if (tier === 'EXTREME' || tier === 'HIGH') {
         return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
       }
-      if (rating === 'MODERATE') {
+      if (tier === 'MODERATE') {
         return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
       }
       return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
     }
 
-    // ===== Format Duration =====
-    function formatDuration(hours) {
-      if (hours < 1) return 'Less than 1 hour';
-      if (hours < 24) return Math.round(hours) + ' hour' + (Math.round(hours) !== 1 ? 's' : '');
-      var days = Math.floor(hours / 24);
-      var remainingHours = Math.round(hours % 24);
-      var result = days + ' day' + (days !== 1 ? 's' : '');
-      if (remainingHours > 0) {
-        result += ', ' + remainingHours + ' hr' + (remainingHours !== 1 ? 's' : '');
-      }
-      return result;
-    }
-
     // ===== Render Results =====
     function renderResults(data) {
       var o = data.outage;
-      var rating = getRating(data);
+      var prep = getPrep(data);
       var years = o.years || 10;
+      var rating = prep.tier === 'EXTREME' ? 'SEVERE' : prep.tier;
 
       // County name
       document.getElementById('countyName').textContent = data.county + ', ' + data.state;
@@ -863,52 +972,74 @@
       // Rating badge
       document.getElementById('ratingBadge').innerHTML =
         '<span class="rating-badge rating-' + rating + '">' +
-          getRatingIcon(rating) + ' ' + getRatingLabel(rating) +
+          getRatingIcon(prep.tier) + ' ' + prep.label +
         '</span>';
 
-      // Stat cards
-      document.getElementById('statGrid').innerHTML =
-        '<div class="stat-card">' +
-          '<div class="stat-label">Outage Events</div>' +
-          '<div class="stat-value">' + (o.events || 0).toLocaleString() + '</div>' +
-          '<div class="stat-sublabel">in ' + years + ' years</div>' +
-        '</div>' +
-        '<div class="stat-card">' +
-          '<div class="stat-label">Major Events</div>' +
-          '<div class="stat-value">' + (o.major || 0) + '</div>' +
-          '<div class="stat-sublabel">10%+ customers affected</div>' +
-        '</div>' +
-        '<div class="stat-card">' +
-          '<div class="stat-label">Annual Rate</div>' +
-          '<div class="stat-value">' + (o.annual_rate || 0).toFixed(1) + '</div>' +
-          '<div class="stat-sublabel">events per year</div>' +
-        '</div>' +
-        '<div class="stat-card">' +
-          '<div class="stat-label">Longest Outage</div>' +
-          '<div class="stat-value">' + formatDuration(o.longest_hrs || 0) + '</div>' +
-          '<div class="stat-sublabel">single event duration</div>' +
-        '</div>';
-
-      // Explainer content
-      var explainerHtml = '';
-      if (rating === 'SEVERE') {
-        explainerHtml =
-          '<p>Your county has experienced a <strong>high frequency of significant power outages</strong> over the past decade. Multiple major events have affected more than 10% of utility customers at once, and at least one outage has lasted 3 days or longer.</p>' +
-          '<p>This level of grid instability means power loss during severe weather or infrastructure failures is not a question of "if" but "when." Having backup power, emergency lighting, and a plan for food and water storage is strongly recommended.</p>';
-      } else if (rating === 'HIGH') {
-        explainerHtml =
-          '<p>Your county has seen <strong>notable power outages</strong> that have disrupted daily life. At least one major event affected a large portion of customers, or an outage lasted a full day or longer.</p>' +
-          '<p>While not the most vulnerable, your area has a meaningful risk of extended power loss. Consider having backup lighting, a way to charge devices, and enough supplies to last 24-72 hours without electricity.</p>';
-      } else if (rating === 'MODERATE') {
-        explainerHtml =
-          '<p>Your county experiences <strong>regular but typically manageable outages</strong> — averaging more than two per year. Most are resolved relatively quickly without widespread impact.</p>' +
-          '<p>Basic preparedness like flashlights, battery packs, and a small supply of water and non-perishable food will cover most scenarios you are likely to face.</p>';
+      // Preparedness recommendation
+      var reasonText = '';
+      if (prep.tier === 'EXTREME') {
+        reasonText = 'Your area faces <strong>' + prep.topExtended.toLowerCase() + ' risk</strong> that has historically caused week-long or longer outages. Plan for an extended period without power, water pressure, or cell service.';
+      } else if (prep.tier === 'HIGH') {
+        reasonText = '<strong>' + prep.topExtended + '</strong> is a significant threat in your area. Events like these have knocked out power for days or longer — often longer than utility data shows.';
+      } else if (prep.tier === 'MODERATE') {
+        reasonText = 'Your area has some exposure to <strong>' + (prep.topExtended || prep.topHazard.name).toLowerCase() + '</strong>. Most outages are short, but a multi-day event is realistic in a bad year.';
       } else {
-        explainerHtml =
-          '<p>Your county has a <strong>relatively stable power grid</strong> based on the past decade of data. Outages are infrequent and tend to be short-lived.</p>' +
-          '<p>That said, no area is immune. A basic emergency kit and a plan for how to handle an unexpected outage — even a short one — is always worthwhile.</p>';
+        reasonText = 'Your area has relatively low exposure to hazards that cause extended outages. FEMA recommends all households maintain a minimum 72-hour emergency kit regardless of risk level.';
       }
-      explainerHtml += '<p style="font-size:0.8rem;color:var(--gray-400);margin-top:12px;">Data source: DOE EAGLE-I (Eagle-i.doe.gov), covering reported utility outages from 2014 to 2024. FEMA National Risk Index used for hazard data.</p>';
+
+      document.getElementById('prepRecommendation').innerHTML =
+        '<div class="prep-label">We recommend preparing for at least</div>' +
+        '<div class="prep-days">' + prep.days + '</div>' +
+        '<div class="prep-days-label">day' + (prep.days === '1' ? '' : 's') + ' without power</div>' +
+        '<div class="prep-reason">' + reasonText + '</div>' +
+        '<div class="prep-disclaimer">This is a general estimate, not a prediction. Actual outages can be shorter or significantly longer depending on the event. Always follow your local emergency management agency\'s guidance. FEMA recommends a minimum 72-hour kit for all households regardless of risk level.</div>';
+
+      // Top threat callout — show the top extended-outage hazard, not just the top overall hazard
+      var topThreatEl = document.getElementById('topThreat');
+      var threatName = prep.topExtended || prep.topHazard.name;
+      if (threatName && threatName !== 'Unknown') {
+        var icon = HAZARD_ICONS[threatName] || '⚠️';
+        topThreatEl.innerHTML =
+          '<div class="top-threat">' +
+            '<div class="top-threat-icon">' + icon + '</div>' +
+            '<div class="top-threat-text">' +
+              '<div class="top-threat-label">#1 Threat to Your Power</div>' +
+              '<div class="top-threat-name">' + threatName + '</div>' +
+            '</div>' +
+          '</div>';
+      } else {
+        topThreatEl.innerHTML = '';
+      }
+
+      // Explainer content — data disclaimer + raw stats
+      var explainerHtml =
+        '<p><strong>Why "prepare for ' + prep.days + ' days"?</strong> This recommendation is based on your county\'s natural hazard profile from the FEMA National Risk Index, weighted by each hazard\'s historical impact on power infrastructure.</p>' +
+        '<p>The raw grid data below comes from DOE EAGLE-I, which tracks utility-reported outages at 15-minute intervals. <strong>These numbers often understate real outage durations.</strong> Long outages from wildfires, hurricanes, or ice storms appear as multiple shorter events in utility data — because partial restorations, evacuations, and safety shutoffs create gaps in the signal. For example, the 2015 Butte Fire left parts of Calaveras County, CA without power for 3+ weeks, but appears in the data as several separate events under 2 days each.</p>' +
+        '<div class="stat-grid">' +
+          '<div class="stat-card">' +
+            '<div class="stat-label">Grid Events</div>' +
+            '<div class="stat-value">' + (o.events || 0).toLocaleString() + '</div>' +
+            '<div class="stat-sublabel">in ' + years + ' years</div>' +
+          '</div>' +
+          '<div class="stat-card">' +
+            '<div class="stat-label">Major Events</div>' +
+            '<div class="stat-value">' + (o.major || 0) + '</div>' +
+            '<div class="stat-sublabel">10%+ customers affected</div>' +
+          '</div>' +
+          '<div class="stat-card">' +
+            '<div class="stat-label">Avg. Per Year</div>' +
+            '<div class="stat-value">' + (o.annual_rate || 0).toFixed(1) + '</div>' +
+            '<div class="stat-sublabel">events per year</div>' +
+          '</div>' +
+          '<div class="stat-card">' +
+            '<div class="stat-label">Longest Recorded</div>' +
+            '<div class="stat-value">' + formatDuration(o.longest_hrs || 0) + '</div>' +
+            '<div class="stat-sublabel">single grid event</div>' +
+          '</div>' +
+        '</div>' +
+        '<p style="font-size:0.8rem;color:var(--gray-400);margin-top:12px;">Sources: FEMA National Risk Index (hazard profiles), DOE EAGLE-I via Oak Ridge National Lab (outage records 2014\u20132024). All data processed locally in your browser.</p>' +
+        '<p style="font-size:0.75rem;color:var(--gray-400);margin-top:8px;font-style:italic;"><strong>Disclaimer:</strong> This tool provides general preparedness estimates for educational purposes only. It is not professional emergency management advice, and should not be relied upon as a substitute for guidance from FEMA, your local emergency management agency, or your utility provider. The data may contain inaccuracies, may not reflect recent events, and county-level analysis cannot account for neighborhood-level conditions. NomadCore and Lost Pines Creative LLC assume no liability for actions taken or not taken based on this information. When in doubt, prepare for more, not less.</p>';
+
       document.getElementById('explainerContent').innerHTML = explainerHtml;
 
       // Reset explainer state
@@ -921,9 +1052,9 @@
       var hazardsList = document.getElementById('hazardsList');
       if (data.fema && data.fema.length > 0) {
         hazardsSection.style.display = 'block';
-        var topHazards = data.fema.slice(0, 3);
+        var topHazards = data.fema.slice(0, 5);
         var maxScore = topHazards[0].score || 1;
-        var hazardColors = ['var(--red)', 'var(--amber)', 'var(--blue)'];
+        var hazardColors = ['var(--red)', 'var(--amber)', 'var(--amber)', 'var(--blue)', 'var(--blue)'];
         hazardsList.innerHTML = topHazards.map(function(h, i) {
           var pct = Math.round((h.score / maxScore) * 100);
           return (
@@ -933,13 +1064,24 @@
                 '<div class="hazard-name">' + h.name + '</div>' +
                 '<div class="hazard-bar-bg"><div class="hazard-bar-fill" style="width:' + pct + '%;background:' + hazardColors[i] + ';"></div></div>' +
               '</div>' +
-              '<div class="hazard-score">' + h.score.toFixed(1) + '</div>' +
+              '<div class="hazard-score">' + h.score + '</div>' +
             '</div>'
           );
         }).join('');
       } else {
         hazardsSection.style.display = 'none';
       }
+    }
+
+    // ===== Format Duration =====
+    function formatDuration(hours) {
+      if (hours < 1) return '< 1 hr';
+      if (hours < 24) return Math.round(hours) + ' hrs';
+      var days = Math.floor(hours / 24);
+      var remainingHours = Math.round(hours % 24);
+      var result = days + 'd';
+      if (remainingHours > 0) result += ' ' + remainingHours + 'h';
+      return result;
     }
 
     // ===== Explainer Toggle =====
