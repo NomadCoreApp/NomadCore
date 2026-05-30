@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Emergency Preparedness Knowledge Base - NomadCore Knowledge Base</title>
+  <meta name="description" content="Search 32,993 emergency preparedness procedures. Free reference library covering medical emergencies, survival skills, first aid, and more.">
+  <meta property="og:title" content="Emergency Preparedness Knowledge Base - NomadCore Knowledge Base">
+  <meta property="og:description" content="Search 32,993 emergency preparedness procedures. Free reference library covering medical emergencies, survival skills, first aid, and more.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nomad-core.com/knowledge-base/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1D3A; --navy-light: #122B52;
+      --blue: #2E6BD6; --blue-light: #EBF2FF;
+      --cyan: #22B8CF; --cyan-light: #E6FAFB;
+      --amber: #F59E0B; --green: #10B981; --red: #EF4444;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1; --gray-400: #94A3B8; --gray-500: #64748B;
+      --gray-600: #475569; --gray-700: #334155; --gray-800: #1E293B; --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --radius: 12px; --radius-lg: 20px; --radius-full: 9999px;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--navy); }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav (matches production nomad-core.com) */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--gray-900); text-decoration: none; }
+    .nav-logo:hover { color: var(--gray-900); text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); text-decoration: none; }
+    .nav-cta { background: var(--blue); color: white !important; padding: 8px 20px; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; transition: background 0.2s, transform 0.2s; cursor: pointer; text-decoration: none; }
+    .nav-cta:hover { background: var(--navy); color: white !important; transform: translateY(-1px); text-decoration: none; }
+    .nav-download { position: relative; }
+    .nav-download-menu { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: white; border-radius: var(--radius); box-shadow: var(--shadow-xl); border: 1px solid var(--gray-100); padding: 8px; min-width: 220px; z-index: 1001; }
+    .nav-download-menu.open { display: block; }
+    .nav-download-menu a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 8px; color: var(--gray-700) !important; font-weight: 500; font-size: 0.95rem; transition: background 0.15s; }
+    .nav-download-menu a:hover { background: var(--blue-light); color: var(--blue) !important; }
+    .nav-download-menu svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .nav-download-menu .store-label { display: flex; flex-direction: column; line-height: 1.3; }
+    .nav-download-menu .store-label small { font-size: 0.7rem; color: var(--gray-400); font-weight: 400; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--gray-700); margin: 6px 0; transition: transform 0.3s, opacity 0.3s; border-radius: 2px; }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* Content */
+    .page-content { padding-top: 100px; padding-bottom: 60px; }
+    .page-header { text-align: center; margin-bottom: 48px; }
+    .page-header h1 { font-size: 36px; margin-bottom: 12px; }
+    .page-header p { font-size: 18px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+    .category-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+    .stats { display: flex; gap: 24px; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+    .stat { background: var(--gray-50); padding: 12px 24px; border-radius: var(--radius); text-align: center; }
+    .stat-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 700; color: var(--navy); }
+    .stat-label { font-size: 13px; color: var(--gray-500); }
+
+    /* Procedures */
+    .subcategory { margin-bottom: 36px; }
+    .subcategory-header { font-size: 20px; color: var(--navy); margin-bottom: 16px; padding: 12px 0 8px; border-bottom: 2px solid var(--gray-200); cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+    .subcategory-header:hover { color: var(--blue); }
+    .subcategory-header .toggle { font-size: 18px; color: var(--gray-400); padding: 8px; }
+    .proc-list { display: grid; gap: 12px; }
+    .proc-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px 20px; transition: box-shadow 0.2s, border-color 0.2s; }
+    .proc-card:hover { box-shadow: var(--shadow-md); border-color: var(--gray-300); }
+    .proc-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .proc-meta { font-size: 12px; color: var(--gray-400); margin-bottom: 8px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .proc-content { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+    .proc-content strong { color: var(--gray-800); }
+    .proc-keywords { font-size: 11px; color: var(--gray-400); margin-top: 8px; }
+    .expand-btn { background: none; border: none; color: var(--blue); font-size: 14px; cursor: pointer; padding: 12px 0; margin-top: 6px; font-weight: 500; min-height: 44px; }
+    .expand-btn:hover { text-decoration: underline; }
+    #search-results { max-height: 80vh; overflow-y: auto; }
+
+    /* Badges */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; }
+    .badge-critical { background: #FEF2F2; color: #DC2626; }
+    .badge-high { background: #FFF7ED; color: #EA580C; }
+    .badge-medium { background: #EFF6FF; color: #2563EB; }
+    .badge-low { background: var(--gray-100); color: var(--gray-500); }
+
+    /* Category grid (index page) */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .cat-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .cat-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); text-decoration: none; }
+    .cat-card-icon { font-size: 36px; margin-bottom: 8px; display: block; }
+    .cat-card-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .cat-card-count { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; }
+    .cat-card-desc { font-size: 13px; color: var(--gray-500); }
+
+    /* Search */
+    .search-box { max-width: 600px; margin: 0 auto 36px; position: relative; }
+    .search-box input { width: 100%; padding: 14px 20px 14px 44px; border: 2px solid var(--gray-200); border-radius: var(--radius-full); font-size: 16px; outline: none; transition: border-color 0.2s; }
+    .search-box input:focus { border-color: var(--blue); }
+    .search-box .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-400); font-size: 18px; }
+    #search-results { margin-top: 24px; }
+
+    /* CTA */
+    .cta-section { background: var(--navy); color: white; padding: 48px; border-radius: var(--radius-lg); text-align: center; margin: 48px 0; }
+    .cta-section h2 { color: white; margin-bottom: 12px; }
+    .cta-section p { color: var(--gray-300); margin-bottom: 24px; }
+    .btn-cta { background: var(--cyan); color: var(--navy); padding: 12px 32px; border-radius: var(--radius-full); font-weight: 700; font-size: 16px; display: inline-block; }
+    .btn-cta:hover { background: #1DA7BC; text-decoration: none; }
+
+    /* Disclaimer */
+    .disclaimer { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px 20px; margin: 36px 0; font-size: 13px; color: var(--gray-500); }
+
+    /* Footer */
+    .footer { background: var(--gray-900); color: var(--gray-400); padding: 48px 0 24px; margin-top: 60px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray-400); font-size: 13px; }
+    .footer-copy { text-align: center; font-size: 12px; color: var(--gray-600); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); padding: 16px 24px 24px; gap: 4px; border-bottom: 1px solid var(--gray-100); }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .page-header h1 { font-size: 28px; }
+      .stats { flex-direction: column; align-items: center; }
+      .cat-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="NomadCore" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/knowledge-base/">Knowledge Base</a></li>
+        <li><a href="/outage-risk/">Risk Lookup</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li class="nav-download">
+          <span class="nav-cta" id="downloadBtn">Download &#9662;</span>
+          <div class="nav-download-menu" id="downloadMenu">
+            <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span class="store-label"><small>Download on the</small>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+              <span class="store-label"><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Emergency Preparedness Knowledge Base</h1>
+        <p>Search 32,993 procedures from military field manuals, medical references, and government preparedness guides.</p>
+      </div>
+
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">&#x1F50D;</span>
+        <label for="search-input" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Search procedures</label>
+        <input type="search" id="search-input" placeholder="Search procedures... (e.g., tourniquet, water purification, CPR)" autocomplete="off" role="searchbox" aria-label="Search emergency preparedness procedures">
+      </div>
+      <div id="search-results"></div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-num">32,993</div><div class="stat-label">Procedures</div></div>
+        <div class="stat"><div class="stat-num">25</div><div class="stat-label">Categories</div></div>
+        <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Sources</div></div>
+      </div>
+
+      <h2 style="text-align:center; margin: 36px 0 24px;">Browse by Category</h2>
+      <div class="cat-grid">
+    <a href="medical-emergency.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F6A8;</span>
+      <div class="cat-card-name">Medical Emergency</div>
+      <div class="cat-card-count">6,337 procedures</div>
+      <div class="cat-card-desc">Life-threatening medical situations requiring immediate response</div>
+    </a>
+    <a href="preparedness.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F4E6;</span>
+      <div class="cat-card-name">Preparedness</div>
+      <div class="cat-card-count">4,805 procedures</div>
+      <div class="cat-card-desc">Emergency preparedness planning, equipment, and readiness</div>
+    </a>
+    <a href="survival.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F3D5;</span>
+      <div class="cat-card-name">Survival</div>
+      <div class="cat-card-count">3,685 procedures</div>
+      <div class="cat-card-desc">Wilderness and urban survival skills for emergency situations</div>
+    </a>
+    <a href="food-preservation.html" class="cat-card">
+      <span class="cat-card-icon">&#x1FAD9;</span>
+      <div class="cat-card-name">Food & Preservation</div>
+      <div class="cat-card-count">3,100 procedures</div>
+      <div class="cat-card-desc">Canning, drying, smoking, fermentation, and food storage</div>
+    </a>
+    <a href="tactical.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F3AF;</span>
+      <div class="cat-card-name">Tactical</div>
+      <div class="cat-card-count">2,235 procedures</div>
+      <div class="cat-card-desc">Tactical procedures, field operations, and situational awareness</div>
+    </a>
+    <a href="first-aid.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F3E5;</span>
+      <div class="cat-card-name">First Aid</div>
+      <div class="cat-card-count">1,818 procedures</div>
+      <div class="cat-card-desc">Non-critical medical care, wound treatment, and injury management</div>
+    </a>
+    <a href="natural-disaster.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F30A;</span>
+      <div class="cat-card-name">Natural Disasters</div>
+      <div class="cat-card-count">1,618 procedures</div>
+      <div class="cat-card-desc">Earthquake, flood, hurricane, wildfire, and tornado response</div>
+    </a>
+    <a href="nuclear-cbrn.html" class="cat-card">
+      <span class="cat-card-icon">&#x2622;</span>
+      <div class="cat-card-name">Nuclear & CBRN</div>
+      <div class="cat-card-count">1,467 procedures</div>
+      <div class="cat-card-desc">Nuclear, chemical, biological, and radiological threat response</div>
+    </a>
+    <a href="gardening.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F331;</span>
+      <div class="cat-card-name">Gardening</div>
+      <div class="cat-card-count">1,375 procedures</div>
+      <div class="cat-card-desc">Growing food, composting, seed saving, and soil management</div>
+    </a>
+    <a href="communications.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F4E1;</span>
+      <div class="cat-card-name">Communications</div>
+      <div class="cat-card-count">1,086 procedures</div>
+      <div class="cat-card-desc">Radio operations, emergency communications, and signaling</div>
+    </a>
+    <a href="natural-remedies.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F33F;</span>
+      <div class="cat-card-name">Natural Remedies</div>
+      <div class="cat-card-count">962 procedures</div>
+      <div class="cat-card-desc">Herbal medicine, natural treatments, and traditional remedies</div>
+    </a>
+    <a href="navigation.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F9ED;</span>
+      <div class="cat-card-name">Navigation</div>
+      <div class="cat-card-count">899 procedures</div>
+      <div class="cat-card-desc">Map reading, land navigation, and finding your way</div>
+    </a>
+    <a href="sanitation.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F9FC;</span>
+      <div class="cat-card-name">Sanitation</div>
+      <div class="cat-card-count">660 procedures</div>
+      <div class="cat-card-desc">Hygiene, waste disposal, water treatment, and disease prevention</div>
+    </a>
+    <a href="security.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F512;</span>
+      <div class="cat-card-name">Security</div>
+      <div class="cat-card-count">487 procedures</div>
+      <div class="cat-card-desc">Personal, home, and operational security procedures</div>
+    </a>
+    <a href="shelter.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F3E0;</span>
+      <div class="cat-card-name">Shelter</div>
+      <div class="cat-card-count">380 procedures</div>
+      <div class="cat-card-desc">Building, improvising, and maintaining emergency shelter</div>
+    </a>
+    <a href="hunting-trapping.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F98C;</span>
+      <div class="cat-card-name">Hunting & Trapping</div>
+      <div class="cat-card-count">355 procedures</div>
+      <div class="cat-card-desc">Game hunting, trapping, fishing, and field dressing</div>
+    </a>
+    <a href="knots-rope.html" class="cat-card">
+      <span class="cat-card-icon">&#x1FAA2;</span>
+      <div class="cat-card-name">Knots & Rope</div>
+      <div class="cat-card-count">350 procedures</div>
+      <div class="cat-card-desc">Knot tying, rope work, lashing, and rigging</div>
+    </a>
+    <a href="bushcraft.html" class="cat-card">
+      <span class="cat-card-icon">&#x1FA93;</span>
+      <div class="cat-card-name">Bushcraft</div>
+      <div class="cat-card-count">326 procedures</div>
+      <div class="cat-card-desc">Wilderness self-reliance, primitive skills, and field craft</div>
+    </a>
+    <a href="water.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F4A7;</span>
+      <div class="cat-card-name">Water</div>
+      <div class="cat-card-count">324 procedures</div>
+      <div class="cat-card-desc">Water sourcing, purification, filtration, and storage</div>
+    </a>
+    <a href="fire-energy.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F525;</span>
+      <div class="cat-card-name">Fire & Energy</div>
+      <div class="cat-card-count">244 procedures</div>
+      <div class="cat-card-desc">Fire-making, heating, cooking, and alternative energy</div>
+    </a>
+    <a href="mental-health.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F49A;</span>
+      <div class="cat-card-name">Mental Health</div>
+      <div class="cat-card-count">188 procedures</div>
+      <div class="cat-card-desc">Psychological resilience, stress management, and wellness</div>
+    </a>
+    <a href="fermentation.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F376;</span>
+      <div class="cat-card-name">Fermentation</div>
+      <div class="cat-card-count">126 procedures</div>
+      <div class="cat-card-desc">Fermenting foods and beverages for preservation and nutrition</div>
+    </a>
+    <a href="civil-rights.html" class="cat-card">
+      <span class="cat-card-icon">&#x2696;</span>
+      <div class="cat-card-name">Civil & Legal</div>
+      <div class="cat-card-count">116 procedures</div>
+      <div class="cat-card-desc">Rights, legal procedures, and constitutional knowledge</div>
+    </a>
+    <a href="animals.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F43E;</span>
+      <div class="cat-card-name">Animals</div>
+      <div class="cat-card-count">44 procedures</div>
+      <div class="cat-card-desc">Animal identification, handling, husbandry, and dangerous species</div>
+    </a>
+    <a href="faith-hope.html" class="cat-card">
+      <span class="cat-card-icon">&#x1F54A;</span>
+      <div class="cat-card-name">Faith & Hope</div>
+      <div class="cat-card-count">6 procedures</div>
+      <div class="cat-card-desc">Spiritual resilience, hope, and faith-based encouragement</div>
+    </a>
+      </div>
+
+      <div class="cta-section">
+        <h2>Get the Full Offline Library</h2>
+        <p>Over 9,000 curated procedures available offline in the NomadCore app. No internet needed.</p>
+        <a href="https://apps.apple.com/app/nomadcore/id6740512962" class="btn-cta">Download NomadCore</a>
+      </div>
+
+      
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This information is for educational purposes only and is not a substitute for
+    professional medical advice, diagnosis, or treatment. Content has been compiled by AI from open-source
+    and public domain references including military field manuals, government health guidelines, and community
+    preparedness resources. Always verify critical information independently. In an emergency, call 911.
+  </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Preload search index (plain text: title|cat_id|cat_name|proc_id)
+    let searchData = null;
+    let searchLines = null;
+    let searchReady = false;
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    let searchTimeout = null;
+
+    fetch('search-index.txt')
+      .then(r => r.text())
+      .then(text => {
+        searchLines = text.split('\n');
+        searchData = text.toLowerCase().split('\n');
+        searchReady = true;
+        searchInput.placeholder = 'Search 32,993+ procedures... (e.g., tourniquet, water purification, CPR)';
+      });
+
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => doSearch(this.value), 150);
+    });
+
+    // C1+C2 fix: sanitize all dynamic content to prevent XSS
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    function doSearch(query) {
+      if (query.length < 2) { searchResults.innerHTML = ''; return; }
+      if (!searchReady) {
+        searchResults.innerHTML = '<p style="text-align:center;color:var(--gray-400);">Loading search index...</p>';
+        return;
+      }
+      const q = query.toLowerCase();
+      const matches = [];
+      for (let i = 0; i < searchData.length && matches.length < 50; i++) {
+        if (searchData[i].includes(q)) {
+          const parts = searchLines[i].split('|');
+          matches.push({ title: parts[0], catId: parts[1], catName: parts[2] || parts[1], id: parts[3] || '' });
+        }
+      }
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = '<p style="text-align:center;color:var(--gray-400);">No procedures found for &quot;' + esc(query) + '&quot;.</p>';
+        return;
+      }
+      let html = '<p style="color:var(--gray-400);margin-bottom:12px;">' + matches.length + (matches.length === 50 ? '+' : '') + ' results</p><div class="proc-list" role="list">';
+      for (const m of matches) {
+        const slug = esc(m.catId).replace(/_/g, '-');
+        const link = slug + '.html' + (m.id ? '#p' + esc(m.id) : '');
+        html += '<a href="' + link + '" class="proc-card" role="listitem" style="display:block;text-decoration:none;color:inherit;">';
+        html += '<div class="proc-title">' + esc(m.title) + '</div>';
+        html += '<div class="proc-meta">' + esc(m.catName) + '</div>';
+        html += '</a>';
+      }
+      html += '</div>';
+      searchResults.innerHTML = html;
+    }
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/terms-of-service.html">Terms</a>
+        <a href="/eula.html">EULA</a>
+        <a href="/accessibility.html">Accessibility</a>
+        <a href="/support/">Support</a>
+        <a href="/knowledge-base/">Knowledge Base</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Lost Pines Creative LLC. All rights reserved. support@nomad-core.com</p>
+    </div>
+  </footer>
+  <script>
+    // Nav scroll shadow
+    var nav = document.getElementById('nav');
+    if (nav) window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+    // Mobile toggle
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', function() { toggle.classList.toggle('active'); links.classList.toggle('open'); });
+    // Download dropdown
+    var dlBtn = document.getElementById('downloadBtn');
+    var dlMenu = document.getElementById('downloadMenu');
+    if (dlBtn && dlMenu) {
+      dlBtn.addEventListener('click', function(e) { e.stopPropagation(); dlMenu.classList.toggle('open'); });
+      document.addEventListener('click', function() { dlMenu.classList.remove('open'); });
+    }
+  </script>
+</body>
+</html>

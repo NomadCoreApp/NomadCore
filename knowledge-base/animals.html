@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Animals - NomadCore Knowledge Base</title>
+  <meta name="description" content="44 animals procedures. Animal identification, handling, husbandry, and dangerous species">
+  <meta property="og:title" content="Animals - NomadCore Knowledge Base">
+  <meta property="og:description" content="44 animals procedures. Animal identification, handling, husbandry, and dangerous species">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nomad-core.com/knowledge-base/animals.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1D3A; --navy-light: #122B52;
+      --blue: #2E6BD6; --blue-light: #EBF2FF;
+      --cyan: #22B8CF; --cyan-light: #E6FAFB;
+      --amber: #F59E0B; --green: #10B981; --red: #EF4444;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1; --gray-400: #94A3B8; --gray-500: #64748B;
+      --gray-600: #475569; --gray-700: #334155; --gray-800: #1E293B; --gray-900: #0F172A;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --radius: 12px; --radius-lg: 20px; --radius-full: 9999px;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--navy); }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav (matches production nomad-core.com) */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--gray-900); text-decoration: none; }
+    .nav-logo:hover { color: var(--gray-900); text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); text-decoration: none; }
+    .nav-cta { background: var(--blue); color: white !important; padding: 8px 20px; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; transition: background 0.2s, transform 0.2s; cursor: pointer; text-decoration: none; }
+    .nav-cta:hover { background: var(--navy); color: white !important; transform: translateY(-1px); text-decoration: none; }
+    .nav-download { position: relative; }
+    .nav-download-menu { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: white; border-radius: var(--radius); box-shadow: var(--shadow-xl); border: 1px solid var(--gray-100); padding: 8px; min-width: 220px; z-index: 1001; }
+    .nav-download-menu.open { display: block; }
+    .nav-download-menu a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 8px; color: var(--gray-700) !important; font-weight: 500; font-size: 0.95rem; transition: background 0.15s; }
+    .nav-download-menu a:hover { background: var(--blue-light); color: var(--blue) !important; }
+    .nav-download-menu svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .nav-download-menu .store-label { display: flex; flex-direction: column; line-height: 1.3; }
+    .nav-download-menu .store-label small { font-size: 0.7rem; color: var(--gray-400); font-weight: 400; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--gray-700); margin: 6px 0; transition: transform 0.3s, opacity 0.3s; border-radius: 2px; }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* Content */
+    .page-content { padding-top: 100px; padding-bottom: 60px; }
+    .page-header { text-align: center; margin-bottom: 48px; }
+    .page-header h1 { font-size: 36px; margin-bottom: 12px; }
+    .page-header p { font-size: 18px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+    .category-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+    .stats { display: flex; gap: 24px; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+    .stat { background: var(--gray-50); padding: 12px 24px; border-radius: var(--radius); text-align: center; }
+    .stat-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 700; color: var(--navy); }
+    .stat-label { font-size: 13px; color: var(--gray-500); }
+
+    /* Procedures */
+    .subcategory { margin-bottom: 36px; }
+    .subcategory-header { font-size: 20px; color: var(--navy); margin-bottom: 16px; padding: 12px 0 8px; border-bottom: 2px solid var(--gray-200); cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+    .subcategory-header:hover { color: var(--blue); }
+    .subcategory-header .toggle { font-size: 18px; color: var(--gray-400); padding: 8px; }
+    .proc-list { display: grid; gap: 12px; }
+    .proc-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px 20px; transition: box-shadow 0.2s, border-color 0.2s; }
+    .proc-card:hover { box-shadow: var(--shadow-md); border-color: var(--gray-300); }
+    .proc-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .proc-meta { font-size: 12px; color: var(--gray-400); margin-bottom: 8px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .proc-content { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+    .proc-content strong { color: var(--gray-800); }
+    .proc-keywords { font-size: 11px; color: var(--gray-400); margin-top: 8px; }
+    .expand-btn { background: none; border: none; color: var(--blue); font-size: 14px; cursor: pointer; padding: 12px 0; margin-top: 6px; font-weight: 500; min-height: 44px; }
+    .expand-btn:hover { text-decoration: underline; }
+    #search-results { max-height: 80vh; overflow-y: auto; }
+
+    /* Badges */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; }
+    .badge-critical { background: #FEF2F2; color: #DC2626; }
+    .badge-high { background: #FFF7ED; color: #EA580C; }
+    .badge-medium { background: #EFF6FF; color: #2563EB; }
+    .badge-low { background: var(--gray-100); color: var(--gray-500); }
+
+    /* Category grid (index page) */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .cat-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .cat-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); text-decoration: none; }
+    .cat-card-icon { font-size: 36px; margin-bottom: 8px; display: block; }
+    .cat-card-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .cat-card-count { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; }
+    .cat-card-desc { font-size: 13px; color: var(--gray-500); }
+
+    /* Search */
+    .search-box { max-width: 600px; margin: 0 auto 36px; position: relative; }
+    .search-box input { width: 100%; padding: 14px 20px 14px 44px; border: 2px solid var(--gray-200); border-radius: var(--radius-full); font-size: 16px; outline: none; transition: border-color 0.2s; }
+    .search-box input:focus { border-color: var(--blue); }
+    .search-box .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-400); font-size: 18px; }
+    #search-results { margin-top: 24px; }
+
+    /* CTA */
+    .cta-section { background: var(--navy); color: white; padding: 48px; border-radius: var(--radius-lg); text-align: center; margin: 48px 0; }
+    .cta-section h2 { color: white; margin-bottom: 12px; }
+    .cta-section p { color: var(--gray-300); margin-bottom: 24px; }
+    .btn-cta { background: var(--cyan); color: var(--navy); padding: 12px 32px; border-radius: var(--radius-full); font-weight: 700; font-size: 16px; display: inline-block; }
+    .btn-cta:hover { background: #1DA7BC; text-decoration: none; }
+
+    /* Disclaimer */
+    .disclaimer { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px 20px; margin: 36px 0; font-size: 13px; color: var(--gray-500); }
+
+    /* Footer */
+    .footer { background: var(--gray-900); color: var(--gray-400); padding: 48px 0 24px; margin-top: 60px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray-400); font-size: 13px; }
+    .footer-copy { text-align: center; font-size: 12px; color: var(--gray-600); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); padding: 16px 24px 24px; gap: 4px; border-bottom: 1px solid var(--gray-100); }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+      .page-header h1 { font-size: 28px; }
+      .stats { flex-direction: column; align-items: center; }
+      .cat-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="NomadCore" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/features/">Features</a></li>
+        <li><a href="/knowledge-base/">Knowledge Base</a></li>
+        <li><a href="/outage-risk/">Risk Lookup</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li class="nav-download">
+          <span class="nav-cta" id="downloadBtn">Download &#9662;</span>
+          <div class="nav-download-menu" id="downloadMenu">
+            <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span class="store-label"><small>Download on the</small>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+              <span class="store-label"><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <span class="category-icon">&#x1F43E;</span>
+        <h1>Animals</h1>
+        <p>Animal identification, handling, husbandry, and dangerous species</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-num">44</div><div class="stat-label">Procedures</div></div>
+        <div class="stat"><div class="stat-num">14</div><div class="stat-label">Subcategories</div></div>
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">Emergency</div></div>
+      </div>
+
+      <p style="text-align:center; margin-bottom:36px;">
+        <a href="index.html" style="color:var(--gray-500);">&larr; Back to Knowledge Base</a>
+      </p>
+
+      
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Snake Identification (9) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5087" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid Boomslang</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the snake&#x27;s appearance:</strong><br>   - Coloration is variable but typically includes a mix of green, brown, and black colors.<br>   - The snake has a distinctive head shape with large eyes and a long, slender body.<br><br>2....</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the snake&#x27;s appearance:</strong><br>   - Coloration is variable but typically includes a mix of green, brown, and black colors.<br>   - The snake has a distinctive head shape with large eyes and a long, slender body.<br><br>2. <strong>Understand its habitat:</strong><br>   - Found in Africa and parts of Asia, particularly in regions with dense vegetation such as forests, savannas, and rocky outcrops.<br><br>3. <strong>Be aware of its behavior:</strong><br>   - The boomslang is a highly venomous snake that is generally shy and avoids confrontation unless provoked.<br>   - Its venom is hemotoxic and can be fatal if left untreated.<br><br>4. <strong>Take precautions in its range:</strong><br>   - Avoid areas where this snake is common: parts of Africa and Asia, particularly in regions with dense vegetation such as forests, savannas, and rocky outcrops.<br><br>5. <strong>Stay alert during outdoor activities:</strong><br>   - Be cautious when hiking or camping in areas with dense vegetation to avoid accidental encounters.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">boomslang, identification, avoidance, habitat, behavior</div>
+          </div>
+          <div class="proc-card" id="p5082" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid Eastern Diamondback Rattlesnake</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the snake&#x27;s appearance:</strong><br>   - The body is a light buff color with darker brown diamond-shaped markings.<br>   - The tail has heavy black and white bands.<br><br>2. <strong>Understand its habitat:</strong><br>   - Found in grasslands, deserts,...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the snake&#x27;s appearance:</strong><br>   - The body is a light buff color with darker brown diamond-shaped markings.<br>   - The tail has heavy black and white bands.<br><br>2. <strong>Understand its habitat:</strong><br>   - Found in grasslands, deserts, woodlands, and canyons.<br><br>3. <strong>Be aware of its behavior:</strong><br>   - This snake is very common over its range and holds its ground when threatened.<br>   - It injects a large amount of venom when it bites, making it one of the most dangerous snakes.<br><br>4. <strong>Take precautions in its range:</strong><br>   - Avoid areas where this snake is common: Southeast California, Oklahoma, Texas, New Mexico, and Arizona.<br><br>5. <strong>Stay alert during outdoor activities:</strong><br>   - Be cautious when hiking or camping in grasslands, deserts, woodlands, and canyons to avoid accidental encounters.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">eastern diamondback rattlesnake, identification, avoidance, habitat, behavior</div>
+          </div>
+          <div class="proc-card" id="p5081" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid Western Diamondback Rattlesnake</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the snake&#x27;s appearance:</strong><br>   - The body is a pallid or sandy color with darker diamond-shaped markings bordered by lighter-colored scales.<br>   - Black bands are present around the tail.<br><br>2. <strong>Understand its habitat:</strong><br> ...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the snake&#x27;s appearance:</strong><br>   - The body is a pallid or sandy color with darker diamond-shaped markings bordered by lighter-colored scales.<br>   - Black bands are present around the tail.<br><br>2. <strong>Understand its habitat:</strong><br>   - Found in arid regions, deserts, and rocky hillsides from sea level to 2400-meter elevations.<br><br>3. <strong>Be aware of its behavior:</strong><br>   - This rattlesnake is defensive and will strike if threatened.<br>   - It injects a large amount of venom when it bites, making it one of the most dangerous snakes.<br><br>4. <strong>Take precautions in its range:</strong><br>   - Avoid areas where this snake is common: Mojave Desert in California, Nevada, southwest Arizona, and Texas into Mexico.<br><br>5. <strong>Stay alert during outdoor activities:</strong><br>   - Be cautious when hiking or camping in arid regions to avoid accidental encounters.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">western diamondback rattlesnake, identification, avoidance, habitat, behavior</div>
+          </div>
+          <div class="proc-card" id="p5110" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Malayan Pit Viper Characteristics</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Observe coloration:</strong> Look for a reddish body that transitions into a pinkish hue toward the belly.<br>2. <strong>Check markings:</strong> Identify triangular-shaped, brown markings bordered by light-colored scales. These markings end at the...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Observe coloration:</strong> Look for a reddish body that transitions into a pinkish hue toward the belly.<br>2. <strong>Check markings:</strong> Identify triangular-shaped, brown markings bordered by light-colored scales. These markings end at the midline of the body.<br>3. <strong>Examine head features:</strong> Look for dark brown, arrow-shaped markings on the top and each side of the head.<br>4. <strong>Assess behavior:</strong> Note that this snake has long fangs, is ill-tempered, and responsible for many bites.<br>5. <strong>Determine habitat:</strong> Confirm if the area is a rubber plantation, farm, rural village, or rainforest.<br>6. <strong>Measure length:</strong> The average length is 60 centimeters, with a maximum of 1 meter.<br>7. <strong>Verify distribution:</strong> Ensure the location is in Thailand, Laos, Cambodia, Java, Sumatra, Malaysia, Vietnam, Burma, or China.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">Malayan Pit Viper, identification, snake characteristics, venom, habitat</div>
+          </div>
+          <div class="proc-card" id="p5114" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Puff Adder Characteristics</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Observe appearance:</strong> Look for a snake with a distinctive, robust body and a broad head.<br>2. <strong>Check venom effects:</strong> Understand that the puff adder&#x27;s venom is highly toxic and can cause severe tissue damage, necrosis, and...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Observe appearance:</strong> Look for a snake with a distinctive, robust body and a broad head.<br>2. <strong>Check venom effects:</strong> Understand that the puff adder&#x27;s venom is highly toxic and can cause severe tissue damage, necrosis, and systemic effects such as coagulopathy and shock.<br>3. <strong>Assess behavior:</strong> Note that this snake is generally shy but may strike if provoked or cornered.<br>4. <strong>Determine habitat:</strong> Confirm if the area is in sub-Saharan Africa, particularly in savannas, grasslands, and rocky areas.<br>5. <strong>Measure length:</strong> The average length varies between 60 to 120 centimeters.<br>6. <strong>Verify distribution:</strong> Ensure the location includes countries such as South Africa, Zimbabwe, Kenya, Tanzania, Nigeria, and other regions across sub-Saharan Africa.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">Puff Adder, identification, snake characteristics, venom, habitat</div>
+          </div>
+          <div class="proc-card" id="p5115" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Rhinoceros Viper or River Jack</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Yellowish, light brown, or orange with chevron-shaped dark brown or black bars.<br><br><strong>Characteristics:</strong><br>&bull; The second largest of the dangerous vipers.<br>&bull; One of the most common snakes in Africa.<br>&bull; Nocturnal, hunting at night and...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Yellowish, light brown, or orange with chevron-shaped dark brown or black bars.<br><br><strong>Characteristics:</strong><br>&bull; The second largest of the dangerous vipers.<br>&bull; One of the most common snakes in Africa.<br>&bull; Nocturnal, hunting at night and seeking shelter during the day&#x27;s heat.<br>&bull; Not shy when approached; draws its head close to its coils, makes a loud hissing sound, and is quick to strike any intruder.<br>&bull; Venom is strongly hemotoxic, destroying blood cells and causing extensive tissue damage.<br><br><strong>Habitat:</strong><br>&bull; Arid regions to swamps and dense forests.<br>&bull; Common around human settlements.<br><br><strong>Length:</strong><br>&bull; Average 1.2 meters, maximum 1.8 meters.<br><br><strong>Distribution:</strong><br>&bull; Most of Africa, Saudi Arabia, Iraq, Lebanon, Israel, and Jordan.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">rhinoceros viper,river jack,identification,snake,venom,hemotoxic</div>
+          </div>
+          <div class="proc-card" id="p5116" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Rhinoceros Viper&#x27;s Physical Features</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Brightly colored with purplish to reddish-brown markings and black and light olive markings along the back.<br>&bull; On its head it has a triangular marking that starts at the tip of the nose.<br>&bull; Has a pair of long horns (scales) on the...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Brightly colored with purplish to reddish-brown markings and black and light olive markings along the back.<br>&bull; On its head it has a triangular marking that starts at the tip of the nose.<br>&bull; Has a pair of long horns (scales) on the tip of its nose.<br><br><strong>Characteristics:</strong><br>&bull; Appearance is awesome; its horns and very rough scales give it a sinister look.<br>&bull; Irritable disposition.<br>&bull; Not aggressive but will stand its ground ready to strike if disturbed.<br>&bull; Venom is neurotoxic and hemotoxic.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">rhinoceros viper,physical features,identification,neurotoxic venom,hemotoxic</div>
+          </div>
+          <div class="proc-card" id="p5117" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Russell&#x27;s Viper</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Light brown body with three rows of dark brown or black splotches bordered with white or yellow extending its entire length.<br><br><strong>Characteristics:</strong><br>&bull; Responsible for more human fatalities than any other venomous snake.<br>&bull; Irritable;...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Light brown body with three rows of dark brown or black splotches bordered with white or yellow extending its entire length.<br><br><strong>Characteristics:</strong><br>&bull; Responsible for more human fatalities than any other venomous snake.<br>&bull; Irritable; when threatened, coils tightly, hisses, and strikes with such speed that its victim has little chance of escaping.<br>&bull; Hemotoxic venom is a powerful coagulant, damaging tissue and blood cells.<br><br><strong>Habitat:</strong><br>&bull; Variable, from farmlands to dense rain forests. Commonly found around human settlements.<br><br><strong>Length:</strong><br>&bull; Average 1 meter, maximum 1.5 meters.<br><br><strong>Distribution:</strong><br>&bull; Sri Lanka, south China, India, Malaysian Peninsula, Java, Sumatra, Borneo, and surrounding islands.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">russell&#x27;s viper,identification,venom,hemotoxic,fatalities</div>
+          </div>
+          <div class="proc-card" id="p5119" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Saw-Scaled Viper</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Color is light buff with shades of brown, dull red, or gray.<br>&bull; Its sides have a white or light-colored pattern.<br>&bull; Its head usually has two dark stripes that start behind the eye and extend to the rear.<br><br><strong>Characteristics:</strong><br>-...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Color is light buff with shades of brown, dull red, or gray.<br>&bull; Its sides have a white or light-colored pattern.<br>&bull; Its head usually has two dark stripes that start behind the eye and extend to the rear.<br><br><strong>Characteristics:</strong><br>&bull; Small but extremely dangerous viper.<br>&bull; Gets the name sawscaled from rubbing the sides of its body together, producing a rasping sound.<br>&bull; Ill-tempered snake; will attack any intruder.<br>&bull; Venom is highly hemotoxic and quite potent. Many deaths are attributed to this species.<br><br><strong>Habitat:</strong><br>&bull; Found in a variety of environments. Common in rural settlements, cultivated fields, arid regions, barns, and rock walls.<br><br><strong>Length:</strong><br>&bull; Average 45 centimeters, maximum 60 centimeters.<br><br><strong>Distribution:</strong><br>&bull; Asia, Syria, India, Africa, Iraq, Iran, Saudi Arabia, Pakistan, Jordan, Lebanon, Sri Lanka, Algeria, Egypt, and Israel.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">saw-scaled viper,identification,hemotoxic venom,rasping sound</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Beekeeping (8) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p8035" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Optimal Hive Orientation and Placement in Winter</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure for Optimal Hive Orientation and Placement During Winter:</strong><br><br>1. <strong>Hive orientation when left outdoors:</strong><br>   - Position hives to face north so that the sun does not shine directly on the entrance.<br>   - This prevents bees from being...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure for Optimal Hive Orientation and Placement During Winter:</strong><br><br>1. <strong>Hive orientation when left outdoors:</strong><br>   - Position hives to face north so that the sun does not shine directly on the entrance.<br>   - This prevents bees from being tempted out during cold weather, which could lead to loss of individuals due to inability to fly safely.<br><br>2. <strong>Secure hive entrances:</strong><br>   - Ensure all entrances are closed securely against mice and other pests.<br><br>3. <strong>Hive type selection for outdoor wintering:</strong><br>   - Use upright hive forms, such as the American style, when storing bees outdoors during winter.<br>   - This allows better clustering of bees and more efficient heat retention.<br><br>4. <strong>Ensure sufficient honey stores:</strong><br>   - Provide at least 30 lbs. of honey per hive to ensure adequate food supply for the winter months.<br><br>5. <strong>Avoid overfeeding or underfeeding:</strong><br>   - Too much honey may lead to unnecessary consumption, while too little can result in starvation.<br>   - The goal is to provide enough honey to last until swarming time in spring.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">hive orientation winter, outdoor bee storage, hive placement for bees</div>
+          </div>
+          <div class="proc-card" id="p8033" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Wintering Bees Successfully</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure for Wintering Bees Successfully:</strong><br><br>1. <strong>Understand bee behavior in cold weather:</strong><br>   - Bees cluster together to maintain body heat.<br>   - In the coldest days, their cluster can reach summer temperatures internally.<br>   - They remain in a...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure for Wintering Bees Successfully:</strong><br><br>1. <strong>Understand bee behavior in cold weather:</strong><br>   - Bees cluster together to maintain body heat.<br>   - In the coldest days, their cluster can reach summer temperatures internally.<br>   - They remain in a semi-torpid state during winter and consume very little food.<br><br>2. <strong>Ensure proper ventilation:</strong><br>   - Provide upward ventilation in hives to allow warm air to rise from the bee cluster.<br>   - In shallow hives, this is critical for keeping stores above the cluster.<br><br>3. <strong>Provide sufficient food:</strong><br>   - Ensure bees have access to plenty of honey (at least 30 lbs. per hive).<br>   - Remove honey boxes under the cap to allow upward ventilation.<br><br>4. <strong>Maintain adequate numbers of bees:</strong><br>   - A large enough population is necessary to maintain body heat in cold weather.<br><br>5. <strong>Choose appropriate storage location:</strong><br>   - If possible, store hives in a cellar during winter for better temperature control and reduced honey consumption.<br>   - In the North, this should be done from about the last of November until spring.<br>   - In the Middle and Southern States, bees should be housed from when bloom ceases until it returns.<br><br>6. <strong>Position hives correctly:</strong><br>   - If left outside during winter, position them to face north so that sunlight does not tempt bees out on cold days.<br>   - Secure hive entrances against mice.<br><br>7. <strong>Timing for moving bees back outdoors:</strong><br>   - Choose a warm, pleasant day in spring to move bees back outdoors.<br>   - Bees will be attracted by light and may fly out if the weather is still chilly, risking loss of some individuals.<br><br>8. <strong>Ensure hives are heavy when set out in spring:</strong><br>   - Hives should have enough honey stored to last until swarming time.<br>   - This ensures bees can rear young rapidly during the spring months and be ready for the harvest season.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">wintering bees, beekeeping, hive ventilation, honey storage, bee cluster heat</div>
+          </div>
+          <div class="proc-card" id="p8034" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Wintering Bees in Cellars for Optimal Survival</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure for Wintering Bees in Cellars:</strong><br><br>1. <strong>Timing of cellar placement:</strong><br>   - In the Northern States, place bees in cellars around the last of November when cold weather begins.<br>   - In the Middle and Southern States, house bees from when...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure for Wintering Bees in Cellars:</strong><br><br>1. <strong>Timing of cellar placement:</strong><br>   - In the Northern States, place bees in cellars around the last of November when cold weather begins.<br>   - In the Middle and Southern States, house bees from when bloom ceases until it returns.<br><br>2. <strong>Cellar storage benefits:</strong><br>   - Bees consume significantly less honey when stored in a cellar compared to being outdoors.<br>   - Example: A hive weighing 60 lbs. in fall lost only 5 lbs. over three months in a cellar, while one left outdoors lost 29 1/2 lbs. over the same period.<br><br>3. <strong>Cellar storage conditions:</strong><br>   - Ensure proper ventilation within the cellar for the hives.<br>   - Avoid placing bees in cellars too early before cold weather is established.<br><br>4. <strong>Hive preparation for cellar storage:</strong><br>   - Use upright hive forms, such as the American style, if not storing in a cellar.<br>   - Ensure honey boxes under the cap are removed to allow upward ventilation.<br><br>5. <strong>Cellar storage duration:</strong><br>   - In the North, bees may be stored in cellars for three to five months.<br><br>6. <strong>Reintroducing bees outdoors in spring:</strong><br>   - Choose a warm day when reintroducing bees to outdoor stands.<br>   - Bees will be attracted by light and may fly out if the weather is still chilly, risking loss of some individuals.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">cellar bee storage, winter bee survival, hive preparation for winter</div>
+          </div>
+          <div class="proc-card" id="p8029" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Feeding Bees Using Sugar Candy</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Select the right time</strong>: Feed bees only when necessary, typically during spring.<br>2. <strong>Use sugar candy as a substitute</strong>: Plain sugar candy is the best substitute for honey in feeding bees.<br>3. <strong>Place sugar candy between combs</strong>:...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Select the right time</strong>: Feed bees only when necessary, typically during spring.<br>2. <strong>Use sugar candy as a substitute</strong>: Plain sugar candy is the best substitute for honey in feeding bees.<br>3. <strong>Place sugar candy between combs</strong>: Insert a few pounds of sugar candy directly between the combs in the hive.<br>4. <strong>Purpose</strong>: This method can often save a colony from starvation when natural food sources are scarce.<br><br><strong>Notes:</strong><br>&bull; Avoid feeding honey, as it may attract robbers from other hives.<br>&bull; Ensure that the sugar candy is placed properly to be accessible to the bees.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">feeding bees,sugar candy,beekeeping,hive management</div>
+          </div>
+          <div class="proc-card" id="p8031" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Feeding Bees with Rye Meal in Spring</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Choose the right time</strong>: Feed rye meal to bees during spring when natural pollen sources are not yet available.<br>2. <strong>Prepare feeding stations</strong>: Use shallow pans or troughs to hold the rye meal.<br>3. <strong>Place near the hive</strong>:...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Choose the right time</strong>: Feed rye meal to bees during spring when natural pollen sources are not yet available.<br>2. <strong>Prepare feeding stations</strong>: Use shallow pans or troughs to hold the rye meal.<br>3. <strong>Place near the hive</strong>: Position these feeding stations close to the bee colony so that the bees can easily access them.<br>4. <strong>Monitor consumption</strong>: Bees will gather around the meal in large numbers, and large apiaries may consume up to 100 pounds of rye meal per day.<br><br><strong>Notes:</strong><br>&bull; Rye meal is preferred over wheat meal as it more closely resembles the farina of flowers.<br>&bull; Once natural blossoms appear and bees can gather pollen from them, they will no longer need the meal.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">rye meal feeding,bee nutrition,spring bee care</div>
+          </div>
+          <div class="proc-card" id="p8036" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Hive Weight and Honey Storage for Spring Success</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure for Ensuring Hive Weight and Honey Stores in Preparation for Spring:</strong><br><br>1. <strong>Maintain sufficient honey stores during winter:</strong><br>   - Ensure that hives have enough honey to last until swarming time in spring.<br>   - This helps bees rear...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure for Ensuring Hive Weight and Honey Stores in Preparation for Spring:</strong><br><br>1. <strong>Maintain sufficient honey stores during winter:</strong><br>   - Ensure that hives have enough honey to last until swarming time in spring.<br>   - This helps bees rear young rapidly during the spring months, preparing them for the harvest season.<br><br>2. <strong>Monitor hive weight in spring:</strong><br>   - Hives should be heavy when set out in the spring, indicating sufficient honey stores remain.<br>   - The more honey available in March and April, the faster bees will rear young and prepare for the fruit blossom season.<br><br>3. <strong>Avoid overconsumption of honey during winter:</strong><br>   - Store hives in cellars or use proper ventilation to minimize honey consumption during cold months.<br><br>4. <strong>Replenish honey if necessary:</strong><br>   - If bees have consumed too much honey, consider adding additional stores before the spring season begins.<br><br>5. <strong>Ensure hive readiness for swarming time:</strong><br>   - Provide enough honey so that bees can repay the generosity with compound interest during the active season.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">hive weight, spring bee preparation, honey storage winter</div>
+          </div>
+          <div class="proc-card" id="p8032" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Providing Water Access for Bees</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Locate the apiary near water</strong>: If possible, place the bee hives near a small running brook or stream.<br>2. <strong>Observe natural behavior</strong>: Bees in the wild are rarely found more than a few yards from a water source.<br>3. **Set up...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Locate the apiary near water</strong>: If possible, place the bee hives near a small running brook or stream.<br>2. <strong>Observe natural behavior</strong>: Bees in the wild are rarely found more than a few yards from a water source.<br>3. <strong>Set up artificial water sources if needed</strong>:<br>   - Use shallow vessels filled with clean water.<br>   - Add shavings, leaves, or moss to the vessel to act as floats for the bees to land on.<br>4. <strong>Ensure accessibility</strong>: Place these water stations in areas where bees can easily find and use them.<br><br><strong>Notes:</strong><br>&bull; Bees require a significant amount of water for various hive functions.<br>&bull; Providing adequate water access is crucial, especially during hot or dry periods.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">bee water access,hive hydration,apiary setup</div>
+          </div>
+          <div class="proc-card" id="p8030" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Transferring Comb of Stores Between Colonies</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Identify a strong colony</strong>: Choose a hive that has an excess of honey and can spare some stores.<br>2. <strong>Remove a comb of stores</strong>: Carefully take out a comb containing honey or other food stores from the strong colony.<br>3....</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Identify a strong colony</strong>: Choose a hive that has an excess of honey and can spare some stores.<br>2. <strong>Remove a comb of stores</strong>: Carefully take out a comb containing honey or other food stores from the strong colony.<br>3. <strong>Transfer to a destitute colony</strong>: Place this comb into a weaker or destitute colony that needs additional resources.<br>4. <strong>Monitor both colonies</strong>: Ensure that the transfer does not harm either colony and that the weaker one benefits from the addition of stores.<br><br><strong>Notes:</strong><br>&bull; This method is effective for saving struggling colonies without harming the donor hive.<br>&bull; Use caution to avoid damaging the combs during removal or insertion.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">transferring comb,bee colony support,hive management</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Horse Health (5) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p8062" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Treat Inflammation of the Bowels in Horses (Peritoneal Type)</div>
+            <div class="proc-meta"><span class="badge badge-critical">Critical</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Administer early and large bleeding</strong>: This is the primary treatment for peritoneal inflammation.<br>2. <strong>Apply mustard embrocation</strong> to the entire belly area.<br>3. <strong>Clothe the horse warmly</strong>, using fresh sheep-skins if...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Administer early and large bleeding</strong>: This is the primary treatment for peritoneal inflammation.<br>2. <strong>Apply mustard embrocation</strong> to the entire belly area.<br>3. <strong>Clothe the horse warmly</strong>, using fresh sheep-skins if available.<br>4. <strong>Insert rowels</strong> around the chest and belly, filling them with blistering ointment.<br>5. <strong>Give a pint of castor oil</strong> (if the horse is constipated).<br>6. <strong>Administer clysters</strong> of warm flaxseed tea.<br>7. <strong>Provide warm water or thin gruel/flaxseed tea</strong> for drinking.<br>8. <strong>Rub the legs</strong> with hands to promote circulation.<br>9. <strong>Ensure clean, fresh litter</strong> is available.<br>10. If no improvement in six hours:<br>   - Bleed the horse again.<br>   - Repeat oil and clysters if constipation persists.<br>11. If pain continues after these steps, use an <strong>anodyne clyster</strong> for relief.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">inflammation,bowel,horse,treatment,peritoneal,bleeding,mustard,embrocation,clysters</div>
+          </div>
+          <div class="proc-card" id="p8064" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Manage Broken Wind in Horses</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the condition</strong>: This is an incurable disease that only allows temporary relief for work performance.<br>2. <strong>Administer a treatment</strong> to relieve symptoms, though no specific remedy is described in this text.<br>3. **Provide...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the condition</strong>: This is an incurable disease that only allows temporary relief for work performance.<br>2. <strong>Administer a treatment</strong> to relieve symptoms, though no specific remedy is described in this text.<br>3. <strong>Provide supportive care</strong>, including clean bedding and hydration, as needed.<br><br><strong>Notes:</strong><br>&bull; No definitive cure exists for broken wind.<br>&bull; Focus on comfort and temporary relief rather than long-term recovery.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">broken,wind,horse,treatment,relief,incurable</div>
+          </div>
+          <div class="proc-card" id="p8061" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Administer Vermifuge Treatment for Worms in Horses</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Fast the horse</strong>: Withhold all food for one day.<br>2. <strong>Prepare a warm bran mash</strong> and give it to the horse at night, followed by a medicinal ball made of:<br>   - 1 scruple of calomel<br>   - 1 scruple of turpeth mineral<br>   - Crumb of...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Fast the horse</strong>: Withhold all food for one day.<br>2. <strong>Prepare a warm bran mash</strong> and give it to the horse at night, followed by a medicinal ball made of:<br>   - 1 scruple of calomel<br>   - 1 scruple of turpeth mineral<br>   - Crumb of bread and honey (enough to form a mass)<br>3. <strong>Next evening</strong>, administer:<br>   - 1 pint of castor oil<br>   - ½ pint of linseed oil<br>4. <strong>Resume normal feeding</strong> for two or three days after the treatment.<br>5. <strong>Repeat this process</strong> as needed.<br><br><strong>Alternative remedies (fall season):</strong><br>&bull; Give a drench of sweetened milk followed by brine (4–5 ounces salt to 1 quart water).<br>&bull; Administer oil of turpentine (4 oz) in a pint of gruel, after fasting the horse.<br>&bull; Use nux vomica (dog-buttons):<br>   - Rasp one nut and pour a pint of boiling water over it.<br>   - Cool to blood heat and drench the horse with it.<br>   - Bleed the horse in the mouth about 30 minutes before administration to encourage worm expulsion.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">vermifuge,worm,treatment,horse,calomel,turpeth,mineral,nux,vomica</div>
+          </div>
+          <div class="proc-card" id="p8059" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Recognize Bot Worms in Horses</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Observe the horse’s dung</strong> for small, reddish worms with large heads.<br>2. <strong>Check the maw (mouth)</strong> of the horse for a short, thick worm with a blackish head.<br>3. <strong>Look for signs of maw-worms</strong>, which are pale red and resemble...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Observe the horse’s dung</strong> for small, reddish worms with large heads.<br>2. <strong>Check the maw (mouth)</strong> of the horse for a short, thick worm with a blackish head.<br>3. <strong>Look for signs of maw-worms</strong>, which are pale red and resemble earthworms, measuring 2 to 3 inches in length.<br><br><strong>Notes:</strong><br>&bull; Bots can be found in the stomach and intestines.<br>&bull; Truncheon worms may cause serious damage if left untreated.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">bot,worm,horse,identification,stomach,intestine,dung,maw</div>
+          </div>
+          <div class="proc-card" id="p8060" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Recognize Symptoms of Worm Infestation in Horses</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Watch for stamping behavior</strong>: The horse may forcefully stamp on the ground with its forefeet.<br>2. <strong>Observe belly behavior</strong>: The horse frequently strikes at its belly with its hind legs and may groan in pain.<br>3. **Check for...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Watch for stamping behavior</strong>: The horse may forcefully stamp on the ground with its forefeet.<br>2. <strong>Observe belly behavior</strong>: The horse frequently strikes at its belly with its hind legs and may groan in pain.<br>3. <strong>Check for physical signs</strong>: Look for a hard, projecting belly and signs of discomfort or pain.<br><br><strong>Notes:</strong><br>&bull; These symptoms indicate the presence of worms in the digestive tract.<br>&bull; Early recognition is crucial to effective treatment.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">worm,symptoms,horse,belly,pain,stomach</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Wildlife Identification (4) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p41199" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Elk or Wapiti</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: Boy Scout Handbook 1911</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Elk or Wapiti (Cervus canadensis)</strong><br><br>&bull; Smaller than the moose.<br>&bull; Height at the shoulder: <strong>4 to 5 feet</strong>.<br>&bull; Weight: <strong>400 to 800 pounds</strong>.<br>&bull; Identified by its <strong>rounded horns</strong> and a <strong>patch of yellowish-white on the rump and tail</strong>.<br>-...</div>
+              <div class="proc-full" style="display:none;"><strong>Elk or Wapiti (Cervus canadensis)</strong><br><br>&bull; Smaller than the moose.<br>&bull; Height at the shoulder: <strong>4 to 5 feet</strong>.<br>&bull; Weight: <strong>400 to 800 pounds</strong>.<br>&bull; Identified by its <strong>rounded horns</strong> and a <strong>patch of yellowish-white on the rump and tail</strong>.<br>&bull; Historically found throughout <strong>temperate America</strong>, from the <strong>Atlantic to the Pacific</strong>, north to <strong>Massachusetts, Ottawa River, Peace River, British Columbia</strong>, and south to <strong>Georgia, Texas, southern California</strong>.<br>&bull; Currently found in <strong>Manitoba, Saskatchewan, Alberta, Vancouver Island, Washington, Wyoming</strong>, and a few localities in the <strong>mountain states</strong> and in parks where it has been reintroduced.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">elk,wapiti,Cervus canadensis,wildlife identification</div>
+          </div>
+          <div class="proc-card" id="p46192" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Distinguish Swift Fox from Kit Fox</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: Student manual 2005</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Observe physical characteristics:</strong><br>   - Look for <strong>longer ears</strong> with bases closer to the center of the skull.<br>   - Note a <strong>more rounded, dog-like head shape</strong> compared to kit foxes.<br>   - Check the **tail length relative to...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Observe physical characteristics:</strong><br>   - Look for <strong>longer ears</strong> with bases closer to the center of the skull.<br>   - Note a <strong>more rounded, dog-like head shape</strong> compared to kit foxes.<br>   - Check the <strong>tail length relative to body size</strong>, which is shorter in swift foxes than in kit foxes.<br><br>2. <strong>Consider habitat:</strong><br>   - Swift foxes are found in <strong>prairies east of the Rocky Mountains</strong>.<br>   - Kit foxes typically live in different regions, such as deserts or arid areas.<br><br>3. <strong>Note behavior:</strong><br>   - Swift foxes are primarily <strong>nocturnal</strong>.<br>   - They have experienced population declines due to <strong>conversion of prairies to croplands</strong>, <strong>overgrazing</strong>, and <strong>poisoning</strong>.<br><br>4. <strong>Compare with kit fox features if necessary:</strong><br>   - Kit foxes generally have <strong>shorter ears</strong> and a more elongated head shape.<br>   - Their tails are proportionally longer compared to their body size.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">swift fox, kit fox, identification, physical characteristics, habitat, nocturnal behavior</div>
+          </div>
+          <div class="proc-card" id="p46193" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Distinguish Weasels from Other Small Furbearers</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: Student manual 2005</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Examine physical features:</strong><br>   - Look for a <strong>small body size</strong> with <strong>short fur</strong>.<br>   - Note the coloration: generally <strong>light brown above</strong>, with a <strong>cream-colored throat and belly</strong>, and a <strong>black-tipped tail</strong>.<br>   - In...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Examine physical features:</strong><br>   - Look for a <strong>small body size</strong> with <strong>short fur</strong>.<br>   - Note the coloration: generally <strong>light brown above</strong>, with a <strong>cream-colored throat and belly</strong>, and a <strong>black-tipped tail</strong>.<br>   - In northern areas, observe if they have a <strong>white winter coat</strong>, which identifies them as ermine (a subspecies of weasels).<br><br>2. <strong>Measure size:</strong><br>   - Long-tailed weasels (<strong>Mustela frenata</strong>) measure <strong>13 to 17 inches</strong> in length, including a <strong>4.5 to 6.5 inch tail</strong>.<br>   - Short-tailed weasels (<strong>Mustela erminea</strong>) have tails of <strong>4 inches or less</strong>.<br><br>3. <strong>Compare sex differences:</strong><br>   - Males are generally <strong>larger than females</strong>.<br><br>4. <strong>Determine geographic distribution:</strong><br>   - Long-tailed weasels are found in most U.S. states except the <strong>southwest</strong>.<br>   - Short-tailed weasels are primarily located in <strong>northern states</strong>.<br><br>5. <strong>Assess habitat preferences:</strong><br>   - Weasels live in a variety of environments including <strong>mountains, farmland, forests</strong>, and <strong>prairies near water</strong>.<br><br>6. <strong>Note behavior:</strong><br>   - They are primarily <strong>nocturnal</strong> and stay within a <strong>half-mile radius of their den</strong>.<br><br>7. <strong>Identify prey and predators:</strong><br>   - Prey includes <strong>mice, voles, chipmunks, rabbits, birds, eggs</strong>, and <strong>poultry</strong>.<br>   - Predators include <strong>foxes, mink, coyotes, bobcats, hawks</strong>, and <strong>owls</strong>.<br><br>8. <strong>Observe den characteristics:</strong><br>   - Dens are located in <strong>hollow stumps, tree roots, rock piles</strong>, or under <strong>old buildings</strong>.<br>   - They are lined with <strong>grasses and fur from prey animals</strong>.<br><br>9. <strong>Understand reproductive behavior:</strong><br>   - Breeding occurs in <strong>July</strong>, with <strong>delayed implantation</strong>.<br>   - One litter of an average of <strong>six young</strong> is produced.<br>   - Females mate at <strong>3 to 4 months old</strong>, while males typically mate during their <strong>second year of life</strong>.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">weasels, identification, physical characteristics, habitat, behavior, reproduction, predator-prey relationships</div>
+          </div>
+          <div class="proc-card" id="p46194" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Distinguish Wolverine from Other Weasel Family Members</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: Student manual 2005</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Observe physical characteristics:</strong><br>   - Look for a <strong>large body size</strong>, resembling a <strong>small bear</strong> but with the movement and behavior of weasels.<br>   - Note the <strong>thick, glossy fur</strong>, which is generally <strong>dark brown</strong> with a...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Observe physical characteristics:</strong><br>   - Look for a <strong>large body size</strong>, resembling a <strong>small bear</strong> but with the movement and behavior of weasels.<br>   - Note the <strong>thick, glossy fur</strong>, which is generally <strong>dark brown</strong> with a possible <strong>light face mask</strong>.<br>   - Identify the <strong>stripe running from the shoulders down the sides to the rump</strong>.<br>   - Look for a <strong>bushy tail</strong>.<br><br>2. <strong>Measure size:</strong><br>   - Males grow up to <strong>44 inches in length and weigh 40 pounds</strong>.<br>   - Females are about <strong>25% smaller</strong> than males.<br><br>3. <strong>Identify unique behaviors:</strong><br>   - Wolverines can release <strong>musk from their anal glands</strong>, which is a distinguishing feature.<br><br>4. <strong>Determine geographic distribution:</strong><br>   - They are found in <strong>Alaska, Canada</strong>, and parts of the U.S., including <strong>Idaho, Montana, Washington</strong>, and <strong>Oregon</strong>.<br>   - Their habitat includes <strong>boreal forests and tundra</strong>.<br><br>5. <strong>Assess diet and feeding habits:</strong><br>   - Feed on <strong>rodents</strong> and scavenge for food such as <strong>deer, caribou, and moose</strong>.<br>   - They are known to <strong>raid traps and cabins</strong> in search of food.<br><br>6. <strong>Note movement patterns:</strong><br>   - Travel with a <strong>slow lope</strong>, but they can also <strong>swim</strong> and are <strong>quick climbers</strong>.<br><br>7. <strong>Understand reproductive behavior:</strong><br>   - Mating occurs from <strong>April to September</strong>, but implantation is <strong>delayed until winter</strong>.<br>   - One litter of <strong>2 to 5 young</strong> is produced.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">wolverine, identification, physical characteristics, habitat, behavior, reproduction, musk glands</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Venomous Snakes (3) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5078" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Fer-De-Lance</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br><br>&bull; Variable coloration, from gray to olive, brown, or reddish, with dark triangles edged with light scales.<br>&bull; Triangles are narrow at the top and wide at the bottom.<br><br><strong>Characteristics:</strong><br><br>&bull; This highly dangerous snake is...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br><br>&bull; Variable coloration, from gray to olive, brown, or reddish, with dark triangles edged with light scales.<br>&bull; Triangles are narrow at the top and wide at the bottom.<br><br><strong>Characteristics:</strong><br><br>&bull; This highly dangerous snake is responsible for a high mortality rate.<br>&bull; It has an irritable disposition, ready to strike with little provocation.<br>&bull; The female fer-de-lance is highly prolific, producing up to <strong>60 young</strong> born with a dangerous bite.<br>&bull; The venom of this species is hemotoxic, painful, and hemorrhagic (causing profuse internal bleeding).<br>&bull; The venom causes massive tissue destruction.<br><br><strong>Habitat:</strong><br><br>&bull; Found on cultivated land and farms, often entering houses in search of <strong>rodents</strong>.<br><br><strong>Length:</strong><br><br>&bull; Average <strong>1.4 meters</strong>, maximum <strong>2.4 meters</strong>.<br><br><strong>Distribution:</strong><br><br>&bull; <strong>Southern Mexico, throughout Central and South America</strong>.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">fer-de-lance, identification, venomous snake, characteristics, habitat, distribution</div>
+          </div>
+          <div class="proc-card" id="p5079" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Jumping Viper</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br><br>&bull; It has a stocky body.<br>&bull; Its ground color varies from brown to gray and it has dark brown or black dorsal blotches.<br>&bull; It has no pattern on its head.<br><br><strong>Characteristics:</strong><br><br>&bull; It is chiefly a <strong>nocturnal snake</strong>.<br>&bull; It comes out in...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br><br>&bull; It has a stocky body.<br>&bull; Its ground color varies from brown to gray and it has dark brown or black dorsal blotches.<br>&bull; It has no pattern on its head.<br><br><strong>Characteristics:</strong><br><br>&bull; It is chiefly a <strong>nocturnal snake</strong>.<br>&bull; It comes out in the early evening hours to feed on <strong>lizards, rodents,</strong> and <strong>frogs</strong>.<br>&bull; As the name implies, this species can strike with force as it actually leaves the ground.<br>&bull; Its venom is hemotoxic.<br>&bull; Humans have died from the bites inflicted by large jumping vipers.<br>&bull; They often hide under fallen logs and piles of leaves and are difficult to see.<br><br><strong>Habitat:</strong><br><br>&bull; Found in <strong>rain forests, on plantations,</strong> and on <strong>wooded hillsides</strong>.<br><br><strong>Length:</strong><br><br>&bull; Average <strong>60 centimeters</strong>, maximum <strong>120 centimeters</strong>.<br><br><strong>Distribution:</strong><br><br>&bull; <strong>Southern Mexico, Honduras, Guatemala, Costa Rica, Panama,</strong> and <strong>El Salvador</strong>.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">jumping viper, identification, venomous snake, characteristics, habitat, distribution</div>
+          </div>
+          <div class="proc-card" id="p5080" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify a Mojave Rattlesnake</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br><br>&bull; Not explicitly detailed in the provided text.<br><br><strong>Characteristics:</strong><br><br>&bull; A highly venomous species with potent hemotoxic venom that can be fatal if not treated promptly.<br>&bull; Known for its distinctive rattle, used as a warning before...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br><br>&bull; Not explicitly detailed in the provided text.<br><br><strong>Characteristics:</strong><br><br>&bull; A highly venomous species with potent hemotoxic venom that can be fatal if not treated promptly.<br>&bull; Known for its distinctive rattle, used as a warning before striking.<br>&bull; The Mojave Rattlesnake is known to deliver a neurotoxic bite in addition to hemotoxic effects.<br>&bull; It has an aggressive disposition and may strike without provocation.<br><br><strong>Habitat:</strong><br><br>&bull; Found in <strong>arid desert environments, rocky hillsides,</strong> and <strong>brushlands</strong>.<br><br><strong>Length:</strong><br><br>&bull; Average <strong>1.2 meters</strong>, maximum <strong>2.0 meters</strong>.<br><br><strong>Distribution:</strong><br><br>&bull; <strong>Southern California, Arizona, Nevada, Utah, New Mexico,</strong> and <strong>parts of Texas and Colorado</strong>.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">mojave rattlesnake, identification, venomous snake, characteristics, habitat, distribution</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Snake Prevention (3) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5096" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid Green Mamba Encounters</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the Green Mamba:</strong><br>   - Look for a snake that is uniformly bright green over its entire body, with the black mamba being the largest of the species and appearing olive to black.<br>   - It is found in brush, trees, and...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the Green Mamba:</strong><br>   - Look for a snake that is uniformly bright green over its entire body, with the black mamba being the largest of the species and appearing olive to black.<br>   - It is found in brush, trees, and low-hanging branches where it searches for birds as part of its diet.<br><br>2. <strong>Avoid Encounters:</strong><br>   - Be cautious in areas where the snake is commonly found, such as brush, trees, and low-hanging branches in Africa.<br>   - Treat the Green Mamba with great respect, as it is highly venomous and aggressive.<br><br>3. <strong>Understand the Risk:</strong><br>   - The Green Mamba&#x27;s venom is highly neurotoxic, making it one of the most dangerous snakes known.<br>   - It is aggressive and its victim has little chance to escape from a bite.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">green mamba, identification, avoidance, snake prevention</div>
+          </div>
+          <div class="proc-card" id="p5102" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid Horned Desert Viper Encounters</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the Horned Desert Viper:</strong><br>   - Look for a snake with light brown or olive-yellow coloration and black markings, along with a yellow or greenish-white belly.<br>   - It typically measures between 1 meter (average) and 1.5...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the Horned Desert Viper:</strong><br>   - Look for a snake with light brown or olive-yellow coloration and black markings, along with a yellow or greenish-white belly.<br>   - It typically measures between 1 meter (average) and 1.5 meters (maximum) in length.<br><br>2. <strong>Avoid Encounters:</strong><br>   - Stay alert in arid regions where these snakes are common, such as deserts and dry rocky areas.<br>   - Avoid walking barefoot or without protective clothing in desert environments during the day when they may be active.<br>   - Be cautious near old houses, rock walls, or other structures that provide shelter for this species.<br><br>3. <strong>Behavioral Awareness:</strong><br>   - This snake is irritable and ready to defend itself.<br>   - It is often encountered in lowlands to mountainous regions.<br>   - Its venom is hemotoxic, causing pain and tissue damage.<br><br>4. <strong>Preventive Measures:</strong><br>   - Wear long pants and boots when traversing desert or rocky terrain.<br>   - Use a flashlight at night if walking through areas where this snake may be active.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">horned desert viper, identification, prevention, snake avoidance</div>
+          </div>
+          <div class="proc-card" id="p5104" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid King Cobra Encounters</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the King Cobra:</strong><br>   - Look for a snake that is uniformly olive, brown, or green with ringlike crossbands of black.<br>   - It typically measures between 3.5 meters (average) and 5.5 meters (maximum) in length.<br><br>2....</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the King Cobra:</strong><br>   - Look for a snake that is uniformly olive, brown, or green with ringlike crossbands of black.<br>   - It typically measures between 3.5 meters (average) and 5.5 meters (maximum) in length.<br><br>2. <strong>Avoid Encounters:</strong><br>   - Stay alert in dense jungle and cultivated fields where these snakes are common.<br>   - Avoid walking barefoot or without protective clothing in areas where they may be active.<br>   - Be cautious near old houses, rock walls, or other structures that provide shelter for this species.<br><br>3. <strong>Behavioral Awareness:</strong><br>   - This snake is the largest venomous snake in the world and has a powerful neurotoxin.<br>   - It avoids attacking other venomous snakes but may attack humans if provoked.<br>   - The female builds a nest, deposits her eggs, and guards it aggressively.<br><br>4. <strong>Preventive Measures:</strong><br>   - Wear long pants and boots when traversing jungle or cultivated areas.<br>   - Use a flashlight at night if walking through areas where this snake may be active.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">king cobra, identification, prevention, snake avoidance</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          For Food (2) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5001" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Suitable Animals for Food in Survival Situations</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: Animals For Food</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. Focus on <strong>smaller animals</strong> rather than large game, as they are more abundant and easier to prepare.<br>2. Learn the <strong>habits and behavioral patterns</strong> of different animal classes:<br>   - Animals that are good candidates for trapping...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. Focus on <strong>smaller animals</strong> rather than large game, as they are more abundant and easier to prepare.<br>2. Learn the <strong>habits and behavioral patterns</strong> of different animal classes:<br>   - Animals that are good candidates for trapping (e.g., those with fixed feeding areas or trails).<br>   - Animals that inhabit a particular range and occupy dens or nests.<br>3. Understand the <strong>food choices</strong> of specific species to locate them effectively.<br>4. Avoid personal biases or aversions toward certain food sources, as this can risk survival in starvation situations.<br>5. Remember that <strong>most animals</strong> (those that crawl, swim, walk, or fly) are edible, with only a few exceptions.<br>6. Be aware of the <strong>limited number of poisonous species</strong>, which makes it easier to memorize safe options.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">survival food, animal foraging, edible animals, survival diet, small game</div>
+          </div>
+          <div class="proc-card" id="p5004" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Harvest and Prepare Crustaceans as a Food Source</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: Animals For Food</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Identify freshwater crustaceans</strong> such as shrimp and crayfish:<br>   - Shrimp range in size from 0.25 cm to 2.5 cm.<br>   - They can be found in <strong>floating algae mats</strong> or <strong>mud bottoms of ponds and lakes</strong>.<br>   - Crayfish have a...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Identify freshwater crustaceans</strong> such as shrimp and crayfish:<br>   - Shrimp range in size from 0.25 cm to 2.5 cm.<br>   - They can be found in <strong>floating algae mats</strong> or <strong>mud bottoms of ponds and lakes</strong>.<br>   - Crayfish have a <strong>hard exoskeleton</strong>, five pairs of legs, and oversized pincers on the front pair.<br>2. Locate crayfish during the day by checking under and around stones in streams.<br>3. Look for their <strong>breathing holes</strong> (chimneylike structures) in soft mud near their nests.<br>4. Use a <strong>string with bait</strong> (e.g., bits of offal or internal organs) to catch crayfish:<br>   - When they grab the bait, pull them to shore before they release it.<br>5. For <strong>saltwater crustaceans</strong> such as lobsters and crabs:<br>   - Find them from the <strong>surf&#x27;s edge out to 10 meters deep</strong>.<br>6. Use a <strong>light at night</strong> to attract shrimp, which can be scooped up with a net.<br>7. Catch <strong>lobsters and crabs</strong> using a <strong>baited trap or hook</strong>:<br>   - Place bait at the <strong>edge of the surf</strong> for crabs.<br>   - Lobsters are best caught <strong>at night</strong>, as they are nocturnal.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">crustacean foraging, edible crustaceans, survival seafood, shrimp harvesting</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Poisonous Snakes (2) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5124" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Tiger Snake</div>
+            <div class="proc-meta"><span class="badge badge-critical">Critical</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Olive to dark brown above with yellowish or olive belly and crossbands.<br>&bull; The subspecies in Tasmania and Victoria is uniformly black.<br><br><strong>Characteristics:</strong><br>&bull; It is the most dangerous snake in Australia.<br>&bull; It is very common and...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Olive to dark brown above with yellowish or olive belly and crossbands.<br>&bull; The subspecies in Tasmania and Victoria is uniformly black.<br><br><strong>Characteristics:</strong><br>&bull; It is the most dangerous snake in Australia.<br>&bull; It is very common and bites many humans.<br>&bull; It has a very potent neurotoxic venom that attacks the nervous system.<br>&bull; When aroused, it is aggressive and attacks any intruder.<br>&bull; It flattens its neck making a narrow band.<br><br><strong>Habitat:</strong><br>&bull; Found in many habitats from arid regions to human settlements along waterways to grasslands.<br><br><strong>Length:</strong><br>&bull; Average 1.2 meters, maximum 1.8 meters.<br><br><strong>Distribution:</strong><br>&bull; Australia, Tasmania, Bass Strait islands, and New Guinea.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">Tiger Snake, snake identification, neurotoxin, nervous system, habitat</div>
+          </div>
+          <div class="proc-card" id="p5122" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Death Adder Snake</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Reddish, yellowish, or brown color with distinct dark brown crossbands.<br>&bull; The end of its tail is black, ending in a hard spine.<br><br><strong>Characteristics:</strong><br>&bull; When aroused, this highly dangerous snake will flatten its entire body, ready...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Reddish, yellowish, or brown color with distinct dark brown crossbands.<br>&bull; The end of its tail is black, ending in a hard spine.<br><br><strong>Characteristics:</strong><br>&bull; When aroused, this highly dangerous snake will flatten its entire body, ready to strike over a short distance.<br>&bull; It is nocturnal, hiding by day and coming out to feed at night.<br>&bull; Although it has the appearance of a viper, it is related to the cobra family.<br>&bull; Its venom is a powerful neurotoxin; it causes mortality in about 50 percent of the victims, even with treatment.<br><br><strong>Habitat:</strong><br>&bull; Usually found in arid regions, fields, and wooded lands.<br><br><strong>Length:</strong><br>&bull; Average 45 centimeters, maximum 90 centimeters.<br><br><strong>Distribution:</strong><br>&bull; Australia, New Guinea, and Moluccas.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">Death Adder, snake identification, neurotoxin, arid regions, habitat</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Tracking Identification (2) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p6961" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Differences in Habits Between Rabbits and Hares</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: the ten bushcraft books</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Observe physical similarities</strong>: Note that rabbits and hares are similar in shape and form.<br>2. <strong>Compare living habits</strong>:<br>   - *Rabbits*: Live in colonies underground, seek safety in warrens when alarmed, attracted to newly dug...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Observe physical similarities</strong>: Note that rabbits and hares are similar in shape and form.<br>2. <strong>Compare living habits</strong>:<br>   - *Rabbits*: Live in colonies underground, seek safety in warrens when alarmed, attracted to newly dug earth.<br>   - *Hares*: Live singly on the surface in a &#x27;form&#x27; or nest, seek safety by running at speed when alarmed, prefer grassland and avoid new ground.<br>3. <strong>Use this knowledge for tracking</strong>: Understand that rabbits are more likely to be found near disturbed soil, while hares are typically found in open grasslands.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">rabbits,hares,differences,habit,tracking</div>
+          </div>
+          <div class="proc-card" id="p6962" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Recognize Variability in Animal Behavior Within Species</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: the ten bushcraft books</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Understand that similar species can have different behaviors</strong>: For example:<br>   - *Wild dogs*: Some hunt in packs, others hunt singly like foxes.<br>   - *Cats*: Some climb trees to pounce on prey from above; others stalk at...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Understand that similar species can have different behaviors</strong>: For example:<br>   - *Wild dogs*: Some hunt in packs, others hunt singly like foxes.<br>   - *Cats*: Some climb trees to pounce on prey from above; others stalk at drinking pools.<br>   - *Kangaroos/Deer*: Some live on open plains, others prefer forest or hilly terrain.<br>   - *Pigeons*: Some feed exclusively on tree fruits, while others forage on the ground for fallen fruit and seeds.<br>2. <strong>Apply this knowledge</strong>: When tracking or identifying animals, consider that behavior can vary even within a species or family group.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">animal behavior,variation,species,tracking</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Bees (2) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p8021" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Change Colonies of Black Bees to Italians</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>How to change Colonies of Black Bees to Italians:</strong><br><br>Since the queen is the mother of all the bees in the hive, and deposits all the eggs, it follows that they will all be like her. If then the queen be taken from a colony of common bees, and an...</div>
+              <div class="proc-full" style="display:none;"><strong>How to change Colonies of Black Bees to Italians:</strong><br><br>Since the queen is the mother of all the bees in the hive, and deposits all the eggs, it follows that they will all be like her. If then the queen be taken from a colony of common bees, and an Italian queen be put there in her stead, all the eggs thenceforth laid will produce Italian bees, and as the life of the worker bee is short, in from two to three months the old bees will all have died out and be replaced in greater numbers by the beautiful Italians.<br><br>These Italian queens are now reared for sale by scientific apiarians, and sent to any part of the world with perfect safety. If a pure queen purely impregnated is purchased and introduced to any colony of black bees, an Italian stock is secured in the best and least expensive way. Italian queens impregnated by common drones will produce what is called &quot;hybrid&quot; stock, and though this is a great improvement on the black bees, it is very desirable to secure a queen to commence with that is warranted pure by some reliable person.<br><br>Many bee-keepers have, by the purchase of one queen, succeeded in Italianizing all their stocks to their great profit and pleasure.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">change bees, black bees to italians, beekeeping, queen replacement</div>
+          </div>
+          <div class="proc-card" id="p8022" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Introduce an Italian Queen to a Native Colony Safely</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>How to introduce an Italian Queen to a Native Colony in the Safest Way:</strong><br><br>A colony have a great attachment for their queen being, it would seem, conscious that on her presence their whole existence depends. When she is taken from them, some...</div>
+              <div class="proc-full" style="display:none;"><strong>How to introduce an Italian Queen to a Native Colony in the Safest Way:</strong><br><br>A colony have a great attachment for their queen being, it would seem, conscious that on her presence their whole existence depends. When she is taken from them, some precautions are necessary, lest they destroy a strange queen presented to them. There are various ways of doing this, but the following will be found safe and easy.<br><br>1. <strong>Remove the existing queen:</strong><br>   - Take away the queen of the colony to which the Italian is to be given.<br>   - To find her most easily, open the stand in the middle of a fine day, when many bees are absent from the hive.<br>   - Disturb the bees as little as possible, and have an assistant to look on one side of the frame, while you examine the other.<br>   - Look first on the combs near where the bees cluster, as the queen is apt to be there.<br><br>2. <strong>Prepare the Italian queen for introduction:</strong><br>   - As soon as you have found and killed her, put the Italian queen, with three or more of the bees that come with her, into a wire cage which always accompanies her when sent, and lay this over the frames near the cluster, or, if the weather be cool, the cage may be laid between two frames.<br>   - Leave her there for <strong>48 hours</strong>, and then, without disturbing the bees, withdraw the stopper and allow the queen to go into the hive at her pleasure.<br><br>3. <strong>Handle the queen carefully:</strong><br>   - Open the box in which the queen is sent in a light room, that, if the queen fly, she may be caught on the window.<br>   - Never handle a queen by the abdomen, as a pressure there may be fatal; take her by the upper part of the body or wings.<br><br>4. <strong>Move and prepare the hive:</strong><br>   - Move the hive to which you wish to introduce the queen to a new position some distance away.<br>   - Take from it two or three frames of comb containing brood and honey, shake all the bees from them, put them in an empty hive, and place this hive where the other stood;<br>   - Close all the entrances except one hole in the top, and through this gently put the new queen on to the frames and shut her in.<br><br>5. <strong>Allow bees to return safely:</strong><br>   - Then open entrance for one bee at a time in front, and allow the bees that are out in the fields to come in. Being full of honey, and disturbed also at the new appearance of their home, they will not harm the stranger queen.<br><br>6. <strong>Optional: Create new colonies:</strong><br>   - If it is the right season of the year for making new colonies, you may, towards night, add a frame or two more of brood from some other colony.<br>   - As a majority of the worker trees from the removed colony will return to their new location, you will have a good, new, prosperous colony.<br><br>7. <strong>Alternative method:</strong><br>   - If you do not care thus to divide, look over the removed hive at once and kill its queen.<br>   - Leave it an hour or two, and then take all the remaining frames, shake the bees from them and place them in the hive where your Italian queen is,<br>   - Just at dusk put all the remaining bees in the old hive, in front of the new, which they will gladly enter. In this way you remove by degrees all parts of a colony to a new hive, except its queen, which you replace by the Italian.<br><br>This is my favorite way of exchanging queens.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">introduce italian queen, beekeeping, safe queen introduction</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Poisonous Lizards (1) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5125" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify Gila Monster Lizard</div>
+            <div class="proc-meta"><span class="badge badge-high">High Priority</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Description:</strong><br>&bull; Robust, with a large head and a heavy tail.<br>&bull; Its body is covered with beadlike scales.<br>&bull; It is capable of storing fat against lean times when food is scarce.<br>&bull; Its color is striking in rich blacks laced with yellow or pinkish...</div>
+              <div class="proc-full" style="display:none;"><strong>Description:</strong><br>&bull; Robust, with a large head and a heavy tail.<br>&bull; Its body is covered with beadlike scales.<br>&bull; It is capable of storing fat against lean times when food is scarce.<br>&bull; Its color is striking in rich blacks laced with yellow or pinkish scales.<br><br><strong>Characteristics:</strong><br>&bull; Not an aggressive lizard, but it is ready to defend itself when provoked.<br>&bull; If approached too closely, it will turn toward the intruder with its mouth open.<br>&bull; If it bites, it hangs on tenaciously and must be pried off.<br>&bull; Its venom glands and grooved teeth are on its bottom jaw.<br><br><strong>Habitat:</strong><br>&bull; Found in arid areas, coming out at night or early morning hours in search of small rodents and bird eggs.<br>&bull; During the heat of the day it stays under brush or rocks.<br><br><strong>Length:</strong><br>&bull; Average 30 centimeters, maximum 50 centimeters.<br><br><strong>Distribution:</strong><br>&bull; Arizona, New Mexico, Utah, Nevada, northern Mexico, and extreme corner of southeast California.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">Gila Monster, lizard identification, venom, arid areas, habitat</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Reptiles (1) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p5126" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Identify and Avoid Mexican Beaded Lizard Encounters</div>
+            <div class="proc-meta"><span class="badge badge-medium">Standard</span> <span>Source: Dangerous Animals</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview"><strong>Procedure:</strong><br><br>1. <strong>Recognize the appearance:</strong> Look for a lizard with black or pale yellow bands, or entirely black in color.<br>2. <strong>Understand behavior:</strong> Note that this lizard has strong legs for crawling over rocks and digging burrows. It is...</div>
+              <div class="proc-full" style="display:none;"><strong>Procedure:</strong><br><br>1. <strong>Recognize the appearance:</strong> Look for a lizard with black or pale yellow bands, or entirely black in color.<br>2. <strong>Understand behavior:</strong> Note that this lizard has strong legs for crawling over rocks and digging burrows. It is short-tempered and may open its mouth in a threatening manner when disturbed.<br>3. <strong>Avoid provocation:</strong> Do not molest or attempt to handle the lizard, as it can deliver a venomous bite.<br>4. <strong>Be aware of habitat:</strong> Stay cautious in arid or desert areas, especially rocky hillsides, during evening and early morning hours when the lizard is active.<br>5. <strong>Know the danger:</strong> Understand that its venom is hemotoxic and potentially dangerous to humans.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">mexican beaded lizard, identification, avoidance, desert animals, reptile dangers</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Dog Training (1) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p10640" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Selecting the Best Breed of Dogs for Shooting Game</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview">To select the best breed of dogs for shooting game, consider the following:<br><br>1. <strong>Preferred Breeds</strong>: Choose dogs bred from a mix of setters and pointers.<br>2. <strong>Avoid Certain Setters</strong>: Do not use setters that lack a natural pointing instinct, as...</div>
+              <div class="proc-full" style="display:none;">To select the best breed of dogs for shooting game, consider the following:<br><br>1. <strong>Preferred Breeds</strong>: Choose dogs bred from a mix of setters and pointers.<br>2. <strong>Avoid Certain Setters</strong>: Do not use setters that lack a natural pointing instinct, as they are unreliable in the field.<br>3. <strong>Training Requirements</strong>: Avoid breaking setters by force; this method is outdated and ineffective. If you must leave a setter at home for more than a week, be prepared to spend two days on dog-breaking training instead of shooting.<br>4. <strong>Foot Quality</strong>: Prefer dogs that take after setters in terms of foot quality, as they have better feet with more hair, which helps protect the feet if kept clean.<br>5. <strong>Pointer Advantages</strong>: Pointers are preferred for shooting in dense cover due to their reliability and ability to avoid driving game away.<br>6. <strong>Cocker Spaniel Disadvantage</strong>: Cocker spaniels are not recommended for use in woods as they can drive game out quickly.<br>7. <strong>Newfoundland Retrievers</strong>: A well-trained Newfoundland dog is highly useful for retrieving wounded game, especially if kept within a short distance of the hunter in wooded areas.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">dogs,breeds,shooting game,pointers,setters,dog training,Newfoundland retrievers</div>
+          </div>
+        </div>
+      </div>
+      <div class="subcategory">
+        <h3 class="subcategory-header" role="button" aria-expanded="true" tabindex="0" onclick="var l=this.nextElementSibling;var open=l.style.display!=='none';l.style.display=open?'none':'grid';this.querySelector('.toggle').textContent=open?'+':'-';this.setAttribute('aria-expanded',!open);" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+          Dog Health (1) <span class="toggle" aria-hidden="true">-</span>
+        </h3>
+        <div class="proc-list">
+          <div class="proc-card" id="p10641" itemscope itemtype="https://schema.org/HowTo">
+            <div class="proc-title" itemprop="name">Determining the Age of a Dog Until Six Years Old</div>
+            <div class="proc-meta"><span class="badge badge-low">Reference</span> <span>Source: The Household Cyclopedia</span></div>
+            <div class="proc-content" itemprop="description">
+              <div class="proc-preview">To determine the age of a dog until it is six years old, examine its teeth:<br><br>1. <strong>Teeth Inspection</strong>: Look at the four front teeth in both the upper and lower jaws, with particular attention to those in the upper jaw.<br>2. <strong>Age Indicators</strong>:<br>   - At...</div>
+              <div class="proc-full" style="display:none;">To determine the age of a dog until it is six years old, examine its teeth:<br><br>1. <strong>Teeth Inspection</strong>: Look at the four front teeth in both the upper and lower jaws, with particular attention to those in the upper jaw.<br>2. <strong>Age Indicators</strong>:<br>   - At 1 year old: The four front teeth are jagged and uneven, resembling a fleur de lis but not as pointed.<br>   - Between 3-4 years old: These marks will be about half worn down.<br>   - Near or at 6 years old: All the four front teeth in both jaws are smooth and even with no jagged edges.<br>3. <strong>Limitations</strong>: Once these marks are completely worn flat, it is no longer possible to estimate a dog&#x27;s age based on its teeth.<br>4. <strong>Common Mistakes</strong>: Many hunters incorrectly assess a dog’s age by looking at the side and eye-teeth, which can be misleading due to conditions like canker in the mouth.</div>
+              <button class="expand-btn" onclick="var p=this.previousElementSibling;var pv=p.previousElementSibling;if(p.style.display==='none'){p.style.display='block';pv.style.display='none';this.textContent='Show less';}else{p.style.display='none';pv.style.display='block';this.textContent='Show full procedure';}">Show full procedure</button>
+            </div>
+            <div class="proc-keywords">dog age,dog teeth,age determination,teeth inspection</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h2>Get Animals Procedures Offline</h2>
+        <p>Search, browse, and access 9,000+ curated procedures without internet in the NomadCore app.</p>
+        <a href="https://apps.apple.com/app/nomadcore/id6740512962" class="btn-cta">Download NomadCore</a>
+      </div>
+
+      
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This information is for educational purposes only and is not a substitute for
+    professional medical advice, diagnosis, or treatment. Content has been compiled by AI from open-source
+    and public domain references including military field manuals, government health guidelines, and community
+    preparedness resources. Always verify critical information independently. In an emergency, call 911.
+  </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/terms-of-service.html">Terms</a>
+        <a href="/eula.html">EULA</a>
+        <a href="/accessibility.html">Accessibility</a>
+        <a href="/support/">Support</a>
+        <a href="/knowledge-base/">Knowledge Base</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Lost Pines Creative LLC. All rights reserved. support@nomad-core.com</p>
+    </div>
+  </footer>
+  <script>
+    // Nav scroll shadow
+    var nav = document.getElementById('nav');
+    if (nav) window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+    // Mobile toggle
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', function() { toggle.classList.toggle('active'); links.classList.toggle('open'); });
+    // Download dropdown
+    var dlBtn = document.getElementById('downloadBtn');
+    var dlMenu = document.getElementById('downloadMenu');
+    if (dlBtn && dlMenu) {
+      dlBtn.addEventListener('click', function(e) { e.stopPropagation(); dlMenu.classList.toggle('open'); });
+      document.addEventListener('click', function() { dlMenu.classList.remove('open'); });
+    }
+  </script>
+</body>
+</html>
