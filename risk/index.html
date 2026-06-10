@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>What Should You Actually Prepare For? | NomadCore Risk Profile</title>
+  <meta name="description" content="Get your local threat reality profile. Data-driven risk assessment based on FEMA, DOE, and NOAA data. Free, private, no data collected.">
+  <meta property="og:title" content="What Should You Actually Prepare For?">
+  <meta property="og:description" content="Get your local threat reality profile based on real FEMA and DOE data. Free, private, no data collected.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomad-core.com/risk/">
+  <meta property="og:image" content="https://nomad-core.com/images/og-quiz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nomad-core.com/risk/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../knowledge-base/">Knowledge Base</a></li>
+        <li><a href="../risk/" class="active">Risk Profile</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li class="nav-download">
+          <span class="nav-cta" id="downloadBtn">Download &#9662;</span>
+          <div class="nav-download-menu" id="downloadMenu">
+            <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span class="store-label"><small>Download on the</small>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+              <span class="store-label"><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="page-wrapper">
+    <div class="page-card">
+
+      <!-- Screen 1: Intro -->
+      <div class="screen active" id="screen-intro">
+        <div class="intro">
+          <div class="intro-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h1>What Should You Actually Prepare For?</h1>
+          <p class="subtitle">Your local risk profile based on real hazard data, not hype. See what threats actually matter for your area &mdash; and which ones are statistically negligible.</p>
+          <div class="zip-input-group">
+            <input type="text" class="zip-input" id="zipInput" placeholder="ZIP code" maxlength="5" inputmode="numeric" pattern="[0-9]*" aria-label="Enter your 5-digit ZIP code" autocomplete="postal-code">
+          </div>
+          <button class="btn-check" id="btnCheck" onclick="checkRisk()">Get My Risk Profile</button>
+          <div class="privacy-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Your ZIP code is processed locally in your browser and is never sent to any server.
+          </div>
+          <div class="trust-badges">
+            <span class="trust-badge"><span class="trust-badge-dot"></span> No data collected</span>
+            <span class="trust-badge"><span class="trust-badge-dot"></span> 100% client-side</span>
+            <span class="trust-badge"><span class="trust-badge-dot"></span> FEMA + DOE sourced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 2: Loading -->
+      <div class="screen" id="screen-loading">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Analyzing your area...</p>
+        </div>
+      </div>
+
+      <!-- Screen 3: Results -->
+      <div class="screen" id="screen-results">
+        <div class="results">
+          <div class="results-header">
+            <h2 id="countyName"></h2>
+            <div class="results-subtitle" id="countySubtitle"></div>
+            <div id="ratingBadge"></div>
+          </div>
+          <div class="share-bar">
+            <button class="btn-share" id="btnCopyLink" onclick="copyShareLink()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Copy Link
+            </button>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-bar bar-data"></div> Data-backed</div>
+            <div class="legend-item"><div class="legend-bar bar-derived"></div> Derived estimate</div>
+            <div class="legend-item"><div class="legend-bar bar-estimated"></div> Expert estimate</div>
+          </div>
+          <div class="risk-section" id="topThreatsSection"></div>
+          <div class="risk-section" id="otherRisksSection"></div>
+          <div class="risk-section" id="lowProbSection"></div>
+          <div class="community-section" id="communitySection"></div>
+          <div class="customize-section">
+            <button class="section-toggle" onclick="toggleSection(this)">
+              Customize for My Family
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="section-content customize-content" id="customizeContent"></div>
+          </div>
+          <div class="disclaimer">
+            <h4>Methodology &amp; Disclaimer</h4>
+            <p>Risk shares are computed using an <strong>Annualized Impact Score (AIS)</strong> model: each category's annual event frequency is multiplied by an impact severity weight and location-based modifiers (population density, social vulnerability). Categories are then normalized to show their relative share of your total risk profile.</p>
+            <p><strong>Data-backed</strong> categories use historical event counts from FEMA National Risk Index (v1.19.0, March 2023) and DOE EAGLE-I outage records (2014&ndash;2024). <strong>Derived</strong> categories are computed from related data using established correlations. <strong>Expert estimates</strong> use published research and historical frequency analysis &mdash; these are informed guesses, not predictions.</p>
+            <p>This tool provides general preparedness estimates for educational purposes only. It is not professional emergency management advice. The data may contain inaccuracies, may not reflect recent events, and county-level analysis cannot account for neighborhood-level conditions. NomadCore and Lost Pines Creative LLC assume no liability for actions taken or not taken based on this information. <strong>When in doubt, prepare for more, not less.</strong></p>
+            <p>Sources: <a href="https://hazards.fema.gov/nri/" target="_blank" rel="noopener">FEMA National Risk Index</a>, <a href="https://eagle-i.doe.gov/" target="_blank" rel="noopener">DOE EAGLE-I</a>, Congressional EMP Commission, NASA Solar Storm Probability Studies, WHO Pandemic Frequency Data, DHS/CISA Infrastructure Reports.</p>
+          </div>
+          <div class="result-cta">
+            <h3>Get Real-Time Alerts &amp; Prep Plans in NomadCore</h3>
+            <p>Track supplies, emergency procedures, family plans &mdash; all offline, all private.</p>
+            <div class="cta-buttons">
+              <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" class="btn-download" onclick="gtag('event','risk_cta_click',{event_category:'conversion',event_label:'ios'})">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download for iOS
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" class="btn-download-secondary" onclick="gtag('event','risk_cta_click',{event_category:'conversion',event_label:'android'})">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+                Download for Android
+              </a>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <button class="btn-try-another" onclick="tryAnother()">Try another ZIP code</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 4: Error -->
+      <div class="screen" id="screen-error">
+        <div class="error-screen">
+          <div class="error-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <p id="errorMessage"></p>
+          <button class="btn-retry" onclick="tryAnother()">Try again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="risk-engine.js"></script>
+</body>
+</html>
