@@ -229,17 +229,20 @@ function computeRiskProfile(data) {
   // so we use actual NWS excessive heat event counts by state instead.
   var stateAbbr = data.state;
   var heatData = HEAT_RISK_BY_STATE[stateAbbr];
-  if (heatData && heatData.eventsPerYear > 5) {
-    // Normalize: state-level events are zone-based (many per event day).
-    // Divide by ~50 to approximate county-level annual frequency.
-    // A state with 853 events/yr (TX) → ~17 county-equivalent events/yr.
-    var heatEventsPerYear = heatData.eventsPerYear / 50;
+  if (heatData && heatData.score > 0) {
+    // Use the composite score (0-100, blending 70% event frequency + 30% mortality)
+    // as a normalized proxy rather than raw event counts, which are inflated by
+    // NWS zone-based reporting (one heat wave day = dozens of "events").
+    // score/100 * 2.0 gives max ~1.4 events/yr equivalent for TX (score 72).
+    // This avoids overweighting states like CA where heat varies enormously
+    // between Death Valley and the Sierra foothills.
+    var heatEventsPerYear = heatData.score / 100 * 2.0;
     var heatAIS = heatEventsPerYear * weights.heat;
     categories.push({
       id: 'heat', name: 'Extreme Heat', icon: ICONS['Heat Wave'],
       ais: heatAIS, tier: 'data', eventsPerYear: heatEventsPerYear,
       score: heatData.score,
-      detail: Math.round(heatData.eventsPerYear) + ' NWS heat events/yr statewide (' + stateAbbr + ', 2019\u20132024). Heat is the #1 weather-related killer in the US. Source: NOAA Storm Events Database'
+      detail: 'NOAA composite score: ' + heatData.score + '/100 (' + stateAbbr + ', 2019\u20132024). ' + Math.round(heatData.eventsPerYear) + ' NWS heat events/yr statewide. Heat is the #1 weather-related killer in the US.'
     });
   }
 
