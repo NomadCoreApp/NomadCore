@@ -187,11 +187,20 @@ function computeRiskProfile(data) {
     hazardsSeen[key] = true;
 
     var eventsPerYear = 0;
-    if (h.events && h.yearsOfData && h.yearsOfData > 0) {
+    var isModelBased = false;
+    if (h.events && h.yearsOfData && h.yearsOfData > 1) {
+      // Real historical events (tornado, flood, hurricane, winter)
       eventsPerYear = h.events / h.yearsOfData;
     } else {
-      // Fallback: FEMA percentile as proxy
-      eventsPerYear = (h.score || 0) / 100 * 0.5;
+      // Model-based hazards (wildfire, earthquake) or missing data.
+      // FEMA NRI uses probability models for these — yearsOfData=1 and events=0.
+      // The FEMA percentile score IS valid, just not event-derived.
+      // Use a steeper curve so high scores (99th %ile wildfire) produce
+      // proportionally higher AIS than the old linear 0.5x multiplier.
+      // score^1.5 / 100^1.5 gives: score 99 -> 0.985, score 50 -> 0.354, score 20 -> 0.089
+      var s = h.score || 0;
+      eventsPerYear = Math.pow(s, 1.5) / Math.pow(100, 1.5);
+      isModelBased = true;
     }
 
     // Auto-filter: skip negligible hazards
@@ -200,13 +209,18 @@ function computeRiskProfile(data) {
     var w = weights[key] || 1.0;
     var ais = eventsPerYear * w;
 
+    var itemDetail;
+    if (isModelBased) {
+      itemDetail = 'FEMA probability model (score: ' + (h.score || 0) + 'th percentile). Wildfire and earthquake use modeled risk, not historical event counts.';
+    } else {
+      itemDetail = h.events + ' events over ' + h.yearsOfData + ' years (' + eventsPerYear.toFixed(2) + '/yr). FEMA score: ' + (h.score || 0);
+    }
+
     categories.push({
       id: key, name: h.name, icon: ICONS[h.name] || '\u26A0\uFE0F',
       ais: ais, tier: 'data', eventsPerYear: eventsPerYear,
       score: h.score, events: h.events, yearsOfData: h.yearsOfData,
-      detail: h.events && h.yearsOfData
-        ? h.events + ' events over ' + h.yearsOfData + ' years (' + eventsPerYear.toFixed(2) + '/yr). FEMA score: ' + (h.score || 0)
-        : 'FEMA risk score: ' + (h.score || 0) + 'th percentile'
+      detail: itemDetail
     });
   }
 
@@ -237,7 +251,7 @@ function computeRiskProfile(data) {
       id: 'power_outage', name: 'Power Outage', icon: ICONS.power_outage,
       ais: outageRate * weights.power_outage, tier: 'data',
       eventsPerYear: outageRate,
-      detail: (o.events || 0) + ' grid events in ' + (o.years || 10) + ' years. Longest: ' + formatDuration(o.longest_hrs || 0)
+      detail: (o.events || 0) + ' grid events in ' + (o.years || 10) + ' years. Longest recorded: ' + formatDuration(o.longest_hrs || 0) + '. Note: DOE data often understates duration \u2014 wildfire and PSPS outages can last days to weeks but appear as shorter segments in utility reports.'
     });
   }
 
