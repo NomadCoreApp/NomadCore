@@ -1,21 +1,50 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.73",
-      "buildNumber": "73",
+      "version": "1.0.74",
+      "buildNumber": "74",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-04-05",
+      "releaseDate": "2026-06-20",
       "storeUrl": "https://apps.apple.com/us/app/nomadcore/id6751544385"
     },
     "android": {
-      "version": "1.0.73",
-      "versionCode": "73",
+      "version": "1.0.74",
+      "versionCode": "74",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-04-05",
+      "releaseDate": "2026-06-20",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.74",
+      "buildNumber": "74",
+      "date": "2026-06-20",
+      "critical": false,
+      "highlights": [
+        "SOS beacon reliability — fresh GPS fix, coordinates in fallback messages",
+        "Map tile system stability — race condition fixes and deduplication",
+        "Privacy hardening — location data gating, coordinate zeroing, log scrubbing"
+      ],
+      "categories": {
+        "fixes": [
+          "SOS beacon attempts fresh GPS fix before falling back to cached location",
+          "SOS message includes coordinates when reverse geocode fails",
+          "SOS message includes street number and labels cached location",
+          "Removed dead beacon handlers that showed help is on the way without sending alerts",
+          "Removed mock POI generation — synthetic emergency resources no longer displayed as real",
+          "Map tile race conditions fixed — serialized persist, init promise lock, per-tile save lock",
+          "LRU eviction now skips tiles with region references",
+          "Deduplicated concurrent tile fetch calls",
+          "Style switching now properly overrides region tiles",
+          "Block edit/delete on shared family waypoints (read-only)",
+          "Preserve waypoint ID on save to prevent QR import duplicates",
+          "Gate location sharing on tracking consent and permission success",
+          "Zero coordinates and null encrypted fields on per-group sharing disable",
+          "Removed raw location data from log output"
+        ]
+      }
+    },
     {
       "version": "1.0.73",
       "buildNumber": "73",
