@@ -22,11 +22,19 @@
       "date": "2026-06-20",
       "critical": false,
       "highlights": [
+        "Knowledge base expanded to ~9,333 procedures with graph-powered search",
         "SOS beacon reliability — fresh GPS fix, coordinates in fallback messages",
-        "Map tile system stability — race condition fixes and deduplication",
-        "Privacy hardening — location data gating, coordinate zeroing, log scrubbing"
+        "Map tile stability and privacy hardening across the app"
       ],
       "categories": {
+        "features": [
+          "Knowledge base expanded from ~1,400 to ~9,333 procedures across 3 tiers",
+          "Knowledge graph-powered related procedures and search augmentation",
+          "SOS Beacon quick action on dashboard for one-tap access",
+          "Meeting place map preview with draggable pin adjustment",
+          "Grid outage risk data for 3,232 US counties",
+          "Google Geocoding with daily cap and fallback"
+        ],
         "fixes": [
           "SOS beacon attempts fresh GPS fix before falling back to cached location",
           "SOS message includes coordinates when reverse geocode fails",
