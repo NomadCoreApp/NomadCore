@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join a family on NomadCore</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --primary: #0b7c72;
+        --primary-contrast: #ffffff;
+        --border: #e2e8f0;
+        --code-bg: #f1f5f9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1419;
+          --card: #1a2332;
+          --text: #f8fafc;
+          --muted: #94a3b8;
+          --primary: #00a6fb;
+          --primary-contrast: #0f1419;
+          --border: #24303f;
+          --code-bg: #0f1419;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      .card {
+        width: 100%;
+        max-width: 420px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px 24px;
+        text-align: center;
+      }
+      .badge {
+        width: 64px; height: 64px; border-radius: 16px;
+        background: color-mix(in srgb, var(--primary) 15%, transparent);
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 16px; font-size: 30px;
+      }
+      h1 { font-size: 22px; margin: 0 0 6px; }
+      .sub { color: var(--muted); font-size: 15px; line-height: 1.5; margin: 0 0 22px; }
+      .btn {
+        display: block; width: 100%; padding: 15px 18px; border-radius: 12px;
+        font-size: 16px; font-weight: 600; text-decoration: none; cursor: pointer;
+        border: 1px solid transparent; margin-bottom: 12px;
+      }
+      .btn-primary { background: var(--primary); color: var(--primary-contrast); }
+      .btn-ghost { background: transparent; color: var(--primary); border-color: var(--primary); }
+      .divider { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; margin: 18px 0; }
+      .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+      .code-label { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+      .code {
+        font-family: "SF Mono", Menlo, Consolas, monospace;
+        font-size: 26px; font-weight: 700; letter-spacing: 5px; color: var(--primary);
+        background: var(--code-bg); border: 1px solid var(--border); border-radius: 12px;
+        padding: 14px; user-select: all;
+      }
+      .steps { text-align: left; color: var(--muted); font-size: 14px; line-height: 1.6; margin: 16px 0 0; padding-left: 18px; }
+      .foot { color: var(--muted); font-size: 12px; margin-top: 22px; }
+      .foot a { color: var(--primary); }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="badge">👨‍👩‍👧‍👦</div>
+      <h1 id="title">You've been invited</h1>
+      <p class="sub" id="subtitle">Join your family on NomadCore to share locations, emergency plans, and updates — end-to-end encrypted.</p>
+
+      <a class="btn btn-primary" id="openApp" href="#">Open in the NomadCore app</a>
+      <a class="btn btn-ghost" href="/downloads">Don't have the app? Get NomadCore</a>
+
+      <div class="divider">or join manually</div>
+
+      <div class="code-label">Enter this code in the app</div>
+      <div class="code" id="code">—</div>
+      <ol class="steps">
+        <li>Open NomadCore</li>
+        <li>Go to <strong>Family</strong> → <strong>Join my family</strong></li>
+        <li>Enter the code above</li>
+      </ol>
+
+      <p class="foot">The invite includes everything needed to join securely. Codes expire after 7 days.<br />
+        <a href="https://nomad-core.com">nomad-core.com</a></p>
+    </div>
+
+    <script>
+      // The invite URL is nomad-core.com/join/<payload>, where <payload> is the
+      // encoded inviteQrData JSON produced by createGroup. We decode defensively
+      // (URI-encoded JSON or base64) purely to show the human-readable code; the
+      // app itself re-parses the payload. Phase 3 finalizes the encoding — this
+      // page tolerates either and degrades gracefully if it can't parse.
+      (function () {
+        var raw = decodeURIComponent((location.pathname.split('/join/')[1] || '').replace(/\/$/, ''));
+        var appLink = raw ? 'nomadcore://join/' + encodeURIComponent(raw) : 'nomadcore://';
+        document.getElementById('openApp').setAttribute('href', appLink);
+
+        function tryParse(s) {
+          try { return JSON.parse(s); } catch (e) {}
+          try { return JSON.parse(decodeURIComponent(s)); } catch (e) {}
+          try { return JSON.parse(atob(s)); } catch (e) {}
+          return null;
+        }
+
+        var payload = raw ? tryParse(raw) : null;
+        var data = payload && payload.data ? payload.data : null;
+        if (data && data.code) {
+          document.getElementById('code').textContent = data.code;
+        }
+        if (data && data.inviterName) {
+          document.getElementById('title').textContent = data.inviterName + ' invited you';
+        }
+        if (data && data.groupName) {
+          document.getElementById('subtitle').textContent =
+            'Join "' + data.groupName + '" on NomadCore to share locations, emergency plans, and updates — end-to-end encrypted.';
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["REPLACE_WITH_APPLE_TEAM_ID.com.nomadcoreapp.nomadcore"],
+        "components": [
+          { "/": "/join/*", "comment": "Family invite deep links" },
+          { "/": "/join", "comment": "Family invite root" }
+        ]
+      }
+    ]
+  }
+}
