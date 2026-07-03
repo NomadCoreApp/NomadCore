@@ -130,10 +130,20 @@
           return null;
         }
 
+        // Mirror of formatInviteCode (src/utils/inviteWordCode.ts): word-codes
+        // (8 letters + 2 digits) display as WORD-WORD-NN; legacy codes unchanged.
+        function formatInviteCode(c) {
+          if (!c) return c;
+          var u = String(c).toUpperCase();
+          return /^[A-Z]{8}[0-9]{2}$/.test(u)
+            ? u.slice(0, 4) + '-' + u.slice(4, 8) + '-' + u.slice(8, 10)
+            : c;
+        }
+
         var payload = raw ? tryParse(raw) : null;
         var data = payload && payload.data ? payload.data : null;
         if (data && data.code) {
-          document.getElementById('code').textContent = data.code;
+          document.getElementById('code').textContent = formatInviteCode(data.code);
         }
         if (data && data.inviterName) {
           document.getElementById('title').textContent = data.inviterName + ' invited you';
