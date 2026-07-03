@@ -102,13 +102,24 @@
     </div>
 
     <script>
-      // The invite URL is nomad-core.com/join/<payload>, where <payload> is the
-      // encoded inviteQrData JSON produced by createGroup. We decode defensively
-      // (URI-encoded JSON or base64) purely to show the human-readable code; the
-      // app itself re-parses the payload. Phase 3 finalizes the encoding — this
-      // page tolerates either and degrades gracefully if it can't parse.
+      // The invite URL is nomad-core.com/join/#<payload>, where <payload> is the
+      // encoded inviteQrData JSON produced by createGroup. The payload rides in
+      // the URL *fragment* (never sent to the server) so the encrypted key stays
+      // out of access logs and link-preview crawlers, and so GitHub Pages serves
+      // this page (a path payload would 404). We decode defensively (URI-encoded
+      // JSON or base64) purely to show the human-readable code; the app re-parses
+      // the payload. Older path-style links are still tolerated as a fallback.
       (function () {
-        var raw = decodeURIComponent((location.pathname.split('/join/')[1] || '').replace(/\/$/, ''));
+        var frag = (location.hash || '').replace(/^#/, '');
+        var pathPart = (location.pathname.split('/join/')[1] || '').replace(/\/$/, '');
+        var raw;
+        try {
+          raw = decodeURIComponent(frag || pathPart);
+        } catch (e) {
+          raw = frag || pathPart;
+        }
+        // Reconstruct the custom-scheme deep link (path form; the app's parser
+        // handles it and custom schemes have no GitHub Pages path constraint).
         var appLink = raw ? 'nomadcore://join/' + encodeURIComponent(raw) : 'nomadcore://';
         document.getElementById('openApp').setAttribute('href', appLink);
 
