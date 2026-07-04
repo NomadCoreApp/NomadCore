@@ -456,7 +456,7 @@
         Back to Home
       </a>
       <div class="article-meta fade-up delay-1">
-        <span>Last Updated: March 11, 2026</span>
+        <span>Last Updated: July 3, 2026</span>
       </div>
       <h1 class="fade-up delay-2">Privacy Policy</h1>
     </div>
@@ -477,7 +477,7 @@
     <h2>2. Local Storage</h2>
     <p>All your data is stored locally on your device using secure storage methods, including:</p>
     <ul>
-      <li>Emergency contacts (ICE contacts) — <strong>always local-only, never uploaded</strong></li>
+      <li>Emergency contacts (ICE contacts) — <strong>local by default and never included in cloud backup</strong> (the only way contacts ever leave your device is optional, end-to-end encrypted family sharing you choose to turn on — see Section 3)</li>
       <li>Inventory items (PackMind)</li>
       <li>Location preferences</li>
       <li>Custom procedures</li>
@@ -494,7 +494,7 @@
     <p>NomadCore may request the following permissions:</p>
     <ul>
       <li><strong>Location:</strong> Used for weather updates, disaster risk assessment, finding nearby emergency resources, and optional family location sharing. When these features are used, your coordinates are sent to third-party services (see Section 4). Location data is never stored or shared for advertising purposes.</li>
-      <li><strong>Contacts:</strong> Used only to let you quickly select emergency contacts from your address book for your preparedness plan. <strong>Your contacts are never uploaded to our servers or any third party.</strong> Contact data stays entirely on your device and is excluded from cloud backup.</li>
+      <li><strong>Contacts:</strong> Used to let you quickly select emergency contacts from your address book for your preparedness plan. Your contacts stay on your device, are excluded from your cloud backup, and are never used for advertising or sold to anyone. <strong>One exception:</strong> if you explicitly choose to share specific contacts with a family group you belong to, those contacts are end-to-end encrypted on your device <em>before</em> they are uploaded — only members of that group can decrypt them, and NomadCore cannot read them (see Section 6). Contacts are never uploaded for any other purpose.</li>
       <li><strong>Storage:</strong> Required to save your data locally on your device.</li>
       <li><strong>Camera:</strong> Used for scanning documents and QR codes in emergency plan sharing (optional features).</li>
       <li><strong>Phone:</strong> To enable quick dialing of emergency contacts and 911.</li>
@@ -543,7 +543,7 @@
     <ul>
       <li>You create an account (data syncs to Supabase for backup — see Section 4)</li>
       <li>You use weather, maps, or geocoding features (location coordinates are sent to the providers listed in Section 4)</li>
-      <li>You join a family group (group membership, bulletin posts, and shared data are stored in Supabase; shared inventories and plans are encrypted on your device before upload)</li>
+      <li>You join a family group (group membership, bulletin posts, and shared data are stored in Supabase; shared inventories, plans, and any contacts you choose to share are encrypted on your device before upload)</li>
       <li>You enable push notifications (device token and notification content pass through Expo's servers)</li>
       <li>The app encounters an error in production (crash data is sent to Sentry — see Section 4)</li>
       <li>You explicitly export data (such as sharing emergency plans via QR code with trusted contacts)</li>
@@ -553,7 +553,7 @@
     <p>We take multiple steps to protect your data:</p>
     <ul>
       <li><strong>Local storage:</strong> Data on your device is protected by your device's built-in security measures. Sensitive tokens are stored in your device's secure keychain/keystore.</li>
-      <li><strong>Cloud storage:</strong> All cloud data is protected by row-level security (RLS), ensuring only you can access your own records. Family-shared inventories and plans are encrypted on your device using AES-256 before upload — Supabase stores the encrypted data but cannot access the plaintext, as encryption keys never leave your device. Personal cloud backups are encrypted with a key derived from your password.</li>
+      <li><strong>Cloud storage:</strong> All cloud data is protected by row-level security (RLS), ensuring only you can access your own records. Family-shared data — inventories, plans, and any contacts you choose to share — is encrypted on your device using AES-256 before upload — Supabase stores the encrypted data but cannot access the plaintext, as encryption keys never leave your device. Personal cloud backups are encrypted with a key derived from your password.</li>
       <li><strong>Crash reports:</strong> Sensitive fields (passwords, tokens, API keys, credit card numbers) are automatically redacted before crash reports are sent.</li>
     </ul>
     <p>We recommend using device lock screens and keeping your operating system updated.</p>
