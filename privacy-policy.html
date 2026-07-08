@@ -477,7 +477,7 @@
     <h2>2. Local Storage</h2>
     <p>All your data is stored locally on your device using secure storage methods, including:</p>
     <ul>
-      <li>Emergency contacts (ICE contacts) — <strong>local by default and never included in cloud backup</strong> (the only way contacts ever leave your device is optional, end-to-end encrypted family sharing you choose to turn on — see Section 3)</li>
+      <li>Emergency contacts (ICE contacts) — <strong>local by default and never included in cloud backup</strong> (the only way contacts ever leave your device is optional, encrypted family sharing you choose to turn on — see Section 3)</li>
       <li>Inventory items (PackMind)</li>
       <li>Location preferences</li>
       <li>Custom procedures</li>
@@ -494,7 +494,7 @@
     <p>NomadCore may request the following permissions:</p>
     <ul>
       <li><strong>Location:</strong> Used for weather updates, disaster risk assessment, finding nearby emergency resources, and optional family location sharing. When these features are used, your coordinates are sent to third-party services (see Section 4). Location data is never stored or shared for advertising purposes.</li>
-      <li><strong>Contacts:</strong> Used to let you quickly select emergency contacts from your address book for your preparedness plan. Your contacts stay on your device, are excluded from your cloud backup, and are never used for advertising or sold to anyone. <strong>One exception:</strong> if you explicitly choose to share specific contacts with a family group you belong to, those contacts are end-to-end encrypted on your device <em>before</em> they are uploaded — only members of that group can decrypt them, and NomadCore cannot read them (see Section 6). Contacts are never uploaded for any other purpose.</li>
+      <li><strong>Contacts:</strong> Used to let you quickly select emergency contacts from your address book for your preparedness plan. Your contacts stay on your device, are excluded from your cloud backup, and are never used for advertising or sold to anyone. <strong>One exception:</strong> if you explicitly choose to share specific contacts with a family group you belong to, those contacts are encrypted on your device with your group's key <em>before</em> they are uploaded, so the server stores only encrypted data (see Section 6). Note that group keys are backed up to our servers (in encrypted form) so you don't lose access to your family's data on a new device — because we manage that key backup, family sharing is <strong>not</strong> zero-knowledge, and we could in principle recover these keys. Contacts are never uploaded for any other purpose.</li>
       <li><strong>Storage:</strong> Required to save your data locally on your device.</li>
       <li><strong>Camera:</strong> Used for scanning documents and QR codes in emergency plan sharing (optional features).</li>
       <li><strong>Phone:</strong> To enable quick dialing of emergency contacts and 911.</li>
@@ -506,7 +506,7 @@
 
     <h3>Cloud Storage &amp; Authentication</h3>
     <ul>
-      <li><strong>Supabase:</strong> For optional account backup, sync, and family sharing (only if you create an account). Stores your email, display name, and backed-up app data. Family sharing data (inventories, plans) is encrypted on your device using a shared group key before upload — Supabase stores the encrypted data but cannot access the plaintext. Bulletin posts and group messages are stored unencrypted. All data is protected by row-level security scoped to your account. Supabase does not use your data for any other purpose.</li>
+      <li><strong>Supabase:</strong> For optional account backup, sync, and family sharing (only if you create an account). Stores your email, display name, and backed-up app data. Family sharing data (inventories, plans) is encrypted on your device using a shared group key before upload, so Supabase stores only the encrypted data. To let you recover access on a new device, group keys are also backed up to the server in encrypted form; because that key backup is recoverable by us, family sharing is not end-to-end/zero-knowledge encryption. Bulletin posts and group messages are stored unencrypted. All data is protected by row-level security scoped to your account. Supabase does not use your data for any other purpose.</li>
     </ul>
 
     <h3>Weather &amp; Environmental Data</h3>
@@ -553,7 +553,7 @@
     <p>We take multiple steps to protect your data:</p>
     <ul>
       <li><strong>Local storage:</strong> Data on your device is protected by your device's built-in security measures. Sensitive tokens are stored in your device's secure keychain/keystore.</li>
-      <li><strong>Cloud storage:</strong> All cloud data is protected by row-level security (RLS), ensuring only you can access your own records. Family-shared data — inventories, plans, and any contacts you choose to share — is encrypted on your device using AES-256 before upload — Supabase stores the encrypted data but cannot access the plaintext, as encryption keys never leave your device. Personal cloud backups are encrypted with a key derived from your password.</li>
+      <li><strong>Cloud storage:</strong> All cloud data is protected by row-level security (RLS), ensuring only you can access your own records. Family-shared data — inventories, plans, and any contacts you choose to share — is encrypted on your device using AES-256 before upload, so Supabase stores only the encrypted data. Group keys are backed up to the server (encrypted) so you can regain access on a new device; because we manage that key backup, family sharing is not end-to-end/zero-knowledge — we could in principle recover the keys. Personal cloud backups are encrypted with a key derived from your password (which we do not store).</li>
       <li><strong>Crash reports:</strong> Sensitive fields (passwords, tokens, API keys, credit card numbers) are automatically redacted before crash reports are sent.</li>
     </ul>
     <p>We recommend using device lock screens and keeping your operating system updated.</p>
