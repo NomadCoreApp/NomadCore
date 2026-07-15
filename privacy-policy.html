@@ -507,7 +507,7 @@
 
     <h3>Cloud Storage &amp; Authentication</h3>
     <ul>
-      <li><strong>Supabase:</strong> For optional account backup, sync, and family sharing (only if you create an account). Stores your email, display name, and your backed-up app data in encrypted form. Family sharing data &mdash; inventories, plans, shared contacts, and bulletin posts &mdash; is encrypted on your device using your group's key before upload, so Supabase stores only the encrypted data. Your group's key is itself backed up to the server in encrypted form so you can regain access on a new phone (see Section 6). All data is protected by row-level security scoped to your account. Supabase does not use your data for any other purpose.</li>
+      <li><strong>Supabase:</strong> For optional account backup, sync, and family sharing (only if you create an account). Stores your email, display name, and your backed-up app data in encrypted form. Family sharing data &mdash; inventories, plans, shared contacts, bulletin posts, and the profile you share with your group (which may include a home address) &mdash; is encrypted on your device using your group's key before upload, so Supabase stores only the encrypted data. Your group's key is itself backed up to the server in encrypted form so you can regain access on a new phone (see Section 6). All data is protected by row-level security scoped to your account. Supabase does not use your data for any other purpose.</li>
     </ul>
 
     <h3>Weather &amp; Environmental Data</h3>
@@ -518,7 +518,7 @@
 
     <h3>Maps &amp; Geocoding</h3>
     <ul>
-      <li><strong>OpenStreetMap / Nominatim:</strong> For map tiles and address-to-coordinate lookups. Your search queries or coordinates are sent as URL parameters. No personal information is included.</li>
+      <li><strong>OpenStreetMap / Nominatim:</strong> For map tiles and address-to-coordinate lookups. When you search for a place, that search text is sent to convert it to coordinates. If you enter a <strong>home address</strong> in your profile, that address is sent once &mdash; when you save it, or one time automatically if you had already saved one before this feature existed &mdash; for the same purpose, so the map can center near home when GPS is unavailable. This geocoding lookup does not route the address through our servers, and it is never used for advertising or profiling. (Separately, if you turn on cloud backup or family profile sharing, your profile &mdash; including a home address you have entered &mdash; is included in that encrypted data as described in Sections 4 and 6; the two are independent of this map lookup.)</li>
       <li><strong>U.S. Census Bureau:</strong> For county and state identification from coordinates. Only location coordinates are sent.</li>
       <li><strong>MapTiler:</strong> For offline map tile downloads (legacy; being replaced by OpenStreetMap). No personal data is sent beyond tile coordinates.</li>
     </ul>
