@@ -209,7 +209,7 @@ A dedicated preparedness app like NomadCore solves the practical problems that d
 | "I can't find my emergency plan" | Digital plans accessible anytime |
 | "What do I do in [emergency]?" | Offline survival guides and procedures |
 | "Where are the nearest shelters?" | Offline maps with downloaded areas |
-| "I don't know who to call" | ICE contacts with one-tap dialing |
+| "I don't know who to call" | Priority emergency contacts with one-tap dialing |
 | "My family doesn't know the plan" | QR code sharing with family members |
 | "The internet is down" | 100% offline functionality |
 
