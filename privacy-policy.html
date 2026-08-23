@@ -456,7 +456,7 @@
         Back to Home
       </a>
       <div class="article-meta fade-up delay-1">
-        <span>Last Updated: August 9, 2026</span>
+        <span>Last Updated: August 23, 2026</span>
       </div>
       <h1 class="fade-up delay-2">Privacy Policy</h1>
     </div>
@@ -468,6 +468,7 @@
     <div class="highlight-box">
       <p><strong>We don't have your data.</strong> NomadCore works fully offline, and your data stays on your device by default. If you turn on cloud backup or family sharing, what you put in the app &mdash; inventories, plans, documents, shared contacts, and anything you post to your family group &mdash; is encrypted on your device before it leaves it. Your group's key is backed up to our servers in encrypted form so your family doesn't lose access when someone gets a new phone; we don't use it to read your data, and nothing in the app is built to.</p>
       <p>What we can see is your <strong>email address and display name</strong>, so we can run your account. That's it. No ads, no profiles, no data sales.</p>
+      <p>One thing lives outside the app: the <strong>AI assistant on our website</strong>. It only holds onto anything if you ask us to follow up &mdash; Section 4 spells out exactly what it does with a message you send it.</p>
     </div>
 
     <h2>1. Data Collection</h2>
@@ -539,6 +540,14 @@
       <li><strong>Google:</strong> A connectivity check (no data sent beyond a standard HTTP request) is used to determine if your device is online.</li>
     </ul>
 
+    <h3>Website AI Assistant</h3>
+    <p>The chat assistant on nomad-core.com is an AI (not a human) that answers questions about NomadCore and can take a message for our team. It is part of the website, not the app. When you send it a message:</p>
+    <ul>
+      <li><strong>Anthropic (Claude):</strong> Your message and the current conversation are sent to Anthropic's API to generate the reply. Anthropic processes them only to return a response and does not use them to train its models. Please don't enter passwords, payment details, or sensitive personal information in the chat.</li>
+      <li><strong>What we log:</strong> For each request we record technical metadata only &mdash; timing, token counts, and outcome, with <strong>no message content</strong> &mdash; plus a short-lived record of your IP address used purely to rate-limit abuse, deleted automatically after about two days.</li>
+      <li><strong>Only if you ask us to follow up:</strong> When (and only when) you provide contact details, we store your name, email (and phone, if you give it), your message, and a short transcript of the chat in our Supabase database so we can reply. This is deleted automatically after 180 days, or sooner if you ask.</li>
+    </ul>
+
     <h2>5. Data Sharing</h2>
     <p>We never share, sell, or transmit your personal data to third parties for marketing or advertising. Your information stays on your device unless:</p>
     <ul>
@@ -548,6 +557,7 @@
       <li>You enable push notifications (device token and notification content pass through Expo's servers)</li>
       <li>The app encounters an error in production (crash data is sent to Sentry — see Section 4)</li>
       <li>You explicitly export data (such as sharing emergency plans via QR code with trusted contacts)</li>
+      <li>You use the website AI assistant (your message is sent to Anthropic to generate a reply; your contact details and a transcript are stored only if you ask us to follow up — see Section 4)</li>
     </ul>
 
     <h2>6. Data Security</h2>
