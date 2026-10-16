@@ -1,21 +1,40 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.74",
-      "buildNumber": "74",
+      "version": "1.0.75",
+      "buildNumber": "75",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-06-20",
+      "releaseDate": "2026-10-16",
       "storeUrl": "https://apps.apple.com/us/app/nomadcore/id6751544385"
     },
     "android": {
-      "version": "1.0.74",
-      "versionCode": "74",
+      "version": "1.0.75",
+      "versionCode": "75",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-06-20",
+      "releaseDate": "2026-10-16",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.75",
+      "buildNumber": "75",
+      "date": "2026-10-16",
+      "critical": false,
+      "highlights": [
+        "Severe-weather alerts now cover Europe via MeteoAlarm (EUMETNET), not just the US",
+        "Honest alert coverage — never shows a false \"all clear\" when it could not actually check"
+      ],
+      "categories": {
+        "features": [
+          "EU severe-weather alerts for ~39 MeteoAlarm member countries (country-level, CC BY 4.0 attribution)"
+        ],
+        "fixes": [
+          "Weather-alert tile now distinguishes a confirmed all-clear from \"no coverage here\" and \"couldn't check\"",
+          "Android text-clipping fix on the alert-status labels"
+        ]
+      }
+    },
     {
       "version": "1.0.74",
       "buildNumber": "74",
