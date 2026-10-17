@@ -23,9 +23,13 @@
       "critical": true,
       "highlights": [
         "Fixes offline maps showing as empty after updating — your downloaded tiles were never lost, only hidden",
-        "Smoother location/GPS and UI right after updating, while maps finish upgrading in the background"
+        "Smoother location/GPS and UI right after updating, while maps finish upgrading in the background",
+        "New: choose Miles or Kilometers in Settings → Appearance (defaults to your device)"
       ],
       "categories": {
+        "features": [
+          "Distance units are now a preference (Settings → Appearance → Distance Units) — map distances and directions follow your choice, defaulting to your device's region"
+        ],
         "fixes": [
           "Recover the offline-map index from disk when the legacy tile index is too large for Android to read (CursorWindow limit), instead of showing zero downloaded maps",
           "Tile migration now yields to the UI thread, so the GPS fix and app stay responsive during the one-time upgrade after updating"
