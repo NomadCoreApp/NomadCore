@@ -24,11 +24,12 @@
       "highlights": [
         "Fixes offline maps showing as empty after updating — your downloaded tiles were never lost, only hidden",
         "Smoother location/GPS and UI right after updating, while maps finish upgrading in the background",
-        "New: choose Miles or Kilometers in Settings → Appearance — now applies everywhere, including weather temperature (°F/°C) and wind"
+        "New: your Miles/Kilometers choice (Settings → Appearance) now also covers wind speed and nearby distances; weather temperature follows your device's °C/°F"
       ],
       "categories": {
         "features": [
-          "Distance units are now a preference (Settings → Appearance → Distance Units) — map distances, directions, weather (temperature and wind) and nearby-resource distances all follow your choice, defaulting to your device's region"
+          "Distance units are a preference (Settings → Appearance → Distance Units): map distances, directions, wind speed, visibility and nearby-resource distances follow your choice, defaulting to your device's region",
+          "Weather temperature now matches your device's temperature setting (°C/°F) — so UK devices get °C even while distances stay in miles"
         ],
         "fixes": [
           "Recover the offline-map index from disk when the legacy tile index is too large for Android to read (CursorWindow limit), instead of showing zero downloaded maps",
