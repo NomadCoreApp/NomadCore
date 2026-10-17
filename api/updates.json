@@ -1,21 +1,37 @@
 {
   "latest": {
     "ios": {
-      "version": "1.0.75",
-      "buildNumber": "75",
+      "version": "1.0.76",
+      "buildNumber": "77",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-10-16",
+      "releaseDate": "2026-10-17",
       "storeUrl": "https://apps.apple.com/us/app/nomadcore/id6751544385"
     },
     "android": {
-      "version": "1.0.75",
-      "versionCode": "75",
+      "version": "1.0.76",
+      "versionCode": "77",
       "minSupportedBuild": "60",
-      "releaseDate": "2026-10-16",
+      "releaseDate": "2026-10-17",
       "storeUrl": "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
     }
   },
   "releases": [
+    {
+      "version": "1.0.76",
+      "buildNumber": "77",
+      "date": "2026-10-17",
+      "critical": true,
+      "highlights": [
+        "Fixes offline maps showing as empty after updating — your downloaded tiles were never lost, only hidden",
+        "Smoother location/GPS and UI right after updating, while maps finish upgrading in the background"
+      ],
+      "categories": {
+        "fixes": [
+          "Recover the offline-map index from disk when the legacy tile index is too large for Android to read (CursorWindow limit), instead of showing zero downloaded maps",
+          "Tile migration now yields to the UI thread, so the GPS fix and app stay responsive during the one-time upgrade after updating"
+        ]
+      }
+    },
     {
       "version": "1.0.75",
       "buildNumber": "75",
