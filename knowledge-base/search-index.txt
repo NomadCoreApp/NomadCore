@@ -77,7 +77,6 @@ Identify and Avoid Green Mamba Encounters|animals|Animals|5096
 Respond to a Green Mamba Bite|medical_emergency|Medical Emergency|5097
 Identify and Avoid Horned Desert Viper Encounters|animals|Animals|5102
 Identify and Avoid King Cobra Encounters|animals|Animals|5104
-Respond to a King Cobra Bite|medical_emergency|Medical Emergency|5105
 Identify Malayan Pit Viper Characteristics|animals|Animals|5110
 Identify Puff Adder Characteristics|animals|Animals|5114
 Identify a Rhinoceros Viper or River Jack|animals|Animals|5115
@@ -88,7 +87,6 @@ Identify Death Adder Snake|animals|Animals|5122
 Identify Tiger Snake|animals|Animals|5124
 Identify Gila Monster Lizard|animals|Animals|5125
 Identify and Avoid Mexican Beaded Lizard Encounters|animals|Animals|5126
-Respond to a Mexican Beaded Lizard Bite|medical_emergency|Medical Emergency|5127
 Respond to a Banded Sea Snake Bite|medical_emergency|Medical Emergency|5129
 Use Pacing Method for Determining Distance on the Ground|navigation|Navigation|6582
 Use Azimuth for Finding Direction on a Map|navigation|Navigation|6583
@@ -499,7 +497,6 @@ Identify Eastern Coral Snake|survival|Survival|7094
 Identify Pit Vipers|survival|Survival|7095
 Identify Rattlesnakes|survival|Survival|7098
 Prevent Snake Bites in the Wild|survival|Survival|7099
-Respond to a Snake Bite|first_aid|First Aid|7100
 Identify and Avoid Poisonous Lizards in the Southwest|survival|Survival|7101
 Avoid Dangerous Reptiles and Snakes in the Wild|survival|Survival|7102
 Maintain Safe Distance from Wildlife to Avoid Stress and Injury|survival|Survival|7103
@@ -509,7 +506,6 @@ Treat Wasp and Hornet Stings|first_aid|First Aid|7107
 Hypersensitivity and Allergic Reaction Management for Insect Stings|first_aid|First Aid|7108
 Identify Black Widow Spider Habitats|survival|Survival|7109
 Identify Scorpion Habitats and Behavior|survival|Survival|7110
-Provide Immediate First Aid for Black Widow or Scorpion Bites|first_aid|First Aid|7111
 Recognize Symptoms of Black Widow or Scorpion Bites|medical_emergency|Medical Emergency|7112
 Protect Against Mosquitoes and Blackflies Using Clothing|survival|Survival|7113
 Use Insect Repellents for Mosquito and Blackfly Protection|survival|Survival|7114
@@ -11084,13 +11080,10 @@ First Aid for Frozen Extremities (Cold Injuries)|first_aid|First Aid|21249
 First Aid for Mild Hypothermia|first_aid|First Aid|21252
 First Aid for Severe Hypothermia|first_aid|First Aid|21253
 Identify Pit Viper Snake Bites|medical_emergency|Medical Emergency|21257
-What to Avoid After a Snakebite|first_aid|First Aid|21264
 Treating Jellyfish and Similar Marine Animals|first_aid|First Aid|21269
 Treating Spiny Fish and Similar Marine Animals|first_aid|First Aid|21270
 Treating Insect Bites and Stings|first_aid|First Aid|21271
 Recognize and Respond to Insect Bite/Sting Symptoms|medical_emergency|Medical Emergency|21272
-Provide First Aid for Insect Bites and Stings|first_aid|First Aid|21273
-Identify and Handle Insect Bites from Black Widow and Brown Recluse Spiders|medical_emergency|Medical Emergency|21275
 Use of Nerve Agent Pyridostigmine Pretreatment (NAPP)|first_aid|First Aid|21280
 Use of M291 Skin Decontaminating Kit|first_aid|First Aid|21281
 Mask Without Order or Alarm During Chemical/Biological Attack|medical_emergency|Medical Emergency|21284
@@ -11134,7 +11127,6 @@ First Aid for Specific Injuries - General First Aid Measures|first_aid|First Aid
 Administer First Aid for Psychological Reactions|first_aid|First Aid|21419
 Rescue and Transportation of Casualties|first_aid|First Aid|21420
 Administer First Aid for Cold Injuries|first_aid|First Aid|21422
-Administer First Aid for Snakebites|first_aid|First Aid|21423
 Administer First Aid for Human or Animal Bites|first_aid|First Aid|21424
 Understanding Trauma Specialist and Hospital Corpsman Roles|first_aid|First Aid|21429
 Understanding First Aid Measures|first_aid|First Aid|21433
@@ -11197,7 +11189,6 @@ Identification of Poisonous Snakes|first_aid|First Aid|21624
 Identify Coral Snake Bites|medical_emergency|Medical Emergency|21626
 Identify Sea Snake Bites|medical_emergency|Medical Emergency|21628
 Responding to a Snakebite|medical_emergency|Medical Emergency|21629
-Immobilizing a Limb After a Snakebite|first_aid|First Aid|21631
 Cleaning and Preparing the Bite Area After a Snakebite|first_aid|First Aid|21632
 Administer First Aid for Jellyfish, Portuguese Man-of-War, Anemones, and Others|first_aid|First Aid|21637
 Recognize and Respond to Chemical or Biological Agent Exposure|medical_emergency|Medical Emergency|21651
@@ -11325,14 +11316,10 @@ Recognize Symptoms of a Pit Viper Bite|medical_emergency|Medical Emergency|21975
 Recognize Symptoms of a Coral Snake, Cobra, Krait, or Mamba Bite|medical_emergency|Medical Emergency|21976
 Identify Sea Snakes and Recognize Their Venomous Nature|medical_emergency|Medical Emergency|21977
 Identify and Handle a Snakebite|first_aid|First Aid|21978
-Immobilize and Bandage a Snakebite on an Extremity|first_aid|First Aid|21979
-Immobilize a Snakebitten Limb and Positioning Guidelines|first_aid|First Aid|21980
 Clean and Care for a Snakebite Wound|first_aid|First Aid|21981
 Do Not Administer Food or Stimulants to a Snakebite Victim|first_aid|First Aid|21982
-Transport a Snakebite Victim to Medical Treatment|first_aid|First Aid|21983
 First Aid for Jellyfish and Similar Marine Animal Stings|first_aid|First Aid|21988
 Identify the Insect Responsible for a Bite or Sting|medical_emergency|Medical Emergency|21990
-Provide First Aid for Severe Allergic Reactions to Insect Bites or Stings|medical_emergency|Medical Emergency|21992
 Preparation and Use of Nerve Agent Pyridostigmine Pretreatment (NAPP)|preparedness|Preparedness|22000
 Avoid Contaminated Food and Water During Chemical or Biological Attack|survival|Survival|22004
 Masking Without Order or Alarm During Chemical or Biological Attack|survival|Survival|22005
@@ -12862,7 +12849,6 @@ Treat Dislocations|medical_emergency|Medical Emergency|23949
 Treat Sprains|medical_emergency|Medical Emergency|23950
 Treat Bee and Wasp Stings|medical_emergency|Medical Emergency|23951
 Treat Spider Bites and Scorpion Stings|medical_emergency|Medical Emergency|23952
-Treat Snakebites|medical_emergency|Medical Emergency|23953
 Treat Open Wounds|medical_emergency|Medical Emergency|23954
 Recognize and Respond to Airway Obstruction|medical_emergency|Medical Emergency|23955
 Manage Severe Bleeding|medical_emergency|Medical Emergency|23956
@@ -12880,7 +12866,6 @@ Reduce and Immobilize a Dislocation|first_aid|First Aid|23969
 Treat a Sprain Using the RICE Method|first_aid|First Aid|23970
 Treating a Funnelweb Spider Bite|medical_emergency|Medical Emergency|23976
 Treating a Tarantula Bite|medical_emergency|Medical Emergency|23978
-Treating a Poisonous Snakebite|medical_emergency|Medical Emergency|23980
 Identifying Poisonous vs Nonpoisonous Snakebites|medical_emergency|Medical Emergency|23981
 Preventing and Managing Infection from Snakebites|medical_emergency|Medical Emergency|23982
 Managing Wounds in a Survival Situation|first_aid|First Aid|23983
@@ -15296,7 +15281,6 @@ Update Nutrition Advice for Poorly Nourished Children|medical_emergency|Medical 
 Update Stomach Ulcer Treatment Advice|medical_emergency|Medical Emergency|27102
 Update Special Drinks for Diarrhea (Oral Rehydration Therapy)|medical_emergency|Medical Emergency|27103
 Sterilizing Equipment to Prevent Disease Spread|medical_emergency|Medical Emergency|27104
-Revised Treatment of Snakebite|medical_emergency|Medical Emergency|27105
 Building the Fly-Killing VIP Latrine|sanitation|Sanitation|27106
 Update Medicines List Based on Local Availability and Effectiveness|medical_emergency|Medical Emergency|27107
 Incorporate Local Home Remedies and Traditional Healing Practices|medical_emergency|Medical Emergency|27108
@@ -15571,9 +15555,7 @@ How to Set a Dislocated Shoulder|medical_emergency|Medical Emergency|27414
 How to Treat Strains and Sprains|first_aid|First Aid|27415
 Prevent and Manage Poisoning in Children|medical_emergency|Medical Emergency|27416
 Immediate Actions for Suspected Poisoning in a Child|medical_emergency|Medical Emergency|27417
-First Aid for Poisonous Snakebite|first_aid|First Aid|27419
 What to Avoid After a Snakebite|medical_emergency|Medical Emergency|27420
-Treating a Beaded Lizard Bite (Gila Monster)|medical_emergency|Medical Emergency|27421
 Treating a Scorpion Sting in Children Under 5 Years Old|medical_emergency|Medical Emergency|27423
 Recognizing Signs of Malnutrition in Children|medical_emergency|Medical Emergency|27425
 Recognize Signs of Poor Nutrition in Individuals|medical_emergency|Medical Emergency|27426
@@ -16171,7 +16153,6 @@ Treating Scabies with Medicines|first_aid|First Aid|28129
 Managing Seizures (Fits) with Medicines|medical_emergency|Medical Emergency|28130
 Treating Scorpion Stings with Antivenoms|medical_emergency|Medical Emergency|28131
 Administering Sodium Bicarbonate for Acid-Related Conditions|first_aid|First Aid|28132
-Treating Snakebite with Antivenoms|medical_emergency|Medical Emergency|28133
 Administering Tetracycline for Bacterial Infections|first_aid|First Aid|28135
 Administering Zinc for Nutritional Deficiencies and Skin Conditions|first_aid|First Aid|28136
 Administering Acyclovir for Herpes Infections|first_aid|First Aid|28137
@@ -20294,7 +20275,6 @@ Manage Frostbite (Deep)|first_aid|First Aid|34110
 Manage Dehydration|first_aid|First Aid|34112
 Manage Hypothermia (Mild)|first_aid|First Aid|34113
 Manage Hypothermia (Severe)|first_aid|First Aid|34114
-Manage Snake Bite|first_aid|First Aid|34115
 Manage Wasp or Bee Sting|first_aid|First Aid|34118
 Manage Human and Other Animal Bites|first_aid|First Aid|34119
 Implement Hydration and Acclimatization Strategies|preparedness|Preparedness|34125
@@ -22387,7 +22367,6 @@ Recognize Signs and Symptoms of Snow Blindness|medical_emergency|Medical Emergen
 Prevent Trench Foot / Immersion Foot by Keeping Feet Dry and Warm|survival|Survival|38869
 Prevent Dehydration in a Survival Situation|survival|Survival|38874
 Managing Scorpion Stings|first_aid|First Aid|38884
-Managing Snakebites|first_aid|First Aid|38885
 Wound Care in a Survival Situation|first_aid|First Aid|38886
 Preventing Animal Attacks and Bites|first_aid|First Aid|38887
 Wound Irrigation and Open Wound Management|first_aid|First Aid|38888
@@ -24003,7 +23982,6 @@ Demonstrate Treatment for Bite of Finger by Mad Dog|first_aid|First Aid|40982
 Demonstrate Rescue of Person in Contact with Electric Wire|first_aid|First Aid|40983
 Apply Tourniquet to a Principal Artery|first_aid|First Aid|40984
 Explain Differences Between Carbolic Poisoning and Intoxication|first_aid|First Aid|40985
-Explain What to Do for Snake Bite|first_aid|First Aid|40986
 Obtain Interpreting Merit Badge - Simple Conversation|preparedness|Preparedness|40994
 Obtain Interpreting Merit Badge - Write a Simple Letter|preparedness|Preparedness|40995
 Obtain Interpreting Merit Badge - Read and Translate Passage|preparedness|Preparedness|40996
@@ -24383,7 +24361,6 @@ Treat Sprains|first_aid|First Aid|41457
 Manage Dislocations|first_aid|First Aid|41458
 Treat Wounds with Broken Skin|first_aid|First Aid|41459
 Apply Sterilized Dressing to a Wound|first_aid|First Aid|41460
-First Aid for Snake Bites|first_aid|First Aid|41461
 First Aid for Wounds Without Severe Bleeding|first_aid|First Aid|41462
 Apply Pressure to Arterial Bleeding in the Arm or Leg|first_aid|First Aid|41463
 Apply First Aid Dressing to Severe Bleeding Wounds|first_aid|First Aid|41464
@@ -30738,7 +30715,6 @@ First Aid for Hypothermia|first_aid|First Aid|21961
 First Aid for Chilblains|first_aid|First Aid|21614
 First Aid for Immersion Syndrome (Trench Foot/Immersion Foot)|first_aid|First Aid|21615
 First Aid for Frostbite|first_aid|First Aid|21616
-Applying a Constricting Band for Snakebite|first_aid|First Aid|21630
 Treating Human Bites|first_aid|First Aid|21984
 Treating Animal Bites|first_aid|First Aid|21634
 First Aid for Marine Animal Bites (Sharks, Barracuda, Alligators)|first_aid|First Aid|21986
