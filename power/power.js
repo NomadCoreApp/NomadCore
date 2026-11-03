@@ -57,6 +57,7 @@
     fuel: 'gasoline',
     hours: 12,
     sun: 'typical',
+    openSizes: {},
   };
   for (var k in E.DEFAULT_SELECTION) state.qty[k] = E.DEFAULT_SELECTION[k];
 
@@ -248,7 +249,8 @@
       '</div>' +
       '<p>The battery covers one day, and the panels refill it on a ' + esc(preset.label.toLowerCase()) + ' day. ' +
       'Storms are cloudy: with no sun at all you would need ' + kwh(s.batteryWhNoRecharge) + ' for ' + d + ' ' + dd + '. ' +
-      "Check that the unit's surge rating covers " + fmt(s.surgeWatts) + ' W.</p>' + shop + '</section>';
+      "Check that the unit's surge rating covers " + fmt(s.surgeWatts) + ' W.</p>' + shop +
+      sizeTableHtml(items, preset) + '</section>';
 
     var warnHtml = r.warnings.length
       ? '<section class="power-card warn"><ul>' + r.warnings.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></section>'
@@ -257,11 +259,59 @@
     out.innerHTML = gasHtml + solarHtml + warnHtml;
   }
 
+  // ----- What each size can run -----
+  function fitText(fit, cycles) {
+    if (fit.canRun) return E.formatRuntime(fit, cycles);
+    return fit.reason === 'output'
+      ? 'Too big: needs ' + fmt(fit.neededWatts) + ' W output'
+      : "Can't start it: needs " + fmt(fit.neededWatts) + ' W surge';
+  }
+
+  function sizeTableHtml(items, preset) {
+    var rows = E.solarSizeTable({
+      items: items, days: state.days, fuel: state.fuel,
+      generatorHoursPerDay: state.hours, sunHours: preset.hours,
+    });
+    var bestIdx = -1;
+    for (var i = 0; i < rows.length; i++) {
+      var y = rows[i].yourList;
+      if (y && y.canRun && y.days >= 1) { bestIdx = i; break; }
+    }
+    var html = '<h3 class="size-title">What each size can run</h3>' +
+      '<p class="hint">One full charge, no sun, at typical daily use. Output and surge are typical for each size; check the spec sheet of a real unit.</p>';
+    rows.forEach(function (row, i) {
+      var y = row.yourList;
+      var yourText = y ? fitText(y) : 'Add something above';
+      var cls = 'size-row' + (i === bestIdx ? ' best' : '') + (y && !y.canRun ? ' no' : '');
+      html += '<details class="' + cls + '" data-tier="' + row.tier.id + '"' + (state.openSizes[row.tier.id] ? ' open' : '') + '>' +
+        '<summary>' +
+          '<span class="size-head"><strong>' + esc(row.tier.label) + '</strong> \u00b7 ' +
+            fmt(row.tier.capacityWh) + ' Wh \u00b7 ' + fmt(row.tier.outputWatts) + ' W</span>' +
+          '<span class="size-your">Your list: ' + esc(yourText) + '</span>' +
+          (i === bestIdx ? '<span class="size-badge">Smallest that covers a day</span>' : '') +
+        '</summary>' +
+        '<ul class="size-list">' +
+          row.appliances.map(function (a) {
+            return '<li class="' + (a.fit.canRun ? '' : 'no') + '"><span>' + esc(a.name) + '</span><span>' + esc(fitText(a.fit, a.cycles)) + '</span></li>';
+          }).join('') +
+        '</ul>' +
+        '<p class="size-refill">Refill a full charge in one ' + esc(preset.label.toLowerCase()) + ' day with about ' +
+          fmt(row.panelWattsToRefill) + ' W of solar panels.</p>' +
+      '</details>';
+    });
+    return html;
+  }
+
   function stat(value, label) {
     return '<div class="stat"><span class="v">' + esc(value) + '</span><span class="l">' + esc(label) + '</span></div>';
   }
 
   renderAppliances();
+  // 'toggle' does not bubble: listen in the capture phase so rebuilt rows keep their open state.
+  document.getElementById('results').addEventListener('toggle', function (ev) {
+    var d = ev.target;
+    if (d && d.matches && d.matches('details[data-tier]')) state.openSizes[d.getAttribute('data-tier')] = d.open;
+  }, true);
   chips('days', [1, 3, 7, 14].map(function (d) { return { value: d, label: d + (d === 1 ? ' day' : ' days') }; }), 'days');
   chips('fuel', [{ value: 'gasoline', label: 'Gasoline' }, { value: 'propane', label: 'Propane' }], 'fuel');
   chips('hours', [8, 12, 24].map(function (h) { return { value: h, label: h + ' h' }; }), 'hours');

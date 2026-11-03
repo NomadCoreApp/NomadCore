@@ -37,14 +37,14 @@
   ];
 
   var APPLIANCES = [
-    { id: 'refrigerator', name: 'Refrigerator', category: 'essential', runningWatts: 200, startingWatts: 1200, hoursPerDay: 8, note: 'Hours = compressor time. It cycles about a third of the day.' },
-    { id: 'chest-freezer', name: 'Chest freezer', category: 'essential', runningWatts: 100, startingWatts: 800, hoursPerDay: 8 },
-    { id: 'mini-fridge-meds', name: 'Mini fridge (medicine)', category: 'medical', runningWatts: 80, startingWatts: 400, hoursPerDay: 8 },
+    { id: 'refrigerator', name: 'Refrigerator', category: 'essential', runningWatts: 200, startingWatts: 1200, hoursPerDay: 8, note: 'Hours = compressor time. It cycles about a third of the day.', cycles: true },
+    { id: 'chest-freezer', name: 'Chest freezer', category: 'essential', runningWatts: 100, startingWatts: 800, hoursPerDay: 8, cycles: true },
+    { id: 'mini-fridge-meds', name: 'Mini fridge (medicine)', category: 'medical', runningWatts: 80, startingWatts: 400, hoursPerDay: 8, cycles: true },
     { id: 'cpap', name: 'CPAP machine', category: 'medical', runningWatts: 60, startingWatts: 60, hoursPerDay: 8, note: 'Heated humidifier off uses far less. Ask your supplier about a DC cord.' },
     { id: 'oxygen-concentrator', name: 'Oxygen concentrator', category: 'medical', runningWatts: 350, startingWatts: 700, hoursPerDay: 24, note: 'Keep backup oxygen too. Tell your utility you depend on power.', continuous: true },
-    { id: 'sump-pump', name: 'Sump pump (1/2 HP)', category: 'essential', runningWatts: 1050, startingWatts: 2150, hoursPerDay: 2 },
-    { id: 'well-pump', name: 'Well pump (1/2 HP)', category: 'essential', runningWatts: 1000, startingWatts: 2100, hoursPerDay: 2, note: 'Most well pumps are 240 V and need a transfer switch wired by an electrician.', requires240V: true },
-    { id: 'furnace-fan', name: 'Gas furnace blower', category: 'essential', runningWatts: 875, startingWatts: 2350, hoursPerDay: 8, note: 'Needs a transfer switch or inlet. Never backfeed through an outlet.' },
+    { id: 'sump-pump', name: 'Sump pump (1/2 HP)', category: 'essential', runningWatts: 1050, startingWatts: 2150, hoursPerDay: 2, cycles: true },
+    { id: 'well-pump', name: 'Well pump (1/2 HP)', category: 'essential', runningWatts: 1000, startingWatts: 2100, hoursPerDay: 2, note: 'Most well pumps are 240 V and need a transfer switch wired by an electrician.', requires240V: true, cycles: true },
+    { id: 'furnace-fan', name: 'Gas furnace blower', category: 'essential', runningWatts: 875, startingWatts: 2350, hoursPerDay: 8, note: 'Needs a transfer switch or inlet. Never backfeed through an outlet.', cycles: true },
     { id: 'lights', name: 'LED lights (per room)', category: 'essential', runningWatts: 10, startingWatts: 10, hoursPerDay: 5 },
     { id: 'phone', name: 'Phone charging', category: 'electronics', runningWatts: 10, startingWatts: 10, hoursPerDay: 3 },
     { id: 'router', name: 'Wi-Fi router + modem', category: 'electronics', runningWatts: 20, startingWatts: 20, hoursPerDay: 24 },
@@ -220,6 +220,74 @@
     };
   }
 
+  // ===== "What each size can run" (mirror of solarSizeTable in powerEngine.ts) =====
+
+  var SOLAR_SIZE_TIERS = [
+    { id: 'small', label: 'Small', capacityWh: 256, outputWatts: 300 },
+    { id: 'medium', label: 'Medium', capacityWh: 512, outputWatts: 500 },
+    { id: '1kwh', label: '1 kWh', capacityWh: 1024, outputWatts: 1800 },
+    { id: '2kwh', label: '2 kWh', capacityWh: 2048, outputWatts: 2400 },
+    { id: '3kwh', label: '3.6 kWh', capacityWh: 3600, outputWatts: 3600 },
+    { id: 'expanded', label: 'Expanded (extra battery)', capacityWh: 6000, outputWatts: 3600 },
+  ];
+  var STATION_SURGE_FACTOR = 2;
+  var SIZE_TABLE_APPLIANCES = [
+    'refrigerator', 'chest-freezer', 'cpap', 'oxygen-concentrator', 'lights', 'phone', 'router',
+    'laptop', 'tv', 'fan', 'sump-pump', 'window-ac', 'microwave', 'space-heater',
+  ];
+
+  function fitFor(tier, runningWatts, peakWatts, whPerDay) {
+    if (runningWatts > tier.outputWatts) {
+      return { canRun: false, reason: 'output', neededWatts: runningWatts };
+    }
+    if (peakWatts > tier.outputWatts * STATION_SURGE_FACTOR) {
+      return { canRun: false, reason: 'surge', neededWatts: peakWatts };
+    }
+    var usable = tier.capacityWh * BATTERY_USABLE;
+    var days = whPerDay > 0 ? Math.floor((usable / whPerDay) * 1000) / 1000 : 0;
+    var hours = runningWatts > 0 ? Math.floor((usable / runningWatts) * 1000) / 1000 : 0;
+    return { canRun: true, days: days, hours: hours };
+  }
+
+  function solarSizeTable(raw) {
+    var result = calculatePower(raw);
+    var sunHours = clampNumber(raw.sunHours, 0.5, 8);
+    return SOLAR_SIZE_TIERS.map(function (tier) {
+      var appliances = SIZE_TABLE_APPLIANCES.map(function (id) {
+        var a = APPLIANCES.filter(function (x) { return x.id === id; })[0];
+        return {
+          id: a.id,
+          name: a.name,
+          cycles: !!a.cycles,
+          fit: fitFor(tier, a.runningWatts, a.startingWatts, a.runningWatts * a.hoursPerDay),
+        };
+      });
+      return {
+        tier: tier,
+        usableWh: Math.round(tier.capacityWh * BATTERY_USABLE),
+        panelWattsToRefill: roundUp(tier.capacityWh / (sunHours * SOLAR_DERATE), 50),
+        yourList: result.empty
+          ? null
+          : fitFor(tier, result.totalRunningWatts, result.peakStartingWatts, result.dailyWh),
+        appliances: appliances,
+      };
+    });
+  }
+
+  function formatRuntime(fit, cycles) {
+    if (cycles === undefined) cycles = true;
+    if (fit.days >= 1) {
+      var d = Math.floor(fit.days * 10) / 10;
+      return d + ' ' + (d === 1 ? 'day' : 'days');
+    }
+    var hours = cycles ? fit.days * 24 : fit.hours;
+    var suffix = cycles ? '' : ' running';
+    var h = Math.floor(hours * 10) / 10;
+    if (h >= 1) return h + ' h' + suffix;
+    return Math.max(0, Math.floor(hours * 60)) + ' min' + suffix;
+  }
+
+
   return {
     APPLIANCES: APPLIANCES,
     DEFAULT_SELECTION: DEFAULT_SELECTION,
@@ -229,5 +297,9 @@
     ESTIMATE_DISCLAIMER: ESTIMATE_DISCLAIMER,
     itemFromAppliance: itemFromAppliance,
     calculatePower: calculatePower,
+    SOLAR_SIZE_TIERS: SOLAR_SIZE_TIERS,
+    SIZE_TABLE_APPLIANCES: SIZE_TABLE_APPLIANCES,
+    solarSizeTable: solarSizeTable,
+    formatRuntime: formatRuntime,
   };
 });

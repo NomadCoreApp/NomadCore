@@ -53,3 +53,22 @@
   .stat .v { font-size: 1.05rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* What each size can run */
+.size-title { font-size: 1.05rem; margin: 18px 0 4px; }
+.size-row { border: 1px solid var(--gray-200); border-radius: 10px; margin-top: 8px; background: var(--gray-50); }
+.size-row[open] { background: white; }
+.size-row summary { min-height: 44px; padding: 10px 12px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; list-style: none; }
+.size-row summary::-webkit-details-marker { display: none; }
+.size-row summary::after { content: 'Show what it runs \25BE'; font-size: 0.8rem; color: var(--blue); font-weight: 600; }
+.size-row[open] summary::after { content: 'Hide \25B4'; }
+.size-row summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 10px; }
+.size-head { color: var(--gray-900); }
+.size-your { font-size: 0.92rem; color: var(--gray-700); }
+.size-row.no .size-your { color: #B45309; }
+.size-row.best { border-color: var(--green); border-width: 2px; }
+.size-badge { align-self: flex-start; font-size: 0.75rem; font-weight: 700; color: #047857; background: var(--green-light); border-radius: var(--radius-full); padding: 2px 10px; margin-top: 2px; }
+.size-list { list-style: none; padding: 0 12px; margin: 0; }
+.size-list li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 1px solid var(--gray-100); font-size: 0.92rem; }
+.size-list li span:last-child { text-align: right; font-weight: 600; color: var(--gray-900); }
+.size-list li.no span:last-child { font-weight: 500; color: #B45309; }
+.size-refill { font-size: 0.85rem; color: var(--gray-600); padding: 8px 12px 12px; margin: 0; }
