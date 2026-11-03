@@ -229,7 +229,9 @@
     { id: '2kwh', label: '2 kWh', capacityWh: 2048, outputWatts: 2400 },
     { id: '3kwh', label: '3.6 kWh', capacityWh: 3600, outputWatts: 3600 },
     { id: 'expanded', label: 'Expanded (extra battery)', capacityWh: 6000, outputWatts: 3600 },
+    { id: '10kwh', label: '10 kWh (home backup)', capacityWh: 10000, outputWatts: 7200 },
   ];
+  var MAX_RUNTIME_DAYS = 30;
   var STATION_SURGE_FACTOR = 2;
   var SIZE_TABLE_APPLIANCES = [
     'refrigerator', 'chest-freezer', 'cpap', 'oxygen-concentrator', 'lights', 'phone', 'router',
@@ -276,6 +278,7 @@
 
   function formatRuntime(fit, cycles) {
     if (cycles === undefined) cycles = true;
+    if (fit.days > MAX_RUNTIME_DAYS) return MAX_RUNTIME_DAYS + '+ days';
     if (fit.days >= 1) {
       var d = Math.floor(fit.days * 10) / 10;
       return d + ' ' + (d === 1 ? 'day' : 'days');
