@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>CommStation: Offline Vehicle Comms Station | NomadCore</title>
+  <meta name="description" content="CommStation is a Raspberry Pi touchscreen station for your vehicle: offline maps, GPS, Meshtastic mesh chat, weather, radio listening and an emergency card that work with no signal. Features, parts list and approximate cost.">
+  <meta property="og:title" content="NomadCore CommStation">
+  <meta property="og:description" content="An offline map, mesh chat, radio and emergency station for the truck, built on a Raspberry Pi. What it does, the parts list, and what it costs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomad-core.com/commstation/">
+  <link rel="canonical" href="https://nomad-core.com/commstation/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../risk/styles.css">
+  <link rel="stylesheet" href="commstation.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../knowledge-base/">Knowledge Base</a></li>
+        <li><a href="../risk/">Risk Profile</a></li>
+        <li><a href="../power/">Power Calculator</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li class="nav-download">
+          <span class="nav-cta" id="downloadBtn">Download &#9662;</span>
+          <div class="nav-download-menu" id="downloadMenu">
+            <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span class="store-label"><small>Download on the</small>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+              <span class="store-label"><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="cs-wrapper">
+    <header class="cs-intro">
+      <img src="../images/nomadcore-commstation.svg" alt="NomadCore CommStation" class="cs-logo" width="800" height="208">
+      <span class="cs-status">In development &middot; not for sale</span>
+      <h1>CommStation</h1>
+      <p class="subtitle">A touchscreen station for the truck, built on a Raspberry Pi. Map, GPS, mesh messaging, weather, radio and an emergency card on one screen, and it keeps working when the cell signal is gone.</p>
+    </header>
+
+    <section class="cs-card">
+      <h2>What it is</h2>
+      <p>The NomadCore app puts your family plan on your phone. CommStation is the same idea for the vehicle: a 7-inch touchscreen on the dash that knows where you are, talks to your family's radios, and holds the reference library, with no internet needed once it's set up.</p>
+      <p>It runs on a Raspberry Pi 5. Your phone or a small USB GPS gives it your position. Plug in a Meshtastic radio and you can text other family radios with no cell towers. Plug in a software radio and it listens for weather and digital radio traffic. Everything else (maps, places, directions, first-aid steps) is stored on a USB stick in the truck.</p>
+      <p class="hint">It's our own build, running in a Texas pickup today. We're sharing the parts list so you can see what it takes. It isn't a product you can buy, and the software isn't published yet.</p>
+    </section>
+
+    <section class="cs-card">
+      <h2>What it does</h2>
+      <p class="hint"><span class="tag off">Offline</span> works with no signal. <span class="tag on">Online</span> needs internet and falls back to the saved copy without it.</p>
+      <div class="cs-features">
+        <div class="cs-feature">
+          <h3>Offline map <span class="tag off">Offline</span></h3>
+          <p>Vector map stored on the Pi, day and night themes, terrain shading, contour lines and public land (BLM, Forest Service, parks) for finding a camp.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Your position <span class="tag off">Offline</span></h3>
+          <p>From your phone over the truck's own Wi-Fi, or a USB GPS. Speed, heading, altitude, and the clock set from GPS time.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Mesh messaging <span class="tag off">Offline</span></h3>
+          <p>With a Meshtastic radio: text family radios with no cell service, see them on the map with distance and direction, and send an SOS beacon that reports whether it was delivered.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>SOS card <span class="tag off">Offline</span></h3>
+          <p>One tap from the map: your coordinates and what to say, radio steps for a call for help, and a printable copy with the family evacuation plan.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Find nearest <span class="tag off">Offline</span></h3>
+          <p>About a million places across North America: fuel, hospitals, pharmacies, water, camping, police, vets, defibrillators. Sorted by distance and direction.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Directions <span class="tag on">Online</span> <span class="tag off">Offline</span></h3>
+          <p>Turn-by-turn with live traffic and faster-route offers when online. With no signal it still plans routes on the Pi, just without traffic.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Weather <span class="tag on">Online</span></h3>
+          <p>Forecast and National Weather Service alerts for where you are, home, and where you're headed. Offline it shows the last saved forecast and how old it is. Sunrise, sunset and moon are always worked out on the Pi.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Radio listening <span class="tag off">Offline</span></h3>
+          <p>A software radio and a handheld radio as receivers: NOAA weather radio, APRS position reports, and digital modes, all receive-only.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Library <span class="tag off">Offline</span></h3>
+          <p>The NomadCore procedure library and offline medical references, searched on the Pi. Every answer shows its source. It only shows what's in the library and says when nothing matches.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Travel log <span class="tag off">Offline</span></h3>
+          <p>Trips record on their own: route, stops, miles, time and weather along the way. Save any trip as GPX.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Supplies <span class="tag off">Offline</span></h3>
+          <p>Your household inventory from the same CSV the NomadCore app imports, with what's expired, expiring, or running low.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Device status <span class="tag off">Offline</span></h3>
+          <p>A status bar shows at a glance which GPS, mesh radio and other devices are connected and working.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-totals" aria-label="Approximate cost">
+      <div><span class="v">~$240</span><span class="l">Core station: Pi, screen, storage, truck power</span></div>
+      <div><span class="v">~$465</span><span class="l">As built: core plus GPS, mesh, radio and SDR</span></div>
+      <div><span class="v">~$755</span><span class="l">Everything, with Flipper Zero and planned add-ons</span></div>
+    </section>
+
+    <section class="cs-card">
+      <h2>Parts list (approximate)</h2>
+      <p class="hint">US street prices as of late 2026, rounded. Prices move, so treat these as ballpark. Your phone can stand in for the GPS, and you can skip any section you don't need.</p>
+
+      <p class="bom-group">Core station</p>
+      <table class="bom">
+        <thead><tr><th>Part</th><th>Approx.</th></tr></thead>
+        <tbody>
+          <tr><td>Raspberry Pi 5, 8 GB<span class="why">The computer. 8 GB gives room for maps and offline routing.</span></td><td>$95</td></tr>
+          <tr><td>Raspberry Pi Active Cooler<span class="why">Needed. The Pi runs hot in a closed cab without it.</span></td><td>$5</td></tr>
+          <tr><td>Raspberry Pi Touch Display, 7" (800&times;480)<span class="why">The touchscreen.</span></td><td>$60</td></tr>
+          <tr><td>Case or stand for Pi and display<span class="why">Holds both together on the dash.</span></td><td>$20</td></tr>
+          <tr><td>microSD card, 64 GB (A2)<span class="why">Operating system and app.</span></td><td>$12</td></tr>
+          <tr><td>USB 3 flash drive, 256 GB<span class="why">The library: maps, places, routing data, medical references.</span></td><td>$25</td></tr>
+          <tr><td>12 V to 5 V 5 A USB-C power converter<span class="why">Powers the Pi from the truck. Under 5 A the Pi limits its USB ports.</span></td><td>$25</td></tr>
+        </tbody>
+        <tfoot><tr><td>Core subtotal</td><td>~$240</td></tr></tfoot>
+      </table>
+
+      <p class="bom-group">Position</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>Your Android phone with a GPS forwarder app<span class="why">Sends its GPS to the Pi over the truck's Wi-Fi.</span></td><td>$0</td></tr>
+          <tr><td>USB GPS receiver (u-blox 7, e.g. VK-162)<span class="why">Optional. Works without the phone. Mount it high on the dash.</span></td><td>$18</td></tr>
+        </tbody>
+      </table>
+
+      <p class="bom-group">Mesh messaging</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>Meshtastic LoRa radio, 915 MHz (e.g. Heltec V3) with antenna<span class="why">Texts and SOS beacons to other family Meshtastic radios. No license needed.</span></td><td>$25</td></tr>
+          <tr><td>Case for the mesh radio<span class="why">Protects the bare board.</span></td><td>$10</td></tr>
+        </tbody>
+      </table>
+
+      <p class="bom-group">Handheld radio</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>Baofeng UV-5R handheld<span class="why">Second receiver and a radio you can carry.</span></td><td>$25</td></tr>
+          <tr><td>USB programming cable (genuine FTDI chip)<span class="why">Loads channels with CHIRP. Cheap clone cables often fail.</span></td><td>$20</td></tr>
+        </tbody>
+      </table>
+
+      <p class="bom-group">Listening (receive only)</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>RTL-SDR receiver (Nooelec NESDR SMArt v5)<span class="why">Software radio for weather radio, APRS and digital modes.</span></td><td>$40</td></tr>
+          <tr><td>VHF/UHF antenna (magnetic mount)<span class="why">The stock antenna is weak inside a cab.</span></td><td>$20</td></tr>
+          <tr><td>Digirig Mobile audio interface<span class="why">Brings the handheld's audio into the Pi.</span></td><td>$55</td></tr>
+          <tr><td>Digirig cable for Baofeng (K1 plug)<span class="why">Connects the Digirig to the UV-5R.</span></td><td>$10</td></tr>
+        </tbody>
+        <tfoot><tr><td>As built, with everything above</td><td>~$465</td></tr></tfoot>
+      </table>
+
+      <p class="bom-group">Optional and planned</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>Flipper Zero<span class="why">Optional. Shows up in the status bar; no features depend on it yet.</span></td><td>$200</td></tr>
+          <tr><td>Vehicle UPS HAT with ignition sense, plus add-a-circuit fuse tap<span class="why">Planned. Shuts the Pi down cleanly when the key turns off, so the SD card doesn't get corrupted.</span></td><td>$50</td></tr>
+          <tr><td>Compass and barometer sensor board (e.g. BNO085 + BME280)<span class="why">Planned. Compass that works while parked, level for camp, pressure trend.</span></td><td>$25</td></tr>
+          <tr><td>USB speaker<span class="why">Planned. Reads answers and first-aid steps aloud while driving.</span></td><td>$15</td></tr>
+        </tbody>
+        <tfoot><tr><td>Everything</td><td>~$755</td></tr></tfoot>
+      </table>
+    </section>
+
+    <section class="cs-card">
+      <h2>What else it costs</h2>
+      <ul>
+        <li><strong>Data:</strong> the maps, places and medical references are free, open downloads (OpenStreetMap, Protomaps, USGS, Kiwix). The first download is large, tens of gigabytes, so do it on home Wi-Fi.</li>
+        <li><strong>Online extras:</strong> live traffic and gas prices use TomTom and Google free tiers with their own keys. The station caps its own use under those free limits. Skip them and it still routes offline.</li>
+        <li><strong>Licenses:</strong> see below. A GMRS license is a one-time FCC fee that covers your immediate family for 10 years.</li>
+        <li><strong>No subscription.</strong> Nothing here is paid monthly.</li>
+      </ul>
+    </section>
+
+    <section class="cs-card legal">
+      <h2>Radio rules (US)</h2>
+      <p>Listening is open to everyone. Transmitting has rules.</p>
+      <ul>
+        <li><strong>Meshtastic on 915 MHz</strong> needs no license. Leave the radio's "licensed" (ham) mode off.</li>
+        <li><strong>NOAA weather radio</strong> is receive only.</li>
+        <li><strong>GMRS</strong> needs an FCC license and a radio certified for GMRS. The UV-5R is not certified for GMRS, so use a certified GMRS radio for everyday family talk.</li>
+        <li><strong>Amateur (ham) bands</strong> need at least a Technician license to transmit.</li>
+        <li>In the station, the software radio and the Digirig are set up to receive only.</li>
+      </ul>
+      <p class="hint">This is a summary, not legal advice. Check current FCC rules before you transmit.</p>
+    </section>
+
+    <section class="cs-card">
+      <h2>Start with the app</h2>
+      <p>You don't need a CommStation to be ready. NomadCore keeps your family plan, first-aid steps, offline maps and supply checklist on your phone, and works with no signal. Free, no account needed.</p>
+      <p><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">App Store</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">Google Play</a></p>
+    </section>
+
+    <p class="disclaimer">Prices are estimates for planning, not quotes, and we don't earn anything from these parts. Product names are their makers' trademarks; we aren't affiliated with them. CommStation is an in-progress personal build. Don't depend on any single device in an emergency: keep a paper map, a charged phone, and know how to reach 911.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="commstation.js"></script>
+  <!-- NomadCore AI assistant (Agent Build Standard v1.2) -->
+  <script src="/assistant-config.js"></script>
+  <script src="/assistant.js" defer></script>
+</body>
+</html>

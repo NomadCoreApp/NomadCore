@@ -1,0 +1,42 @@
+/* CommStation page styles. Shared nav/footer/tokens come from ../risk/styles.css. */
+.cs-wrapper { margin: 64px auto 0; max-width: 820px; padding: 32px 16px 56px; display: flex; flex-direction: column; gap: 16px; }
+.cs-logo { display: block; width: 100%; max-width: 420px; height: auto; margin-bottom: 12px; }
+.cs-intro h1 { font-size: 2rem; margin-bottom: 8px; }
+.cs-intro .subtitle { font-size: 1.05rem; color: var(--gray-600); }
+.cs-status { display: inline-block; font-size: 0.8rem; font-weight: 700; color: #92400E; background: var(--amber-light); border: 1px solid var(--amber); border-radius: var(--radius-full); padding: 2px 12px; margin-bottom: 12px; }
+.cs-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); }
+.cs-card h2 { font-size: 1.25rem; margin-bottom: 10px; }
+.cs-card h3 { font-size: 1.02rem; margin: 16px 0 6px; }
+.cs-card p { margin-bottom: 10px; }
+.cs-card p:last-child { margin-bottom: 0; }
+.cs-card ul { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.hint { font-size: 0.9rem; color: var(--gray-500); }
+
+.cs-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.cs-feature { border: 1px solid var(--gray-200); border-radius: 10px; padding: 14px; background: var(--gray-50); }
+.cs-feature h3 { font-size: 1rem; margin: 0 0 4px; }
+.cs-feature p { font-size: 0.92rem; color: var(--gray-700); margin: 0; }
+.tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: var(--radius-full); padding: 1px 8px; margin-left: 4px; vertical-align: middle; }
+.tag.off { color: #047857; background: var(--green-light); }
+.tag.on { color: var(--blue); background: var(--blue-light); }
+
+.cs-totals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; background: var(--navy); color: white; border-radius: var(--radius); padding: 16px 18px; }
+.cs-totals .v { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.35rem; color: white; display: block; }
+.cs-totals .l { font-size: 0.82rem; color: rgba(255,255,255,0.78); display: block; }
+
+.bom-group { font-family: 'Inter', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 18px 0 4px; }
+.bom { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.bom th { text-align: left; font-size: 0.78rem; font-weight: 600; color: var(--gray-500); padding: 6px 8px 6px 0; border-bottom: 1px solid var(--gray-200); }
+.bom td { padding: 8px 8px 8px 0; border-top: 1px solid var(--gray-100); vertical-align: top; color: var(--gray-800); }
+.bom td:last-child, .bom th:last-child { text-align: right; white-space: nowrap; padding-right: 0; font-weight: 600; color: var(--gray-900); }
+.bom .why { display: block; font-size: 0.84rem; color: var(--gray-500); }
+.bom tfoot td { border-top: 2px solid var(--gray-200); font-weight: 700; }
+
+.legal { border-left: 3px solid var(--amber); }
+.disclaimer { font-size: 0.85rem; color: var(--gray-500); }
+
+@media (max-width: 560px) {
+  .cs-intro h1 { font-size: 1.6rem; }
+  .cs-totals { grid-template-columns: 1fr; gap: 8px; }
+  .bom { font-size: 0.88rem; }
+}
