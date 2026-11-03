@@ -69,7 +69,7 @@
     <section class="cs-card">
       <h2>What it is</h2>
       <p>The NomadCore app puts your family plan on your phone. CommStation is the same idea for the vehicle: a 7-inch touchscreen on the dash that knows where you are, talks to your family's radios, and holds the reference library, with no internet needed once it's set up.</p>
-      <p>It runs on a Raspberry Pi 5. Your phone or a small USB GPS gives it your position. Plug in a Meshtastic radio and you can text other family radios with no cell towers. Plug in a software radio and it listens for weather and digital radio traffic. Everything else (maps, places, directions, first-aid steps) is stored on a USB stick in the truck.</p>
+      <p>It runs on a Raspberry Pi 5. Your phone or a small USB GPS gives it your position. Plug in a Meshtastic radio and you can text other family radios with no cell towers. Plug in a software radio and it listens for weather and digital radio traffic. Everything else (maps, places, directions, first-aid steps) is stored on the Pi's 256 GB memory card.</p>
       <p class="hint">It's our own build, running in a Texas pickup today. We're sharing the parts list so you can see what it takes. It isn't a product you can buy, and the software isn't published yet.</p>
     </section>
 
@@ -129,9 +129,9 @@
     </section>
 
     <section class="cs-totals" aria-label="Approximate cost">
-      <div><span class="v">~$240</span><span class="l">Core station: Pi, screen, storage, truck power</span></div>
-      <div><span class="v">~$465</span><span class="l">As built: core plus GPS, mesh, radio and SDR</span></div>
-      <div><span class="v">~$755</span><span class="l">Everything, with Flipper Zero and planned add-ons</span></div>
+      <div><span class="v">~$230</span><span class="l">Core station: Pi, screen, storage, truck power</span></div>
+      <div><span class="v">~$455</span><span class="l">As built: core plus GPS, mesh, radio and SDR</span></div>
+      <div><span class="v">~$745</span><span class="l">Everything, with Flipper Zero and planned add-ons</span></div>
     </section>
 
     <section class="cs-card">
@@ -146,11 +146,10 @@
           <tr><td>Raspberry Pi Active Cooler<span class="why">Needed. The Pi runs hot in a closed cab without it.</span></td><td>$5</td></tr>
           <tr><td>Raspberry Pi Touch Display, 7" (800&times;480)<span class="why">The touchscreen.</span></td><td>$60</td></tr>
           <tr><td>Case or stand for Pi and display<span class="why">Holds both together on the dash.</span></td><td>$20</td></tr>
-          <tr><td>microSD card, 64 GB (A2)<span class="why">Operating system and app.</span></td><td>$12</td></tr>
-          <tr><td>USB 3 flash drive, 256 GB<span class="why">The library: maps, places, routing data, medical references.</span></td><td>$25</td></tr>
+          <tr><td>microSD card, 256 GB (A2)<span class="why">System, app and the library: maps, places, routing data, medical references.</span></td><td>$25</td></tr>
           <tr><td>12 V to 5 V 5 A USB-C power converter<span class="why">Powers the Pi from the truck. Under 5 A the Pi limits its USB ports.</span></td><td>$25</td></tr>
         </tbody>
-        <tfoot><tr><td>Core subtotal</td><td>~$240</td></tr></tfoot>
+        <tfoot><tr><td>Core subtotal</td><td>~$230</td></tr></tfoot>
       </table>
 
       <p class="bom-group">Position</p>
@@ -185,7 +184,7 @@
           <tr><td>Digirig Mobile audio interface<span class="why">Brings the handheld's audio into the Pi.</span></td><td>$55</td></tr>
           <tr><td>Digirig cable for Baofeng (K1 plug)<span class="why">Connects the Digirig to the UV-5R.</span></td><td>$10</td></tr>
         </tbody>
-        <tfoot><tr><td>As built, with everything above</td><td>~$465</td></tr></tfoot>
+        <tfoot><tr><td>As built, with everything above</td><td>~$455</td></tr></tfoot>
       </table>
 
       <p class="bom-group">Optional and planned</p>
@@ -196,7 +195,7 @@
           <tr><td>Compass and barometer sensor board (e.g. BNO085 + BME280)<span class="why">Planned. Compass that works while parked, level for camp, pressure trend.</span></td><td>$25</td></tr>
           <tr><td>USB speaker<span class="why">Planned. Reads answers and first-aid steps aloud while driving.</span></td><td>$15</td></tr>
         </tbody>
-        <tfoot><tr><td>Everything</td><td>~$755</td></tr></tfoot>
+        <tfoot><tr><td>Everything</td><td>~$745</td></tr></tfoot>
       </table>
     </section>
 
