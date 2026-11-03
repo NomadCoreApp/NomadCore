@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-901VG0NQY2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-901VG0NQY2');
+  </script>
+  <title>Generator &amp; Solar Power Calculator | NomadCore</title>
+  <meta name="description" content="What do you need to power during an outage, and for how long? Get the generator or solar generator size, fuel per day, refills and gallons to store. Free, runs in your browser.">
+  <meta property="og:title" content="Generator &amp; Solar Power Calculator">
+  <meta property="og:description" content="Pick what you need to power and for how long. Get generator size, fuel, refills, or the solar generator and panels it takes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomad-core.com/power/">
+  <link rel="canonical" href="https://nomad-core.com/power/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../risk/styles.css">
+  <link rel="stylesheet" href="power.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+        NomadCore
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../features/">Features</a></li>
+        <li><a href="../knowledge-base/">Knowledge Base</a></li>
+        <li><a href="../risk/">Risk Profile</a></li>
+        <li><a href="../power/" class="active">Power Calculator</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li class="nav-download">
+          <span class="nav-cta" id="downloadBtn">Download &#9662;</span>
+          <div class="nav-download-menu" id="downloadMenu">
+            <a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span class="store-label"><small>Download on the</small>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>
+              <span class="store-label"><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="power-wrapper">
+    <header class="power-intro">
+      <h1>Power Calculator</h1>
+      <p class="subtitle">What do you want to power, and for how long? See the generator or solar generator it takes, how much fuel, and how often you will refill it.</p>
+      <p class="privacy-line">Runs in your browser. Nothing you enter is sent anywhere.</p>
+    </header>
+
+    <section class="power-summary" id="summary" aria-live="polite"></section>
+
+    <section class="power-card">
+      <h2>1. What do you want to power?</h2>
+      <p class="hint">Tap a name to edit its watts and hours. Check the label on your own appliance.</p>
+      <div id="appliances"></div>
+    </section>
+
+    <section class="power-card">
+      <h2>2. For how long?</h2>
+      <div class="option-group"><span class="option-label" id="lbl-days">Outage length</span><div class="chips" id="days" role="radiogroup" aria-labelledby="lbl-days"></div></div>
+      <div class="option-group"><span class="option-label" id="lbl-fuel">Generator fuel</span><div class="chips" id="fuel" role="radiogroup" aria-labelledby="lbl-fuel"></div></div>
+      <div class="option-group"><span class="option-label" id="lbl-hours">Generator runs per day</span><div class="chips" id="hours" role="radiogroup" aria-labelledby="lbl-hours"></div></div>
+      <div class="option-group"><span class="option-label" id="lbl-sun">Sun for solar</span><div class="chips" id="sun" role="radiogroup" aria-labelledby="lbl-sun"></div></div>
+    </section>
+
+    <div id="results" aria-live="polite"></div>
+
+    <section class="power-card app-cta">
+      <h2>Take it offline</h2>
+      <p>NomadCore keeps generator safety, outage checklists and your family plan on your phone, and works with no signal. Free, no account needed.</p>
+      <p><a href="https://apps.apple.com/us/app/nomadcore/id6751544385" target="_blank" rel="noopener noreferrer">App Store</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore" target="_blank" rel="noopener noreferrer">Google Play</a></p>
+    </section>
+
+    <p class="disclaimer" id="disclaimer"></p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/nomadcore-icon.png" alt="" class="nav-logo-icon">
+            NomadCore
+          </div>
+          <p style="font-size: 0.9rem; max-width: 300px;">Your family's emergency plan, in your pocket. Built in Texas.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../eula.html">EULA</a></li>
+          <li><a href="../accessibility.html">Accessibility</a></li>
+          <li><a href="../delete-account/">Delete Account</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 <a href="https://lostpinescreative.com" target="_blank" rel="noopener noreferrer">Lost Pines Creative LLC</a></span>
+        <a href="mailto:support@nomad-core.com">support@nomad-core.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="power-engine.js"></script>
+  <script src="power.js"></script>
+  <!-- NomadCore AI assistant (Agent Build Standard v1.2) -->
+  <script src="/assistant-config.js"></script>
+  <script src="/assistant.js" defer></script>
+</body>
+</html>
