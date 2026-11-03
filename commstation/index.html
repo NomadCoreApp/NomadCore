@@ -69,7 +69,7 @@
     <section class="cs-card">
       <h2>What it is</h2>
       <p>The NomadCore app puts your family plan on your phone. CommStation is the same idea for the vehicle: a 7-inch touchscreen on the dash that knows where you are, talks to your family's radios, and holds the reference library, with no internet needed once it's set up.</p>
-      <p>It runs on a Raspberry Pi 5. Your phone or a small USB GPS gives it your position. Plug in a Meshtastic radio and you can text other family radios with no cell towers. Plug in a software radio and it listens for weather and digital radio traffic. Everything else (maps, places, directions, first-aid steps) is stored on the Pi's 256 GB memory card.</p>
+      <p>It runs on a Raspberry Pi 5 with a battery backup that rides through engine starts. A small USB GPS or your phone gives it your position. Plug in a Meshtastic radio and you can text other family radios with no cell towers. Plug in a software radio and it listens for weather and digital radio traffic. Everything else (maps, places, directions, first-aid steps) is stored on the Pi's 256 GB memory card.</p>
       <p class="hint">It's our own build, running in a Texas pickup today. We're sharing the parts list so you can see what it takes. It isn't a product you can buy, and the software isn't published yet.</p>
     </section>
 
@@ -129,73 +129,79 @@
     </section>
 
     <section class="cs-totals" aria-label="Approximate cost">
-      <div><span class="v">~$230</span><span class="l">Core station: Pi, screen, storage, truck power</span></div>
-      <div><span class="v">~$455</span><span class="l">As built: core plus GPS, mesh, radio and SDR</span></div>
-      <div><span class="v">~$745</span><span class="l">Everything, with Flipper Zero and planned add-ons</span></div>
+      <div><span class="v">~$330&ndash;435</span><span class="l">Core station: map, GPS, offline library, routing</span></div>
+      <div><span class="v">~$500&ndash;665</span><span class="l">Plus mesh, handheld radio and SDR listening</span></div>
+      <div><span class="v">~$580&ndash;765</span><span class="l">Full station as built, with speakerphone</span></div>
     </section>
 
     <section class="cs-card">
       <h2>Parts list (approximate)</h2>
-      <p class="hint">US street prices as of late 2026, rounded. Prices move, so treat these as ballpark. Your phone can stand in for the GPS, and you can skip any section you don't need.</p>
+      <p class="hint">Rough US street prices from late 2026, for budgeting only. Prices move. Your phone can stand in for the USB GPS, and you can skip any section you don't need.</p>
 
       <p class="bom-group">Core station</p>
       <table class="bom">
         <thead><tr><th>Part</th><th>Approx.</th></tr></thead>
         <tbody>
-          <tr><td>Raspberry Pi 5, 8 GB<span class="why">The computer. 8 GB gives room for maps and offline routing.</span></td><td>$95</td></tr>
-          <tr><td>Raspberry Pi Active Cooler<span class="why">Needed. The Pi runs hot in a closed cab without it.</span></td><td>$5</td></tr>
-          <tr><td>Raspberry Pi Touch Display, 7" (800&times;480)<span class="why">The touchscreen.</span></td><td>$60</td></tr>
-          <tr><td>Case or stand for Pi and display<span class="why">Holds both together on the dash.</span></td><td>$20</td></tr>
-          <tr><td>microSD card, 256 GB (A2)<span class="why">System, app and the library: maps, places, routing data, medical references.</span></td><td>$25</td></tr>
-          <tr><td>12 V to 5 V 5 A USB-C power converter<span class="why">Powers the Pi from the truck. Under 5 A the Pi limits its USB ports.</span></td><td>$25</td></tr>
+          <tr><td>Raspberry Pi 5, 8 GB<span class="why">Runs everything offline: map, routing, library, radio decoders.</span></td><td>$80</td></tr>
+          <tr><td>Raspberry Pi 5 Active Cooler<span class="why">Needed. The Pi idles at 65 &deg;C without it.</span></td><td>$5</td></tr>
+          <tr><td>7" touch display, 800&times;480 (DSI)<span class="why">The screen the station is designed around.</span></td><td>$60&ndash;70</td></tr>
+          <tr><td>microSD card, 256 GB (A2, high endurance)<span class="why">System, maps, places, routing data, medical references and the NomadCore library, all on one card.</span></td><td>$25&ndash;35</td></tr>
+          <tr><td>UPS HAT (Geekworm X120x, e.g. X1202)<span class="why">Rides through engine cranking and power drops, with a battery gauge.</span></td><td>$35&ndash;45</td></tr>
+          <tr><td>18650 Li-ion cells, protected (2&ndash;4)<span class="why">Batteries for the UPS.</span></td><td>$20&ndash;30</td></tr>
+          <tr><td>12 V to 5 V 5 A USB-C PD converter, plus fused add-a-circuit<span class="why">Powers the Pi from the truck. Under 5 A the Pi limits its USB ports.</span></td><td>$20&ndash;30</td></tr>
+          <tr><td>Powered USB hub, 4&ndash;7 port<span class="why">The station can have up to six USB devices plugged in.</span></td><td>$20&ndash;30</td></tr>
+          <tr><td>Enclosure and dash or console mount<span class="why">Holds the Pi and display.</span></td><td>$30&ndash;60</td></tr>
+          <tr><td>Cables: USB-C data cables, SMA adapters, short USB extensions<span class="why">Use data USB-C cables, not charge-only.</span></td><td>$20&ndash;30</td></tr>
+          <tr><td>USB GPS (VK-162, u-blox 7)<span class="why">Position, and the clock when there's no network. An Android phone running a GPS forwarder app also works, for $0.</span></td><td>$15&ndash;20</td></tr>
         </tbody>
-        <tfoot><tr><td>Core subtotal</td><td>~$230</td></tr></tfoot>
+        <tfoot><tr><td>Core subtotal</td><td>~$330&ndash;435</td></tr></tfoot>
       </table>
 
-      <p class="bom-group">Position</p>
+      <p class="bom-group">Mesh and handheld radio</p>
       <table class="bom">
         <tbody>
-          <tr><td>Your Android phone with a GPS forwarder app<span class="why">Sends its GPS to the Pi over the truck's Wi-Fi.</span></td><td>$0</td></tr>
-          <tr><td>USB GPS receiver (u-blox 7, e.g. VK-162)<span class="why">Optional. Works without the phone. Mount it high on the dash.</span></td><td>$18</td></tr>
+          <tr><td>Meshtastic node: Heltec LoRa 32 V3 (US 915 MHz) with antenna<span class="why">Mesh map, chat and SOS beacons to family radios. No license needed.</span></td><td>$20&ndash;30</td></tr>
+          <tr><td>Baofeng UV-5R handheld<span class="why">Weather radio and a radio you can carry. See the radio rules below before transmitting.</span></td><td>$25&ndash;35</td></tr>
+          <tr><td>USB programming cable (FTDI)<span class="why">Loads channels with CHIRP.</span></td><td>$15&ndash;20</td></tr>
         </tbody>
-      </table>
-
-      <p class="bom-group">Mesh messaging</p>
-      <table class="bom">
-        <tbody>
-          <tr><td>Meshtastic LoRa radio, 915 MHz (e.g. Heltec V3) with antenna<span class="why">Texts and SOS beacons to other family Meshtastic radios. No license needed.</span></td><td>$25</td></tr>
-          <tr><td>Case for the mesh radio<span class="why">Protects the bare board.</span></td><td>$10</td></tr>
-        </tbody>
-      </table>
-
-      <p class="bom-group">Handheld radio</p>
-      <table class="bom">
-        <tbody>
-          <tr><td>Baofeng UV-5R handheld<span class="why">Second receiver and a radio you can carry.</span></td><td>$25</td></tr>
-          <tr><td>USB programming cable (genuine FTDI chip)<span class="why">Loads channels with CHIRP. Cheap clone cables often fail.</span></td><td>$20</td></tr>
-        </tbody>
+        <tfoot><tr><td>Subtotal</td><td>~$60&ndash;85</td></tr></tfoot>
       </table>
 
       <p class="bom-group">Listening (receive only)</p>
       <table class="bom">
         <tbody>
-          <tr><td>RTL-SDR receiver (Nooelec NESDR SMArt v5)<span class="why">Software radio for weather radio, APRS and digital modes.</span></td><td>$40</td></tr>
-          <tr><td>VHF/UHF antenna (magnetic mount)<span class="why">The stock antenna is weak inside a cab.</span></td><td>$20</td></tr>
-          <tr><td>Digirig Mobile audio interface<span class="why">Brings the handheld's audio into the Pi.</span></td><td>$55</td></tr>
-          <tr><td>Digirig cable for Baofeng (K1 plug)<span class="why">Connects the Digirig to the UV-5R.</span></td><td>$10</td></tr>
+          <tr><td>Digirig Mobile + Baofeng K1 cable<span class="why">Brings the handheld's audio into the Pi for APRS and digital modes.</span></td><td>$55&ndash;65</td></tr>
+          <tr><td>Software-defined radio: Nooelec NESDR SMArt v5<span class="why">Scanner, weather alerts, APRS and other digital modes.</span></td><td>$35&ndash;45</td></tr>
+          <tr><td>SDR antennas: magnetic-mount VHF/UHF whip, long wire for AM/HF<span class="why">The roof antenna does most of the work.</span></td><td>$20&ndash;35</td></tr>
         </tbody>
-        <tfoot><tr><td>As built, with everything above</td><td>~$455</td></tr></tfoot>
+        <tfoot><tr><td>Subtotal</td><td>~$110&ndash;145</td></tr></tfoot>
       </table>
 
-      <p class="bom-group">Optional and planned</p>
+      <p class="bom-group">Audio</p>
       <table class="bom">
         <tbody>
-          <tr><td>Flipper Zero<span class="why">Optional. Shows up in the status bar; no features depend on it yet.</span></td><td>$200</td></tr>
-          <tr><td>Vehicle UPS HAT with ignition sense, plus add-a-circuit fuse tap<span class="why">Planned. Shuts the Pi down cleanly when the key turns off, so the SD card doesn't get corrupted.</span></td><td>$50</td></tr>
-          <tr><td>Compass and barometer sensor board (e.g. BNO085 + BME280)<span class="why">Planned. Compass that works while parked, level for camp, pressure trend.</span></td><td>$25</td></tr>
-          <tr><td>USB speaker<span class="why">Planned. Reads answers and first-aid steps aloud while driving.</span></td><td>$15</td></tr>
+          <tr><td>Bluetooth speakerphone (Anker PowerConf S3)<span class="why">Scanner audio, and speaker and microphone for voice features.</span></td><td>$80&ndash;100</td></tr>
         </tbody>
-        <tfoot><tr><td>Everything</td><td>~$745</td></tr></tfoot>
+        <tfoot><tr><td>Full station as built</td><td>~$580&ndash;765</td></tr></tfoot>
+      </table>
+
+      <p class="bom-group">Optional</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>Extra Meshtastic nodes for family<span class="why">One for each family member who should get SOS messages.</span></td><td>$20&ndash;30 each</td></tr>
+          <tr><td>Flipper Zero<span class="why">Shows in the status bar; no features depend on it yet.</span></td><td>$170</td></tr>
+        </tbody>
+      </table>
+
+      <p class="bom-group">Planned add-ons</p>
+      <table class="bom">
+        <tbody>
+          <tr><td>9-axis IMU (Adafruit BNO085 or ICM-20948)<span class="why">Compass and level while parked, crash detection.</span></td><td>$20&ndash;25</td></tr>
+          <tr><td>Barometer and humidity sensor (BME280 or BMP390)<span class="why">Offline pressure trend, cab temperature.</span></td><td>$10&ndash;15</td></tr>
+          <tr><td>RTL-SDR Blog V4<span class="why">Better SDR, with HF reception built in.</span></td><td>$35&ndash;40</td></tr>
+          <tr><td>Pi Camera Module 3 Wide<span class="why">Loop-recording dashcam.</span></td><td>$35&ndash;45</td></tr>
+          <tr><td>Ignition sense (optocoupler on an ignition-switched fuse)<span class="why">Clean shutdown when the key turns off.</span></td><td>$5&ndash;10</td></tr>
+        </tbody>
       </table>
     </section>
 
