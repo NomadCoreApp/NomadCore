@@ -106,8 +106,8 @@
           <p>Forecast and National Weather Service alerts for where you are, home, and where you're headed. Offline it shows the last saved forecast and how old it is. Sunrise, sunset and moon are always worked out on the Pi.</p>
         </div>
         <div class="cs-feature">
-          <h3>Radio listening <span class="tag off">Offline</span></h3>
-          <p>A software radio and a handheld radio as receivers: NOAA weather radio, APRS position reports, and digital modes, all receive-only.</p>
+          <h3>SDR and scanner <span class="tag off">Offline</span></h3>
+          <p>A software-defined radio, installed and running: a scanner, NOAA weather radio, APRS position reports and digital modes (FT8, JS8, CW, SSTV) in the dashboard. The handheld works as a second receiver. All receive-only.</p>
         </div>
         <div class="cs-feature">
           <h3>Library <span class="tag off">Offline</span></h3>
@@ -128,6 +128,10 @@
         <div class="cs-feature">
           <h3>Device status <span class="tag off">Offline</span></h3>
           <p>A status bar shows at a glance which GPS, mesh radio and other devices are connected and working.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Phone link <span class="tag on">Bluetooth</span></h3>
+          <p>Pair your phone and make calls from the screen: contacts, recents and a keypad, an incoming-call banner, and call audio through the cab speakerphone. Incoming texts show in a big box and are read aloud while the truck is moving, with spoken replies. Contacts stay on the Pi. Calls still go over your phone's cell signal.</p>
         </div>
       </div>
     </section>
@@ -201,7 +205,7 @@
       <p class="bom-group">Audio</p>
       <table class="bom">
         <tbody>
-          <tr><td>Bluetooth speakerphone (Anker PowerConf S3)<span class="why">Scanner audio, and speaker and microphone for voice features.</span></td><td>$80&ndash;100</td></tr>
+          <tr><td>Bluetooth speakerphone (Anker PowerConf S3, connected by USB)<span class="why">Hands-free call audio for the phone link, scanner audio, and the microphone for spoken replies.</span></td><td>$80&ndash;100</td></tr>
         </tbody>
         <tfoot><tr><td>Full station as built</td><td>~$580&ndash;765</td></tr></tfoot>
       </table>
@@ -219,11 +223,19 @@
         <tbody>
           <tr><td>9-axis IMU (Adafruit BNO085 or ICM-20948)<span class="why">Compass and level while parked, crash detection.</span></td><td>$20&ndash;25</td></tr>
           <tr><td>Barometer and humidity sensor (BME280 or BMP390)<span class="why">Offline pressure trend, cab temperature.</span></td><td>$10&ndash;15</td></tr>
-          <tr><td>RTL-SDR Blog V4<span class="why">Better SDR, with HF reception built in.</span></td><td>$35&ndash;40</td></tr>
+          <tr><td>SDR upgrade: RTL-SDR Blog V4<span class="why">Optional upgrade to the installed SDR, for HF reception without an upconverter.</span></td><td>$35&ndash;40</td></tr>
           <tr><td>Pi Camera Module 3 Wide<span class="why">Loop-recording dashcam.</span></td><td>$35&ndash;45</td></tr>
           <tr><td>Ignition sense (optocoupler on an ignition-switched fuse)<span class="why">Clean shutdown when the key turns off.</span></td><td>$5&ndash;10</td></tr>
         </tbody>
       </table>
+    </section>
+
+    <section class="cs-card">
+      <h2>Coming next</h2>
+      <h3>Drone link</h3>
+      <p>The station's side is built: it flies one ArduPilot drone over a 915 MHz telemetry radio, with no internet. The drone shows on the map with its height, battery and trail, and five big buttons cover it: <strong>Take off</strong>, <strong>Go here</strong>, <strong>Hold</strong>, <strong>Return home</strong> and <strong>Land</strong>. It stays within 400 ft up and 400 m of home, so it stays in sight. So far it has flown only in a simulator. The drone is its own build, about <strong>$650&ndash;1,100</strong> on top of the station (frame, flight controller, GPS, telemetry radios, hand controller, Remote ID, batteries), and needs FAA registration.</p>
+      <h3>Security</h3>
+      <p>Security features for the truck and camp are planned. The screen already locks with a PIN or passphrase. More to come.</p>
     </section>
 
     <section class="cs-card">
