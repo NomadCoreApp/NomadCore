@@ -32,6 +32,8 @@
 .bom .why { display: block; font-size: 0.84rem; color: var(--gray-500); }
 .bom tfoot td { border-top: 2px solid var(--gray-200); font-weight: 700; }
 
+.cs-video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: var(--radius); background: var(--navy); box-shadow: var(--shadow-md); }
+.cs-video .hint { margin-top: 6px; }
 .legal { border-left: 3px solid var(--amber); }
 .disclaimer { font-size: 0.85rem; color: var(--gray-500); }
 
