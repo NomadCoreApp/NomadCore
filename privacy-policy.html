@@ -456,7 +456,7 @@
         Back to Home
       </a>
       <div class="article-meta fade-up delay-1">
-        <span>Last Updated: August 23, 2026</span>
+        <span>Last Updated: November 5, 2026</span>
       </div>
       <h1 class="fade-up delay-2">Privacy Policy</h1>
     </div>
@@ -466,15 +466,15 @@
   <article class="article-body">
 
     <div class="highlight-box">
-      <p><strong>We don't have your data.</strong> NomadCore works fully offline, and your data stays on your device by default. If you turn on cloud backup or family sharing, what you put in the app &mdash; inventories, plans, documents, shared contacts, and anything you post to your family group &mdash; is encrypted on your device before it leaves it. Your group's key is backed up to our servers in encrypted form so your family doesn't lose access when someone gets a new phone; we don't use it to read your data, and nothing in the app is built to.</p>
-      <p>What we can see is your <strong>email address and display name</strong>, so we can run your account. That's it. No ads, no profiles, no data sales.</p>
+      <p><strong>Your data is never sold.</strong> NomadCore's core tools work offline, and your data stays on your device by default. If you turn on cloud backup or family sharing, what you put in the app &mdash; inventories, plans, documents, shared contacts, and anything you post to your family group &mdash; is encrypted on your device before it leaves it. Your group's key is backed up to our servers in encrypted form so your family doesn't lose access when someone gets a new phone; we don't use it to read your data, and nothing in the app is built to.</p>
+      <p>If you create an account, we can see your <strong>email address, display name, and group memberships</strong>, so we can run it. Crash reports also reach us, as Sections 4 and 9 describe. No ads, no profiles, no data sales.</p>
       <p>One thing lives outside the app: the <strong>AI assistant on our website</strong>. It only holds onto anything if you ask us to follow up &mdash; Section 4 spells out exactly what it does with a message you send it.</p>
     </div>
 
     <h2>1. Data Collection</h2>
     <p>NomadCore is designed with privacy at its core. The app works fully offline by default, storing all data locally on your device. We do not sell your data or use it for advertising.</p>
 
-    <p><strong>Optional Account:</strong> If you choose to create an account for backup and sync, your data is securely stored using Supabase (our cloud database provider). This is entirely optional—the app functions fully without an account.</p>
+    <p><strong>Optional Account:</strong> If you choose to create an account for backup and sync, your data is securely stored using Supabase (our cloud database provider). This is entirely optional. The app's core features work without an account; cloud backup and family sharing need one.</p>
 
     <h2>2. Local Storage</h2>
     <p>All your data is stored locally on your device using secure storage methods, including:</p>
@@ -533,7 +533,7 @@
 
     <h3>Crash Reporting</h3>
     <ul>
-      <li><strong>Sentry:</strong> In production builds, crash reports are sent to Sentry to help us fix bugs. This may include your user ID, email, device information, and error details. Sensitive fields (passwords, tokens, API keys) are automatically redacted before sending. Sentry data is used solely for debugging and is not shared with any other party.</li>
+      <li><strong>Sentry:</strong> In production builds, crash reports are sent to Sentry to help us fix bugs. This may include your user ID, display name, device information, and error details. Email addresses and IP addresses are removed before sending, and screenshots are never attached. Sentry also receives app session counts and a sample of performance timing. Sentry data is used solely for debugging and app reliability, and is not shared with any other party.</li>
     </ul>
 
     <h3>Other</h3>
@@ -567,7 +567,7 @@
       <li><strong>Local storage:</strong> Data on your device is protected by your device's built-in security measures. Sensitive tokens are stored in your device's secure keychain/keystore.</li>
       <li><strong>Cloud storage:</strong> All cloud data is protected by row-level security (RLS), ensuring only you can access your own records. Family-shared data &mdash; inventories, plans, bulletin posts, and any contacts you choose to share &mdash; is encrypted on your device with AES-256 before upload, so Supabase stores only the encrypted data. Personal cloud backups are encrypted with a key derived from your password, which we do not store.</li>
       <li><strong>Family group keys:</strong> So your family can recover its shared data on a new phone, your group's encryption key is backed up to our servers in encrypted form. Because we hold that backup, family sharing is not zero-knowledge encryption &mdash; we don't read your data and nothing in the app is built to, but we won't claim it is technically impossible for us to. We'd rather tell you that than overstate it.</li>
-      <li><strong>Crash reports:</strong> Sensitive fields (passwords, tokens, API keys, credit card numbers) are automatically redacted before crash reports are sent.</li>
+      <li><strong>Crash reports:</strong> Email addresses and IP addresses are removed before crash reports are sent, and screenshots are never attached.</li>
     </ul>
     <p>We recommend using device lock screens and keeping your operating system updated.</p>
 
@@ -615,8 +615,7 @@
     <p>NomadCore respects your privacy by minimizing data collection:</p>
     <ul>
       <li><strong>No advertising or behavioral tracking in the mobile app.</strong> The app does not include Facebook Pixel, ad SDKs, or any behavioral analytics. We do not build user profiles or track your activity for marketing purposes.</li>
-      <li><strong>Crash reporting (Sentry):</strong> In production builds, the app sends crash reports to Sentry to help us identify and fix bugs. These reports may include your user ID, email, device information, and error details. Sensitive data is automatically redacted. Crash data is used solely for debugging.</li>
-      <li><strong>Basic usage events:</strong> If you create an account, the app records basic events — such as login, backup, restore, accessibility settings, data migrations, update checks, and feature usage — to your private account record in Supabase. This data is not shared with any third party and is only accessible to you and our support team for troubleshooting.</li>
+      <li><strong>Crash reporting (Sentry):</strong> In production builds, the app sends crash reports to Sentry to help us identify and fix bugs. These reports may include your user ID, display name, device information, and error details. Email and IP addresses are removed before sending. Sentry also receives app session counts and a sample of performance timing, used solely for debugging and app reliability.</li>
       <li><strong>Website analytics:</strong> The nomad-core.com website uses Google Analytics 4 (GA4) to collect anonymous usage statistics such as page views, referral sources, and general visitor demographics. No personally identifiable information is collected by GA4 on our website. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</li>
     </ul>
 
