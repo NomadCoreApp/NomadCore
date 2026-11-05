@@ -12,9 +12,9 @@
   gtag('config', 'G-901VG0NQY2');
 </script>
 <title>NomadCore - Your family's emergency plan, in your pocket</title>
-<meta name="description" content="The private, offline-first emergency preparedness app. 1,400+ verified procedures, supply tracking, offline maps, and family coordination. No tracking. No ads. No data sold. Works without internet.">
+<meta name="description" content="The private, offline-first emergency preparedness app. 1,400+ sourced procedures, supply tracking, offline maps, and family coordination. Works offline. No ads. Your data is never sold.">
 <meta property="og:title" content="NomadCore - Be Ready for Anything">
-<meta property="og:description" content="Your family's emergency plan, in your pocket. 1,400+ offline procedures, supply tracking, and family coordination. No tracking. No ads. No data sold.">
+<meta property="og:description" content="Your family's emergency plan, in your pocket. 1,400+ offline procedures, supply tracking, and family coordination. No ads. Your data is never sold.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://nomad-core.com/images/og-homepage.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   "name": "NomadCore",
   "url": "https://nomad-core.com",
   "logo": "https://nomad-core.com/images/nomadcore-icon.png",
-  "description": "The offline-first emergency preparedness app with 1,400+ verified procedures, supply tracking, offline maps, and family coordination.",
+  "description": "The offline-first emergency preparedness app with 1,400+ sourced procedures, supply tracking, offline maps, and family coordination.",
   "sameAs": [
     "https://apps.apple.com/us/app/nomadcore/id6751544385",
     "https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"
@@ -140,41 +140,15 @@ section { position: relative; padding: clamp(84px, 13vh, 140px) 0; }
 .private .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 90px); align-items: start; }
 .claims { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px clamp(24px, 3vw, 40px); }
 .claims p { margin-top: 6px; font-size: .96rem; }
+.leaves { margin-bottom: 24px; font-size: 1.35rem; }
 
-.spot { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: clamp(32px, 7vw, 110px); align-items: center; max-width: 960px; margin: 0 auto; }
-.spot + .spot { margin-top: clamp(64px, 10vh, 110px); }
-.spot:nth-child(even) { grid-template-columns: 260px minmax(0, 1fr); }
-.spot:nth-child(even) .phone { order: -1; }
-.spot h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
-.spot p { margin-top: 14px; }
-.spot ul { margin-top: 18px; padding-left: 20px; }
-.spot li { margin-top: 8px; font-size: .96rem; }
-.spot li::marker { color: var(--cyan); }
-.phone { padding: 9px; border: 1px solid var(--line); border-radius: 30px; background: var(--deep); }
-.phone img { width: 100%; height: auto; border-radius: 22px; }
 
-.who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px clamp(24px, 3vw, 44px); margin-top: 40px; }
-.who p, .values p { margin-top: 6px; font-size: .96rem; }
 
-.versus { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 72px); margin-top: 40px; }
-.versus ul { margin-top: 12px; list-style: none; }
-.versus li { padding: 11px 0; border-top: 1px solid var(--line); font-size: .98rem; }
 
 .score .cta { margin-top: 32px; }
-.values { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px clamp(24px, 3vw, 40px); margin-top: 36px; }
-.news .wrap { max-width: 720px; }
-.news .note { margin-top: 12px; font-size: .84rem; color: var(--muted); }
 
 .menu { display: none; min-height: 44px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--white); font: 600 .92rem Inter, sans-serif; cursor: pointer; }
 
-.leave { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; padding: 20px 24px; background: var(--navy); border-top: 1px solid var(--line); transform: translateY(100%); visibility: hidden; transition: transform .4s ease, visibility .4s; }
-.leave.show { transform: none; visibility: visible; }
-.leave > div { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; max-width: 900px; margin: 0 auto; padding-right: 64px; }
-.leave h2 { font-size: 1.05rem; letter-spacing: 0; }
-.leave p { font-size: .9rem; }
-.leave .btn { min-height: 44px; padding: 8px 20px; }
-.leave button { min-height: 44px; margin-left: 8px; padding: 0 10px; background: none; border: 0; color: var(--soft); font: inherit; cursor: pointer; }
-@media (prefers-reduced-motion: reduce) { .leave { transition: none; } }
 
 .story .wrap { max-width: 860px; }
 .story blockquote { margin-top: 26px; font: 600 clamp(1.2rem, 2vw, 1.55rem)/1.45 var(--head); letter-spacing: -.012em; color: var(--white); }
@@ -200,9 +174,6 @@ footer a:hover { color: var(--white); }
   .bar nav.open { position: absolute; top: 72px; left: 16px; right: 16px; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--navy); }
   .bar nav.open a { display: block; padding: 12px 0; }
   .gap .wrap, .private .wrap { grid-template-columns: 1fr; }
-  .spot, .spot:nth-child(even), .who, .versus, .values { grid-template-columns: 1fr; }
-  .spot:nth-child(even) .phone { order: 0; }
-  .phone { width: min(240px, 70vw); margin: 0 auto; }
   .hero::before { background: linear-gradient(180deg, rgba(7, 20, 40, .35), rgba(7, 20, 40, .55) 45%, rgba(7, 20, 40, .9)); }
   .maps { align-items: flex-start; min-height: 135svh; }
   .maps .text { max-width: none; }
@@ -243,18 +214,18 @@ footer a:hover { color: var(--white); }
   </div></header>
 
   <div class="hero"><div class="wrap">
-    <p class="promise">Private. Offline. No tracking. No ads.</p>
+    <p class="promise">Works offline. No ads. Your data is never sold.</p>
     <h1>Your family's emergency plan, in your pocket.</h1>
-    <p class="lede">1,400+ verified emergency procedures, supply tracking, offline maps, and family coordination. All on your device. No internet required. Your information is never tracked or sold.</p>
+    <p class="lede">1,400+ sourced emergency procedures, supply tracking, offline maps, and family coordination. Your plans stay on your device by default. Procedures, supplies, and saved maps work with no signal.</p>
     <div class="cta">
       <a class="btn go" href="https://apps.apple.com/us/app/nomadcore/id6751544385"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a>
       <a class="btn" href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.68c.27.16.6.18.89.06l11.26-5.34L4.1 8.56l-.92 14.42c-.04.28.08.56.28.7h-.28zm1.1-16.88L15.52 17.9l5.72-2.71c.42-.2.68-.64.68-1.12 0-.48-.26-.92-.68-1.12L4.28 6.8zm14.7 8.7L7.22 3.74l-2.64-1.5c-.33-.19-.74-.16-1.04.06L15.52 12.5l3.46 3z"/></svg>Google Play</a>
     </div>
     <div class="proof">
-      <div><b>1,400+</b>Verified procedures</div>
-      <div><b>56</b>Expert sources</div>
-      <div><b>100%</b>Offline capable</div>
-      <div><b>0</b>Data collected in the app</div>
+      <div><b>1,400+</b>Sourced procedures</div>
+      <div><b>56</b>Sources</div>
+      <div><b>0</b>Ads</div>
+      <div><b>0</b>Data sold</div>
     </div>
   </div></div>
 
@@ -267,9 +238,8 @@ footer a:hover { color: var(--white); }
       </div>
       <div class="facts">
         <div><b>72 hrs</b><p><strong>FEMA's minimum</strong>Every household should sustain itself for 3 days without outside help.</p></div>
-        <div><b>3 days</b><p><strong>Store inventory</strong>The average grocery store's total stock at normal demand. Storm forecast? Hours.</p></div>
-        <div><b>4-8 hrs</b><p><strong>Tower backup</strong>Most cell towers run on batteries that last hours, not days.</p></div>
-        <div><b>~$100</b><p><strong>To close the gap</strong>Water, food, light, and a plan. One afternoon, under a hundred dollars.</p></div>
+        <div><b>4-8 hrs</b><p><strong>Tower backup</strong>Many cell towers rely on backup that lasts hours, not days.</p></div>
+        <div><b>~$100</b><p><strong>To close the gap, by our estimate</strong>Water, food, light, and a plan. One afternoon, under a hundred dollars.</p></div>
       </div>
     </div></section>
 
@@ -283,11 +253,11 @@ footer a:hover { color: var(--white); }
 
     <section class="six veil" id="features"><div class="wrap">
       <h2>One app instead of six</h2>
-      <p class="sub">Everything your family needs for emergency readiness, all in one place. No internet required.</p>
+      <p class="sub">Everything your family needs for emergency readiness, all in one place. The core tools work with no signal.</p>
       <ul class="apps" tabindex="0" aria-label="NomadCore features">
         <li><div class="shot"><img src="images/emergency.jpg" alt="Emergency center with SOS beacon and quick contacts" width="919" height="2048" loading="lazy"></div><h3>Emergency Center</h3><p>One-tap SOS beacon, priority emergency contacts, 911 quick-dial, and step-by-step emergency procedures when seconds count.</p></li>
         <li><div class="shot"><img src="images/packmind.jpg" alt="PackMind inventory tracking with categories and expiration alerts" width="919" height="2048" loading="lazy"></div><h3>PackMind Inventory</h3><p>Track every supply, monitor expiration dates, and never wonder "do we have batteries?" again.</p></li>
-        <li><div class="shot"><img src="images/guide2.png" alt="Survival guide with categorized procedures and search" width="1008" height="2244" loading="lazy"></div><h3>Survival Guide</h3><p>1,400+ verified procedures from military, medical, and government sources. Searchable and always offline.</p></li>
+        <li><div class="shot"><img src="images/guide2.png" alt="Survival guide with categorized procedures and search" width="1008" height="2244" loading="lazy"></div><h3>Survival Guide</h3><p>1,400+ sourced procedures, including military, medical, and government manuals. Searchable and always offline.</p></li>
         <li><div class="shot"><img src="images/maps.jpg" alt="Offline maps with downloaded regions and waypoints" width="780" height="2048" loading="lazy"></div><h3>Offline Maps</h3><p>Download maps for your area. Navigate with GPS, save waypoints, and find resources without cell service.</p></li>
         <li><div class="shot"><img src="images/family-network.png" alt="Family network with encrypted sharing, live location, and emergency beacon" width="1008" height="2728" loading="lazy"></div><h3>Family Plan</h3><p>Meeting places, grab lists, family profiles with medical info, evacuation drills, and QR sharing.</p></li>
         <li><div class="shot"><img src="images/documents.jpg" alt="Encrypted document center with categories" width="919" height="2048" loading="lazy"></div><h3>Document Center</h3><p>Encrypted storage for IDs, insurance, medical records. AES-256 encryption with biometric access.</p></li>
@@ -295,96 +265,29 @@ footer a:hover { color: var(--white); }
       <a class="more" href="features/">See all features</a>
     </div></section>
 
-    <section class="spots veil"><div class="wrap">
-      <div class="spot">
-        <div>
-          <h2>Expert knowledge that works when the internet doesn't</h2>
-          <p>Over 1,400 verified procedures from 56 trusted sources including military field manuals, Red Cross training, and FEMA guides. All stored on your device.</p>
-          <ul>
-            <li>Medical emergencies: CPR, bleeding, choking, burns</li>
-            <li>Shelter, fire, water, and food procurement</li>
-            <li>Navigation, signaling, and radio communication</li>
-            <li>Morse code encoder/decoder with audio</li>
-          </ul>
-        </div>
-        <div class="phone"><img src="images/guide2.png" alt="Survival guide with searchable procedures" width="1008" height="2244" loading="lazy"></div>
-      </div>
-      <div class="spot">
-        <div>
-          <h2>Know exactly what you have and what's expiring</h2>
-          <p>PackMind tracks your emergency supplies with smart alerts. Import from CSV, scan product URLs, or add items manually. Share inventories with family.</p>
-          <ul>
-            <li>Expiration date tracking with 30-day warnings</li>
-            <li>Criticality ratings and low-stock alerts</li>
-            <li>13 categories and 14 storage locations</li>
-            <li>Family sharing with activity feed</li>
-          </ul>
-        </div>
-        <div class="phone"><img src="images/packmind.jpg" alt="PackMind inventory with supply tracking" width="919" height="2048" loading="lazy"></div>
-      </div>
-      <div class="spot">
-        <div>
-          <h2>See how prepared your family actually is</h2>
-          <p>Your Emergency Plan scores your readiness across family members, meeting places, grab lists, and evacuation routes. Drill reminders keep your plan fresh.</p>
-          <ul>
-            <li>Readiness score based on your actual plan completeness</li>
-            <li>Quarterly drill reminders for fire and evacuation</li>
-            <li>Family members, meeting places, and grab lists at a glance</li>
-            <li>Practice drills with guided walkthroughs</li>
-          </ul>
-        </div>
-        <div class="phone"><img src="images/emergency-plan.png" alt="Emergency readiness score with drill reminders and plan overview" width="1008" height="2244" loading="lazy"></div>
-      </div>
-    </div></section>
-
     <section class="private veil" id="privacy"><div class="wrap">
       <div>
-        <h2>Your information is never tracked or sold.</h2>
-        <p class="sub">In the app, your family's data stays on your device. No ads. No analytics. No profiles built. We don't know who you are and we like it that way.</p>
-        <p class="sub">This website uses Google Analytics for anonymous page statistics. The app doesn't.</p>
+        <h2>Your information is never sold.</h2>
+        <p class="sub">Your plans, supplies, and documents stay on your device unless you turn on backup or family sharing. We only use data to run the app, never for ads.</p>
+        <p class="sub">No ad or behavioral tracking. Use it without an account, and we won't have your name or email.</p>
+        <p class="sub">This website uses Google Analytics. The app doesn't.</p>
         <a class="more" href="privacy-policy.html">Read our full privacy policy</a>
       </div>
-      <div class="claims">
-        <div><h3>100% offline by default</h3><p>Everything works without internet. Your data never leaves your device unless you explicitly choose cloud backup.</p></div>
-        <div><h3>AES-256 encryption</h3><p>Documents and cloud backups are encrypted with AES-256 on your device, before they ever leave it. Your personal backup key is derived from your password. We don't store it.</p></div>
-        <div><h3>No tracking. No ads. No data sold.</h3><p>No Facebook Pixel, ad SDKs, behavioral analytics, or user profiles in the app. We do not sell or share your personal information with anyone.</p></div>
-        <div><h3>No account required</h3><p>Use every feature without creating an account or giving us your email. Optional cloud backup only if you want multi-device sync.</p></div>
-      </div>
-    </div></section>
-
-    <section class="scenarios veil" id="scenarios"><div class="wrap">
-      <h2>Whether you want freedom or peace of mind, it starts with being ready.</h2>
-      <p class="sub">Some people want independence. Some want their family covered. NomadCore is built for both.</p>
-      <div class="who">
-        <div><h3>The Self-Reliant</h3><p>You like knowing you can handle whatever comes. Offline maps, survival knowledge, and supply tracking for people who don't wait for someone else to figure it out.</p></div>
-        <div><h3>Parents</h3><p>Your kids are counting on you. Family profiles, meeting places, grab lists, and medical info - organized, shareable, and ready before you need it.</p></div>
-        <div><h3>Adventurers</h3><p>Backpacking, overlanding, road trips off the grid. Offline maps, GPS waypoints, wilderness procedures, and emergency frequencies when there's no cell service.</p></div>
-        <div><h3>Homeowners</h3><p>Power outage? Water main break? You're the one who has to deal with it now. Build a household plan at your own pace and know what to do when something goes sideways.</p></div>
-        <div><h3>Storm Country</h3><p>Hurricanes, ice storms, tornadoes, wildfires. Step-by-step guidance and your supply checklist, ready before it hits. Works without power or cell service.</p></div>
-        <div><h3>The Quietly Capable</h3><p>You're not a "prepper." You just like being the person who has their act together. Start small, build at your pace. NomadCore meets you where you are.</p></div>
+      <div>
+        <h3 class="leaves">What can leave your device, and why</h3>
+        <div class="claims">
+          <div><h3>Crash reports</h3><p>Error and device details so we can fix bugs, plus your account ID and display name if you're signed in.</p></div>
+          <div><h3>Live features</h3><p>Weather, alerts, and nearby resources send your location to those providers, without your account details.</p></div>
+          <div><h3>Backup and family sharing (optional)</h3><p>We see your email and display name. What you store or share is encrypted on your device first.</p></div>
+          <div><h3>Notifications (optional)</h3><p>A device token and alert text pass through our push provider.</p></div>
+          <div><h3>Scanned documents</h3><p>Never leave your device, even with backup on.</p></div>
+        </div>
       </div>
     </div></section>
 
     <section class="score veil"><div class="wrap">
       <h2>If the power went out for a week, would you know what to do?</h2>
-      <p class="sub">Most people don't. And the apps that exist either don't work offline, charge monthly, or treat you like you're building a bunker.</p>
-      <div class="versus">
-        <div><h3>Without NomadCore</h3><ul>
-          <li>Googling "what to do in a power outage" during a power outage</li>
-          <li>Emergency supplies scattered with no inventory</li>
-          <li>Important documents in a drawer somewhere</li>
-          <li>No family meeting plan if you can't call</li>
-          <li>Emergency apps that need internet to work</li>
-        </ul></div>
-        <div><h3>With NomadCore</h3><ul>
-          <li>Step-by-step procedures for any emergency, offline</li>
-          <li>Every supply tracked with expiration alerts</li>
-          <li>Documents encrypted and always accessible</li>
-          <li>Family plan with meeting places and SOS beacon</li>
-          <li>Offline maps, no cell service needed</li>
-        </ul></div>
-      </div>
-      <p class="sub">Find your readiness score. 10 quick questions. Personalized results. Free action plan.</p>
+            <p class="sub">Find your readiness score. 10 quick questions. Personalized results. Free action plan.</p>
       <div class="cta">
         <a class="btn go" href="quiz/">Take the quiz</a>
         <a class="btn" href="risk/">Check your county's outage risk</a>
@@ -397,21 +300,10 @@ footer a:hover { color: var(--white); }
       <div class="body">
         <p>NomadCore is built by a product development engineer in the medical device industry and a parent who believes your family's safety information shouldn't depend on a cell tower or a subscription.</p>
         <p>The deeper motivation? Independence. The confidence that comes from knowing you can handle things yourself - not because the world is ending, but because self-reliance is a better way to live.</p>
-      </div>
-      <div class="values">
-        <div><h3>Independence over dependence</h3><p>Real freedom means not relying on fragile systems. NomadCore works offline, on your device, under your control.</p></div>
-        <div><h3>Capability, not fear</h3><p>We're not selling doomsday. We're building the quiet confidence that comes from knowing what to do.</p></div>
-        <div><h3>Privacy matters</h3><p>Your emergency plans, your family's info, your location - that's yours. Not ours. Not anyone's.</p></div>
-        <div><h3>Works when it matters</h3><p>An app that needs internet during an emergency isn't an emergency app.</p></div>
+        <p>An app that needs internet during an emergency isn't an emergency app.</p>
       </div>
     </div></section>
 
-    <section class="news veil" id="newsletter"><div class="wrap">
-      <h2>Stay prepared. Stay informed.</h2>
-      <p class="sub">Get weekly preparedness guides, safety tips, and NomadCore updates, straight to your inbox. No spam, unsubscribe anytime.</p>
-      <div class="cta"><a class="btn go" href="subscribe/">Subscribe to the newsletter</a></div>
-      <p class="note">Join families already using NomadCore to stay prepared.</p>
-    </div></section>
 
     <section class="end" id="download"><div class="wrap">
       <h2>Be ready for anything.</h2>
@@ -420,7 +312,7 @@ footer a:hover { color: var(--white); }
         <a class="btn go" href="https://apps.apple.com/us/app/nomadcore/id6751544385">Download for iOS</a>
         <a class="btn" href="https://play.google.com/store/apps/details?id=com.nomadcoreapp.nomadcore">Download for Android</a>
       </div>
-      <p class="small">NomadCore is free with no ads or subscriptions. If it helps your family feel more prepared, <a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer">consider supporting the project</a>.</p>
+      <p class="small">NomadCore is free with no ads or subscriptions. If it helps your family feel more prepared, <a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer">consider supporting the project</a>, or <a href="subscribe/">get the weekly preparedness newsletter</a>.</p>
     </div></section>
   </main>
 </div>
@@ -432,19 +324,6 @@ footer a:hover { color: var(--white); }
     <a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="eula.html">EULA</a><a href="accessibility.html">Accessibility</a><a href="delete-account/">Delete Account</a><a href="support/">Support</a><a href="#about">About</a><a href="https://www.paypal.com/donate/?hosted_button_id=6MHV4N97K6BM8" target="_blank" rel="noopener noreferrer">Donate</a>
   </nav>
 </div></footer>
-
-<div class="leave" id="exitIntent">
-  <div>
-    <div>
-      <h2>Before you go, how prepared is your family?</h2>
-      <p>Take a free 2-minute quiz and get your personalized readiness score.</p>
-    </div>
-    <div>
-      <a class="btn go" href="quiz/">Take the quiz</a>
-      <button type="button" id="exitDismiss">No thanks</button>
-    </div>
-  </div>
-</div>
 
 <!-- NomadCore AI assistant (Agent Build Standard v1.2) -->
 <script src="/assistant-config.js"></script>
@@ -459,21 +338,6 @@ footer a:hover { color: var(--white); }
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
 })();
 
-/* Exit intent: desktop only, once per session, not for people already deep in the page */
-(function () {
-  var box = document.getElementById('exitIntent'), shown = false;
-  function seen() { try { return sessionStorage.getItem('exitDismissed'); } catch (e) { return null; } }
-  function dismiss() { box.classList.remove('show'); try { sessionStorage.setItem('exitDismissed', 'true'); } catch (e) {} }
-  document.addEventListener('mouseout', function (e) {
-    if (e.clientY > 0 || shown || seen()) return;
-    if (scrollY / (document.body.scrollHeight - innerHeight) > .7) return;
-    shown = true;
-    box.classList.add('show');
-    if (window.gtag) gtag('event', 'exit_intent_shown', { event_category: 'engagement' });
-  });
-  document.getElementById('exitDismiss').addEventListener('click', dismiss);
-  document.querySelectorAll('a[href*="quiz"]').forEach(function (a) { a.addEventListener('click', dismiss); });
-})();
 </script>
 
 <script>
