@@ -1,0 +1,106 @@
+/* NomadCore dark theme. Loaded last on every page except the home page, which has its own
+   styles. Pages share one set of color tokens, so most of the work is redefining them; the rules
+   below fix the places where a token also has to work as a dark background. */
+:root {
+  --deep: #071428;
+  --white: #0F2647;
+  --gray-50: #0B1D3A;
+  --gray-100: #1C3659;
+  --gray-200: #2A4570;
+  --gray-300: #8497B7;
+  --red: #F87171;
+  --purple: #C084FC;
+  /* The join page names its colors differently */
+  --bg: #0B1D3A;
+  --card: #0F2647;
+  --text: #FFFFFF;
+  --muted: #B4C2D8;
+  --primary: #FFFFFF;
+  --primary-contrast: #071428;
+  --border: #2A4570;
+  --code-bg: #071428;
+  --gray-400: #9FB0C9;
+  --gray-500: #B4C2D8;
+  --gray-600: #C6D2E4;
+  --gray-700: #D6E0EE;
+  --gray-800: #E7EDF6;
+  --gray-900: #FFFFFF;
+  --blue-light: rgba(46, 107, 214, .2);
+  --cyan-light: rgba(34, 184, 207, .16);
+  --amber-light: rgba(245, 158, 11, .16);
+  --red-light: rgba(239, 68, 68, .16);
+  --green-light: rgba(16, 185, 129, .16);
+  --purple-light: rgba(139, 92, 246, .2);
+  --shadow-sm: none;
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .25);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, .3);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, .35);
+}
+
+html { background: var(--deep); }
+body { background: radial-gradient(110% 80% at 65% 100%, #12305c 0%, var(--navy) 45%, var(--deep) 100%) fixed; color: var(--gray-600); }
+a { color: #5FD0E0; }
+a:hover { color: #fff; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+/* Navigation */
+.nav { background: rgba(7, 20, 40, .9); border-bottom-color: var(--gray-100); }
+.nav-links a { color: var(--gray-600); }
+.nav-links a:hover { color: #fff; }
+.nav-toggle span { background: #fff; }
+.nav-download-menu { background: var(--navy); border-color: var(--gray-200); }
+.nav-cta, .nav-cta:hover { background: #fff; color: var(--deep) !important; }
+@media (max-width: 768px) {
+  .nav-links { background: var(--navy); border-bottom-color: var(--gray-200); }
+}
+
+/* Solid buttons: white on navy, like the home page */
+.btn-primary, .btn-primary:hover,
+.btn-quiz, .btn-quiz:hover, .btn-quiz-card, .btn-quiz-card:hover,
+.btn-check, .btn-start:hover, .btn-next:hover, .btn-continue:hover, .btn-retry:hover,
+.email-form button:hover, .btn-download:hover,
+.newsletter .btn-subscribe:hover { background: #fff; color: var(--deep); }
+
+/* Dark panels that used a token now meaning white */
+.footer { background: var(--deep); border-top: 1px solid var(--gray-100); }
+.phone-frame, .phone-frame::before { background: var(--deep); }
+.cs-totals, .power-summary, .result-cta, .cs-video-play { background: var(--navy-light); }
+
+/* Text that used navy directly */
+h1, h2, h3, .nav-logo, .stat-num, .subcategory-header, .proc-title, .cat-card-name,
+.tip-box strong, .highlight-box strong, .article-body h3 a:hover, .blog-link:hover { color: #fff; }
+
+/* Blue is dark for text on navy. It stays as a background, with a lighter blue for text. */
+.nav-links a.active, .reading-time, .article-meta .reading-time, .blog-card-meta .reading-time, .expand-btn,
+.btn-outline, .btn-secondary, .stat-callout .stat-number, .article-body h3 a, .tag.on, .alt-box h3, .appliance.on .name,
+.step.plus, .chip.selected, .size-row summary::after, .cat-plan, .option-btn.selected, .qualifier-btn.selected,
+.intro-icon svg, .slider-value, .blog-link, .page-header h1, .faq-item.open .faq-question .chevron,
+.release-badge.latest-badge, .release-category-title.features, .checklist li::before,
+[style*="color: var(--blue)"] { color: #7FB0F5 !important; }
+
+/* Status colors picked for light backgrounds */
+.badge-supported, .tag.off, .status-message.success, .size-badge { color: #6EE7B7; }
+.badge-planned, .cs-status, .rating-HIGH, .rating-MODERATE, .confidence-derived,
+.size-row.no .size-your, .size-list li.no span:last-child { color: #FCD34D; }
+.safety h3, .status-message.error { color: #FCA5A5; }
+.rating-MODERATE { background: var(--amber-light); }
+.badge-critical { background: var(--red-light); color: #FCA5A5; }
+.badge-high { background: rgba(234, 88, 12, .18); color: #FDBA74; }
+.badge-medium { background: var(--blue-light); color: #93C5FD; }
+.error-text { background: var(--red-light); color: #FCA5A5; }
+
+/* Small text that was too faint */
+.nav-download-menu a { color: var(--gray-600) !important; }
+.nav-download-menu a:hover { background: var(--blue-light); color: #fff !important; }
+.footer-bottom, .footer-bottom a, .footer-bottom span, .footer-links a { color: rgba(255, 255, 255, .7); }
+.footer-bottom a:hover, .footer-links a:hover { color: #fff; }
+.newsletter .btn-subscribe { color: var(--deep); }
+.btn-delete:disabled { color: var(--deep); }
+
+/* Phone widths: footer links were cut off and knowledge base cards scrolled sideways */
+.footer-inner > * { min-width: 0; max-width: 100%; }
+.footer-links { flex-wrap: wrap; max-width: 100%; }
+.proc-card { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+
+/* Light fixed backgrounds */
+.form-group input, .form-group textarea, .step, .chip, .size-row[open], .quiz-cta-badge { background: var(--white); color: var(--gray-700); }
