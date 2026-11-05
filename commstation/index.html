@@ -130,6 +130,10 @@
           <p>A status bar shows at a glance which GPS, mesh radio and other devices are connected and working.</p>
         </div>
         <div class="cs-feature">
+          <h3>Wi-Fi scanner <span class="tag off">Offline</span></h3>
+          <p>An ESP32 board lists every Wi-Fi network around the truck, tags open and known ones, and logs each on the map where it was strongest.</p>
+        </div>
+        <div class="cs-feature">
           <h3>Phone link <span class="tag on">Bluetooth</span></h3>
           <p>Pair your phone and make calls from the screen: contacts, recents and a keypad, an incoming-call banner, and call audio through the cab speakerphone. Incoming texts show in a big box and are read aloud while the truck is moving, with spoken replies. Contacts stay on the Pi. Calls still go over your phone's cell signal.</p>
         </div>
@@ -214,7 +218,8 @@
       <table class="bom">
         <tbody>
           <tr><td>Extra Meshtastic nodes for family<span class="why">One for each family member who should get SOS messages.</span></td><td>$20&ndash;30 each</td></tr>
-          <tr><td>Flipper Zero<span class="why">Shows in the status bar; no features depend on it yet.</span></td><td>$170</td></tr>
+          <tr><td>Flipper Zero<span class="why">Its screen is mirrored on the station, and it carries the Wi-Fi scanner board.</span></td><td>$170</td></tr>
+          <tr><td>ESP32-S2 Wi-Fi board (Flipper Wi-Fi devboard)<span class="why">The Wi-Fi scanner. Also works on its own, powered over USB.</span></td><td>$25&ndash;30</td></tr>
         </tbody>
       </table>
 
@@ -234,8 +239,25 @@
       <h2>Coming next</h2>
       <h3>Drone link</h3>
       <p>The station's side is built: it flies one ArduPilot drone over a 915 MHz telemetry radio, with no internet. The drone shows on the map with its height, battery and trail, and five big buttons cover it: <strong>Take off</strong>, <strong>Go here</strong>, <strong>Hold</strong>, <strong>Return home</strong> and <strong>Land</strong>. It stays within 400 ft up and 400 m of home, so it stays in sight. So far it has flown only in a simulator. The drone is its own build, about <strong>$650&ndash;1,100</strong> on top of the station (frame, flight controller, GPS, telemetry radios, hand controller, Remote ID, batteries), and needs FAA registration.</p>
-      <h3>Security</h3>
-      <p>Security features for the truck and camp are planned. The screen already locks with a PIN or passphrase. More to come.</p>
+    </section>
+
+    <section class="cs-card">
+      <h2>Security: Wi-Fi scanner and logging</h2>
+      <h3>Wi-Fi scanner</h3>
+      <p>A small ESP32-S2 Wi-Fi board rides on the Flipper Zero's header and reports what it hears to the station over the truck's own Wi-Fi, so it takes no USB port.</p>
+      <ul>
+        <li>Every Wi-Fi network in range, strongest first, tagged <strong>OPEN</strong> (no password) or <strong>SAVED</strong> (one the station knows).</li>
+        <li>An alert when a saved network comes into range.</li>
+        <li>How busy each 2.4 GHz channel is, and the quietest one for the truck's network.</li>
+        <li>It only listens. The only network it joins is the truck's own.</li>
+      </ul>
+      <h3>Logging</h3>
+      <ul>
+        <li>Every network heard is logged on the Pi at the spot where it was strongest, and <strong>Show on map</strong> draws them: saved, open and the rest in their own colors.</li>
+        <li>The station also keeps its own records on the Pi: trips and stops, mesh messages, SOS beacons and whether each was delivered, and every drone command.</li>
+        <li>The logs stay on the Pi. Nothing is uploaded.</li>
+      </ul>
+      <p class="hint">The screen also locks with a PIN or passphrase at every start. Wrong guesses make you wait longer each time.</p>
     </section>
 
     <section class="cs-card">
