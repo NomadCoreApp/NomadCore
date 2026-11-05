@@ -111,7 +111,11 @@
         </div>
         <div class="cs-feature">
           <h3>Library <span class="tag off">Offline</span></h3>
-          <p>The NomadCore procedure library and offline medical references, searched on the Pi. Every answer shows its source. It only shows what's in the library and says when nothing matches.</p>
+          <p>The NomadCore procedure library (9,333 procedures) and offline medical references, searched on the Pi. Every result shows its source and page.</p>
+        </div>
+        <div class="cs-feature">
+          <h3>Ask the AI <span class="tag off">Offline</span></h3>
+          <p>Ask a question in plain words. AI models running on the Pi itself point you to the right procedure or write an answer from the library, with no internet. Repeat questions come back at once from memory.</p>
         </div>
         <div class="cs-feature">
           <h3>Travel log <span class="tag off">Offline</span></h3>
@@ -126,6 +130,23 @@
           <p>A status bar shows at a glance which GPS, mesh radio and other devices are connected and working.</p>
         </div>
       </div>
+    </section>
+
+    <section class="cs-card">
+      <h2>Ask: AI that runs on the Pi</h2>
+      <p>Ask runs two AI models on the station itself, so it answers with no signal. Unless you use the optional web search, your questions stay on the Pi.</p>
+      <h3>Laya, the router</h3>
+      <p>A small model we trained on our own set of emergency and travel questions. In about five seconds it decides where a question belongs: a procedure in the library, or a written answer. If the library has a procedure, you get the library's exact steps rather than a paraphrase, and questions that need professional care get a red <strong>Call 911</strong> banner.</p>
+      <h3>Granite, the writer</h3>
+      <p>IBM's open Granite 4 model (3B) running in Ollama. For everything else it writes an answer from library procedures and offline references, and lists the sources it used. When the truck has internet it can add a web search as one more source; that sends the question to the search service. It can also summarize a long procedure on request.</p>
+      <h3>Memory and caching</h3>
+      <ul>
+        <li><strong>Answer memory.</strong> Every finished answer is saved on the Pi. Ask the same thing again, even with the words in a different order, and the saved answer shows at once, without the minute the Pi takes to read sources. It says it's from memory and when it was made, and <strong>Look it up again</strong> gets a fresh one.</li>
+        <li><strong>Memories expire.</strong> After 30 days, or 12 hours for questions about right now, such as the weather.</li>
+        <li><strong>Earlier answers as sources.</strong> A new question on a topic it has answered before can use that earlier answer as one extra source, marked <em>not checked</em>. The model is told to trust the library, references and web over it. This is never done for medical questions, so a mistake can't be passed along.</li>
+        <li><strong>Conversations.</strong> Follow-up questions keep the last few exchanges as context.</li>
+      </ul>
+      <p class="hint">AI can be wrong. For first aid, the library's procedures are shown as written, and the station tells you when to call 911. It isn't a substitute for professional medical advice.</p>
     </section>
 
     <section class="cs-totals" aria-label="Approximate cost">
