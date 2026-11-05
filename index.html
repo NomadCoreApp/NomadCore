@@ -495,7 +495,7 @@ footer a:hover { color: var(--white); }
     measure();
   }
 
-  var drawn = total, scroll = 0, mx = 0, mxNow = 0, t0 = performance.now(), last = t0, slow = 0, seen = 0;
+  var drawn = total, scroll = 0, mx = 0, mxNow = 0, t0 = performance.now(), last = t0, seen = 0, times = [], trialFrom = 0, trialBefore = 0, capped = false;
   addEventListener('resize', function () { size(); if (still) frame(t0); });
   /* Fonts and images shift the page; keep the map view pinned to its section */
   new ResizeObserver(function () { measure(); if (still) frame(t0); }).observe(document.body);
@@ -570,11 +570,22 @@ footer a:hover { color: var(--white); }
     return;
   }
   function loop(now) {
-    /* Thin the dots if this device can't hold a smooth frame rate */
+    /* Thin the dots if this device can't hold a smooth frame rate. Each cut is a trial: if the
+       next 30 frames aren't faster, the rate is capped (battery saver, 30 Hz, throttled window),
+       not overloaded, so the dots go back and thinning stops for this visit. */
     var dt = now - last; last = now;
-    if (dt < 250 && ++seen > 20) {
-      slow = dt > 30 ? slow + 1 : Math.max(0, slow - 1);
-      if (slow > 24 && drawn > total * .25) { drawn = Math.floor(drawn * .72); slow = 0; seen = 0; }
+    if (!capped && dt < 1000 && ++seen > 20) {
+      times.push(dt);
+      if (times.length === 30) {
+        var typical = times.sort(function (a, b) { return a - b; })[15];
+        times = [];
+        if (trialFrom) {
+          if (typical > trialBefore * .92) { drawn = trialFrom; capped = true; }
+          trialFrom = 0;
+        } else if (typical > 40 && drawn > total * .25) {
+          trialFrom = drawn; trialBefore = typical; drawn = Math.floor(drawn * .72);
+        }
+      }
     }
     frame(now);
     requestAnimationFrame(loop);
