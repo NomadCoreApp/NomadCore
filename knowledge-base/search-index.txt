@@ -61,6 +61,7 @@ Removing a Tick Safely|first_aid|First Aid|5066
 Avoiding Leeches and Preventing Infections|sanitation|Sanitation|5067
 Avoiding Bat Hazards|medical_emergency|Medical Emergency|5068
 Avoiding Snake Encounters in Snake-Infested Areas|survival|Survival|5069
+Snake Bite Emergency Treatment - North American Pit Vipers|survival|Survival|49001
 Preventing Accidental Snakebite|survival|Survival|5070
 Identifying Snake-Free Areas|survival|Survival|5071
 Identify a Bushmaster Snake|natural_disaster|Natural Disasters|5072
@@ -3546,7 +3547,6 @@ Create an Ant Trap Using a Sponge and Sugar|natural_remedies|Natural Remedies|10
 Prevent Ants from Entering Closets or Drawers Using a Corrosive Sublimate Solution|natural_remedies|Natural Remedies|10657
 Destroy Insects in Grain Using a Vacuum Method|natural_remedies|Natural Remedies|10658
 Drive Away Moths Using Camphor or Insect Powder|natural_remedies|Natural Remedies|10659
-Bibron's Antidote for Snake-Bites|medical_emergency|Medical Emergency|10660
 Relieve Pain from Reptile and Insect Bites or Stings|first_aid|First Aid|10661
 Remove Bugs from Bedsteads and Prevent Infestation|sanitation|Sanitation|10662
 Avoid Injury from Bees and Wasps|first_aid|First Aid|10663
@@ -15355,7 +15355,6 @@ Avoid Using Home Remedies for Serious Infections|medical_emergency|Medical Emerg
 Promote Breastfeeding as the Best Option for Newborns|preparedness|Preparedness|27179
 Respect and Build on Local Traditions in Healthcare|preparedness|Preparedness|27180
 Use Belief-Based Remedies for Psychosomatic or Stress-Related Illnesses|medical_emergency|Medical Emergency|27181
-Administer Snakebite Remedies Based on Belief (Non-Effective for Poison)|medical_emergency|Medical Emergency|27182
 Obtain Antivenom Before a Poisonous Bite Occurs|medical_emergency|Medical Emergency|27183
 Recognize the Limitations of Home Remedies for Poisonous Bites|medical_emergency|Medical Emergency|27184
 Addressing Health Beliefs That Can Harm Physical Wellbeing|medical_emergency|Medical Emergency|27185
@@ -30830,8 +30829,6 @@ Proper Ear Cleaning and Safe Removal of Foreign Objects|preparedness|Preparednes
 Airway Check|first_aid|First Aid|41807
 Learn First Aid, CPR, and AED|preparedness|Preparedness|45616
 Assemble a Multi-Level Dental Kit (Levels 1, 2, and 3)|survival|Survival|46755
-Respond to a Snakebite from a Venomous Pit Viper|survival|Survival|5101
-Respond to a Snake Bite|survival|Survival|5107
 Treat The Gripes in Horses|survival|Survival|8076
 Treat Sallenders on Horses|medical_emergency|Medical Emergency|8097
 Treat Strangles in Horses|medical_emergency|Medical Emergency|8103
